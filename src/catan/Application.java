@@ -16,22 +16,22 @@ import java.util.Map;
 @Controller
 @SpringBootApplication
 public class Application {
-	public static Map<String, Game> games = new HashMap<>();
-	public static List<String> players = new ArrayList<>();
+    public static Map<String, Game> games = new HashMap<>();
+    public static List<String> players = new ArrayList<>();
 
-	@RequestMapping("/")
-	@ResponseBody
-	String home() {
-		return "Hello, World!";
-	}
+    @RequestMapping("/")
+    @ResponseBody
+    String home() {
+        return "Hello, World!";
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class);
-		try {
-			ConnectivitySimulation connectivity = new ConnectivitySimulation();
-			connectivity.simulation();
-		} catch (InterruptedException | IOException exception) {
-			exception.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class);
+        try {
+            ConnectivitySimulation connectivity = new ConnectivitySimulation();
+            connectivity.simulation();
+        } catch (InterruptedException | IOException exception) {
+            exception.printStackTrace();
+        }
+    }
 }
