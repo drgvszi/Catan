@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Messages {
-    private static Messages instance = null;
-    private Map<Code, String> messages;
+    private static final Messages instance = new Messages();
+    private static Map<Code, String> messages;
 
     private Messages() {
         messages = new HashMap<>();
@@ -34,18 +34,12 @@ public class Messages {
         messages.put(Code.InvalidCityPosition,"Invalid position for city.");
         messages.put(Code.InvalidSettlementPosition,"Invalid position for the settlement");
         messages.put(Code.NotEnoughResources,"Not enough resources");
-
-
     }
-
-    public static Messages getInstance() {
-        if (instance == null) {
-            instance = new Messages();
-        }
+    public static Messages getInstance(){
         return instance;
     }
 
-    public String getMessage(Code code) {
+    public static String getMessage(Code code) {
         return messages.get(code);
     }
 }

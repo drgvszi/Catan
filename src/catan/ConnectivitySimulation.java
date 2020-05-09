@@ -170,6 +170,19 @@ public class ConnectivitySimulation {
         return response.getCode() == HttpStatus.SC_OK;
     }
 
+    public boolean updateInfo(String gameId, String playerId) throws IOException {
+        UserResponse response;
+        response = HttpClientPost.userPost(new UserRequest(gameId, playerId,
+                "update", null));
+        return response.getCode() == HttpStatus.SC_OK;
+    }
+    public boolean getRanking(String gameId, String playerId) throws IOException {
+        UserResponse response;
+        response = HttpClientPost.userPost(new UserRequest(gameId, playerId,
+                "getRanking", null));
+        return response.getCode() == HttpStatus.SC_OK;
+    }
+
 
     //endregion
 
@@ -196,7 +209,7 @@ public class ConnectivitySimulation {
         buildRoad(gameID,playersID.get(0),30,31);
 
 
-
+        updateInfo(gameID,playersID.get(0));
 
         // Run the game
         for (int i = 0; i < 2; ++i) {
@@ -217,5 +230,6 @@ public class ConnectivitySimulation {
             sleep(100);
             endTurn(gameID, playersID.get(1));
         }
+        getRanking(gameID,playersID.get(0));
     }
 }

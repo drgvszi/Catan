@@ -523,6 +523,23 @@
   },
 
 
+  {
+    "gameId": "gameId",
+    "playerId": "playerId",
+    "command": "update",
+    "arguments": ""
+  },
+  {
+    "arguments" : {
+      "publicScore" : 2,
+      "hiddenScore" : 2,
+      "hasLargestArmy" : false,
+      "hasLongestRoad" : false,
+      "availableHouses" : [15, 5 ],
+      "availableRoads" : [ 19, 21, 47, 18, 20, 44, 29, 31, 30, 32 ]
+    }
+  },
+
 
   {
     "gameId": "gameId",

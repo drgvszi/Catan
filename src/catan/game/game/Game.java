@@ -40,7 +40,6 @@ public abstract class Game {
     protected String tradeOpponent;
     protected boolean notDiscardedAll;
     protected boolean inversion;
-    protected Messages messages;
 
     public Game() {
         bank = null;
@@ -55,7 +54,6 @@ public abstract class Game {
         tradeOffer = null;
         tradeRequest = null;
         notDiscardedAll = false;
-        messages = Messages.getInstance();
     }
 
     //region Getters
@@ -121,10 +119,6 @@ public abstract class Game {
         return notDiscardedAll;
     }
 
-    public Messages getMessages() {
-        return messages;
-    }
-
     public boolean isInversion() {
         return inversion;
     }
@@ -183,10 +177,6 @@ public abstract class Game {
 
     public void setNotDiscardedAll(boolean notDiscardedAll) {
         this.notDiscardedAll = notDiscardedAll;
-    }
-
-    public void setMessages(Messages messages) {
-        this.messages = messages;
     }
 
     public void setInversion() {
@@ -302,7 +292,7 @@ public abstract class Game {
         }
         Code code = discardResources(playerId, resources);
         if (code != null) {
-            return new UserResponse(HttpStatus.SC_ACCEPTED, messages.getMessage(code),
+            return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code),
                     responseArguments);
         }
         for (String player : playerOrder) {

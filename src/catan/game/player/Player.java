@@ -103,6 +103,14 @@ public class Player {
         return settlements;
     }
 
+    public boolean isHasLargestArmy() {
+        return hasLargestArmy;
+    }
+
+    public boolean isHasLongestRoad() {
+        return hasLongestRoad;
+    }
+
     public List<Intersection> getCities() {
         return cities;
     }
