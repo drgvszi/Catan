@@ -1,6 +1,7 @@
 package catan.game.game;
 
 import catan.API.response.Code;
+import catan.API.response.GameResponse;
 import catan.API.response.Messages;
 import catan.API.response.UserResponse;
 import catan.game.development.Knight;
@@ -40,6 +41,7 @@ public abstract class Game {
     protected String tradeOpponent;
     protected boolean notDiscardedAll;
     protected boolean inversion;
+    private Deque<GameResponse> logs=new ArrayDeque<>();
 
     public Game() {
         bank = null;
@@ -57,6 +59,10 @@ public abstract class Game {
     }
 
     //region Getters
+
+    public Deque<GameResponse> getLogs() {
+        return logs;
+    }
 
     public Bank getBank() {
         return bank;
@@ -201,7 +207,6 @@ public abstract class Game {
         }
         int nextPlayer = (playerOrder.indexOf(currentPlayer) + direction) % playerOrder.size();
         currentPlayer = playerOrder.get(nextPlayer);
-        players.get(currentPlayer).getState().fsm.ProcessFSM("restart");
     }
 
     protected void updateBonusPoints() {
@@ -261,6 +266,10 @@ public abstract class Game {
         Map<String, Object> responseArguments = new HashMap<>();
         responseArguments.put("sentAll", false);
         switch (command) {
+            case "update":
+                return new UserResponse(HttpStatus.SC_OK,"Here are your information",initializeUpdateResponse());
+            case "getRanking":
+                return new UserResponse(HttpStatus.SC_OK,"Here is the current ranking",initializeRankingResponse());
             case "discardResources":
                 return discardResources(playerId, requestArguments, responseArguments);
             case "wantToTrade":
@@ -390,7 +399,32 @@ public abstract class Game {
         }
         return responseArguments;
     }
-
+    public Map<String,Object> initializeRankingResponse() {
+        Map<String, Object> responseArguments = new HashMap<>();
+        boolean finish=false;
+        for (String player : playerOrder) {
+            int playerIndex = playerOrder.indexOf(player);
+            responseArguments.put("player_" + playerIndex, player);
+            Player player1 = players.get(player);
+            responseArguments.put("publicScore_" + playerIndex, player1.getPublicVP());
+            responseArguments.put("hiddenScore_" + playerIndex, player1.getVictoryPoints());
+            if(player1.getVictoryPoints()>=VictoryPoint.FINISH_VICTORY_POINTS)
+                finish=true;
+        }
+        responseArguments.put("foundWinner",finish);
+        return responseArguments;
+    }
+    public Map<String,Object> initializeUpdateResponse(){
+        Map<String, Object> responseArguments = new HashMap<>();
+        Player player1=players.get(currentPlayer);
+        responseArguments.put("publicScore", player1.getPublicVP());
+        responseArguments.put("hiddenScore", player1.getVictoryPoints());
+        responseArguments.put("hasLargestArmy", player1.isHasLargestArmy());
+        responseArguments.put("hasLongestRoad" , player1.isHasLongestRoad());
+        responseArguments.put("availableHouses",getAvailableHousePlacements());
+        responseArguments.put("availableRoads",getAvailableRoadPlacements());
+        return responseArguments;
+    }
     public Map<String, Object> initializeRollDiceResponse() {
         Map<String, Object> responseArguments = new HashMap<>();
         for (String player : playerOrder) {
@@ -429,7 +463,6 @@ public abstract class Game {
         bank.giveResources(resourcesToDiscard);
         return null;
     }
-    //endregion
 
     //region get available placements for settlements, cities and roads
     public boolean isAvailableHousePlacement(Intersection intersection) {
@@ -445,50 +478,51 @@ public abstract class Game {
         return true;
     }
 
-    // TODO ma gandesc ca ar fi mai bine sa returneze perechi, ca sa poata cei de la interfata sa evidentieze latura
-    //  pe care trebuie pus drumul
-    public List<Pair<Integer, Integer>> getAvailableRoadPlacements() {
+    public Set<List<Integer>> getAvailableRoadPlacements() {
         Player player = players.get(currentPlayer);
-        Set<Pair<Integer, Integer>> availableRoadPlacements = new HashSet<>();
-        for (Road road :
+        Set<List<Integer>> availableRoadPlacements = new HashSet<>();
+        for (Road road:
                 player.getRoads()) {
-            List<Intersection> adjacentStartIntersections = board.getAdjacentIntersections(road.getStart());
-            List<Intersection> adjacentEndIntersections = board.getAdjacentIntersections(road.getEnd());
-            for (Intersection intersection :
-                    adjacentStartIntersections) {
-                if (!board.existsRoad(road.getStart().getId(), intersection.getId()))
-                    availableRoadPlacements.add(new Pair<>(road.getStart().getId(), intersection.getId()));
-            }
-            for (Intersection intersection :
-                    adjacentEndIntersections) {
+            for (Intersection intersection:
+                    board.getAdjacentIntersections(road.getStart())) {
+                Integer start=road.getStart().getId();
+                Integer end=intersection.getId();
+                if(start>end){ Integer aux=start;start=end;end=aux; } //swap
                 if (!board.existsRoad(road.getEnd().getId(), intersection.getId()))
-                    availableRoadPlacements.add(new Pair<>(road.getEnd().getId(), intersection.getId()));
+                    availableRoadPlacements.add(new ArrayList<>(Arrays.asList(start,end)));
+            }
+            for (Intersection intersection:
+                    board.getAdjacentIntersections(road.getEnd())) {
+                Integer start=intersection.getId();
+                Integer end=road.getEnd().getId();
+                if(start>end){ Integer aux=start;start=end;end=aux; } //swap
+                if (!board.existsRoad(road.getEnd().getId(), intersection.getId()))
+                    availableRoadPlacements.add(new ArrayList<>(Arrays.asList(start,end)));
             }
         }
-        return (List<Pair<Integer, Integer>>) availableRoadPlacements;
+        return availableRoadPlacements;
     }
 
-    public List<Integer> getAvailableHousePlacements() {
+    public Set<Integer> getAvailableHousePlacements() {
         Player player = players.get(currentPlayer);
         Set<Integer> availableHousePlacements = new HashSet<>();
-        for (Road road :
+        for (Road road:
                 player.getRoads()) {
             if (isAvailableHousePlacement(road.getStart()))
                 availableHousePlacements.add(road.getStart().getId());
             if (isAvailableHousePlacement(road.getEnd()))
                 availableHousePlacements.add(road.getEnd().getId());
         }
-        return (List<Integer>) availableHousePlacements;
+        return availableHousePlacements;
     }
-
-    public List<Integer> getAvailableCityPlacement() {
+    public Set<Integer> getAvailableCityPlacement() {
         Player player = players.get(currentPlayer);
         Set<Integer> availableCityPlacement = new HashSet<>();
         for (Intersection building :
                 player.getSettlements()) {
             availableCityPlacement.add(building.getId());
         }
-        return (List<Integer>) availableCityPlacement;
+        return availableCityPlacement;
     }
     //endregion
 
