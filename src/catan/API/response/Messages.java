@@ -16,6 +16,15 @@ public class Messages {
         messages.put(Code.PlayerNoGrain, "You have no more grain.");
         messages.put(Code.PlayerNoBrick, "You have no more brick.");
         messages.put(Code.PlayerNoOre, "You have no more ore.");
+        messages.put(Code.PlayerHasDev, "You have the development.");
+        messages.put(Code.PlayerNoDev, "You don't have that development.");
+        messages.put(Code.MonopolySuccess, "Monopoly successfully used.");
+        messages.put(Code.KnightSuccess, "Knight successfully used.");
+        messages.put(Code.RoadBuildingSuccess, "Road Building successfully used.");
+        messages.put(Code.YearOfPlentySuccess, "Year of Plenty successfully used.");
+        messages.put(Code.ResourceNotSet, "The resource wasn't set.");
+        messages.put(Code.FirstResourceNotSet, "The first resource wasn't set.");
+        messages.put(Code.SecondResourceNotSet, "The second resource wasn't set.");
         messages.put(Code.BankNoLumber, "The bank has no more lumber.");
         messages.put(Code.BankNoWool, "The bank has no more wool.");
         messages.put(Code.BankNoGrain, "The bank has no more grain.");

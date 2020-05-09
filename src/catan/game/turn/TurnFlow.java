@@ -4,6 +4,7 @@ import catan.API.response.Code;
 import catan.API.response.Messages;
 import catan.API.response.UserResponse;
 import catan.game.game.Game;
+import catan.game.player.Player;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,7 +44,7 @@ public class TurnFlow {
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 try {
                     String data = new ObjectMapper().writeValueAsString(arguments);
-                    response = new UserResponse(HttpStatus.SC_OK, "The dice sum is seven.", (Map<String, Object>)arguments);
+                    response = new UserResponse(HttpStatus.SC_OK, "The dice sum is seven.", (Map<String, Object>) arguments);
                     return true;
                 } catch (JsonProcessingException e) {
                     e.printStackTrace();
@@ -56,7 +57,7 @@ public class TurnFlow {
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 try {
                     String data = new ObjectMapper().writeValueAsString(arguments);
-                    response = new UserResponse(HttpStatus.SC_OK, "The dice sum is not seven.", (Map<String, Object>)arguments);
+                    response = new UserResponse(HttpStatus.SC_OK, "The dice sum is not seven.", (Map<String, Object>) arguments);
                     return true;
                 } catch (JsonProcessingException e) {
                     e.printStackTrace();
@@ -68,7 +69,8 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, Integer>>(){});
+                        new TypeReference<HashMap<String, Integer>>() {
+                        });
                 int tile = requestArguments.get("tile");
                 Code code = game.moveRobber(tile);
                 if (code == null) {
@@ -82,7 +84,8 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, String>>(){});
+                        new TypeReference<HashMap<String, String>>() {
+                        });
                 String playerId = requestArguments.get("playerId");
                 //TODO: Add game.stealResource(String playerId).
                 response = new UserResponse(HttpStatus.SC_OK, "The resource was stolen successfully.", null);
@@ -110,7 +113,8 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, String>>(){});
+                        new TypeReference<HashMap<String, String>>() {
+                        });
                 if (requestArguments != null) {
                     String playerId = requestArguments.get("playerId");
                 }
@@ -123,7 +127,8 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, String>>(){});
+                        new TypeReference<HashMap<String, String>>() {
+                        });
                 String firstOffer = requestArguments.get("offer_1");
                 String secondOffer = requestArguments.get("offer_2");
                 String thirdOffer = requestArguments.get("offer_3");
@@ -137,8 +142,8 @@ public class TurnFlow {
             @Override
             public boolean action(String curState, String message, String nextState, Object args) {
                 response = new UserResponse(HttpStatus.SC_OK, "The settlement was built successfully.", null);
-                Code code=game.buildSettlement(((HashMap<String, Integer>) args).get("intersection"));
-                if (code!=null) {
+                Code code = game.buildSettlement(((HashMap<String, Integer>) args).get("intersection"));
+                if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
@@ -149,26 +154,24 @@ public class TurnFlow {
             @Override
             public boolean action(String curState, String message, String nextState, Object args) {
                 response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.", null);
-                Code code=game.buildRoad(((HashMap<String, Integer>) args).get("start"),
+                Code code = game.buildRoad(((HashMap<String, Integer>) args).get("start"),
                         ((HashMap<String, Integer>) args).get("end"));
-                if (code!=null) {
+                if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
-                if(!game.isInversion()) {
+                if (!game.isInversion()) {
                     if (game.getCurrentPlayer().equals(game.getPlayerOrder().get(game.getPlayerOrder().size() - 1))) {
                         game.setInversion();
                     } else {
                         game.changeTurn(1);
                     }
 
-                }
-                else {
-                    if(game.getCurrentPlayer().equals(game.getPlayerOrder().get(0))){
+                } else {
+                    if (game.getCurrentPlayer().equals(game.getPlayerOrder().get(0))) {
                         game.giveInitialResources();
                         game.setInversion();
-                    }
-                    else
+                    } else
                         game.changeTurn(-1);
 
                 }
@@ -179,12 +182,13 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, Integer>>(){});
+                        new TypeReference<HashMap<String, Integer>>() {
+                        });
                 int start = requestArguments.get("start");
                 int end = requestArguments.get("end");
 
-                Code code=game.buyRoad(start,end);
-                if(code!=null){
+                Code code = game.buyRoad(start, end);
+                if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
@@ -195,10 +199,11 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, Integer>>(){});
+                        new TypeReference<HashMap<String, Integer>>() {
+                        });
                 int intersection = requestArguments.get("intersection");
-                Code code=game.buySettlement(intersection);
-                if (code!=null) {
+                Code code = game.buySettlement(intersection);
+                if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
@@ -210,10 +215,11 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, Integer>>(){});
+                        new TypeReference<HashMap<String, Integer>>() {
+                        });
                 int intersection = requestArguments.get("intersection");
-                Code code=game.buyCity(intersection);
-                if (code!=null) {
+                Code code = game.buyCity(intersection);
+                if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
@@ -224,7 +230,8 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, String>>(){});
+                        new TypeReference<HashMap<String, String>>() {
+                        });
                 String development = requestArguments.get("development");
                 //TODO: Add game.buyDevelopment(String development).
                 response = new UserResponse(HttpStatus.SC_OK, "The development was built successfully.", null);
@@ -235,15 +242,118 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
-                        new TypeReference<HashMap<String, String>>(){});
+                        new TypeReference<HashMap<String, String>>() {
+                        });
                 String development = requestArguments.get("development");
+                String result = game.useDevelopment(development);
+                if (result != null) {
+                    fsm.ProcessFSM(result);
+                    return false;
+                } else {
+                    response = new UserResponse(HttpStatus.SC_OK, "There is no such development card", null);
+                    return false;
+                }
+            }
+        });
+        fsm.setAction("useKnight", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Code code = game.useKnight();
+                if (code == Code.PlayerHasDev) {
+                    return true;
+                } else {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
+                    return false;
+                }
+            }
+        });
+        fsm.setAction("useMonopoly", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Code code = game.useMonopoly();
+                if (code == Code.PlayerHasDev) {
+                    return true;
+                } else {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
+                    return false;
+                }
+            }
+        });
+        fsm.setAction("useYearOfPlenty", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Code code = game.useYearOfPlenty();
+                if (code == Code.PlayerHasDev) {
+                    return true;
+                } else {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
+                    return false;
+                }
+            }
+        });
+
+        fsm.setAction("useRoadBuilding", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Code code = game.useRoadBuilding();
+                if (code == Code.PlayerHasDev) {
+                    return true;
+                } else {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
+                    return false;
+                }
+            }
+        });
+        fsm.setAction("takeResourceFromAll", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
+                        new TypeReference<HashMap<String, String>>() {
+                        });
                 String resource = requestArguments.get("resource");
-                //TODO: Add game.useDevelopment(String development, String resource).
-                fsm.ProcessFSM("useRoadBuilding");
-                response = new UserResponse(HttpStatus.SC_OK, "The development was used successfully.", null);
+                Code code = game.takeResourceFromAll(resource);
+                response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
                 return true;
             }
         });
+
+        fsm.setAction("takeTwoResources", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
+                        new TypeReference<HashMap<String, String>>() {
+                        });
+                String resource1 = requestArguments.get("resource_1");
+                String resource2 = requestArguments.get("resource_2");
+                Code code = game.takeTwoResources(resource1, resource2);
+                response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
+                return true;
+            }
+        });
+
+        fsm.setAction("buildDevRoad", new FSMAction() {
+            @Override
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
+                        new TypeReference<HashMap<String, Integer>>() {
+                        });
+                int start = requestArguments.get("start");
+                int end = requestArguments.get("end");
+                Player player = game.getPlayers().get(game.getCurrentPlayer());
+                Code code = game.buildRoad(start, end);
+                if(code == null) {
+                    response = new UserResponse(HttpStatus.SC_OK, "Build Road from Road Building successfully.", null);
+                    player.setRoadsToBuildCounter(player.getRoadBuildingsCounter() - 1);
+                }
+                else {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(code), null);
+                }
+                if (player.getRoadsToBuildCounter() == 0)
+                    fsm.ProcessFSM("goNext");
+                return true;
+            }
+        });
+
         fsm.setAction("endTurn", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {

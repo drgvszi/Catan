@@ -28,7 +28,7 @@
   <MESSAGE id="takeResourceFromAll" action="takeResourceFromAll" nextState="Playing"/>
  </STATE>
  <STATE id="UsingRoadBuilding">
-  <MESSAGE id="buildRoad" action="buildRoad" nextState="UsingRoadBuilding"/>
+  <MESSAGE id="buildDevRoad" action="buildDevRoad" nextState="UsingRoadBuilding"/>
   <MESSAGE id="goNext" action="goNext" nextState="Playing"/>
  </STATE>
  <STATE id="UsingYearOfPlenty">

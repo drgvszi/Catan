@@ -36,11 +36,20 @@ public class Player {
     private List<Intersection> cities;
 
     private Map<Resource, Integer> resources;
-    private List<Knight> knights;
-    private List<Monopoly> monopolies;
-    private List<RoadBuilding> roadBuildings;
-    private List<YearOfPlenty> yearsOfPlenty;
+    private int knightsCounter;
+    private int monopoliesCounter;
+    private int roadBuildingsCounter;
+    private int yearsOfPlentyCounter;
 
+    public int getRoadsToBuildCounter() {
+        return roadsToBuildCounter;
+    }
+
+    public void setRoadsToBuildCounter(int roadsToBuildCounter) {
+        this.roadsToBuildCounter = roadsToBuildCounter;
+    }
+
+    private int roadsToBuildCounter=0;
     private int usedArmyCards;
 
     private boolean hasLongestRoad;
@@ -70,11 +79,6 @@ public class Player {
         resources.put(Resource.grain, 0);
         resources.put(Resource.lumber, 0);
         resources.put(Resource.brick, 0);
-
-        knights = new ArrayList<>();
-        monopolies = new ArrayList<>();
-        roadBuildings = new ArrayList<>();
-        yearsOfPlenty = new ArrayList<>();
 
         publicVP = 0;
         hiddenVP = 0;
@@ -143,20 +147,20 @@ public class Player {
         return null;
     }
 
-    public List<Knight> getKnights() {
-        return knights;
+    public int getKnightsCounter() {
+        return knightsCounter;
     }
 
-    public List<Monopoly> getMonopolies() {
-        return monopolies;
+    public int getMonopoliesCounter() {
+        return monopoliesCounter;
     }
 
-    public List<RoadBuilding> getRoadBuildings() {
-        return roadBuildings;
+    public int getRoadBuildingsCounter() {
+        return roadBuildingsCounter;
     }
 
-    public List<YearOfPlenty> getYearsOfPlenty() {
-        return yearsOfPlenty;
+    public int getYearsOfPlentyCounter() {
+        return yearsOfPlentyCounter;
     }
 
     public int getUsedKnights() {
@@ -187,20 +191,20 @@ public class Player {
         resources.put(resource, resources.get(resource) + resourceNumber);
     }
 
-    public void addKnight(Knight knight) {
-        knights.add(knight);
+    public void addKnight() {
+        knightsCounter++;
     }
 
-    public void addMonopolies(Monopoly monopoly) {
-        monopolies.add(monopoly);
+    public void addMonopolies() {
+        monopoliesCounter++;
     }
 
-    public void addRoadBuilding(RoadBuilding roadBuilding) {
-        roadBuildings.add(roadBuilding);
+    public void addRoadBuilding() {
+        roadBuildingsCounter++;
     }
 
-    public void addYearsOfPlenty(YearOfPlenty yearOfPlenty) {
-        yearsOfPlenty.add(yearOfPlenty);
+    public void addYearsOfPlenty() {
+        yearsOfPlentyCounter++;
     }
 
     public void addVictoryPoint() {

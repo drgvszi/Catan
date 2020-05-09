@@ -13,11 +13,11 @@ import java.util.*;
 public class Bank {
     private List<Player> players;
     private Map<Resource, Integer> resources;
-    private Stack<Knight> knights;
-    private Stack<Monopoly> monopolies;
-    private Stack<RoadBuilding> roadBuildings;
-    private Stack<VictoryPoint> victoryPoints;
-    private Stack<YearOfPlenty> yearsOfPlenty;
+    private int knightsCounter;
+    private int monopoliesCounter;
+    private int roadBuildingsCounter;
+    private int victoryPointsCounter;
+    private int yearsOfPlentyCounter;
     private Map<Player, Integer> roads;
     private Map<Player, Integer> settlements;
     private Map<Player, Integer> cities;
@@ -25,7 +25,6 @@ public class Bank {
     public Bank(List<Player> players) {
         this.players = players;
         createResources();
-        createDevelopments();
         createProperties();
     }
 
@@ -47,6 +46,10 @@ public class Bank {
 
     public boolean hasCity(Player player) {
         return settlements.get(player) > 0;
+    }
+
+    public int getNumberOfRoads(Player player){
+        return roads.get(player);
     }
 
     public Code takeResource(Resource resource, int resourceNumber) {
@@ -72,49 +75,45 @@ public class Bank {
         return null;
     }
 
-    public Knight takeKnight(Player player) {
-        if (knights.isEmpty()) {
-            return null;
+    public boolean takeKnight(Player player) {
+        if (knightsCounter == 0) {
+            return false;
         }
-        Knight knight = knights.pop();
-        knight.setOwner(player);
-        return knight;
+        knightsCounter--;
+
+        return true;
     }
 
-    public Monopoly takeMonopoly(Player player) {
-        if (monopolies.isEmpty()) {
-            return null;
+    public boolean takeMonopoly(Player player) {
+        if (monopoliesCounter == 0) {
+            return false;
         }
-        Monopoly monopoly = monopolies.pop();
-        monopoly.setOwner(player);
-        return monopoly;
+        monopoliesCounter--;
+        return true;
     }
 
-    public RoadBuilding takeRoadBuilding(Player player) {
-        if (roadBuildings.isEmpty()) {
-            return null;
+    public boolean takeRoadBuilding(Player player) {
+        if (roadBuildingsCounter == 0) {
+            return false;
         }
-        RoadBuilding roadBuilding = roadBuildings.pop();
-        roadBuilding.setOwner(player);
-        return roadBuilding;
+        roadBuildingsCounter--;
+        return true;
     }
 
-    public VictoryPoint takeVictoryPoint(Player player) {
-        if (victoryPoints.isEmpty()) {
-            return null;
+    public boolean takeVictoryPoint(Player player) {
+        if (victoryPointsCounter == 0) {
+            return false;
         }
-        VictoryPoint victoryPoint = victoryPoints.pop();
-        victoryPoint.setOwner(player);
-        return victoryPoint;
+        victoryPointsCounter--;
+        return true;
     }
 
-    public YearOfPlenty takeYearOfPlenty(Player player) {
-        if (yearsOfPlenty.isEmpty()) {
-            return null;
+    public boolean takeYearOfPlenty(Player player) {
+        if (yearsOfPlentyCounter == 0) {
+            return false;
         }
-        YearOfPlenty yearOfPlenty = yearsOfPlenty.pop();
-        yearOfPlenty.setOwner(player);
-        return yearOfPlenty;
+        yearsOfPlentyCounter--;
+        return true;
     }
 
     public Code takeRoad(Player player) {
@@ -170,48 +169,7 @@ public class Bank {
         }
     }
 
-    private void createDevelopments() {
-        createKnights();
-        createVictoryPoints();
-        createRoadBuildings();
-        createYearsOfPlenty();
-        createMonopolies();
-    }
 
-    private void createKnights() {
-        knights = new Stack<>();
-        for (int index = 0; index < Component.KNIGHTS; ++index) {
-            knights.push(new Knight());
-        }
-    }
-
-    private void createVictoryPoints() {
-        victoryPoints = new Stack<>();
-        for (int index = 0; index < Component.VICTORY_POINTS; ++index) {
-            victoryPoints.push(new VictoryPoint());
-        }
-    }
-
-    private void createRoadBuildings() {
-        roadBuildings = new Stack<>();
-        for (int index = 0; index < Component.ROAD_BUILDINGS; ++index) {
-            roadBuildings.push(new RoadBuilding());
-        }
-    }
-
-    private void createYearsOfPlenty() {
-        yearsOfPlenty = new Stack<>();
-        for (int index = 0; index < Component.YEARS_OF_PLENTY; ++index) {
-            yearsOfPlenty.push(new YearOfPlenty());
-        }
-    }
-
-    private void createMonopolies() {
-        monopolies = new Stack<>();
-        for (int index = 0; index < Component.MONOPOLIES; ++index) {
-            monopolies.push(new Monopoly());
-        }
-    }
 
     private void createProperties() {
         createRoads();
