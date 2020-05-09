@@ -2,7 +2,7 @@
   {
     "gameId": "gameId",
     "playerId": "playerId",
-    "command": "buildFirstSettlement",
+    "command": "buildSettlement",
     "arguments":
     {
       "intersection": "a number between 0 and 18 where to build the settlement"
@@ -11,109 +11,60 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
-      "availableSettlements": [1, 2],
-      "availableCities": [1, 2],
-      "availableRoads": [[1, 2], [1, 3]]
-    }
-  },
-
-
-
-  {
-    "gameId": "gameId",
-    "playerId": "playerId",
-    "command": "buildRoad",
-    "arguments":
-    {
-      "start": "number of first intersection",
-      "end": "number of last intersection"
-    }
-  },
-  {
-    "code": "HttpStatus code",
-    "status": "message (success or error type)",
-    "arguments":
-    {
-      "availableSettlements": [1, 2],
-      "availableCities": [1, 2],
-      "availableRoads": [[1, 2], [1, 3]]
-    }
-  },
-
-
-
-  {
-    "gameId": "gameId",
-    "playerId": "playerId",
-    "command": "buildSecondSettlement",
-    "arguments":
-    {
-      "intersection": "a number between 0 and 18 where to build the settlement"
-    }
-  },
-  {
-    "code": "HttpStatus code",
-    "status": "message (success or error type)",
-    "arguments":
-    {
-      "lumber": "number of received lumbers",
-      "wool": "number of received wools",
-      "grain": "number of received grains",
-      "brick": "number of received bricks",
-      "ore": "number of received ores",
-      "availableSettlements": [1, 2],
-      "availableCities": [1, 2],
-      "availableRoads": [[1, 2], [1, 3]]
-    }
-  },
-
-
-
-  {
-    "gameId": "gameId",
-    "playerId": "playerId",
-    "command": "buildRoad",
-    "arguments":
-    {
-      "start": "number of first intersection",
-      "end": "number of last intersection"
-    }
-  },
-  {
-    "code": "HttpStatus code",
-    "status": "message (success or error type)",
-    "arguments":
-    {
-      "availableSettlements": [1, 2],
-      "availableCities": [1, 2],
-      "availableRoads": [[1, 2], [1, 3]]
-    }
-  },
-
-
-
-  {
-    "gameId": "gameId",
-    "playerId": "playerId",
-    "command": "synchronize",
     "arguments": ""
   },
+
+
+
+  {
+    "gameId": "gameId",
+    "playerId": "playerId",
+    "command": "buildRoad",
+    "arguments":
+    {
+      "start": "number of first intersection",
+      "end": "number of last intersection"
+    }
+  },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
+    "arguments": ""
+  },
+
+
+
+  {
+    "gameId": "gameId",
+    "playerId": "playerId",
+    "command": "buildSettlement",
     "arguments":
     {
-      "playerId": "playerId",
-      "publicScore": "",
-      "hiddenScore": "",
-      "resources": "",
-      "developments": "",
-      "roads": "",
-      "settlements": "",
-      "cities": ""
+      "intersection": "a number between 0 and 18 where to build the settlement"
     }
+  },
+  {
+    "code": "HttpStatus code",
+    "status": "message (success or error type)",
+    "arguments": ""
+  },
+
+
+
+  {
+    "gameId": "gameId",
+    "playerId": "playerId",
+    "command": "buildRoad",
+    "arguments":
+    {
+      "start": "number of first intersection",
+      "end": "number of last intersection"
+    }
+  },
+  {
+    "code": "HttpStatus code",
+    "status": "message (success or error type)",
+    "arguments": ""
   },
 
 
@@ -456,7 +407,23 @@
     "command": "useDevelopment",
     "arguments":
     {
-      "development": "monopoly",
+      "development": "monopoly"
+    }
+  },
+  {
+    "code": "HttpStatus code",
+    "status": "message (success or error type)",
+    "arguments": ""
+  },
+
+
+
+  {
+    "gameId": "gameId",
+    "playerId": "playerId",
+    "command": "takeResourceFromAll",
+    "arguments":
+    {
       "resource": "requested resource"
     }
   },
@@ -505,13 +472,7 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
-      "availableSettlements": [1, 2],
-      "availableCities": [1, 2],
-      "availableRoads": [[1, 2], [1, 3]],
-      "sentAll": "true or false"
-    }
+    "arguments": ""
   },
   {
     "gameId": "gameId",
@@ -526,13 +487,7 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
-      "availableSettlements": [1, 2],
-      "availableCities": [1, 2],
-      "availableRoads": [[1, 2], [1, 3]],
-      "sentAll": "true or false"
-    }
+    "arguments": ""
   },
 
 
@@ -554,62 +509,30 @@
   {
     "gameId": "gameId",
     "playerId": "playerId",
-    "command": "takeResource",
+    "command": "takeTwoResources",
     "arguments":
     {
-      "resource": "requested resource"
+      "resource_1": "first requested resource",
+      "resource_2": "second requested resource"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
-      "sentAll": "true or false"
-    }
+    "arguments": ""
   },
+
+
+
   {
     "gameId": "gameId",
     "playerId": "playerId",
-    "command": "takeResource",
-    "arguments":
-    {
-      "resource": "requested resource"
-    }
-  },
-  {
-    "code": "HttpStatus code",
-    "status": "message (success or error type)",
-    "arguments":
-    {
-      "sentAll": "true or false"
-    }
-  },
-
-
-
-  {
-    "username": "username",
-    "password": "password",
     "command": "endTurn",
     "arguments": ""
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments" :
-    {
-      "foundWinner" : "true or false",
-      "player_1" : "playerId",
-      "publicScore_1" : "number of public Victory Points",
-      "hiddenScore_1" : "number of public Victory Points + Victory Point developments",
-      "hasLargestArmy_1" : "true or false",
-      "hasLongestRoad_1" : "true or false",
-      "player_2" : "playerId",
-      "publicScore_2" : "number of public Victory Points",
-      "hiddenScore_2" : "number of public Victory Points + Victory Point developments",
-      "hasLargestArmy_2" : "true or false",
-      "hasLongestRoad_2" : "true or false"
-    }
+    "arguments" : ""
   }
 ]

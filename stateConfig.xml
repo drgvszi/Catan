@@ -24,9 +24,15 @@
  <STATE id="StealingResource">
   <MESSAGE id="stealResource" action="stealResource" nextState="Playing"/>
  </STATE>
+ <STATE id="UsingMonopoly">
+  <MESSAGE id="takeResourceFromAll" action="takeResourceFromAll" nextState="Playing"/>
+ </STATE>
  <STATE id="UsingRoadBuilding">
   <MESSAGE id="buildRoad" action="buildRoad" nextState="UsingRoadBuilding"/>
   <MESSAGE id="goNext" action="goNext" nextState="Playing"/>
+ </STATE>
+ <STATE id="UsingYearOfPlenty">
+  <MESSAGE id="takeTwoResources" action="takeTwoResources" nextState="Playing"/>
  </STATE>
  <STATE id="Playing">
   <MESSAGE id="playerTrade" action="playerTrade" nextState="Trading"/>
@@ -38,9 +44,9 @@
   <MESSAGE id="buyDevelopment" action="buyDevelopment" nextState="Playing"/>
   <MESSAGE id="useDevelopment" action="useDevelopment" nextState="Playing"/>
   <MESSAGE id="useKnight" action="useKnight" nextState="MovingRobber"/>
-  <MESSAGE id="useMonopoly" action="useMonopoly" nextState="Playing"/>
+  <MESSAGE id="useMonopoly" action="useMonopoly" nextState="UsingMonopoly"/>
   <MESSAGE id="useRoadBuilding" action="useRoadBuilding" nextState="UsingRoadBuilding"/>
-  <MESSAGE id="useYearOfPlenty" action="useYearOfPlenty" nextState="Playing"/>
+  <MESSAGE id="useYearOfPlenty" action="useYearOfPlenty" nextState="UsingYearOfPlenty"/>
   <MESSAGE id="endTurn" action="endTurn" nextState="End"/>
  </STATE>
  <STATE id="Trading">
