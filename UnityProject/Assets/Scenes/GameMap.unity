@@ -45346,6 +45346,7 @@ GameObject:
   - component: {fileID: 2205872308994736268}
   - component: {fileID: 2205872308994736269}
   - component: {fileID: 2205872308994736266}
+  - component: {fileID: 2205872308994736265}
   m_Layer: 5
   m_Name: Road
   m_TagString: Untagged
@@ -45353,6 +45354,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2205872308994736265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205872308994736264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372ccfc318d78cb49b7de5920c04e803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2205872308994736266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45396,9 +45409,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2205872308994736265}
+        m_MethodName: buildRoad
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45770,6 +45783,7 @@ GameObject:
   - component: {fileID: 2205872309741714605}
   - component: {fileID: 2205872309741714602}
   - component: {fileID: 2205872309741714603}
+  - component: {fileID: 2205872309741714604}
   m_Layer: 5
   m_Name: Settlement
   m_TagString: Untagged
@@ -45848,9 +45862,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2205872309741714604}
+        m_MethodName: BuildSet
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45859,6 +45873,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2205872309741714604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205872309741714601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4311ccd759aa0864593f776bc42028c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &2205872309741714605
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46296,6 +46322,7 @@ GameObject:
   - component: {fileID: 2205872310042122226}
   - component: {fileID: 2205872310042122227}
   - component: {fileID: 2205872310042122224}
+  - component: {fileID: 2205872310042122127}
   m_Layer: 5
   m_Name: End Turn
   m_TagString: Untagged
@@ -46303,6 +46330,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2205872310042122127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205872310042122126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ba90d0ebeeaa3468e9be1363d915c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2205872310042122224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46417,6 +46456,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 2205872310042122127}
+        m_MethodName: endTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &2205872310042122229
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77435,6 +77485,7 @@ GameObject:
   - component: {fileID: 8916641832126587277}
   - component: {fileID: 8916641832126587276}
   - component: {fileID: 8916641832126587279}
+  - component: {fileID: 8916641832126587274}
   m_Layer: 5
   m_Name: ROLL DICE
   m_TagString: Untagged
@@ -77442,6 +77493,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8916641832126587274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916641832126587273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4d9f1ac58ebf145ad70f87fba24b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8916641832126587276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77484,7 +77547,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8916641832126587277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8916641832126587274}
+        m_MethodName: Roll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8916641832126587277
 MonoBehaviour:
   m_ObjectHideFlags: 0
