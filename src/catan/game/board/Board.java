@@ -34,12 +34,6 @@ public class Board {
             intersections.add(new Intersection(index));
             ports.add(Port.None);
         }
-        /*
-        for (int start = 0; start < Component.INTERSECTIONS - 1; ++start) {
-            for (int end = start + 1; end < Component.INTERSECTIONS; ++end) {
-                roads.add(new Road(intersections.get(start), intersections.get(end)));
-            }
-        }*/
         generateRandomTiles();
         createMapping();
         generatePorts();
@@ -87,8 +81,8 @@ public class Board {
 
     public List<Intersection> getAdjacentIntersections(Intersection intersection) {
         List<Intersection> adjacentIntersections = new ArrayList<>();
-        for (Intersection intersection1:
-             intersections) {
+        for (Intersection intersection1 :
+                intersections) {
             if (intersectionGraph.getAdjacentIntersectionIDs(intersection.getId()).contains(intersection1.getId()))
                 adjacentIntersections.add(intersection1);
         }
@@ -102,7 +96,10 @@ public class Board {
     public List<List<Integer>> getAdjacentTilesToIntersections() {
         return adjacentTilesToIntersections;
     }
-    public List<Integer> getAdjacentTilesToIntersection(int intersection){return adjacentTilesToIntersections.get(intersection);}
+
+    public List<Integer> getAdjacentTilesToIntersection(int intersection) {
+        return adjacentTilesToIntersections.get(intersection);
+    }
 
     public Tile getRobberPosition() {
         return robberPosition;
@@ -163,14 +160,15 @@ public class Board {
     //endregion
 
     //region Road
-    public void addRoad(Road road){
+    public void addRoad(Road road) {
         roads.add(road);
     }
+
     public boolean existsRoad(int intersectionId1, int intersectionId2) {
-        for(Road road:roads){
-            if (road.getStart().getId()==intersectionId1&&road.getEnd().getId()==intersectionId2)
+        for (Road road : roads) {
+            if (road.getStart().getId() == intersectionId1 && road.getEnd().getId() == intersectionId2)
                 return true;
-            if(road.getStart().getId()==intersectionId2&&road.getEnd().getId()==intersectionId1)
+            if (road.getStart().getId() == intersectionId2 && road.getEnd().getId() == intersectionId1)
                 return true;
         }
         return false;
@@ -229,8 +227,7 @@ public class Board {
                 if (tile.getResource() != Resource.desert) {
                     tile.setNumber(numberList.get(i));
                     i++;
-                }
-                else {
+                } else {
                     tile.setNumber(0);
                 }
             }

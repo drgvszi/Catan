@@ -1,10 +1,9 @@
 package catan.game.bank;
 
 import catan.API.response.Code;
+import catan.game.enumeration.Development;
 import catan.game.player.Player;
-import catan.game.development.*;
 import catan.game.enumeration.Resource;
-import catan.game.property.Intersection;
 import catan.game.rule.Component;
 import catan.util.Helper;
 
@@ -12,12 +11,10 @@ import java.util.*;
 
 public class Bank {
     private List<Player> players;
+
     private Map<Resource, Integer> resources;
-    private int knightsCounter;
-    private int monopoliesCounter;
-    private int roadBuildingsCounter;
-    private int victoryPointsCounter;
-    private int yearsOfPlentyCounter;
+    private Map<Development, Integer> developments;
+
     private Map<Player, Integer> roads;
     private Map<Player, Integer> settlements;
     private Map<Player, Integer> cities;
@@ -25,15 +22,90 @@ public class Bank {
     public Bank(List<Player> players) {
         this.players = players;
         createResources();
+        createDevelopments();
         createProperties();
     }
 
-    public boolean existsResource(Resource resource, int resourceNumber) {
+    //region Getters
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public Map<Resource, Integer> getResources() {
+        return resources;
+    }
+
+    public Map<Development, Integer> getDevelopments() {
+        return developments;
+    }
+
+    public Map<Player, Integer> getRoads() {
+        return roads;
+    }
+
+    public int getRoadsNumber(Player player) {
+        return roads.get(player);
+    }
+
+    public Map<Player, Integer> getSettlements() {
+        return settlements;
+    }
+
+    public Map<Player, Integer> getCities() {
+        return cities;
+    }
+
+    //endregion
+
+    //region Setters
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public void setResources(Map<Resource, Integer> resources) {
+        this.resources = resources;
+    }
+
+    public void setDevelopments(Map<Development, Integer> developments) {
+        this.developments = developments;
+    }
+
+    public void setRoads(Map<Player, Integer> roads) {
+        this.roads = roads;
+    }
+
+    public void setSettlements(Map<Player, Integer> settlements) {
+        this.settlements = settlements;
+    }
+
+    public void setCities(Map<Player, Integer> cities) {
+        this.cities = cities;
+    }
+
+    //endregion
+
+    //region Checkers
+
+    public boolean hasResource(Resource resource, int resourceNumber) {
         return resources.get(resource) >= resourceNumber;
     }
 
-    public boolean existsResource(Resource resource) {
-        return existsResource(resource, 1);
+    public boolean hasResource(Resource resource) {
+        return hasResource(resource, 1);
+    }
+
+    public boolean hasResources(Map<Resource, Integer> resourcesToVerify) {
+        for (Resource resource : resourcesToVerify.keySet()) {
+            if (resources.get(resource) < resourcesToVerify.get(resource))
+                return false;
+        }
+        return true;
+    }
+
+    public boolean hasDevelopment(Development development) {
+        return developments.get(development) > 0;
     }
 
     public boolean hasRoad(Player player) {
@@ -48,128 +120,125 @@ public class Bank {
         return settlements.get(player) > 0;
     }
 
-    public int getNumberOfRoads(Player player){
-        return roads.get(player);
+    //endregion
+
+    //region Add
+
+    public void addResource(Resource resource) {
+        resources.put(resource, resources.get(resource) + 1);
     }
 
-    public Code takeResource(Resource resource, int resourceNumber) {
-        int oldResourceNumber = resources.get(resource);
-        if (existsResource(resource, resourceNumber)) {
-            resources.put(resource, oldResourceNumber - resourceNumber);
-            return Helper.getBankCodeFromResourceType(resource);
+    public void addResource(Resource resource, int resourceNumber) {
+        resources.put(resource, resources.get(resource) + resourceNumber);
+    }
+
+    public void addResources(Map<Resource, Integer> resources) {
+        for (Resource resource : resources.keySet()) {
+            addResource(resource, resources.get(resource));
         }
+    }
+
+    public void addSettlement(Player player) {
+        settlements.put(player, settlements.get(player) + 1);
+    }
+
+    //endregion
+
+    //region Remove
+
+    public Code removeResource(Resource resource, int resourceNumber) {
+        if (resourceNumber < 0) {
+            return Code.InvalidRequest;
+        }
+        if (!hasResource(resource, resourceNumber)) {
+            return Helper.getBankNotEnoughResourceFromResource(resource);
+        }
+        resources.put(resource, resources.get(resource) - resourceNumber);
         return null;
     }
 
-    public Code takeResource(Resource resource) {
-        return takeResource(resource, 1);
+    public Code removeResource(Resource resource) {
+        if (!hasResource(resource)) {
+            return Helper.getBankNoResourceFromResource(resource);
+        }
+        resources.put(resource, resources.get(resource) - 1);
+        return null;
     }
 
-    public Code takeResources(Map<Resource, Integer> resources) {
-        for (Resource resource : resources.keySet()) {
-            Code code = takeResource(resource, resources.get(resource));
-            if (code != null) {
-                return code;
+    public Code removeResources(Map<Resource, Integer> resourcesToRemove) {
+        Code result;
+        for (Resource resource : resourcesToRemove.keySet()) {
+            int resourceNumber = resourcesToRemove.get(resource);
+            if (resourceNumber < 0) {
+                return Code.InvalidRequest;
+            }
+            if (resourceNumber == 1) {
+                result = removeResource(resource);
+                if (result != null) {
+                    return result;
+                }
+            }
+            else if (resourceNumber > 1) {
+                result = removeResource(resource, resourceNumber);
+                if (result != null) {
+                    return result;
+                }
             }
         }
         return null;
     }
 
-    public boolean takeKnight(Player player) {
-        if (knightsCounter == 0) {
-            return false;
+    public Code removeDevelopment(Development development, Player player) {
+        if (!hasDevelopment(development)) {
+            return Helper.getBankNoDevelopmentFromDevelopment(development);
         }
-        knightsCounter--;
-
-        return true;
-    }
-
-    public boolean takeMonopoly(Player player) {
-        if (monopoliesCounter == 0) {
-            return false;
-        }
-        monopoliesCounter--;
-        return true;
-    }
-
-    public boolean takeRoadBuilding(Player player) {
-        if (roadBuildingsCounter == 0) {
-            return false;
-        }
-        roadBuildingsCounter--;
-        return true;
-    }
-
-    public boolean takeVictoryPoint(Player player) {
-        if (victoryPointsCounter == 0) {
-            return false;
-        }
-        victoryPointsCounter--;
-        return true;
-    }
-
-    public boolean takeYearOfPlenty(Player player) {
-        if (yearsOfPlentyCounter == 0) {
-            return false;
-        }
-        yearsOfPlentyCounter--;
-        return true;
-    }
-
-    public Code takeRoad(Player player) {
-        int playerRoads = roads.get(player);
-        if (playerRoads == 0) {
-            return Code.NoRoad;
-        }
-        roads.put(player, --playerRoads);
+        developments.put(development, developments.get(development) - 1);
         return null;
     }
 
-    public Code takeSettlement(Player player) {
-        int playerSettlements = settlements.get(player);
-        if (playerSettlements == 0) {
-            return Code.NoSettlement;
+    public Code removeRoad(Player player) {
+        if (!hasRoad(player)) {
+            return Code.BankNoRoad;
         }
-        settlements.put(player, --playerSettlements);
+        roads.put(player, roads.get(player) - 1);
         return null;
     }
 
-    public Code takeCity(Player player) {
-        int playerCities = cities.get(player);
-        if (playerCities == 0) {
-            return Code.NoCity;
+    public Code removeSettlement(Player player) {
+        if (!hasSettlement(player)) {
+            return Code.BankNoSettlement;
         }
-        cities.put(player, --playerCities);
+        settlements.put(player, settlements.get(player) - 1);
         return null;
     }
 
-    public void giveResource(Resource resource, int resourceNumber) {
-        int oldResourceNumber = resources.get(resource);
-        resources.put(resource, oldResourceNumber + resourceNumber);
-    }
-
-    public void giveResource(Resource resource) {
-        giveResource(resource, 1);
-    }
-
-    public void giveResources(Map<Resource, Integer> resources) {
-        for (Resource resource : resources.keySet()) {
-            giveResource(resource, resources.get(resource));
+    public Code removeCity(Player player) {
+        if (!hasCity(player)) {
+            return Code.BankNoCity;
         }
+        cities.put(player, cities.get(player) - 1);
+        return null;
     }
 
-    public void giveSettlement(Player player, Intersection intersection) {
-        settlements.put(player, settlements.get(player) + 1);
-    }
+    //endregion
+
+    //region Create
 
     private void createResources() {
-        resources = new HashMap<>(5);
+        resources = new HashMap<>();
         for (Resource resource : Resource.values()) {
             resources.put(resource, Component.RESOURCES_BY_TYPE);
         }
     }
 
-
+    private void createDevelopments() {
+        developments = new HashMap<>();
+        developments.put(Development.knight, Component.KNIGHTS);
+        developments.put(Development.monopoly, Component.MONOPOLIES);
+        developments.put(Development.roadBuilding, Component.ROAD_BUILDINGS);
+        developments.put(Development.yearOfPlenty, Component.YEARS_OF_PLENTY);
+        developments.put(Development.victoryPoint, Component.VICTORY_POINTS);
+    }
 
     private void createProperties() {
         createRoads();
@@ -197,4 +266,6 @@ public class Bank {
             cities.put(player, Component.CITIES);
         }
     }
+
+    //endregion
 }

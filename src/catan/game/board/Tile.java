@@ -9,8 +9,8 @@ public class Tile {
     private Resource resource;
     private int number;
     private List<Tile> neighbours;
-    
-    Tile(int id){
+
+    Tile(int id) {
         this.id = id;
     }
 
@@ -29,8 +29,8 @@ public class Tile {
     public void setNeighbours(List<Tile> neighbours) {
         this.neighbours = neighbours;
     }
-    
-    public void addNeighbour(Tile neighbour){
+
+    public void addNeighbour(Tile neighbour) {
         this.neighbours.add(neighbour);
     }
 

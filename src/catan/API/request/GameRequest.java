@@ -20,7 +20,8 @@ public interface GameRequest {
         ObjectMapper mapper = new ObjectMapper();
         try {
             if (data != null && !data.equals("")) {
-                return mapper.readValue(data, new TypeReference<HashMap<String, String>>(){});
+                return mapper.readValue(data, new TypeReference<HashMap<String, String>>() {
+                });
             }
         } catch (IOException exception) {
             exception.printStackTrace();

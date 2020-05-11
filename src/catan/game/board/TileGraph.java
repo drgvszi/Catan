@@ -22,25 +22,29 @@ public class TileGraph {
         printAdjacencyLists();
     }
 
-    public List<Integer> getRing(Integer ring) { return rings.get(ring); }
+    public List<Integer> getRing(Integer ring) {
+        return rings.get(ring);
+    }
 
     public List<Integer> getAdjacentTiles(Integer tile) {
         return adjacencyLists.get(tile);
     }
 
-    public boolean areAdjacent(int source,int target) { return adjacencyMatrix[source][target]; }
+    public boolean areAdjacent(int source, int target) {
+        return adjacencyMatrix[source][target];
+    }
 
     private void setIndexes() {
         List<Integer> list1 = new ArrayList<>();
         list1.add(0);
         rings.add(list1);
         List<Integer> list2 = new ArrayList<>();
-        for (int i = 1; i <= 6 ; ++i) {
+        for (int i = 1; i <= 6; ++i) {
             list2.add(i);
         }
         rings.add(list2);
         List<Integer> list3 = new ArrayList<>();
-        for (int i = 7; i <= 18 ; ++i) {
+        for (int i = 7; i <= 18; ++i) {
             list3.add(i);
         }
         rings.add(list3);
@@ -81,8 +85,7 @@ public class TileGraph {
         int neighbor;
         if (ringIndex == 0) {
             neighbor = rings.get(ring).get(rings.get(ring).size() - 1);
-        }
-        else {
+        } else {
             neighbor = rings.get(ring).get(ringIndex - 1);
         }
         adjacencyMatrix[boardIndex][neighbor] = true;
@@ -93,8 +96,7 @@ public class TileGraph {
         int neighbor;
         if (index == rings.get(ring).size() - 1) {
             neighbor = rings.get(ring).get(0);
-        }
-        else {
+        } else {
             neighbor = rings.get(ring).get(index + 1);
         }
         adjacencyMatrix[i][neighbor] = true;

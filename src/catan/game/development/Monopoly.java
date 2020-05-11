@@ -41,7 +41,7 @@ public class Monopoly extends Development {
             if (owner != player) {
                 int resourceNumber = player.getResourceNumber(resource);
                 if (resourceNumber > 0) {
-                    owner.takeResource(resource, resourceNumber);
+                    owner.addResource(resource, resourceNumber);
                     player.removeResource(resource, resourceNumber);
                 }
             }

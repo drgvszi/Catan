@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpStatus;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -83,10 +82,10 @@ public class ConnectivitySimulation {
 
     // region User Commands
 
-    public boolean rollDice(String gameID, String playerId) throws IOException {
+    public UserResponse rollDice(String gameID, String playerId) throws IOException {
         UserResponse response;
         response = HttpClientPost.userPost(new UserRequest(gameID, playerId, "rollDice", null));
-        return response.getCode() == HttpStatus.SC_OK;
+        return response;
     }
 
     public boolean buyRoad(String gameId, String playerId, Integer start, Integer end) throws IOException {
@@ -145,21 +144,23 @@ public class ConnectivitySimulation {
                 "selectOpponent", payload));
         return response.getCode() == HttpStatus.SC_OK;
     }
-    public boolean buildSettlement(String gameId, String playerId,Integer intersection) throws IOException{
+
+    public boolean buildSettlement(String gameId, String playerId, Integer intersection) throws IOException {
         Map<String, Object> payload = new HashMap<>();
         payload.put("intersection", intersection);
         String jsonArgs = new ObjectMapper().writeValueAsString(payload);
         UserResponse response;
-        response=HttpClientPost.userPost(new UserRequest(gameId,playerId,"buildSettlement",payload));
+        response = HttpClientPost.userPost(new UserRequest(gameId, playerId, "buildSettlement", payload));
         return response.getCode() == HttpStatus.SC_OK;
     }
-    public boolean buildRoad(String gameId, String playerId,Integer start,Integer end) throws IOException{
+
+    public boolean buildRoad(String gameId, String playerId, Integer start, Integer end) throws IOException {
         Map<String, Object> payload = new HashMap<>();
         payload.put("start", start);
         payload.put("end", end);
         String jsonArgs = new ObjectMapper().writeValueAsString(payload);
         UserResponse response;
-        response=HttpClientPost.userPost(new UserRequest(gameId,playerId,"buildRoad",payload));
+        response = HttpClientPost.userPost(new UserRequest(gameId, playerId, "buildRoad", payload));
         return response.getCode() == HttpStatus.SC_OK;
     }
 
@@ -176,6 +177,7 @@ public class ConnectivitySimulation {
                 "update", null));
         return response.getCode() == HttpStatus.SC_OK;
     }
+
     public boolean getRanking(String gameId, String playerId) throws IOException {
         UserResponse response;
         response = HttpClientPost.userPost(new UserRequest(gameId, playerId,
@@ -196,20 +198,20 @@ public class ConnectivitySimulation {
         setMaxPlayers(gameID, 1);
         startGame(gameID);
 
-        buildSettlement(gameID,playersID.get(0),20);
-        buildRoad(gameID,playersID.get(0),20,19);
+        buildSettlement(gameID, playersID.get(0), 20);
+        buildRoad(gameID, playersID.get(0), 20, 19);
 
-        buildSettlement(gameID,playersID.get(1),40);
-        buildRoad(gameID,playersID.get(1),41,40);
+        buildSettlement(gameID, playersID.get(1), 40);
+        buildRoad(gameID, playersID.get(1), 41, 40);
 
-        buildSettlement(gameID,playersID.get(1),10);
-        buildRoad(gameID,playersID.get(1),10,11);
+        buildSettlement(gameID, playersID.get(1), 10);
+        buildRoad(gameID, playersID.get(1), 10, 11);
 
-        buildSettlement(gameID,playersID.get(0),30);
-        buildRoad(gameID,playersID.get(0),30,31);
+        buildSettlement(gameID, playersID.get(0), 30);
+        buildRoad(gameID, playersID.get(0), 30, 31);
 
 
-        updateInfo(gameID,playersID.get(0));
+        updateInfo(gameID, playersID.get(0));
 
         // Run the game
         for (int i = 0; i < 2; ++i) {
@@ -231,6 +233,6 @@ public class ConnectivitySimulation {
             sleep(100);
             endTurn(gameID, playersID.get(1));
         }
-        getRanking(gameID,playersID.get(0));
+        getRanking(gameID, playersID.get(0));
     }
 }

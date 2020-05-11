@@ -54,7 +54,9 @@ public class ManagerRequest implements GameRequest {
         return arguments;
     }
 
-    public void setArguments(String arguments) { this.arguments = arguments; }
+    public void setArguments(String arguments) {
+        this.arguments = arguments;
+    }
 
     public ManagerResponse run() throws JsonProcessingException {
         Map<String, String> requestJson = GameRequest.getMapFromData(arguments);
@@ -75,8 +77,7 @@ public class ManagerRequest implements GameRequest {
                 return new ManagerResponse(HttpStatus.SC_OK, "The game was created successfully.", responseJson);
             }
             return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The scenario is not implemented.", "");
-        }
-        else if (command.equalsIgnoreCase("setMaxPlayers")) {
+        } else if (command.equalsIgnoreCase("setMaxPlayers")) {
             if (requestJson == null) {
                 return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The maximum number of players is not specified.", "");
             }
@@ -90,12 +91,11 @@ public class ManagerRequest implements GameRequest {
                 return new ManagerResponse(HttpStatus.SC_ACCEPTED, "There are already more players.", "");
             }
             if (game.getCurrentPlayer() != null) {
-                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.","");
+                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", "");
             }
             game.setMaxPlayers(maxPlayers);
             return new ManagerResponse(HttpStatus.SC_OK, "The maximum number of players was set successfully.", "");
-        }
-        else if (command.equalsIgnoreCase("addPlayer")) {
+        } else if (command.equalsIgnoreCase("addPlayer")) {
             if (requestJson == null) {
                 return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", "");
             }
@@ -105,10 +105,10 @@ public class ManagerRequest implements GameRequest {
                 return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", "");
             }
             if (game.getNoPlayers() == game.getMaxPlayers()) {
-                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "There is no room left.","");
+                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "There is no room left.", "");
             }
             if (game.getCurrentPlayer() != null) {
-                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.","");
+                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", "");
             }
             String playerId;
             do {
@@ -120,10 +120,9 @@ public class ManagerRequest implements GameRequest {
             payload.put("playerId", playerId);
             String responseJson = new ObjectMapper().writeValueAsString(payload);
             return new ManagerResponse(HttpStatus.SC_OK, "The player was added successfully.", responseJson);
-        }
-        else if (command.equalsIgnoreCase("startGame")) {
+        } else if (command.equalsIgnoreCase("startGame")) {
             if (requestJson == null) {
-                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.","");
+                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.", "");
             }
             String gameId = requestJson.get("gameId");
             Game game = Application.games.get(gameId);
@@ -137,8 +136,8 @@ public class ManagerRequest implements GameRequest {
                 String responseJson = new ObjectMapper().writeValueAsString(payload);
                 return new ManagerResponse(HttpStatus.SC_OK, "The game has started successfully.", responseJson);
             }
-            return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.","");
+            return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.", "");
         }
-        return new ManagerResponse(HttpStatus.SC_ACCEPTED,"The command was not implemented.", command);
+        return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The command was not implemented.", command);
     }
 }

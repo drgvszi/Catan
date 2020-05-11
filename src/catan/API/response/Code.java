@@ -3,11 +3,38 @@ package catan.API.response;
 public enum Code {
     RolledSeven,
     RolledNotSeven,
+
     PlayerNoLumber,
     PlayerNoWool,
     PlayerNoGrain,
     PlayerNoBrick,
     PlayerNoOre,
+
+    PlayerNotEnoughLumber,
+    PlayerNotEnoughWool,
+    PlayerNotEnoughGrain,
+    PlayerNotEnoughBrick,
+    PlayerNotEnoughOre,
+
+    BankNoLumber,
+    BankNoWool,
+    BankNoGrain,
+    BankNoBrick,
+    BankNoOre,
+
+    BankNotEnoughLumber,
+    BankNotEnoughWool,
+    BankNotEnoughGrain,
+    BankNotEnoughBrick,
+    BankNotEnoughOre,
+
+    BankNoKnight,
+    BankNoMonopoly,
+    BankNoRoadBuilding,
+    BankNoYearOfPlenty,
+
+    NotConnectsToRoad,
+
     PlayerHasDev,
     PlayerNoDev,
     MonopolySuccess,
@@ -21,11 +48,6 @@ public enum Code {
     NoRoad,
     NoSettlement,
     NoCity,
-    BankNoLumber,
-    BankNoWool,
-    BankNoGrain,
-    BankNoBrick,
-    BankNoOre,
     BankNoRoad,
     BankNoSettlement,
     BankNoCity,
@@ -44,4 +66,5 @@ public enum Code {
     TradeIsDone,
     InvalidTradeRequest,
 
+    InvalidRequest
 }

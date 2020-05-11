@@ -4,10 +4,6 @@ import catan.API.response.Code;
 import catan.API.response.GameResponse;
 import catan.API.response.Messages;
 import catan.API.response.UserResponse;
-import catan.game.development.Knight;
-import catan.game.development.Monopoly;
-import catan.game.development.RoadBuilding;
-import catan.game.development.YearOfPlenty;
 import catan.game.enumeration.Port;
 import catan.game.player.Player;
 import catan.game.board.Board;
@@ -33,7 +29,7 @@ public abstract class Game {
     protected Map<String, Player> players;
     protected List<String> playerOrder;
     protected int maxPlayers;
-    protected String currentPlayer;
+    protected Player currentPlayer;
     protected Pair<String, Integer> currentLargestArmy;
     protected Pair<String, Integer> currentLongestRoad;
     protected Map<Resource, Integer> tradeOffer;
@@ -215,27 +211,27 @@ public abstract class Game {
         int usedKnights = players.get(currentPlayer).getUsedKnights();
         if (currentLargestArmy == null) {
             if (usedKnights >= Component.KNIGHTS_FOR_LARGEST_ARMY) {
-                players.get(currentPlayer).takeLargestArmy();
+                players.get(currentPlayer).addLargestArmy();
                 currentLargestArmy = new Pair<>(currentPlayer, usedKnights);
             }
         } else if (usedKnights > currentLargestArmy.getValue() &&
                 !(currentPlayer.equals(currentLargestArmy.getKey()))) {
-            players.get(currentLargestArmy.getKey()).giveLargestArmy();
-            players.get(currentPlayer).takeLargestArmy();
+            players.get(currentLargestArmy.getKey()).removeLargestArmy();
+            players.get(currentPlayer).addLargestArmy();
             currentLargestArmy = new Pair<>(currentPlayer, usedKnights);
         }
 
         // Update largest army.
-        int builtRoads = players.get(currentPlayer).getBuiltRoads();
+        int builtRoads = players.get(currentPlayer).getMaximumRoadLength();
         if (currentLongestRoad == null) {
             if (builtRoads >= Component.ROADS_FOR_LONGEST_ROAD) {
-                players.get(currentPlayer).takeLongestRoad();
+                players.get(currentPlayer).addLongestRoad();
                 currentLongestRoad = new Pair<>(currentPlayer, builtRoads);
             }
         } else if (builtRoads > currentLongestRoad.getValue() &&
                 !(currentPlayer.equals(currentLongestRoad.getKey()))) {
-            players.get(currentLongestRoad.getKey()).giveLongestRoad();
-            players.get(currentPlayer).takeLongestRoad();
+            players.get(currentLongestRoad.getKey()).removeLongestRoad();
+            players.get(currentPlayer).addLongestRoad();
             currentLongestRoad = new Pair<>(currentPlayer, builtRoads);
         }
     }
@@ -294,7 +290,7 @@ public abstract class Game {
         }
         Map<Resource, Integer> resources = new HashMap<>();
         for (String resource : requestArguments.keySet()) {
-            Resource resourceType = Helper.getResourceTypeFromString(resource);
+            Resource resourceType = Helper.getResourceFromString(resource);
             if (resourceType == null) {
                 return new UserResponse(HttpStatus.SC_ACCEPTED, "An argument is invalid.", null);
             }
@@ -372,7 +368,7 @@ public abstract class Game {
             Resource resource = tile.getResource();
             List<Intersection> intersections = board.getAdjacentIntersections(tile);
             int neededResources = getNeededResources(intersections);
-            if (!bank.existsResource(resource, neededResources)) {
+            if (!bank.hasResource(resource, neededResources)) {
                 continue;
             }
             if (board.getRobberPosition().getId() == tile.getId()) {
@@ -386,13 +382,13 @@ public abstract class Game {
                     int previousValue = (int) responseArguments.get(argument);
                     switch (intersection.getBuilding()) {
                         case Settlement:
-                            bank.takeResource(resource);
-                            players.get(playerId).takeResource(resource);
+                            bank.removeResource(resource);
+                            players.get(playerId).addResource(resource);
                             responseArguments.put(argument, previousValue + 1);
                             break;
                         case City:
-                            bank.takeResource(resource, 2);
-                            players.get(playerId).takeResource(resource, 2);
+                            bank.removeResource(resource, 2);
+                            players.get(playerId).addResource(resource, 2);
                             responseArguments.put(argument, previousValue + 2);
                     }
                 }
@@ -408,7 +404,7 @@ public abstract class Game {
             int playerIndex = playerOrder.indexOf(player);
             responseArguments.put("player_" + playerIndex, player);
             Player player1 = players.get(player);
-            responseArguments.put("publicScore_" + playerIndex, player1.getPublicVP());
+            responseArguments.put("publicScore_" + playerIndex, player1.getPublicVictoryPoints());
             responseArguments.put("hiddenScore_" + playerIndex, player1.getVictoryPoints());
             if (player1.getVictoryPoints() >= VictoryPoint.FINISH_VICTORY_POINTS)
                 finish = true;
@@ -420,10 +416,10 @@ public abstract class Game {
     public Map<String, Object> initializeUpdateResponse() {
         Map<String, Object> responseArguments = new HashMap<>();
         Player player1 = players.get(currentPlayer);
-        responseArguments.put("publicScore", player1.getPublicVP());
+        responseArguments.put("publicScore", player1.getPublicVictoryPoints());
         responseArguments.put("hiddenScore", player1.getVictoryPoints());
-        responseArguments.put("hasLargestArmy", player1.isHasLargestArmy());
-        responseArguments.put("hasLongestRoad", player1.isHasLongestRoad());
+        responseArguments.put("hasLargestArmy", player1.hasLargestArmy());
+        responseArguments.put("hasLongestRoad", player1.hasLongestRoad());
         responseArguments.put("availableHouses", getAvailableHousePlacements());
         responseArguments.put("availableRoads", getAvailableRoadPlacements());
         return responseArguments;
@@ -464,7 +460,7 @@ public abstract class Game {
         if (code != null) {
             return code;
         }
-        bank.giveResources(resourcesToDiscard);
+        bank.addResources(resourcesToDiscard);
         return null;
     }
 
@@ -549,7 +545,7 @@ public abstract class Game {
             for (Integer tileID : board.getAdjacentTilesToIntersection(intersection.getId())) {
                 Tile tile = board.getTiles().get(tileID);
                 if (tile.getResource() != Resource.desert) {
-                    bank.takeResource(tile.getResource(), 1);
+                    bank.removeResource(tile.getResource(), 1);
                     player1.addResource(tile.getResource());
                 }
             }
@@ -570,7 +566,7 @@ public abstract class Game {
             if (!isTwoRoadsDistance(intersection)) {
                 return Code.NotTwoRoadsDistance;
             }
-            bank.takeSettlement(player);
+            bank.removeSettlement(player);
             board.getIntersections().get(intersection).setOwner(player);
             board.getIntersections().get(intersection).setBuilding(Building.Settlement);
             player.placeSettlement(building);
@@ -598,7 +594,7 @@ public abstract class Game {
                 return Code.RoadStartNotOwned;
             }
 
-            bank.takeRoad(player);
+            bank.removeRoad(player);
             Road road = new Road(firstIntersection, secondIntersection);
             board.addRoad(road);
             player.addRoad(road);
@@ -722,7 +718,7 @@ public abstract class Game {
             if (!player.buildSettlement(intersection))
                 return Code.NotEnoughResources;
 
-            bank.takeSettlement(player);
+            bank.removeSettlement(player);
             board.getIntersections().get(intersectionId).setOwner(player);
             board.getIntersections().get(intersectionId).setBuilding(Building.Settlement);
             return null;
@@ -746,7 +742,7 @@ public abstract class Game {
             if (!player.buildCity(intersection))
                 return Code.NotEnoughResources;
 
-            bank.takeCity(player);
+            bank.removeCity(player);
             board.getIntersections().get(intersectionId).setBuilding(Building.City);
             return null;
         }
@@ -772,11 +768,11 @@ public abstract class Game {
                 return Code.RoadStartNotOwned;
             }
             Road road = new Road(firstIntersection, secondIntersection);
-            if (!player.buyRoad(road)) {
+            if (!player.canBuyRoad(road)) {
                 return Code.NotEnoughResources;
             }
 
-            bank.takeRoad(player);
+            bank.removeRoad(player);
             board.addRoad(road);
             return null;
         }
@@ -800,37 +796,37 @@ public abstract class Game {
 
     public Code tradeWithPort(Port portType, Pair<Resource,Integer> offer, Pair<Resource,Integer> request){
         Player traderPlayer = players.get(currentPlayer);
-        if(bank.existsResource(request.getKey(),request.getValue())) {
+        if(bank.hasResource(request.getKey(),request.getValue())) {
             if (portType.toString().equalsIgnoreCase(offer.getKey().toString()) && offer.getValue() / 2 == request.getValue() && offer.getValue() % 2 == 0) {
                 if (traderPlayer.removeResource(offer.getKey(), offer.getValue())) {
-                    traderPlayer.takeResource(request.getKey(), request.getValue());
+                    traderPlayer.addResource(request.getKey(), request.getValue());
                     return Code.TradeIsDone;
                 }
             } else if (portType.toString().equalsIgnoreCase(offer.getKey().toString()) && offer.getValue() / 2 != request.getValue())
                 return Code.InvalidTradeRequest;
             else if (portType.equals("ThreeForOne") && offer.getValue() / 3 == request.getValue()) {
                 if (traderPlayer.removeResource(offer.getKey(), offer.getValue())) {
-                    traderPlayer.takeResource(request.getKey(), request.getValue());
+                    traderPlayer.addResource(request.getKey(), request.getValue());
                     return Code.TradeIsDone;
                 }
             } else if (portType.equals("ThreeForOne") && offer.getValue() / 3 != request.getValue())
                 return Code.InvalidTradeRequest;
         }
 
-        return Helper.getBankCodeFromResourceType(request.getKey());
+        return Helper.getBankNoResourceFromResource(request.getKey());
     }
 
     public Code tradeWithBank(Pair<Resource,Integer> offer, Pair<Resource,Integer> request) {
         Player traderPlayer = players.get(currentPlayer);
         if(offer.getValue()/4 == request.getValue() && offer.getValue()%4 == 0 ) {
-            if (bank.existsResource(request.getKey(), request.getValue())) {
+            if (bank.hasResource(request.getKey(), request.getValue())) {
                 if (traderPlayer.removeResource(offer.getKey(), offer.getValue())) {
-                    traderPlayer.takeResource(request.getKey(), request.getValue());
+                    traderPlayer.addResource(request.getKey(), request.getValue());
                     return Code.TradeIsDone;
                 } else
-                    return Helper.getPlayerCodeFromResourceType(request.getKey());
+                    return Helper.getPlayerNoResourceFromResource(request.getKey());
             } else
-                return Helper.getBankCodeFromResourceType(request.getKey());
+                return Helper.getBankNoResourceFromResource(request.getKey());
         }
         else
             return Code.InvalidTradeRequest;
@@ -857,8 +853,8 @@ public abstract class Game {
     }
 
     public boolean stealResource(Pair<String, String> playerPair) {
-        Resource type = players.get(playerPair.getValue()).removeRandomResources();
-        players.get(playerPair.getValue()).takeResource(type);
+        Resource type = players.get(playerPair.getValue()).removeRandomResource();
+        players.get(playerPair.getValue()).addResource(type);
         return true;
     }
 
@@ -904,7 +900,7 @@ public abstract class Game {
     public Code useRoadBuilding() {
         Player player = players.get(currentPlayer);
         if (player.getRoadBuildingsCounter() >= 1) {
-            int remainingRoads = Math.min(bank.getNumberOfRoads(player),2);
+            int remainingRoads = Math.min(bank.getRoadsNumber(player),2);
             player.setRoadsToBuildCounter(remainingRoads);
             return Code.PlayerHasDev;
         }
@@ -921,7 +917,7 @@ public abstract class Game {
             if (players.get(currentPlayer) != player.getValue()) {
                 int resourceNumber = player.getValue().getResourceNumber(r);
                 if (resourceNumber > 0) {
-                    players.get(currentPlayer).takeResource(r, resourceNumber);
+                    players.get(currentPlayer).addResource(r, resourceNumber);
                     player.getValue().removeResource(r, resourceNumber);
                 }
             }
@@ -931,20 +927,20 @@ public abstract class Game {
 
     public Code takeTwoResources(String resource1, String resource2) {
         Player player = players.get(currentPlayer);
-        Resource r1 = Helper.getResourceTypeFromString(resource1);
-        Resource r2 = Helper.getResourceTypeFromString(resource2);
+        Resource r1 = Helper.getResourceFromString(resource1);
+        Resource r2 = Helper.getResourceFromString(resource2);
         if (r1 == null) {
             return Code.FirstResourceNotSet;
         }
         if(r2 == null)
             return Code.SecondResourceNotSet;
-        if(!bank.existsResource(r1))
-            return Helper.getBankCodeFromResourceType(r1);
-        if(!bank.existsResource(r2))
-            return Helper.getBankCodeFromResourceType(r2);
-        bank.takeResource(r1, 1);
+        if(!bank.hasResource(r1))
+            return Helper.getBankNoResourceFromResource(r1);
+        if(!bank.hasResource(r2))
+            return Helper.getBankNoResourceFromResource(r2);
+        bank.removeResource(r1, 1);
         player.addResource(r1);
-        bank.takeResource(r2,1);
+        bank.removeResource(r2,1);
         player.addResource(r2);
         return Code.YearOfPlentySuccess;
     }

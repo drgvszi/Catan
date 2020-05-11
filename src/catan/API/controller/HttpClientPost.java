@@ -28,7 +28,7 @@ public class HttpClientPost {
         System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString((request)));
         String requestJson = objectMapper.writeValueAsString(request);
         URL url = new URL(localhostManagerUrl);
-        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json; utf-8");
         connection.setRequestProperty("Accept", "application/json");
@@ -46,7 +46,8 @@ public class HttpClientPost {
                 responseLine = bufferedReader.readLine();
             }
             Map<String, String> responseJson = objectMapper.readValue(response.toString(),
-                    new TypeReference<HashMap<String, String>>(){});
+                    new TypeReference<HashMap<String, String>>() {
+                    });
             System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString((responseJson)));
             return new ManagerResponse(Integer.valueOf(responseJson.get("code")), responseJson.get("status"),
                     responseJson.get("arguments"));
@@ -58,7 +59,7 @@ public class HttpClientPost {
         System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString((request)));
         String requestJson = objectMapper.writeValueAsString((request));
         URL url = new URL(localhostUserUrl);
-        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json; utf-8");
         connection.setRequestProperty("Accept", "application/json");
@@ -76,11 +77,13 @@ public class HttpClientPost {
                 responseLine = bufferedReader.readLine();
             }
             Map<String, Object> responseJson = objectMapper.readValue(response.toString(),
-                    new TypeReference<HashMap<String, Object>>(){});
+                    new TypeReference<HashMap<String, Object>>() {
+                    });
             System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString((responseJson)));
-            return new UserResponse((Integer)responseJson.get("code"), (String)responseJson.get("status"),
+            return new UserResponse((Integer) responseJson.get("code"), (String) responseJson.get("status"),
                     objectMapper.convertValue(responseJson.get("arguments"),
-                            new TypeReference<HashMap<String, Object>>(){}));
+                            new TypeReference<HashMap<String, Object>>() {
+                            }));
         }
     }
 }

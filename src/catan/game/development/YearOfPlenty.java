@@ -34,10 +34,10 @@ public class YearOfPlenty extends Development {
         if (owner == null || bank == null || resource == null) {
             return new Pair<>(HttpStatus.SC_ACCEPTED, "Owner, bank or resourceType were not set.");
         }
-        if (!bank.existsResource(resource)) {
+        if (!bank.hasResource(resource)) {
             return new Pair<>(HttpStatus.SC_ACCEPTED, "The bank has no more " + resource + ".");
         }
-        owner.takeResource(resource);
+        owner.addResource(resource);
         return new Pair<>(HttpStatus.SC_ACCEPTED, "The " + resource + " from the bank was took successfully.");
     }
 }

@@ -9,17 +9,17 @@ import org.apache.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping ("/Catan")
+@RequestMapping("/Catan")
 public class Controller {
     private static final String username = "catan";
     private static final String password = "catan";
 
-    @RequestMapping (value = "/userRequest", method = RequestMethod.POST)
+    @RequestMapping(value = "/userRequest", method = RequestMethod.POST)
     public UserResponse sendResponse(@RequestBody UserRequest request) {
-            return request.run();
+        return request.run();
     }
 
-    @RequestMapping (value = "/managerRequest", method = RequestMethod.POST)
+    @RequestMapping(value = "/managerRequest", method = RequestMethod.POST)
     public ManagerResponse sendResponse(@RequestBody ManagerRequest request) {
         if (request.getUsername().equals(username) && request.getPassword().equals(password)) {
             try {
@@ -29,6 +29,6 @@ public class Controller {
                 return null;
             }
         }
-        return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The credentials are wrong.","");
+        return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The credentials are wrong.", "");
     }
 }

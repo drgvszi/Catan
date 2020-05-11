@@ -8,8 +8,14 @@ public class Road extends Property {
 
     public Road(Intersection start, Intersection end) {
         super();
-        this.start = start;
-        this.end = end;
+        if (start.getId() < end.getId()) {
+            this.start = start;
+            this.end = end;
+        }
+        else {
+            this.start = end;
+            this.end = start;
+        }
     }
 
     public Intersection getStart() {
@@ -28,44 +34,54 @@ public class Road extends Property {
         this.end = end;
     }
 
-    public Intersection getCommonIntersection(Road road) {
-        if (this.equals(road)) {
+    public Intersection getCommonIntersection(Intersection start, Intersection end) {
+        if (this.start == start && this.end == end) {
             return null;
         }
-        if (this.getStart().equals(road.getStart())) {
-            return this.getStart();
+        if (this.start.equals(start) || this.start.equals(end)) {
+            return this.start;
         }
-        if (this.getEnd().equals(road.getEnd())) {
-            return this.getEnd();
+        if (this.end.equals(start) || this.end.equals(end)) {
+            return this.end;
         }
         return null;
     }
 
-    public boolean hasCommonIntersection(Road road) {
-        return getCommonIntersection(road) != null;
+    public boolean connectsToRoad(Intersection start, Intersection end) {
+        return getCommonIntersection(start, end) != null;
+    }
+
+    public boolean connectsToRoad(Intersection intersection) {
+        return start.equals(intersection) || end.equals(intersection);
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Road)) return false;
-        if (!super.equals(o)) return false;
-        Road road = (Road) o;
-        return Objects.equals(getStart(), road.getStart()) &&
-                Objects.equals(getEnd(), road.getEnd());
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof Road)) {
+            return false;
+        }
+        if (!super.equals(object)) {
+            return false;
+        }
+        Road road = (Road) object;
+        return Objects.equals(start, road.getStart()) &&
+                Objects.equals(end, road.getEnd());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getStart(), getEnd());
+        return Objects.hash(super.hashCode(), start, end);
     }
 
     @Override
     public String toString() {
         return "Road{" +
-                "start=" + start +
+                "owner=" + owner +
+                ", start=" + start +
                 ", end=" + end +
-                ", owner=" + owner +
                 '}';
     }
 }

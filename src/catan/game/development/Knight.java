@@ -14,9 +14,13 @@ public class Knight extends Development {
         player = null;
     }
 
-    public Player getPlayer() { return player; }
+    public Player getPlayer() {
+        return player;
+    }
 
-    public void setPlayer(Player player) { this.player = player; }
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     public Pair<Integer, String> moveRobber() {
         // TODO: Add logic.
@@ -33,7 +37,7 @@ public class Knight extends Development {
         }
         Random random = new Random();
         int resourceIndex = random.nextInt(resourceNumber);
-        owner.takeResource(player.stealResource(resourceIndex));
+        owner.addResource(player.stealResource(resourceIndex));
         return new Pair<>(HttpStatus.SC_OK, "The resource was stolen successfully.");
     }
 }

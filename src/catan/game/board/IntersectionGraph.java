@@ -26,7 +26,9 @@ public class IntersectionGraph {
         return rings.get(ring);
     }
 
-    public List<Integer> getAdjacentIntersectionIDs(Integer intersectionID) { return adjacencyLists.get(intersectionID); }
+    public List<Integer> getAdjacentIntersectionIDs(Integer intersectionID) {
+        return adjacencyLists.get(intersectionID);
+    }
 
     public boolean areAdjacent(int source, int target) {
         return adjacencyMatrix[source][target];
@@ -63,10 +65,9 @@ public class IntersectionGraph {
                 int followingRingSize;
                 // ultimul inel se invecineaza cu marea
                 if (i + 1 < 3) {
-                    followingRing = rings.get(i+1);
+                    followingRing = rings.get(i + 1);
                     followingRingSize = followingRing.size();
-                }
-                else {
+                } else {
                     followingRing = null;
                     followingRingSize = 0;
                 }
@@ -87,13 +88,11 @@ public class IntersectionGraph {
                     if (wait == 0) {
                         wait = i;
                         difference = difference + 2;
-                    }
-                    else {
+                    } else {
                         wait = wait - 1;
                         hasNextLink = false;
                     }
-                }
-                else {
+                } else {
                     hasNextLink = true;
                 }
             }

@@ -31,18 +31,24 @@ public class Intersection extends Property {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Intersection)) return false;
-        if (!super.equals(o)) return false;
-        Intersection intersection = (Intersection) o;
-        return getId() == intersection.getId() &&
-                getBuilding() == intersection.getBuilding();
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof Intersection)) {
+            return false;
+        }
+        if (!super.equals(object)) {
+            return false;
+        }
+        Intersection intersection = (Intersection) object;
+        return id == intersection.getId() &&
+                building == intersection.getBuilding();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getId(), getBuilding());
+        return Objects.hash(super.hashCode(), id, building);
     }
 
     @Override

@@ -25,7 +25,9 @@ public class UserRequest implements GameRequest {
         return gameId;
     }
 
-    public void setGameId(String gameId) { this.gameId = gameId; }
+    public void setGameId(String gameId) {
+        this.gameId = gameId;
+    }
 
     public String getPlayerId() {
         return playerId;
@@ -47,15 +49,17 @@ public class UserRequest implements GameRequest {
         return arguments;
     }
 
-    public void setArguments(Map<String, Object> arguments) { this.arguments = arguments; }
+    public void setArguments(Map<String, Object> arguments) {
+        this.arguments = arguments;
+    }
 
     public UserResponse run() {
         Game game = Application.games.get(gameId);
         if (game == null) {
-            return new UserResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.",null);
+            return new UserResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
         }
         if (game.getPlayer(playerId) == null) {
-            return new UserResponse(HttpStatus.SC_ACCEPTED,"The player does not exist.",null);
+            return new UserResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
         }
         try {
             return game.playTurn(playerId, command, arguments);

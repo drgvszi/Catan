@@ -22,8 +22,6 @@ public class Component {
     public static final int ROADS = 15;
     public static final int SETTLEMENTS = 5;
     public static final int CITIES = 4;
-    public static final int INITIAL_FREE_SETTLEMENTS = 2;
-    public static final int INITIAL_FREE_ROADS = 2;
 
     public static final int ROADS_FOR_LONGEST_ROAD = 3;
     public static final int KNIGHTS_FOR_LARGEST_ARMY = 3;

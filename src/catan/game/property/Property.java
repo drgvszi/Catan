@@ -20,16 +20,20 @@ public abstract class Property {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Property)) return false;
-        Property property = (Property) o;
-        return Objects.equals(getOwner(), property.getOwner());
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof Property)) {
+            return false;
+        }
+        Property property = (Property) object;
+        return Objects.equals(owner, property.getOwner());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getOwner());
+        return Objects.hash(owner);
     }
 
     @Override
