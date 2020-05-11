@@ -211,6 +211,20 @@ public class Player {
         hiddenVP++;
     }
 
+    public void addResource(Resource resource) {
+        resources.put(resource, resources.get(resource) + 1);
+    }
+
+    public void addResource(Resource resource, int resourceNumber) {
+        resources.put(resource, resources.get(resource) + resourceNumber);
+    }
+
+    public void addResources(Map<Resource, Integer> resources) {
+        for (Resource resource : resources.keySet()) {
+            addResource(resource, resources.get(resource));
+        }
+    }
+
     // endregion
 
     //region Remove
@@ -433,54 +447,23 @@ public class Player {
     // endregion
 
     // region Trade
+    // TODO revise player trade, implement bank trade and harbor trade (3:1, 2:1)
 
+    // should be used in updateTradeResouces
+    public Code giveResourcesToPlayer(Map<Resource, Integer> givenResources, Player player) {
+        Code returnCode = null;
+        if((returnCode = this.removeResources(givenResources)) == null) {
+            player.addResources(givenResources);
+        }
+        return returnCode;
+    }
 
-    public boolean hasResources(Map<Resource, Integer> resources) {
+    public Code hasResources(Map<Resource, Integer> resources) {
         for (Resource resource : resources.keySet()) {
             if (this.resources.get(resource) < resources.get(resource))
-                return false;
+                return Helper.getPlayerCodeFromResourceType(resource);
         }
-        return true;
-    }
-
-    public boolean startTrade(Map<Resource, Integer> offer, Map<Resource, Integer> request) {
-        if (hasResources(offer)) {
-            game.setTradeOffer(offer);
-            game.setTradeRequest(request);
-            return true;
-        }
-        return false;
-    }
-
-
-    public boolean wantToTrade(String answer) {
-        if (hasResources(game.getTradeRequest())) {
-            return answer.equalsIgnoreCase("yes");
-        }
-        return false;
-    }
-
-    public boolean selectOpponent(String playerId) {
-        if (playerId != null) {
-            //TODO: Move offer to specified player.
-            //TODO: Move request to current player.
-            return true;
-        }
-        return false;
-    }
-
-    public void updateTradeResources(List<Pair<Resource, Integer>> offer,
-                                     List<Pair<Resource, Integer>> request) {
-        for (Pair<Resource, Integer> pair : offer) {
-            Resource resource = pair.getKey();
-            Integer resourceCount = resources.get(resource);
-            resources.put(resource, resourceCount - pair.getValue());
-        }
-        for (Pair<Resource, Integer> pair : request) {
-            Resource type = pair.getKey();
-            Integer resourceCount = resources.get(type);
-            resources.put(type, resourceCount + pair.getValue());
-        }
+        return null;
     }
 
     // endregion
@@ -556,10 +539,5 @@ public class Player {
         return "Player{" +
                 "id='" + id + '\'' +
                 '}';
-    }
-
-    public void addResource(Resource resource) {
-        int resourceNumber=resources.get(resource)+1;
-        resources.put(resource,1);
     }
 }

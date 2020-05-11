@@ -245,10 +245,7 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "wantToTrade",
-    "arguments":
-    {
-      "answer": "yes or no"
-    }
+    "arguments": null
   },
   {
     "code": "HttpStatus code",

@@ -43,5 +43,10 @@ public enum Code {
     InvalidSettlementPosition,
     TradeIsDone,
     InvalidTradeRequest,
-
+    NoTradeAvailable,
+    AlreadyInTrade,
+    PlayerNotInTrade,
+    AddedToTrade,
+    TradeInitiated,
+    TradeSuccessful
 }

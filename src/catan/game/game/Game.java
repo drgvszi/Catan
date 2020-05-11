@@ -788,19 +788,47 @@ public abstract class Game {
 
     //region Trade
 
-    public void playerTrade(List<Player> playersThatAccepted, List<Pair<Resource, Integer>> offer,
-                            List<Pair<Resource, Integer>> request) {
+    public Code playerTrade(Map<Resource, Integer> offer, Map<Resource, Integer> request) {
+        this.tradeOpponents.clear();
+        tradeRequest = null; tradeOffer = null;
         Player traderPlayer = players.get(currentPlayer);
-        Random rand = new Random();
-        int index = rand.nextInt(playersThatAccepted.size());
-        Player trader = playersThatAccepted.get(index);
-        traderPlayer.updateTradeResources(offer, request);
-        trader.updateTradeResources(request, offer);
+        if (traderPlayer.hasResources(offer) != null)
+            return Code.InvalidTradeRequest;
+        tradeRequest = request;
+        tradeOffer = offer;
+        return Code.TradeInitiated;
     }
 
-    public Code tradeWithPort(Port portType, Pair<Resource,Integer> offer, Pair<Resource,Integer> request){
+    public Code wantToTrade(String playerID) {
+        if (playerID.equals(currentPlayer))
+            return Code.InvalidTradeRequest;
+        if (tradeOffer == null || tradeRequest == null)
+            return Code.NoTradeAvailable;
+        if (tradeOpponents.contains(playerID))
+            return Code.AlreadyInTrade;
+        else
+            tradeOpponents.add(playerID);
+        return Code.AddedToTrade;
+    }
+
+    // ! for sending the tradeOpponents, use getTradeOpponents()
+
+    public Code selectOpponent(String playerID) {
+        if (!tradeOpponents.contains(playerID))
+            return Code.PlayerNotInTrade;
+        Player currentPlayer = players.get(getCurrentPlayer());
+        Player opponent = players.get(playerID);
+        Code currentReturn = currentPlayer.giveResourcesToPlayer(tradeOffer, opponent);
+        Code opponentReturn = opponent.giveResourcesToPlayer(tradeRequest, currentPlayer);
+        if (currentReturn == null && opponentReturn == null)
+            return Code.TradeSuccessful;
+        else
+            return (currentReturn == null) ? opponentReturn : currentReturn;
+    }
+
+    public Code tradeWithPort(Port portType, Pair<Resource, Integer> offer, Pair<Resource, Integer> request) {
         Player traderPlayer = players.get(currentPlayer);
-        if(bank.existsResource(request.getKey(),request.getValue())) {
+        if (bank.existsResource(request.getKey(), request.getValue())) {
             if (portType.toString().equalsIgnoreCase(offer.getKey().toString()) && offer.getValue() / 2 == request.getValue() && offer.getValue() % 2 == 0) {
                 if (traderPlayer.removeResource(offer.getKey(), offer.getValue())) {
                     traderPlayer.takeResource(request.getKey(), request.getValue());
@@ -820,9 +848,9 @@ public abstract class Game {
         return Helper.getBankCodeFromResourceType(request.getKey());
     }
 
-    public Code tradeWithBank(Pair<Resource,Integer> offer, Pair<Resource,Integer> request) {
+    public Code tradeWithBank(Pair<Resource, Integer> offer, Pair<Resource, Integer> request) {
         Player traderPlayer = players.get(currentPlayer);
-        if(offer.getValue()/4 == request.getValue() && offer.getValue()%4 == 0 ) {
+        if (offer.getValue() / 4 == request.getValue() && offer.getValue() % 4 == 0) {
             if (bank.existsResource(request.getKey(), request.getValue())) {
                 if (traderPlayer.removeResource(offer.getKey(), offer.getValue())) {
                     traderPlayer.takeResource(request.getKey(), request.getValue());
@@ -831,8 +859,7 @@ public abstract class Game {
                     return Helper.getPlayerCodeFromResourceType(request.getKey());
             } else
                 return Helper.getBankCodeFromResourceType(request.getKey());
-        }
-        else
+        } else
             return Code.InvalidTradeRequest;
     }
     //endregion
@@ -904,11 +931,10 @@ public abstract class Game {
     public Code useRoadBuilding() {
         Player player = players.get(currentPlayer);
         if (player.getRoadBuildingsCounter() >= 1) {
-            int remainingRoads = Math.min(bank.getNumberOfRoads(player),2);
+            int remainingRoads = Math.min(bank.getNumberOfRoads(player), 2);
             player.setRoadsToBuildCounter(remainingRoads);
             return Code.PlayerHasDev;
-        }
-        else
+        } else
             return Code.PlayerNoDev;
     }
 
@@ -936,18 +962,19 @@ public abstract class Game {
         if (r1 == null) {
             return Code.FirstResourceNotSet;
         }
-        if(r2 == null)
+        if (r2 == null)
             return Code.SecondResourceNotSet;
-        if(!bank.existsResource(r1))
+        if (!bank.existsResource(r1))
             return Helper.getBankCodeFromResourceType(r1);
-        if(!bank.existsResource(r2))
+        if (!bank.existsResource(r2))
             return Helper.getBankCodeFromResourceType(r2);
         bank.takeResource(r1, 1);
         player.addResource(r1);
-        bank.takeResource(r2,1);
+        bank.takeResource(r2, 1);
         player.addResource(r2);
         return Code.YearOfPlentySuccess;
     }
+    //endregion
 
     @Override
     public boolean equals(Object o) {
