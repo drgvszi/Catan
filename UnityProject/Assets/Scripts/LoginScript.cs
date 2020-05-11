@@ -19,6 +19,7 @@ public class LoginScript : MonoBehaviour
     public static string CurrentUserExtension = null;
     public static string CurrentUserLobbyId = null;
     public static string CurrentUserGameId = null;
+    public static string CurrentUserGEId = null;
     public static int ButtonPressed = 0;
     private void CheckCredentials(UserCredentials Checker)
     {

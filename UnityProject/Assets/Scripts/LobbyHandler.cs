@@ -74,14 +74,25 @@ public class LobbyHandler : MonoBehaviour
                     for (int i = 0; i < allLobbies.lobbies.Length; i++)
                     {
                         if (allLobbies.lobbies[i].extension == LoginScript.CurrentUserExtension && (allLobbies.lobbies[i].first == "-" || allLobbies.lobbies[i].second == "-" || allLobbies.lobbies[i].third == "-"))
+                        //if (allLobbies.lobbies[i].extension == "extension3" && (allLobbies.lobbies[i].first == "-" || allLobbies.lobbies[i].second == "-" || allLobbies.lobbies[i].third == "-"))
                         {
                             JoinLobby jl = new JoinLobby(LoginScript.CurrentUser, allLobbies.lobbies[i].lobbyid);
                             found_free_lobby = true;
-                           // JoinLobby jl = new JoinLobby("mmoruz", allLobbies.lobbies[i].lobbyid);
+                            //JoinLobby jl = new JoinLobby("mmoruz", allLobbies.lobbies[i].lobbyid);
                             RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/join", jl).Then(joined_lobby =>
                             {
                                 LoginScript.CurrentUserGameId = allLobbies.lobbies[i].gameid;
                                 LoginScript.CurrentUserLobbyId = allLobbies.lobbies[i].lobbyid;
+
+
+                                UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
+                                //getgeid.username = "mmoruz";
+                                getgeid.username = LoginScript.CurrentUser;
+                                RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                                {
+                                    LoginScript.CurrentUserGEId = response.Text;
+                                }).Catch(err => { Debug.Log(err); });
+
                             }).Catch(err => { Debug.Log(err); });
                             break;
                         }
@@ -95,6 +106,15 @@ public class LobbyHandler : MonoBehaviour
                         {
                             LoginScript.CurrentUserGameId = added_Lobby.gameid;
                             LoginScript.CurrentUserLobbyId = added_Lobby.lobbyid;
+
+                            UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
+                            //getgeid.username = "mmoruz";
+                            getgeid.username = LoginScript.CurrentUser;
+                            RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                            {
+                                LoginScript.CurrentUserGEId = response.Text;
+                            }).Catch(err => { Debug.Log(err); });
+
                         }).Catch(err => { Debug.Log(err); });
                     }
                 }
@@ -107,6 +127,15 @@ public class LobbyHandler : MonoBehaviour
                         {
                             LoginScript.CurrentUserGameId = added_Lobby.gameid;
                             LoginScript.CurrentUserLobbyId = added_Lobby.lobbyid;
+
+                            UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
+                            //getgeid.username = "mmoruz";
+                            getgeid.username = LoginScript.CurrentUser;
+                            RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                            {
+                                LoginScript.CurrentUserGEId = response.Text;
+                            }).Catch(err => { Debug.Log(err); });
+
                         }).Catch(err => { Debug.Log(err); });
                 }
             }).Catch(err => { Debug.Log(err); });
@@ -167,9 +196,10 @@ public class LobbyHandler : MonoBehaviour
 
     public void EmitStartGame()
     {
-
+        Debug.Log(LoginScript.CurrentUserGEId);
         GameIDConnectivityJson gameid = new GameIDConnectivityJson();
         gameid.gameid = LoginScript.CurrentUserGameId;
+        //gameid.gameid = "q6VUq8gSVPkE6BPl4nIFv";
         RestClient.Post<BoardConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/startgame", gameid).Then(board =>
         {
             ReceiveBoardScript.ReceivedBoard.ports = board.ports;

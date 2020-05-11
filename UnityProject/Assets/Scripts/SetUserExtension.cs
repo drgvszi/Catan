@@ -23,7 +23,7 @@ public class SetUserExtension : MonoBehaviour
     {
         SendExt command = new SendExt();
         command.username = LoginScript.CurrentUser;
-       // command.username = "mmoruz";
+        //command.username = "mmoruz";
         command.extension = "extension" + str;
         RestClient.Post("https://catan-connectivity.herokuapp.com/extension/setExtension",command).Then(board =>
         {
