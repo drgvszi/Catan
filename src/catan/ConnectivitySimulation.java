@@ -223,7 +223,7 @@ public class ConnectivitySimulation {
             sleep(100);
             buyRoad(gameID, playersID.get(0), 10, 11);
             useDevelopment(gameID, playersID.get(0), "roadBuilding");
-            buildRoad(gameID, playersID.get(0), 10, 11);
+            buyRoad(gameID, playersID.get(0), 20,21);
             endTurn(gameID, playersID.get(0));
             sleep(100);
             rollDice(gameID, playersID.get(1));
