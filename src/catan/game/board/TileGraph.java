@@ -19,7 +19,7 @@ public class TileGraph {
         setIndexes();
         createAdjacencyMatrix();
         createAdjacencyLists();
-        printAdjacencyLists();
+        // printAdjacencyLists();
     }
 
     public List<Integer> getRing(Integer ring) {

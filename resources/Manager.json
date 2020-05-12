@@ -81,6 +81,35 @@
   {
     "username": "username",
     "password": "password",
+    "command": "getRanking",
+    "arguments":
+    {
+      "gameId": "gameId"
+    }
+  },
+  {
+    "code": "HttpStatus code",
+    "status": "message (success or error type)",
+    "arguments":
+    {
+      "player_1": "playerId",
+      "publicScore_1": 3,
+      "hiddenScore_1": 5,
+      "player_2": "playerId",
+      "publicScore_2": 3,
+      "hiddenScore_2": 4,
+      "player_3": "playerId",
+      "publicScore_3": 2,
+      "hiddenScore_3": 4,
+      "foundWinner": false
+    }
+  },
+
+
+
+  {
+    "username": "username",
+    "password": "password",
     "command": "endGame",
     "arguments":
     {

@@ -19,15 +19,15 @@ public class IntersectionGraph {
         setIndexes();
         createAdjacencyMatrix();
         createAdjacencyLists();
-        printAdjacencyLists();
+        // printAdjacencyLists();
     }
 
     public List<Integer> getRing(Integer ring) {
         return rings.get(ring);
     }
 
-    public List<Integer> getAdjacentIntersectionIDs(Integer intersectionID) {
-        return adjacencyLists.get(intersectionID);
+    public List<Integer> getAdjacentIntersections(int intersection) {
+        return adjacencyLists.get(intersection);
     }
 
     public boolean areAdjacent(int source, int target) {

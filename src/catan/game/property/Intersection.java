@@ -42,13 +42,12 @@ public class Intersection extends Property {
             return false;
         }
         Intersection intersection = (Intersection) object;
-        return id == intersection.getId() &&
-                building == intersection.getBuilding();
+        return id == intersection.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, building);
+        return Objects.hash(super.hashCode(), id);
     }
 
     @Override

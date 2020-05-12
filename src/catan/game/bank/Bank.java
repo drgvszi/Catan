@@ -2,12 +2,15 @@ package catan.game.bank;
 
 import catan.API.response.Code;
 import catan.game.enumeration.Development;
-import catan.game.player.Player;
 import catan.game.enumeration.Resource;
+import catan.game.player.Player;
 import catan.game.rule.Component;
+import catan.game.rule.Cost;
 import catan.util.Helper;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Bank {
     private List<Player> players;
@@ -36,8 +39,16 @@ public class Bank {
         return resources;
     }
 
+    public int getResourcesNumber(Resource resource) {
+        return resources.get(resource);
+    }
+
     public Map<Development, Integer> getDevelopments() {
         return developments;
+    }
+
+    public int getDevelopmentsNumber(Development development) {
+        return developments.get(development);
     }
 
     public Map<Player, Integer> getRoads() {
@@ -52,8 +63,16 @@ public class Bank {
         return settlements;
     }
 
+    public int getSettlementsNumber(Player player) {
+        return settlements.get(player);
+    }
+
     public Map<Player, Integer> getCities() {
         return cities;
+    }
+
+    public int getCitiesNumber(Player player) {
+        return cities.get(player);
     }
 
     //endregion
@@ -108,6 +127,15 @@ public class Bank {
         return developments.get(development) > 0;
     }
 
+    public boolean hasDevelopment() {
+        for (Development development : developments.keySet()) {
+            if (hasDevelopment(development)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean hasRoad(Player player) {
         return roads.get(player) > 0;
     }
@@ -117,7 +145,7 @@ public class Bank {
     }
 
     public boolean hasCity(Player player) {
-        return settlements.get(player) > 0;
+        return cities.get(player) > 0;
     }
 
     //endregion
@@ -177,8 +205,7 @@ public class Bank {
                 if (result != null) {
                     return result;
                 }
-            }
-            else if (resourceNumber > 1) {
+            } else if (resourceNumber > 1) {
                 result = removeResource(resource, resourceNumber);
                 if (result != null) {
                     return result;
@@ -188,7 +215,7 @@ public class Bank {
         return null;
     }
 
-    public Code removeDevelopment(Development development, Player player) {
+    public Code removeDevelopment(Development development) {
         if (!hasDevelopment(development)) {
             return Helper.getBankNoDevelopmentFromDevelopment(development);
         }
@@ -265,6 +292,81 @@ public class Bank {
         for (Player player : players) {
             cities.put(player, Component.CITIES);
         }
+    }
+
+    //endregion
+
+    //region Development
+
+    public Code sellDevelopment(Development development) {
+        Code code = removeDevelopment(development);
+        if (code != null) {
+            return code;
+        }
+        addDevelopmentResources();
+        return null;
+    }
+
+    private void addDevelopmentResources() {
+        addResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
+        addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
+        addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+    }
+
+    //endregion
+
+    //region Road
+
+    public Code sellRoad(Player player) {
+        Code code = removeRoad(player);
+        if (code != null) {
+            return code;
+        }
+        addRoadResources();
+        return null;
+    }
+
+    private void addRoadResources() {
+        addResource(Resource.lumber, Cost.ROAD_LUMBER);
+        addResource(Resource.brick, Cost.ROAD_BRICK);
+    }
+
+    //endregion
+
+    //region Settlement
+
+    public Code sellSettlement(Player player) {
+        Code code = removeSettlement(player);
+        if (code != null) {
+            return code;
+        }
+        addSettlementResources();
+        return null;
+    }
+
+    private void addSettlementResources() {
+        addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
+        addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
+        addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
+        addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
+    }
+
+    //endregion
+
+    //region City
+
+    public Code sellCity(Player player) {
+        Code code = removeCity(player);
+        if (code != null) {
+            return code;
+        }
+        addCityResources();
+        return null;
+    }
+
+    private void addCityResources() {
+        addResource(Resource.grain, Cost.CITY_GRAIN);
+        addResource(Resource.ore, Cost.CITY_ORE);
     }
 
     //endregion

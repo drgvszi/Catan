@@ -2,6 +2,7 @@ package catan.util;
 
 import catan.API.response.Code;
 import catan.game.enumeration.Development;
+import catan.game.enumeration.Port;
 import catan.game.enumeration.Resource;
 
 public class Helper {
@@ -17,8 +18,74 @@ public class Helper {
                 return Resource.brick;
             case "ore":
                 return Resource.ore;
-            case "desert":
-                return Resource.desert;
+            default:
+                return null;
+        }
+    }
+
+    public static Resource getResourceOfferFromString(String resource) {
+        switch (resource) {
+            case "lumber_o":
+                return Resource.lumber;
+            case "wool_o":
+                return Resource.wool;
+            case "grain_o":
+                return Resource.grain;
+            case "brick_o":
+                return Resource.brick;
+            case "ore_o":
+                return Resource.ore;
+            default:
+                return null;
+        }
+    }
+
+    public static Resource getResourceRequestFromString(String resource) {
+        switch (resource) {
+            case "lumber_r":
+                return Resource.lumber;
+            case "wool_r":
+                return Resource.wool;
+            case "grain_r":
+                return Resource.grain;
+            case "brick_r":
+                return Resource.brick;
+            case "ore_r":
+                return Resource.ore;
+            default:
+                return null;
+        }
+    }
+
+    public static Resource getResourceFromPort(Port port) {
+        switch (port) {
+            case Lumber:
+                return Resource.lumber;
+            case Wool:
+                return Resource.wool;
+            case Grain:
+                return Resource.grain;
+            case Brick:
+                return Resource.brick;
+            case Ore:
+                return Resource.ore;
+            default:
+                return null;
+        }
+    }
+
+    public static Development getDevelopmentFromString(String development) {
+        switch (development) {
+            case "knight":
+                return Development.knight;
+            case "monopoly":
+                return Development.monopoly;
+            case "roadBuilding":
+                return Development.roadBuilding;
+            case "victoryPoint":
+                return Development.victoryPoint;
+            case "yearOfPlenty":
+                return Development.yearOfPlenty;
             default:
                 return null;
         }
@@ -53,6 +120,21 @@ public class Helper {
                 return Code.PlayerNotEnoughBrick;
             case ore:
                 return Code.PlayerNotEnoughOre;
+            default:
+                return null;
+        }
+    }
+
+    public static Code getPlayerNoDevelopmentFromDevelopment(Development development) {
+        switch (development) {
+            case knight:
+                return Code.PlayerNoKnight;
+            case monopoly:
+                return Code.PlayerNoMonopoly;
+            case roadBuilding:
+                return Code.PlayerNoRoadBuilding;
+            case yearOfPlenty:
+                return Code.PlayerNoYearOfPlenty;
             default:
                 return null;
         }

@@ -53,7 +53,7 @@ public class Tile {
     @Override
     public String toString() {
         return "Tile{" +
-                "ID=" + id +
+                "id=" + id +
                 ", resource=" + resource +
                 ", number=" + number +
                 ", neighbours=" + neighbours +

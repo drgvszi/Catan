@@ -1,8 +1,14 @@
 package catan.API.response;
 
 public enum Code {
-    RolledSeven,
-    RolledNotSeven,
+    //region Dice
+    DiceSeven,
+    DiceNotSeven,
+    NotDiscard,
+
+    //endregion
+
+    //region Player
 
     PlayerNoLumber,
     PlayerNoWool,
@@ -16,11 +22,14 @@ public enum Code {
     PlayerNotEnoughBrick,
     PlayerNotEnoughOre,
 
-    BankNoLumber,
-    BankNoWool,
-    BankNoGrain,
-    BankNoBrick,
-    BankNoOre,
+    PlayerNoKnight,
+    PlayerNoMonopoly,
+    PlayerNoRoadBuilding,
+    PlayerNoYearOfPlenty,
+
+    //endregion
+
+    //region Bank
 
     BankNotEnoughLumber,
     BankNotEnoughWool,
@@ -28,43 +37,62 @@ public enum Code {
     BankNotEnoughBrick,
     BankNotEnoughOre,
 
+    BankNoLumber,
+    BankNoWool,
+    BankNoGrain,
+    BankNoBrick,
+    BankNoOre,
+
+    BankNoDevelopment,
     BankNoKnight,
     BankNoMonopoly,
     BankNoRoadBuilding,
     BankNoYearOfPlenty,
 
-    NotConnectsToRoad,
-
-    PlayerHasDev,
-    PlayerNoDev,
-    MonopolySuccess,
-    KnightSuccess,
-    RoadBuildingSuccess,
-    YearOfPlentySuccess,
-    ResourceNotSet,
-    FirstResourceNotSet,
-    SecondResourceNotSet,
-    PlayerNoResource,
-    NoRoad,
-    NoSettlement,
-    NoCity,
     BankNoRoad,
     BankNoSettlement,
     BankNoCity,
-    BankNoDev,
-    BankNoResource,
-    IntersectionAlreadyOccupied,
-    NotTwoRoadsDistance,
-    SameTile,
-    NoSuchIntersection,
-    RoadAlreadyExistent,
-    RoadInvalidPosition,
-    RoadStartNotOwned,
-    InvalidCityPosition,
-    NotEnoughResources,
-    InvalidSettlementPosition,
-    TradeIsDone,
-    InvalidTradeRequest,
 
-    InvalidRequest
+    //endregion Bank
+
+    //region Properties
+
+    InvalidRoadPosition,
+    InvalidSettlementPosition,
+    InvalidCityPosition,
+
+    IntersectionAlreadyOccupied,
+    DistanceRuleViolated,
+    NotConnectsToRoad,
+    RoadAlreadyExistent,
+
+    NoRoad,
+    NoSettlement,
+    NoCity,
+
+    //endregion
+
+    //region Robber
+
+    SameTile,
+    PlayerNoResource,
+
+    //endregion
+
+    //region Trade
+
+    InvalidTradeRequest,
+    NoTradeAvailable,
+    AlreadyInTrade,
+    NotInTrade,
+    InvalidPortOffer,
+
+    //endregion Trade
+
+    //region Unknown
+
+    InvalidRequest,
+    ForbiddenRequest
+
+    //endregion
 }

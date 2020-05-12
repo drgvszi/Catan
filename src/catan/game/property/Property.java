@@ -19,6 +19,10 @@ public abstract class Property {
         this.owner = owner;
     }
 
+    public boolean hasOwner() {
+        return owner != null;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {

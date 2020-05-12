@@ -11,8 +11,7 @@ public class Road extends Property {
         if (start.getId() < end.getId()) {
             this.start = start;
             this.end = end;
-        }
-        else {
+        } else {
             this.start = end;
             this.end = start;
         }
@@ -34,25 +33,25 @@ public class Road extends Property {
         this.end = end;
     }
 
-    public Intersection getCommonIntersection(Intersection start, Intersection end) {
-        if (this.start == start && this.end == end) {
-            return null;
+    public int getCommonIntersection(int startId, int endId) {
+        if (start.getId() == startId && end.getId() == endId) {
+            return -1;
         }
-        if (this.start.equals(start) || this.start.equals(end)) {
-            return this.start;
+        if (start.getId() == startId || start.getId() == endId) {
+            return startId;
         }
-        if (this.end.equals(start) || this.end.equals(end)) {
-            return this.end;
+        if (end.getId() == startId || end.getId() == endId) {
+            return endId;
         }
-        return null;
+        return -1;
     }
 
-    public boolean connectsToRoad(Intersection start, Intersection end) {
-        return getCommonIntersection(start, end) != null;
+    public boolean connectsToRoad(int start, int end) {
+        return getCommonIntersection(start, end) != -1;
     }
 
-    public boolean connectsToRoad(Intersection intersection) {
-        return start.equals(intersection) || end.equals(intersection);
+    public boolean connectsToRoad(int intersection) {
+        return start.getId() == intersection || end.getId() == intersection;
     }
 
     @Override

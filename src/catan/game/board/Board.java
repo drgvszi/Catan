@@ -2,7 +2,6 @@ package catan.game.board;
 
 import catan.game.enumeration.Port;
 import catan.game.enumeration.Resource;
-import catan.game.player.Player;
 import catan.game.property.Intersection;
 import catan.game.property.Road;
 import catan.game.rule.Component;
@@ -15,36 +14,50 @@ import java.io.IOException;
 import java.util.*;
 
 public class Board {
-    private List<Tile> tiles = new ArrayList<>();
-    private List<List<Tile>> numberedTiles = new ArrayList<>();
-    private List<Intersection> intersections = new ArrayList<>();
-    private List<Port> ports = new ArrayList<>();
-    private List<Road> roads = new ArrayList<>();
-    private TileGraph tileGraph = new TileGraph();
-    private IntersectionGraph intersectionGraph = new IntersectionGraph();
-    private List<List<Integer>> adjacentIntersectionsToTiles = new ArrayList<>();
-    private List<List<Integer>> adjacentTilesToIntersections = new ArrayList<>();
-    private Tile robberPosition = null;
+    private List<Tile> tiles;
+    private List<List<Tile>> numberedTiles;
+    private List<Intersection> intersections;
+    private List<Port> ports;
+    private List<Road> roads;
+    private TileGraph tileGraph;
+    private IntersectionGraph intersectionGraph;
+    private List<List<Integer>> adjacentIntersectionsToTiles;
+    private List<List<Integer>> adjacentTilesToIntersections;
+    private Tile robberPosition;
 
     public Board() {
+        tiles = new ArrayList<>();
         for (int i = 0; i < Component.TILES; i++) {
             tiles.add(new Tile(i));
         }
+        numberedTiles = new ArrayList<>();
+        intersections = new ArrayList<>();
+        ports = new ArrayList<>();
         for (int index = 0; index < Component.INTERSECTIONS; ++index) {
             intersections.add(new Intersection(index));
             ports.add(Port.None);
         }
+        roads = new ArrayList<>();
+        tileGraph = new TileGraph();
+        intersectionGraph = new IntersectionGraph();
+        adjacentIntersectionsToTiles = new ArrayList<>();
+        adjacentTilesToIntersections = new ArrayList<>();
+        robberPosition = null;
         generateRandomTiles();
         createMapping();
         generatePorts();
-        printAdjacentIntersectionsToTiles();
-        printAdjacentTilesToIntersections();
+        // printAdjacentIntersectionsToTiles();
+        // printAdjacentTilesToIntersections();
     }
 
     //region Getters
 
     public List<Tile> getTiles() {
         return tiles;
+    }
+
+    public Tile getTile(int tile) {
+        return tiles.get(tile);
     }
 
     public List<List<Tile>> getNumberedTiles() {
@@ -59,8 +72,16 @@ public class Board {
         return intersections;
     }
 
+    public Intersection getIntersection(int intersection) {
+        return intersections.get(intersection);
+    }
+
     public List<Port> getPorts() {
         return ports;
+    }
+
+    public Port getPort(int port) {
+        return ports.get(port);
     }
 
     public List<Road> getRoads() {
@@ -83,7 +104,7 @@ public class Board {
         List<Intersection> adjacentIntersections = new ArrayList<>();
         for (Intersection intersection1 :
                 intersections) {
-            if (intersectionGraph.getAdjacentIntersectionIDs(intersection.getId()).contains(intersection1.getId()))
+            if (intersectionGraph.getAdjacentIntersections(intersection.getId()).contains(intersection1.getId()))
                 adjacentIntersections.add(intersection1);
         }
         return adjacentIntersections;
@@ -91,6 +112,15 @@ public class Board {
 
     public List<List<Integer>> getAdjacentIntersectionsToTiles() {
         return adjacentIntersectionsToTiles;
+    }
+
+    public List<Intersection> getAdjacentIntersections(Tile tile) {
+        List<Intersection> adjacentIntersections = new ArrayList<>();
+        List<Integer> intersectionsId = adjacentIntersectionsToTiles.get(tile.getId());
+        for (Integer intersectionId : intersectionsId) {
+            adjacentIntersections.add(intersections.get(intersectionId));
+        }
+        return adjacentIntersections;
     }
 
     public List<List<Integer>> getAdjacentTilesToIntersections() {
@@ -103,6 +133,42 @@ public class Board {
 
     public Tile getRobberPosition() {
         return robberPosition;
+    }
+
+    public List<Map<String, Object>> getBoardArguments() {
+        List<Map<String, Object>> tilesInformation = new ArrayList<>();
+        for (Tile tile : tiles) {
+            Map<String, Object> tileInformation = new HashMap<>();
+            tileInformation.put("resource", tile.getResource());
+            tileInformation.put("number", tile.getNumber());
+            tilesInformation.add(tileInformation);
+        }
+        return tilesInformation;
+    }
+
+    public String getBoardJson() {
+        List<Pair<Resource, Integer>> tilesInformation = new ArrayList<>();
+        for (Tile tile : tiles) {
+            tilesInformation.add(new Pair<>(tile.getResource(), tile.getNumber()));
+        }
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            String boardJSON = objectMapper.writeValueAsString(tilesInformation);
+            return boardJSON.replaceAll("key", "resource")
+                    .replaceAll("value", "number");
+        } catch (JsonProcessingException exception) {
+            exception.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getPortsJson() {
+        try {
+            return new ObjectMapper().writeValueAsString(ports);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+        return null;
     }
 
     //endregion
@@ -121,20 +187,12 @@ public class Board {
         this.intersections = intersections;
     }
 
-    public void setIntersectionOwner(int id, Player player) {
-        intersections.get(id).setOwner(player);
-    }
-
     public void setPorts(List<Port> ports) {
         this.ports = ports;
     }
 
     public void setRoads(List<Road> roads) {
         this.roads = roads;
-    }
-
-    public void setRoadOwner(int id, Player player) {
-        roads.get(id).setOwner(player);
     }
 
     public void setTileGraph(TileGraph tileGraph) {
@@ -160,29 +218,26 @@ public class Board {
     //endregion
 
     //region Road
+
     public void addRoad(Road road) {
         roads.add(road);
     }
 
-    public boolean existsRoad(int intersectionId1, int intersectionId2) {
+    public boolean hasRoad(int start, int end) {
         for (Road road : roads) {
-            if (road.getStart().getId() == intersectionId1 && road.getEnd().getId() == intersectionId2)
+            if (road.getStart().getId() == start && road.getEnd().getId() == end) {
                 return true;
-            if (road.getStart().getId() == intersectionId2 && road.getEnd().getId() == intersectionId1)
+            }
+            if (road.getStart().getId() == end && road.getEnd().getId() == start) {
                 return true;
+            }
         }
         return false;
     }
+
     //endregion
 
-    public List<Intersection> getAdjacentIntersections(Tile tile) {
-        List<Intersection> adjacentIntersections = new ArrayList<>();
-        List<Integer> intersectionsId = adjacentIntersectionsToTiles.get(tile.getId());
-        for (Integer intersectionId : intersectionsId) {
-            adjacentIntersections.add(intersections.get(intersectionId));
-        }
-        return adjacentIntersections;
-    }
+    //region Generate Map
 
     public void generateRandomTiles() {
         generateResources();
@@ -351,41 +406,9 @@ public class Board {
         }
     }
 
-    public List<Map<String, Object>> getBoardArguments() {
-        List<Map<String, Object>> tilesInformation = new ArrayList<>();
-        for (Tile tile : tiles) {
-            Map<String, Object> tileInformation = new HashMap<>();
-            tileInformation.put("resource", tile.getResource());
-            tileInformation.put("number", tile.getNumber());
-            tilesInformation.add(tileInformation);
-        }
-        return tilesInformation;
-    }
+    //endregion
 
-    public String getBoardJson() {
-        List<Pair<Resource, Integer>> tilesInformation = new ArrayList<>();
-        for (Tile tile : tiles) {
-            tilesInformation.add(new Pair<>(tile.getResource(), tile.getNumber()));
-        }
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String boardJSON = objectMapper.writeValueAsString(tilesInformation);
-            return boardJSON.replaceAll("key", "resource")
-                    .replaceAll("value", "number");
-        } catch (JsonProcessingException exception) {
-            exception.printStackTrace();
-        }
-        return null;
-    }
-
-    public String getPortsJson() {
-        try {
-            return new ObjectMapper().writeValueAsString(ports);
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
-        return null;
-    }
+    //region Print
 
     public void printAdjacentIntersectionsToTiles() {
         try {
@@ -417,5 +440,5 @@ public class Board {
         }
     }
 
-
+    //endregion
 }

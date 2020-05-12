@@ -3,7 +3,6 @@ package catan.API.request;
 import catan.API.response.UserResponse;
 import catan.Application;
 import catan.game.game.Game;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.http.HttpStatus;
 
 import java.util.Map;
@@ -61,10 +60,6 @@ public class UserRequest implements GameRequest {
         if (game.getPlayer(playerId) == null) {
             return new UserResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
         }
-        try {
-            return game.playTurn(playerId, command, arguments);
-        } catch (JsonProcessingException e) {
-            return new UserResponse(HttpStatus.SC_ACCEPTED, "Wrong command.", null);
-        }
+        return game.playTurn(playerId, command, arguments);
     }
 }
