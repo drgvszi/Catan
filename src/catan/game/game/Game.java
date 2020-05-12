@@ -901,7 +901,7 @@ public abstract class Game {
         return Code.InvalidRequest;
     }
 
-    protected Code portTrade(int portId, String offerString, String requestString) {
+    public Code portTrade(int portId, String offerString, String requestString) {
         Port port = board.getPort(portId);
         if (port == null || port == Port.None) {
             return Code.InvalidRequest;
