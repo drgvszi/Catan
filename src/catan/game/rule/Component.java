@@ -23,6 +23,6 @@ public class Component {
     public static final int SETTLEMENTS = 5;
     public static final int CITIES = 4;
 
-    public static final int ROADS_FOR_LONGEST_ROAD = 3;
+    public static final int ROADS_FOR_LONGEST_ROAD = 5;
     public static final int KNIGHTS_FOR_LARGEST_ARMY = 3;
 }

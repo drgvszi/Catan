@@ -538,8 +538,6 @@ public abstract class Game {
             for (Intersection intersection : intersections) {
                 Player owner = intersection.getOwner();
                 if (owner != null) {
-                    String playerId = owner.getId();
-
                     String argument = resource.toString() + '_' + playerOrder.indexOf(owner);
                     int previousValue = (int) result.get(argument);
                     switch (intersection.getBuilding()) {
@@ -1033,7 +1031,7 @@ public abstract class Game {
         if (!currentPlayer.hasDevelopment(development)) {
             return Helper.getPlayerNoDevelopmentFromDevelopment(development);
         }
-        return null;
+        return currentPlayer.removeDevelopment(development);
     }
 
     public Pair<Code, Map<String, Object>> takeResourceFromAll(String resourceString) {

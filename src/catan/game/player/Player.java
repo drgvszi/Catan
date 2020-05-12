@@ -335,6 +335,14 @@ public class Player {
         return null;
     }
 
+    public Code removeDevelopment(Development development) {
+        if (!hasDevelopment(development)) {
+            return Helper.getPlayerNoDevelopmentFromDevelopment(development);
+        }
+        developments.put(development, developments.get(development) - 1);
+        return null;
+    }
+
     //endregion
 
     //region Steal
@@ -384,16 +392,26 @@ public class Player {
     }
 
     private Code removeDevelopmentResources() {
-        Code code = removeResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
-        if (code != null) {
+        if (hasResource(Resource.grain) && hasResource(Resource.wool) && hasResource(Resource.ore)) {
+            Code code = removeResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
+            if (code != null) {
+                return code;
+            }
+            code = removeResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
+            if (code != null) {
+                return code;
+            }
+            code = removeResource(Resource.ore, Cost.DEVELOPMENT_ORE);
             return code;
+        } else {
+            if (!hasResource(Resource.grain))
+                return Code.PlayerNotEnoughGrain;
+            if (!hasResource(Resource.wool))
+                return Code.PlayerNotEnoughWool;
+            if (!hasResource(Resource.ore))
+                return Code.PlayerNotEnoughOre;
         }
-        code = removeResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
-        if (code != null) {
-            return code;
-        }
-        code = removeResource(Resource.ore, Cost.DEVELOPMENT_ORE);
-        return code;
+        return null;
     }
 
     //endregion
@@ -436,7 +454,7 @@ public class Player {
         return null;
     }
 
-    private Code connectsToRoad(int start, int end) {
+    public Code connectsToRoad(int start, int end) {
         for (Road road : roads) {
             if (road.connectsToRoad(start, end)) {
                 return null;
@@ -490,7 +508,7 @@ public class Player {
         return null;
     }
 
-    private Code connectsToRoad(int intersection) {
+    public Code connectsToRoad(int intersection) {
         for (Road road : roads) {
             if (road.connectsToRoad(intersection)) {
                 return null;
