@@ -5,27 +5,21 @@ using UnityEngine;
 public class provizoriu : MonoBehaviour
 {
     public GameObject piece;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject allPieces;
+    public GameObject newPiece;
+    public int numar;
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void printfff()
-    {
-        print("ffff");
+        this.numar = numar;
     }
 
     void OnMouseDown()
     {
-        print("ggggg");
-        print(piece.name);
+      
+        allPieces.SetActive(false);
+        Instantiate(newPiece, piece.transform.position, piece.transform.rotation);
+
     }
 
 }
