@@ -408,7 +408,22 @@ public class Player {
         if (result != null) {
             return result;
         }
+        if(connectsToIntersection(start,end)){
+            return null;
+        }
         return connectsToRoad(start, end);
+    }
+
+    private boolean connectsToIntersection(int start, int end) {
+        for(Intersection intersection:settlements)
+            if(start==intersection.getId()||end==intersection.getId())
+                return true;
+
+        for(Intersection intersection:cities){
+            if(start==intersection.getId()||end==intersection.getId())
+                return true;
+        }
+        return false;
     }
 
     public Code hasRoadResources() {
