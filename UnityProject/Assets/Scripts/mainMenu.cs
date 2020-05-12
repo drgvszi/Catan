@@ -13,6 +13,13 @@ public class mainMenu : MonoBehaviour
     public void SetVolume (float volume)
     {
         audioMixer.SetFloat("volume", volume);
+        AudioListener.volume = volume;
+    }
+
+    public AudioSource music;
+    public void SetMusic(float volume)
+    {
+        music.volume = volume;
     }
 
     public void SetQuality (int qualityIndex)
