@@ -92,7 +92,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.02}
+  m_Size: {x: 0.007, y: 0.006, z: 0.004}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-2891805662041124487
 MonoBehaviour:
@@ -109,3 +109,4 @@ MonoBehaviour:
   piece: {fileID: 8167304820134488674}
   newPiece: {fileID: 4638112797438592866, guid: 0b7e26b7ca49e08439f06de2854a4fa1,
     type: 3}
+  ok: 0

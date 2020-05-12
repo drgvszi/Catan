@@ -5026,14 +5026,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317049903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1455355577}
   - {fileID: 145854599}
-  m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 14
+  m_Father: {fileID: 2029153230}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12523,14 +12523,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807373188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 911519995}
   - {fileID: 371030345}
-  m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 11
+  m_Father: {fileID: 2029153230}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12688,14 +12688,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816560722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1081350167}
   - {fileID: 1215494027}
-  m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 13
+  m_Father: {fileID: 2029153230}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14294,7 +14294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0.09, y: 28, z: 0}
+  m_LocalPosition: {x: 0.09, y: 28, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1722288434}
@@ -20267,7 +20267,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!1 &1329263353
 GameObject:
   m_ObjectHideFlags: 0
@@ -22840,14 +22840,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495888093}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427115027}
   - {fileID: 1301698131}
-  m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 12
+  m_Father: {fileID: 2029153230}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28055,14 +28055,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822848827}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1975821532}
   - {fileID: 694343208}
-  m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 15
+  m_Father: {fileID: 2029153230}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31693,6 +31693,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2021925754}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2029153229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029153230}
+  m_Layer: 5
+  m_Name: Cards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2029153230
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029153229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.78749, y: 0.8060373, z: 1}
+  m_Children:
+  - {fileID: 807373189}
+  - {fileID: 1495888094}
+  - {fileID: 816560723}
+  - {fileID: 317049904}
+  - {fileID: 1822848828}
+  m_Father: {fileID: 2205872309884757911}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -99}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2031063706
 GameObject:
   m_ObjectHideFlags: 0
@@ -37217,6 +37257,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2031063707}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a2355bc3333e6b143803a21c5913f301,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2205872309880793865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37366,11 +37418,7 @@ RectTransform:
   - {fileID: 8916641833365612454}
   - {fileID: 1177432845}
   - {fileID: 279553252}
-  - {fileID: 807373189}
-  - {fileID: 1495888094}
-  - {fileID: 816560723}
-  - {fileID: 317049904}
-  - {fileID: 1822848828}
+  - {fileID: 2029153230}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37532,6 +37580,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2031063707}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a2355bc3333e6b143803a21c5913f301,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -74936,7 +74996,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667374243813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74988,7 +75048,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667382271101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75090,7 +75150,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667432351380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75142,7 +75202,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667436939036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75194,7 +75254,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667446374595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75346,7 +75406,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667469938883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75398,7 +75458,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667485663589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75500,7 +75560,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667528560628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75602,7 +75662,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667582212017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75654,7 +75714,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667582756400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75856,7 +75916,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667636704367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75958,7 +76018,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667652648886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76010,7 +76070,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667672891253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76062,7 +76122,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667691120019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76614,7 +76674,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667929383250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76666,7 +76726,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667943676987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76718,7 +76778,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667944653613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76820,7 +76880,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667979810313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76872,7 +76932,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667985419224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76974,7 +77034,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172667996513946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77026,7 +77086,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668004845611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77078,7 +77138,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668013586921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77130,7 +77190,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668020934904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77317,7 +77377,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668112832286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77369,7 +77429,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668114831290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77421,7 +77481,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668133980681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77473,7 +77533,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668144795760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77525,7 +77585,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668175720838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77577,7 +77637,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668198368704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77629,7 +77689,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668223550101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77681,7 +77741,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668226273469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77733,7 +77793,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668229222947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77785,7 +77845,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668237892936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77837,7 +77897,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668277606984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77889,7 +77949,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668299382320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77941,7 +78001,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668303559659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78143,7 +78203,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668327026807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78245,7 +78305,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668362685621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78297,7 +78357,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668377254815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78349,7 +78409,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668408238091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78451,7 +78511,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668431711662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78703,7 +78763,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!65 &8296172668611997809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78768,7 +78828,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668629508083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78820,7 +78880,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668632768620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78872,7 +78932,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668641397235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78974,7 +79034,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668653456411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79126,7 +79186,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668773157893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79228,7 +79288,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668842997365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79380,7 +79440,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668914598755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79432,7 +79492,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668932574598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79534,7 +79594,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668948592283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79586,7 +79646,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172668986080152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79638,7 +79698,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669012422856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79890,7 +79950,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669079165977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79942,7 +80002,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669095086920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80044,7 +80104,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669119994265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80096,7 +80156,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669124441930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80148,7 +80208,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669125814896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80200,7 +80260,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669132293668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80252,7 +80312,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669154208452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80504,7 +80564,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669256086586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80556,7 +80616,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669285952937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80608,7 +80668,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669301223471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80660,7 +80720,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669314705302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80812,7 +80872,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669338796030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80864,7 +80924,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669361845555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80916,7 +80976,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669373278133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80968,7 +81028,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669435010323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81020,7 +81080,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669457606670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81122,7 +81182,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669473487613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81174,7 +81234,7 @@ MonoBehaviour:
   allPieces: {fileID: 1585835860}
   newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
-  numar: 0
+  numar: -1
 --- !u!114 &8296172669475345813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82756,6 +82816,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2031063707}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a2355bc3333e6b143803a21c5913f301,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8916641832126587277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83149,6 +83221,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2031063707}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a2355bc3333e6b143803a21c5913f301,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8916641832850750094
 GameObject:
   m_ObjectHideFlags: 0
@@ -83409,7 +83493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1205.4688, y: -0.24996948}
+  m_AnchoredPosition: {x: 1186, y: -109}
   m_SizeDelta: {x: 170.4, y: 55.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8916641833277000230
@@ -83807,7 +83891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1278.0688, y: 431.75}
+  m_AnchoredPosition: {x: 1262, y: 431.75}
   m_SizeDelta: {x: 170.4, y: 55.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8916641834058067278
