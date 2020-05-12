@@ -65,8 +65,8 @@ public class ChangeTexture : MonoBehaviour
 
                 }
             }
-            else
-                Debug.Log("Null");
+           // else
+           //     Debug.Log("Null");
         }
     }
 }
