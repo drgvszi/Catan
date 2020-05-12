@@ -19,7 +19,7 @@ public class TileGraph {
         setIndexes();
         createAdjacencyMatrix();
         createAdjacencyLists();
-        // printAdjacencyLists();
+        printAdjacencyLists();
     }
 
     public List<Integer> getRing(Integer ring) {
@@ -51,7 +51,7 @@ public class TileGraph {
     }
 
     private void createAdjacencyMatrix() {
-        for (int i = 1; i < 6; ++i) {
+        for (int i = 1; i <= 6; ++i) {
             adjacencyMatrix[0][i] = true;
             adjacencyMatrix[i][0] = true;
         }
