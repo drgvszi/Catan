@@ -114,6 +114,10 @@ public class Board {
         return adjacentIntersectionsToTiles;
     }
 
+    public List<Integer> getAdjacentIntersections(int tile) {
+        return adjacentIntersectionsToTiles.get(tile);
+    }
+
     public List<Intersection> getAdjacentIntersections(Tile tile) {
         List<Intersection> adjacentIntersections = new ArrayList<>();
         List<Integer> intersectionsId = adjacentIntersectionsToTiles.get(tile.getId());
@@ -397,9 +401,9 @@ public class Board {
                 while (frequency[random] <= 0) {
                     random = (int) (Math.random() * ((max - min) + 1)) + min;
                 }
-                ports.add(index, Port.values()[random]);
+                ports.set(index, Port.values()[random]);
                 int nextIndex = index + 1;
-                ports.add(nextIndex, Port.values()[random]);
+                ports.set(nextIndex, Port.values()[random]);
                 frequency[random]--;
             }
             index += addValue;

@@ -335,6 +335,14 @@ public class Player {
         return null;
     }
 
+    public Code removeDevelopment(Development development) {
+        if (!hasDevelopment(development)) {
+            return Helper.getPlayerNoDevelopmentFromDevelopment(development);
+        }
+        developments.put(development, developments.get(development) - 1);
+        return null;
+    }
+
     //endregion
 
     //region Steal
