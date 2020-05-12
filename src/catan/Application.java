@@ -30,7 +30,7 @@ public class Application {
         try {
             ConnectivitySimulation connectivity = new ConnectivitySimulation();
             connectivity.simulation();
-        } catch (InterruptedException | IOException exception) {
+        } catch (IOException exception) {
             exception.printStackTrace();
         }
     }

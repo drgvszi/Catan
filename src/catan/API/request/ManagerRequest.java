@@ -143,7 +143,7 @@ public class ManagerRequest implements GameRequest {
                 }
                 return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.", null);
             }
-            case "getRanking":
+            case "getRanking": {
                 if (requestJson == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
                 }
@@ -157,6 +157,23 @@ public class ManagerRequest implements GameRequest {
                 }
                 String responseJson = new ObjectMapper().writeValueAsString(game.getRankingResult());
                 return new ManagerResponse(HttpStatus.SC_OK, "Here is the current ranking.", responseJson);
+            }
+            case "endGame": {
+                if (requestJson == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
+                }
+                String gameId = requestJson.get("gameId");
+                Game game = Application.games.get(gameId);
+                if (game == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
+                }
+                if (game.getBank() == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has not started yet.", null);
+                }
+                //TODO
+                Application.games.remove(gameId);
+                return new ManagerResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
+            }
             default:
                 return new ManagerResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest), command);
         }

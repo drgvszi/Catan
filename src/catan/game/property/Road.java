@@ -47,6 +47,7 @@ public class Road extends Property {
     }
 
     public boolean connectsToRoad(int start, int end) {
+
         return getCommonIntersection(start, end) != -1;
     }
 

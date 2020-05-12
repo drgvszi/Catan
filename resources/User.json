@@ -438,7 +438,7 @@
   {
     "gameId": "gameId",
     "playerId": "playerId",
-    "command": "buildRoad",
+    "command": "buildDevelopmentRoad",
     "arguments":
     {
       "start": "number of first intersection",
