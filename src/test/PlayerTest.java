@@ -122,17 +122,88 @@ public class PlayerTest {
         assertEquals(player.getRoads().get(player.getRoads().size()-1),road1);
     }
 
-    @DisplayName("Check add resource")
+    @DisplayName("Verificam ca atunci cand un player este initializat acesta sa aiba atributele necesare")
     @Test
-    void TestAdd() {
+    void TestAddAndRemove() {
         BaseGame game = new BaseGame();
         Player player = new Player("Toderas", game);
+        Development development = Development.victoryPoint;
+
+        //add resources
         for (Resource resource : Resource.values()) {
-            if (resource != Resource.desert) {
+            if(!resource.toString().equalsIgnoreCase("desert"))
+            {
                 player.addResource(resource, 4);
                 assertEquals(4, player.getResourcesNumber(resource));
             }
         }
+        // development functions
+        assertNull( player.canBuyDevelopment() );
+        assertNull( player.buyDevelopment(development) );
+
+        //get hiddenVP
+        assertEquals(1,player.getHiddenVictoryPoints());
+
+        //remove function
+        assertEquals(3, player.getResourcesNumber(Resource.wool));
+        assertEquals(3, player.getResourcesNumber(Resource.grain));
+        assertEquals(3, player.getResourcesNumber(Resource.ore));
+
+        // add development
+        development = Development.monopoly;
+        assertNull( player.buyDevelopment(development) );
+        assertEquals(1,player.getDevelopmentsNumber(development));
+
+        // add road/settlements/cities
+        Road road = new Road(new Intersection(22),new Intersection(23));
+        player.addRoad(road);
+        assertEquals(1,player.getRoadsNumber() );
+
+        player.addSettlement(new Intersection(22) );
+        player.addCity(new Intersection(23) );
+
+        assertEquals(1,player.getCitiesNumber() );
+        assertEquals(1,player.getSettlementsNumber() );
+    }
+
+    @DisplayName("Verificarea metodelor din settlement region")
+    @Test
+    void TestSettlements(){
+        BaseGame game = new BaseGame();
+        Player player = new Player("Toderas", game);
+
+        for (Resource resource : Resource.values()) {
+            if(!resource.toString().equalsIgnoreCase("desert"))
+            {
+                player.addResource(resource, 4);
+                assertEquals(4, player.getResourcesNumber(resource));
+            }
+        }
+
+        player.addRoad(new Road(new Intersection(22),new Intersection(23)));
+        assertNull(player.canBuySettlement(23));
+        assertNull(player.buySettlement());
+    }
+
+    @DisplayName("Verificare metodele pentru cities")
+    @Test
+    void TestCities(){
+        BaseGame game = new BaseGame();
+        Player player = new Player("Toderas", game);
+
+        for (Resource resource : Resource.values()) {
+            if(!resource.toString().equalsIgnoreCase("desert"))
+            {
+                player.addResource(resource, 4);
+                assertEquals(4, player.getResourcesNumber(resource));
+            }
+        }
+        player.addRoad(new Road(new Intersection(22),new Intersection(23)));
+        player.addSettlement(new Intersection(22));
+        assertNull(player.canBuyCity(22));
+        player.buildCity(new Intersection(22));
+        assertEquals(2,player.getVictoryPoints());
+
     }
 
 }
