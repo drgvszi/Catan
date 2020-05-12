@@ -123,8 +123,12 @@ public class Bank {
         return true;
     }
 
+    public boolean hasDevelopment(Development development, int developmentNumber) {
+        return developments.get(development) >= developmentNumber;
+    }
+
     public boolean hasDevelopment(Development development) {
-        return developments.get(development) > 0;
+        return hasDevelopment(development, 1);
     }
 
     public boolean hasDevelopment() {
@@ -146,6 +150,55 @@ public class Bank {
 
     public boolean hasCity(Player player) {
         return cities.get(player) > 0;
+    }
+
+    //endregion
+
+    //region Create
+
+    private void createResources() {
+        resources = new HashMap<>();
+        for (Resource resource : Resource.values()) {
+            if (resource != Resource.desert) {
+                resources.put(resource, Component.RESOURCES_BY_TYPE);
+            }
+        }
+    }
+
+    private void createDevelopments() {
+        developments = new HashMap<>();
+        developments.put(Development.knight, Component.KNIGHTS);
+        developments.put(Development.monopoly, Component.MONOPOLIES);
+        developments.put(Development.roadBuilding, Component.ROAD_BUILDINGS);
+        developments.put(Development.yearOfPlenty, Component.YEARS_OF_PLENTY);
+        developments.put(Development.victoryPoint, Component.VICTORY_POINTS);
+    }
+
+    private void createProperties() {
+        createRoads();
+        createSettlements();
+        createCities();
+    }
+
+    private void createRoads() {
+        roads = new HashMap<>();
+        for (Player player : players) {
+            roads.put(player, Component.ROADS);
+        }
+    }
+
+    private void createSettlements() {
+        settlements = new HashMap<>();
+        for (Player player : players) {
+            settlements.put(player, Component.SETTLEMENTS);
+        }
+    }
+
+    private void createCities() {
+        cities = new HashMap<>();
+        for (Player player : players) {
+            cities.put(player, Component.CITIES);
+        }
     }
 
     //endregion
@@ -205,7 +258,8 @@ public class Bank {
                 if (result != null) {
                     return result;
                 }
-            } else if (resourceNumber > 1) {
+            }
+            else if (resourceNumber > 1) {
                 result = removeResource(resource, resourceNumber);
                 if (result != null) {
                     return result;
@@ -245,53 +299,6 @@ public class Bank {
         }
         cities.put(player, cities.get(player) - 1);
         return null;
-    }
-
-    //endregion
-
-    //region Create
-
-    private void createResources() {
-        resources = new HashMap<>();
-        for (Resource resource : Resource.values()) {
-            resources.put(resource, Component.RESOURCES_BY_TYPE);
-        }
-    }
-
-    private void createDevelopments() {
-        developments = new HashMap<>();
-        developments.put(Development.knight, Component.KNIGHTS);
-        developments.put(Development.monopoly, Component.MONOPOLIES);
-        developments.put(Development.roadBuilding, Component.ROAD_BUILDINGS);
-        developments.put(Development.yearOfPlenty, Component.YEARS_OF_PLENTY);
-        developments.put(Development.victoryPoint, Component.VICTORY_POINTS);
-    }
-
-    private void createProperties() {
-        createRoads();
-        createSettlements();
-        createCities();
-    }
-
-    private void createRoads() {
-        roads = new HashMap<>();
-        for (Player player : players) {
-            roads.put(player, Component.ROADS);
-        }
-    }
-
-    private void createSettlements() {
-        settlements = new HashMap<>();
-        for (Player player : players) {
-            settlements.put(player, Component.SETTLEMENTS);
-        }
-    }
-
-    private void createCities() {
-        cities = new HashMap<>();
-        for (Player player : players) {
-            cities.put(player, Component.CITIES);
-        }
     }
 
     //endregion
