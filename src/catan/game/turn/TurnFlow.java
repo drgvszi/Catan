@@ -532,7 +532,6 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.changeTurn(1)) {
-                    fsm.ProcessFSM("restart");
                     response = new UserResponse(HttpStatus.SC_OK, "The turn was changed successfully.", null);
                 } else {
                     fsm.ProcessFSM("end");

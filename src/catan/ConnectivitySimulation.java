@@ -283,7 +283,6 @@ public class ConnectivitySimulation {
         update(gameId, playerIds.get(0));
 
         for (int i = 0; i < 2; ++i) {
-            //TODO: nu functioneaza a doua tura, din playTurn.ProcessFSM nu mai intra in action "rollDice"
             rollDice(gameId, playerIds.get(0));
             discardResources(gameId, playerIds.get(0), null);
             moveRobber(gameId, playerIds.get(0), 3);
