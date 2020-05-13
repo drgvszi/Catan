@@ -157,6 +157,26 @@ public class ManagerRequest implements GameRequest {
                 String responseJson = new ObjectMapper().writeValueAsString(game.getRankingResult());
                 return new ManagerResponse(HttpStatus.SC_OK, "Here is the current ranking.", responseJson);
             }
+            case "changePlayerStatus":{
+                if (requestJson == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
+                }
+                String gameId = requestJson.get("gameId");
+                String playerId= requestJson.get("playerId");
+                boolean active = Boolean.parseBoolean(requestJson.get("active"));
+                Game game = Application.games.get(gameId);
+                if (game == null)
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
+                Player player = game.getPlayer(playerId);
+                if(player==null)
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
+                if(active==player.isActive())
+                    return new ManagerResponse(HttpStatus.SC_OK, "No change has been made.", null);
+                player.setActive(active);
+                if(game.getCurrentPlayer().getId().equals(playerId) && !active)
+                    game.changeTurn(1);
+                return new ManagerResponse(HttpStatus.SC_OK, "The change has been made.", null);
+            }
             case "endGame": {
                 if (requestJson == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);

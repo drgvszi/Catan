@@ -41,7 +41,6 @@ public abstract class Game {
 
     protected boolean inDiscardState;
 
-    protected Deque<GameResponse> logs;
 
     public Game() {
         bank = null;
@@ -62,7 +61,6 @@ public abstract class Game {
 
         inDiscardState = false;
 
-        logs = new ArrayDeque<>();
     }
 
     //region Getters
@@ -127,9 +125,6 @@ public abstract class Game {
         return inDiscardState;
     }
 
-    public Deque<GameResponse> getLogs() {
-        return logs;
-    }
 
     //endregion
 
@@ -187,9 +182,6 @@ public abstract class Game {
         this.inDiscardState = inDiscardState;
     }
 
-    public void setLogs(Deque<GameResponse> logs) {
-        this.logs = logs;
-    }
 
     //endregion
 

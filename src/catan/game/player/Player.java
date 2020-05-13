@@ -20,6 +20,7 @@ public class Player {
     private final String id;
     private final Game game;
     private TurnFlow turnFlow;
+    private boolean active;
 
     private Map<Resource, Integer> resources;
     private Map<Development, Integer> developments;
@@ -46,6 +47,7 @@ public class Player {
             exception.printStackTrace();
         }
 
+        active=true;
         resources = new HashMap<>();
         resources.put(Resource.lumber, 0);
         resources.put(Resource.wool, 0);
@@ -74,6 +76,11 @@ public class Player {
     }
 
     // region Getters
+
+
+    public boolean isActive() {
+        return active;
+    }
 
     public String getId() {
         return id;
@@ -166,6 +173,11 @@ public class Player {
     //endregion
 
     //region Setters
+
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public void setTurnFlow(TurnFlow turnFlow) {
         this.turnFlow = turnFlow;

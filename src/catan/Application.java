@@ -27,11 +27,9 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
-        try {
-            ConnectivitySimulation connectivitySimulation = new ConnectivitySimulation();
-            connectivitySimulation.simulation();
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
+        Runnable connectivitySimulation = new ConnectivitySimulation();
+        new Thread(connectivitySimulation).start();
+        /*ConnectivitySimulation connectivitySimulation2 = new ConnectivitySimulation();
+        new Thread(connectivitySimulation2).start();*/
     }
 }
