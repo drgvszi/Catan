@@ -87,6 +87,15 @@ public class ConnectivitySimulation implements Runnable {
                 "endGame", requestJson));
     }
 
+    public ManagerResponse changePlayerStatus(String gameId, String playerId,boolean active) throws IOException {
+        Map<String, Object> request = new HashMap<>();
+        request.put("gameId", gameId);
+        request.put("playerId", playerId);
+        request.put("active", active);
+        String requestJson = new ObjectMapper().writeValueAsString(request);
+        return HttpClientPost.managerPost(new ManagerRequest(username, password,
+                "changePlayerStatus", requestJson));
+    }
     // endregion
 
     // region User
@@ -283,7 +292,7 @@ public class ConnectivitySimulation implements Runnable {
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
             update(gameId, playerIds.get(0));
-
+            changePlayerStatus(gameId,playerIds.get(0),false);
             for (int i = 0; i < 2; ++i) {
                 rollDice(gameId, playerIds.get(0));
                 discardResources(gameId, playerIds.get(0), null);
