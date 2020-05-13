@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,9 +26,9 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
-        Runnable connectivitySimulation = new ConnectivitySimulation();
-        new Thread(connectivitySimulation).start();
-        /*ConnectivitySimulation connectivitySimulation2 = new ConnectivitySimulation();
-        new Thread(connectivitySimulation2).start();*/
+        Runnable firstConnectivitySimulation = new ConnectivitySimulation();
+        new Thread(firstConnectivitySimulation).start();
+        ConnectivitySimulation secondConnectivitySimulation = new ConnectivitySimulation();
+        new Thread(secondConnectivitySimulation).start();
     }
 }

@@ -47,7 +47,7 @@ public class Player {
             exception.printStackTrace();
         }
 
-        active=true;
+        active = true;
         resources = new HashMap<>();
         resources.put(Resource.lumber, 0);
         resources.put(Resource.wool, 0);
@@ -78,10 +78,6 @@ public class Player {
     // region Getters
 
 
-    public boolean isActive() {
-        return active;
-    }
-
     public String getId() {
         return id;
     }
@@ -92,6 +88,10 @@ public class Player {
 
     public TurnFlow getTurnFlow() {
         return turnFlow;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
     public Map<Resource, Integer> getResources() {
@@ -175,12 +175,12 @@ public class Player {
     //region Setters
 
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
     public void setTurnFlow(TurnFlow turnFlow) {
         this.turnFlow = turnFlow;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public void setResources(Map<Resource, Integer> resources) {

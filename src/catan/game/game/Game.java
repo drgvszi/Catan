@@ -1,7 +1,6 @@
 package catan.game.game;
 
 import catan.API.response.Code;
-import catan.API.response.GameResponse;
 import catan.API.response.Messages;
 import catan.API.response.UserResponse;
 import catan.game.bank.Bank;
@@ -40,7 +39,6 @@ public abstract class Game {
     protected Pair<String, Integer> currentLongestRoad;
 
     protected boolean inDiscardState;
-
 
     public Game() {
         bank = null;
@@ -125,7 +123,6 @@ public abstract class Game {
         return inDiscardState;
     }
 
-
     //endregion
 
     //region Setters
@@ -181,7 +178,6 @@ public abstract class Game {
     public void setInDiscardState(boolean inDiscardState) {
         this.inDiscardState = inDiscardState;
     }
-
 
     //endregion
 

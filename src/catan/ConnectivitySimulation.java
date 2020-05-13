@@ -275,7 +275,8 @@ public class ConnectivitySimulation implements Runnable {
     public void run() {
         try {
             createGame("SettlersOfCatan");
-            setMaxPlayers(gameId, 2);
+            setMaxPlayers(gameId, 3);
+            addPlayer(gameId);
             addPlayer(gameId);
             addPlayer(gameId);
             setMaxPlayers(gameId, 1);
@@ -287,14 +288,19 @@ public class ConnectivitySimulation implements Runnable {
             buildRoad(gameId, playerIds.get(0), 19, 20);
             buildSettlement(gameId, playerIds.get(1), 40);
             buildRoad(gameId, playerIds.get(1), 41, 40);
+            buildSettlement(gameId, playerIds.get(2), 15);
+            buildRoad(gameId, playerIds.get(2), 15, 14);
 
+            buildSettlement(gameId, playerIds.get(2), 35);
+            buildRoad(gameId, playerIds.get(2), 34, 35);
             buildSettlement(gameId, playerIds.get(1), 10);
             buildRoad(gameId, playerIds.get(1), 10, 11);
             buildSettlement(gameId, playerIds.get(0), 30);
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
             update(gameId, playerIds.get(0));
-            changePlayerStatus(gameId,playerIds.get(0),false);
+            changePlayerStatus(gameId, playerIds.get(0), false);
+
             for (int i = 0; i < 2; ++i) {
                 rollDice(gameId, playerIds.get(0));
                 discardResources(gameId, playerIds.get(0), null);
