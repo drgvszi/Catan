@@ -1,6 +1,7 @@
 package test;
 
 import catan.API.response.Code;
+import catan.game.enumeration.Development;
 import catan.game.enumeration.Port;
 import catan.game.enumeration.Resource;
 import catan.game.game.BaseGame;
@@ -8,14 +9,14 @@ import catan.game.game.Game;
 import catan.game.player.Player;
 import catan.game.rule.Component;
 import catan.game.rule.Cost;
+import javafx.util.Pair;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GameTest {
     private Game game;
@@ -128,6 +129,64 @@ public class GameTest {
 
         game.buildRoad(16, 17);
         assertNull(game.buyCity(17));
+    }
+
+    @DisplayName("Check use development")
+    @Test
+    public void useDevelopment() {
+        assertEquals(Code.PlayerNoKnight, game.useDevelopment(Development.knight));
+        game.getCurrentPlayer().addDevelopment(Development.knight);
+        assertNull(game.useDevelopment(Development.knight));
+        assertFalse(game.getCurrentPlayer().hasDevelopment(Development.knight));
+    }
+
+    @DisplayName("Check Monopoly")
+    @Test
+    public void takeResourceFromAll() {
+        assertEquals(Code.InvalidRequest, game.takeResourceFromAll("desert").getKey());
+        Map<String, Object> expectedResult = new HashMap<>();
+        int index = 0;
+        for (Player player : game.getPlayerOrder()) {
+            if (!player.equals(game.getCurrentPlayer())) {
+                player.addResource(Resource.brick, 2);
+                int resourcesNumber = player.getResourcesNumber(Resource.brick);
+                player.removeResource(Resource.brick, resourcesNumber);
+                game.getCurrentPlayer().addResource(Resource.brick, resourcesNumber);
+                expectedResult.put("player_" + index, player.getId());
+                expectedResult.put("resources_" + index, resourcesNumber);
+                ++index;
+            }
+        }
+        for (Player player : game.getPlayerOrder()) {
+            player.addResource(Resource.brick, 2);
+        }
+        assertEquals(new Pair<Code, Map<String, Object>>(null, expectedResult), game.takeResourceFromAll("brick"));
+    }
+
+    @DisplayName("Check YearOfPlenty")
+    @Test
+    public void takeTwoResources() {
+        assertEquals(Code.InvalidRequest, game.takeTwoResources("testStr1", "testStr2"));
+        assertEquals(Code.InvalidRequest, game.takeTwoResources("brick", "testStr2"));
+        assertEquals(Code.InvalidRequest, game.takeTwoResources("testStr1", "lumber"));
+
+        assertNull(game.takeTwoResources("brick", "lumber"));
+        game.getBank().removeResource(Resource.brick, game.getBank().getResourcesNumber(Resource.brick));
+
+        assertEquals(Code.BankNoBrick, game.takeTwoResources("brick", "lumber"));
+        assertEquals(Code.BankNoBrick, game.takeTwoResources("lumber", "brick"));
+        assertNull(game.takeTwoResources("lumber", "lumber"));
+    }
+
+    @DisplayName("Check discard resources")
+    @Test
+    public void discardResources() {
+        game.getCurrentPlayer().addResource(Resource.brick, 5);
+        Map<Resource, Integer> resources = new HashMap<>();
+        resources.put(Resource.brick, 5);
+        game.discardResources(game.getCurrentPlayer().getId(), resources);
+        assertFalse(game.getCurrentPlayer().hasResource());
+        assertEquals(Code.PlayerNotEnoughBrick, game.discardResources(game.getCurrentPlayer().getId(), resources));
     }
 
     @DisplayName("Check player trade")

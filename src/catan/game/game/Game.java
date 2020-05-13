@@ -865,7 +865,7 @@ public abstract class Game {
             return null;
         }
         Map<String, Object> result = new HashMap<>();
-        int index = 1;
+        int index = 0;
         for (String player : tradePartners) {
             result.put("player_" + index, player);
             ++index;
@@ -986,7 +986,7 @@ public abstract class Game {
         }
         Map<String, Object> players = new HashMap<>();
         List<Intersection> intersections = board.getAdjacentIntersections(tile);
-        int index = 1;
+        int index = 0;
         for (Intersection intersection : intersections) {
             Player player = intersection.getOwner();
             if (!(player == null || player.equals(currentPlayer))) {
@@ -1040,7 +1040,7 @@ public abstract class Game {
             return new Pair<>(Code.InvalidRequest, null);
         }
         Code code;
-        int index = 1;
+        int index = 0;
         Map<String, Object> result = new HashMap<>();
         for (Player player : playerOrder) {
             if (!player.equals(currentPlayer)) {
