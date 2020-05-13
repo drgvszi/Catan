@@ -173,6 +173,8 @@ public class ManagerRequest implements GameRequest {
                 if(active==player.isActive())
                     return new ManagerResponse(HttpStatus.SC_OK, "No change has been made.", null);
                 player.setActive(active);
+                if(game.getCurrentPlayer().getId().equals(playerId) && !active)
+                    game.changeTurn(1);
                 return new ManagerResponse(HttpStatus.SC_OK, "The change has been made.", null);
             }
             case "endGame": {
