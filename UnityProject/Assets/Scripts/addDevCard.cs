@@ -10,6 +10,7 @@ public class addDevCard : MonoBehaviour
 {
     public Text text;
     public int counter;
+    public GameObject pop;
 
 
     public void countPP()
