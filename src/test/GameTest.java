@@ -72,7 +72,7 @@ public class GameTest {
         player.addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
 
         assertNull(game.buyDevelopment());
-        assertEquals(game.buyDevelopment(), Code.PlayerNotEnoughWool);
+        assertEquals(game.buyDevelopment().getKey(), Code.PlayerNotEnoughWool);
     }
 
     @DisplayName("Check buy Road")
@@ -200,10 +200,15 @@ public class GameTest {
     @Test
     public void useDevelopment() {
         assertEquals(game.useDevelopment(Development.knight), Code.PlayerNoKnight);
+
         Player currentPlayer = game.getCurrentPlayer();
-        currentPlayer.addDevelopment(Development.knight);
-        assertNull(game.useDevelopment(Development.knight));
-        assertFalse(currentPlayer.hasDevelopment(Development.knight));
+        currentPlayer.addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
+        currentPlayer.addResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
+        currentPlayer.addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+        Pair<Code, Development> result = game.buyDevelopment();
+        assertNull(result.getKey());
+        assertNull(game.useDevelopment(result.getValue()));
+        assertFalse(currentPlayer.hasDevelopment(result.getValue()));
     }
 
     @DisplayName("Check Monopoly")

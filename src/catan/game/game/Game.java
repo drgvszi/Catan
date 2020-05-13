@@ -707,20 +707,24 @@ public abstract class Game {
 
     //region Buy
 
-    public Code buyDevelopment() {
+    public Pair<Code, Development> buyDevelopment() {
         if (!bank.hasDevelopment()) {
-            return Code.BankNoDevelopment;
+            return new Pair<>(Code.BankNoDevelopment, null);
         }
         Code code = currentPlayer.canBuyDevelopment();
         if (code != null) {
-            return code;
+            return new Pair<>(code, null);
         }
         Development development = getRandomDevelopment();
         code = bank.sellDevelopment(development);
         if (code != null) {
-            return code;
+            return new Pair<>(code, null);
         }
-        return currentPlayer.buyDevelopment(development);
+        code = currentPlayer.buyDevelopment(development);
+        if (code != null) {
+            return new Pair<>(code, null);
+        }
+        return new Pair<>(null, development);
     }
 
     protected Development getRandomDevelopment() {

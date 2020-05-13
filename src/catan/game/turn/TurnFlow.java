@@ -297,12 +297,16 @@ public class TurnFlow {
         fsm.setAction("buyDevelopment", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
-                Code code = game.buyDevelopment();
+                Pair<Code, Development> result = game.buyDevelopment();
+                Code code = result.getKey();
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
-                response = new UserResponse(HttpStatus.SC_OK, "The development was bought successfully.", null);
+                Map<String, Object> responseArguments = new HashMap<>();
+                responseArguments.put("development", result.getValue());
+                response = new UserResponse(HttpStatus.SC_OK, "The development was bought successfully.",
+                        responseArguments);
                 return true;
             }
         });

@@ -261,7 +261,10 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments": null
+    "arguments":
+    {
+      "development": "random bought development"
+    }
   },
   {
     "gameId": "gameId",
@@ -333,9 +336,9 @@
     "status": "message (success or error type)",
     "arguments": {
       "player_0": "playerId",
-      "resources_0": "number of resources to stole (integer)",
+      "resources_0": "number of resources to steal (integer)",
       "player_1": "playerId",
-      "resources_1": "number of resources to stole (integer)"
+      "resources_1": "number of resources to steal (integer)"
     }
   },
   {
