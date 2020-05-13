@@ -26,10 +26,11 @@ public class provizoriu : MonoBehaviour
 
     void OnMouseDown()
     {
-      
-        if(numar!=-1)
+        Text txt = FindTextFiel.find();
+
+        if (numar != -1)
         {
-            MakeRequestResponse command = new MakeRequestResponse(); 
+            MakeRequestResponse command = new MakeRequestResponse();
             command.gameId = LoginScript.CurrentUserGameId;
             command.playerId = LoginScript.CurrentUserGEId;
             command.intersection = numar;
@@ -38,13 +39,15 @@ public class provizoriu : MonoBehaviour
             {
                 req.code = Response.code;
                 req.status = Response.status;
-                if(req.code==200)
+                if (req.code == 200)
                 {
                     allPieces.SetActive(false);
                     AfiseazaDrum.afiseaza(newPiece, piece);
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
+
+                txt.text = req.status;
             }).Catch(err => { Debug.Log(err); });
 
 
@@ -71,11 +74,12 @@ public class provizoriu : MonoBehaviour
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
+                txt.text = req.status;
             }).Catch(err => { Debug.Log(err); });
         }
-        
-       
 
+
+        allPieces.SetActive(false);
     }
 
 }
