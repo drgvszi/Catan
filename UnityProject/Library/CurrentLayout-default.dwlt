@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 50176
+  controlID: 988
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 50062
+  controlID: 1075
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -187,16 +187,16 @@ MonoBehaviour:
     y: 0
     width: 1021
     height: 460
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 13}
   - {fileID: 11}
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 0
+  m_MaximizeOnPlay: 1
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -369,9 +369,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 38ccfeffaadbfeff7adcffff1ef2ffff4af9ffff763f000070480000e04a0000e84a0000164b0000984b0000
+      m_SelectedIDs: 0e3c0000
+      m_LastClickedID: 15374
+      m_ExpandedIDs: 6cfbffffa8430000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -684,9 +684,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 84030100
-    m_LastClickedID: 66436
-    m_ExpandedIDs: 00000000a6020100a8020100aa020100ac020100ae020100b0020100b2020100b4020100b6020100b8020100ba020100bc020100be020100c0020100c2020100c4020100c6020100c8020100d0020100d2020100d4020100d602010000ca9a3b
+    m_SelectedIDs: 46fc0000
+    m_LastClickedID: 64582
+    m_ExpandedIDs: 00000000c8fb0000cafb0000ccfb0000cefb0000d0fb0000d2fb0000d4fb0000d6fb0000d8fb0000dafb0000dcfb0000defb0000e0fb0000e2fb0000e4fb0000e6fb0000e8fb0000eafb0000ecfb0000eefb0000f0fb0000f2fb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -714,7 +714,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a6020100a8020100aa020100ac020100ae020100b0020100b2020100b4020100b6020100b8020100ba020100bc020100be020100c0020100c2020100c4020100c6020100c8020100d0020100d2020100d4020100d602010000ca9a3b
+    m_ExpandedIDs: 00000000c8fb0000cafb0000ccfb0000cefb0000d0fb0000d2fb0000d4fb0000d6fb0000d8fb0000dafb0000dcfb0000defb0000e0fb0000e2fb0000e4fb0000e6fb0000e8fb0000eafb0000ecfb0000eefb0000f0fb0000f2fb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009439000032e2000050e200005adf0000e0030100da3d000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -78792
+  m_LastSelectedObjectID: 15374
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -862,4 +862,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 435
