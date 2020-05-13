@@ -3,28 +3,22 @@
     "username": "username",
     "password": "password",
     "command": "newGame",
-    "arguments":
-    {
+    "arguments": {
       "scenario": "SettlersOfCatan"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "gameId": "gameId"
     }
   },
-
-
-
   {
     "username": "username",
     "password": "password",
     "command": "setMaxPlayers",
-    "arguments":
-    {
+    "arguments": {
       "gameId": "gameId",
       "maxPlayers": "a number between 3 and 6"
     }
@@ -34,64 +28,49 @@
     "status": "message (success or error type)",
     "arguments": ""
   },
-
-
-
   {
     "username": "username",
     "password": "password",
     "command": "addPlayer",
-    "arguments":
-    {
+    "arguments": {
       "gameId": "gameId"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "playerId": "playerId"
     }
   },
-
-
-
   {
     "username": "username",
     "password": "password",
     "command": "startGame",
-    "arguments":
-    {
+    "arguments": {
       "gameId": "gameId"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "board": "array of tiles",
       "ports": "array of intersections"
     }
   },
-
-
-
   {
     "username": "username",
     "password": "password",
     "command": "getRanking",
-    "arguments":
-    {
+    "arguments": {
       "gameId": "gameId"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "player_1": "playerId",
       "publicScore_1": 3,
       "hiddenScore_1": 5,
@@ -104,15 +83,11 @@
       "foundWinner": false
     }
   },
-
-
-
   {
     "username": "username",
     "password": "password",
     "command": "endGame",
-    "arguments":
-    {
+    "arguments": {
       "gameId": "gameId"
     }
   },

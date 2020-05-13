@@ -4,12 +4,11 @@ import catan.API.response.Code;
 import catan.API.response.ManagerResponse;
 import catan.API.response.Messages;
 import catan.Application;
-import catan.game.player.Player;
 import catan.game.game.BaseGame;
 import catan.game.game.Game;
+import catan.game.player.Player;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.apache.http.HttpStatus;
 
 import java.util.HashMap;

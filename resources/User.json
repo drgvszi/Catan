@@ -3,8 +3,7 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buildSettlement",
-    "arguments":
-    {
+    "arguments": {
       "intersection": "number of intersection"
     }
   },
@@ -13,15 +12,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buildRoad",
-    "arguments":
-    {
+    "arguments": {
       "start": "number of first intersection",
       "end": "number of last intersection"
     }
@@ -31,15 +26,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buildSettlement",
-    "arguments":
-    {
+    "arguments": {
       "intersection": "number of intersection"
     }
   },
@@ -54,15 +45,11 @@
       "ore": "number of received ores"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buildRoad",
-    "arguments":
-    {
+    "arguments": {
       "start": "number of first intersection",
       "end": "number of last intersection"
     }
@@ -72,9 +59,6 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
@@ -84,8 +68,7 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "dice_1": "a number between 1 and 6",
       "dice_2": "a number between 1 and 6",
       "player_1": "playerId",
@@ -104,15 +87,11 @@
       "resourcesToDiscard_2": "0 or half (rounded down) if rolled seven and has 8 or more resources"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "discardResources",
-    "arguments":
-    {
+    "arguments": {
       "lumber": "number of lumbers to discard",
       "wool": "number of wools to discard",
       "grain": "number of grains to discard",
@@ -123,61 +102,46 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "sentAll": "true or false"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "moveRobber",
-    "arguments":
-    {
+    "arguments": {
       "tile": "a number between 0 and 18"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "1": "playerId from which to steal a resource",
       "2": "playerId from which to steal a resource"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "stealResource",
-    "arguments":
-    {
+    "arguments": {
       "player": "playerId"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "resource": "stolen resource"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "playerTrade",
-    "arguments":
-    {
+    "arguments": {
       "lumber_o": "number of lumbers to offer",
       "wool_o": "number of wools to offer",
       "grain_o": "number of grains to offer",
@@ -195,9 +159,6 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
@@ -209,9 +170,6 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
@@ -221,21 +179,16 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "player_1": "playerId",
       "player_2": "playerId"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "selectPartner",
-    "arguments":
-    {
+    "arguments": {
       "player": "player Id"
     }
   },
@@ -244,15 +197,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "noPlayerTrade",
-    "arguments":
-    {
+    "arguments": {
       "port": "-1 if with bank or the number of the intersection of a port",
       "offer": "offered resource",
       "request": "requested resource"
@@ -263,15 +212,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-  
-  
-  
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buyRoad",
-    "arguments":
-    {
+    "arguments": {
       "start": "number of first intersection",
       "end": "number of last intersection"
     }
@@ -281,15 +226,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-  
-  
-  
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buySettlement",
-    "arguments":
-    {
+    "arguments": {
       "intersection": "number of intersection"
     }
   },
@@ -298,15 +239,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buyCity",
-    "arguments":
-    {
+    "arguments": {
       "intersection": "number of intersection"
     }
   },
@@ -315,9 +252,6 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-  
-  
-  
   {
     "gameId": "gameId",
     "playerId": "playerId",
@@ -329,15 +263,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-  
-  
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "useDevelopment",
-    "arguments":
-    {
+    "arguments": {
       "development": "knight"
     }
   },
@@ -350,16 +280,14 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "moveRobber",
-    "arguments":
-    {
+    "arguments": {
       "tile": "a number between 0 and 18"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "player_1": "playerId from which to steal a resource",
       "player_2": "playerId from which to steal a resource"
     }
@@ -368,28 +296,22 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "stealResource",
-    "arguments":
-    {
+    "arguments": {
       "player": "playerId"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "resource": "stolen resource"
     }
   },
-  
-  
-  
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "useDevelopment",
-    "arguments":
-    {
+    "arguments": {
       "development": "monopoly"
     }
   },
@@ -402,31 +324,25 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "takeResourceFromAll",
-    "arguments":
-    {
+    "arguments": {
       "resource": "requested resource"
     }
   },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "player_1": "playerId",
       "resources_1": "number of resources to stole",
       "player_2": "playerId",
       "resources_2": "number of resources to stole"
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "useDevelopment",
-    "arguments":
-    {
+    "arguments": {
       "development": "RoadBuilding"
     }
   },
@@ -439,8 +355,7 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buildDevelopmentRoad",
-    "arguments":
-    {
+    "arguments": {
       "start": "number of first intersection",
       "end": "number of last intersection"
     }
@@ -454,8 +369,7 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "buildDevelopmentRoad",
-    "arguments":
-    {
+    "arguments": {
       "start": "number of first intersection",
       "end": "number of last intersection"
     }
@@ -465,15 +379,11 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "useDevelopment",
-    "arguments":
-    {
+    "arguments": {
       "development": "yearOfPlenty"
     }
   },
@@ -486,8 +396,7 @@
     "gameId": "gameId",
     "playerId": "playerId",
     "command": "takeTwoResources",
-    "arguments":
-    {
+    "arguments": {
       "resource_1": "first requested resource",
       "resource_2": "second requested resource"
     }
@@ -497,36 +406,44 @@
     "status": "message (success or error type)",
     "arguments": null
   },
-
-
-
   {
-  "gameId": "gameId",
-  "playerId": "playerId",
-  "command": "update",
-  "arguments": null
-},
+    "gameId": "gameId",
+    "playerId": "playerId",
+    "command": "update",
+    "arguments": null
+  },
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "canBuyRoad": true,
       "canBuySettlement": true,
       "canBuyCity": false,
-      "canBuyDevelopment": false ,
-      "availableSettlementPositions" : [5, 15],
-      "availableCityPositions": [2, 4],
-      "availableRoadPositions": [[4, 5], [52, 53]],
+      "canBuyDevelopment": false,
+      "availableSettlementPositions": [
+        5,
+        15
+      ],
+      "availableCityPositions": [
+        2,
+        4
+      ],
+      "availableRoadPositions": [
+        [
+          4,
+          5
+        ],
+        [
+          52,
+          53
+        ]
+      ],
       "hasLargestArmy": false,
       "hasLongestRoad": false,
       "publicScore": 2,
       "hiddenScore": 2
     }
   },
-
-
-
   {
     "gameId": "gameId",
     "playerId": "playerId",
@@ -536,6 +453,6 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments" : null
+    "arguments": null
   }
 ]

@@ -1,7 +1,6 @@
 package catan.API.request;
 
 import catan.API.response.GameResponse;
-import catan.API.response.UserResponse;
 import catan.util.RandomString;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

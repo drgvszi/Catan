@@ -4,6 +4,7 @@ import catan.game.bank.Bank;
 import catan.game.enumeration.Development;
 import catan.game.enumeration.Resource;
 import catan.game.game.BaseGame;
+import catan.game.game.Game;
 import catan.game.player.Player;
 import catan.game.rule.Component;
 import catan.game.rule.Cost;
@@ -16,7 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankTest {
-    private BaseGame game;
+    private Game game;
     private List<Player> players;
     private Bank bank;
 

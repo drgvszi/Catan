@@ -28,7 +28,7 @@ public class ConnectivitySimulation {
         Map<String, Object> request = new HashMap<>();
         request.put("scenario", scenario);
         String requestJson = new ObjectMapper().writeValueAsString(request);
-        ManagerResponse response =  HttpClientPost.managerPost(new ManagerRequest(username, password,
+        ManagerResponse response = HttpClientPost.managerPost(new ManagerRequest(username, password,
                 "newGame", requestJson));
         if (response.getCode() == HttpStatus.SC_OK) {
             Map<String, String> arguments = GameRequest.getMapFromData(response.getArguments());
@@ -131,7 +131,7 @@ public class ConnectivitySimulation {
     //region Robber
 
     public UserResponse moveRobber(String gameId, String playerId,
-                                         int tile) throws IOException {
+                                   int tile) throws IOException {
         Map<String, Object> request = new HashMap<>();
         request.put("tile", tile);
         return HttpClientPost.userPost(new UserRequest(gameId, playerId, "moveRobber", request));
@@ -283,6 +283,7 @@ public class ConnectivitySimulation {
         update(gameId, playerIds.get(0));
 
         for (int i = 0; i < 2; ++i) {
+            //TODO: nu functioneaza a doua tura, din playTurn.ProcessFSM nu mai intra in action "rollDice"
             rollDice(gameId, playerIds.get(0));
             discardResources(gameId, playerIds.get(0), null);
             moveRobber(gameId, playerIds.get(0), 3);
@@ -300,7 +301,7 @@ public class ConnectivitySimulation {
             buyDevelopment(gameId, playerIds.get(0));
             useDevelopment(gameId, playerIds.get(0), "roadBuilding");
             buildDevelopmentRoad(gameId, playerIds.get(0), 2, 3);
-            takeResourceFromAll(gameId, playerIds.get(0), "ores");
+            takeResourceFromAll(gameId, playerIds.get(0), "desert");
             takeTwoResources(gameId, playerIds.get(0), "wool", "lumber");
 
             buildRoad(gameId, playerIds.get(0), 20, 30);

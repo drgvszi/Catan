@@ -367,7 +367,7 @@ public class Player {
 
     public Code hasDevelopmentResources() {
         if (resources.get(Resource.wool) < Cost.DEVELOPMENT_WOOL) {
-            return Code.PlayerNotEnoughGrain;
+            return Code.PlayerNotEnoughWool;
         }
         if (resources.get(Resource.grain) < Cost.DEVELOPMENT_GRAIN) {
             return Code.PlayerNotEnoughGrain;
@@ -392,26 +392,16 @@ public class Player {
     }
 
     private Code removeDevelopmentResources() {
-        if (hasResource(Resource.grain) && hasResource(Resource.wool) && hasResource(Resource.ore)) {
-            Code code = removeResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
-            if (code != null) {
-                return code;
-            }
-            code = removeResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
-            if (code != null) {
-                return code;
-            }
-            code = removeResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+        Code code = removeResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
+        if (code != null) {
             return code;
-        } else {
-            if (!hasResource(Resource.grain))
-                return Code.PlayerNotEnoughGrain;
-            if (!hasResource(Resource.wool))
-                return Code.PlayerNotEnoughWool;
-            if (!hasResource(Resource.ore))
-                return Code.PlayerNotEnoughOre;
         }
-        return null;
+        code = removeResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
+        if (code != null) {
+            return code;
+        }
+        code = removeResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+        return code;
     }
 
     //endregion
@@ -426,22 +416,7 @@ public class Player {
         if (result != null) {
             return result;
         }
-        if(connectsToIntersection(start,end)){
-            return null;
-        }
         return connectsToRoad(start, end);
-    }
-
-    private boolean connectsToIntersection(int start, int end) {
-        for(Intersection intersection:settlements)
-            if(start==intersection.getId()||end==intersection.getId())
-                return true;
-
-        for(Intersection intersection:cities){
-            if(start==intersection.getId()||end==intersection.getId())
-                return true;
-        }
-        return false;
     }
 
     public Code hasRoadResources() {
@@ -580,6 +555,7 @@ public class Player {
 
     public void buildCity(Intersection intersection) {
         removeSettlement(intersection);
+        intersection.setOwner(this);
         addCity(intersection);
         publicVictoryPoints += 2;
     }

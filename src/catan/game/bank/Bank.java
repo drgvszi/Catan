@@ -258,8 +258,7 @@ public class Bank {
                 if (result != null) {
                     return result;
                 }
-            }
-            else if (resourceNumber > 1) {
+            } else if (resourceNumber > 1) {
                 result = removeResource(resource, resourceNumber);
                 if (result != null) {
                     return result;

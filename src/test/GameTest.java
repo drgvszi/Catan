@@ -1,8 +1,6 @@
 package test;
 
 import catan.API.response.Code;
-import catan.game.bank.Bank;
-import catan.game.enumeration.Development;
 import catan.game.enumeration.Port;
 import catan.game.enumeration.Resource;
 import catan.game.game.BaseGame;
@@ -13,254 +11,184 @@ import catan.game.rule.Cost;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class GameTest {
+    private Game game;
 
-    @DisplayName("Check valid settlement placing")
-    @Test
-    public void validSettlement() {
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addNextPlayer("a");
+    public GameTest() {
+        game = new BaseGame();
+        game.addPlayer("Ana", new Player("Ana", game));
+        game.addPlayer("Maria", new Player("Maria", game));
+        game.addNextPlayer("Ana");
+        game.addNextPlayer("Maria");
         game.startGame();
-        assertNull(game.buildSettlement(15));
-        assertSame(game.buildSettlement(15), Code.IntersectionAlreadyOccupied);
-        assertSame(game.buildSettlement(99), Code.InvalidSettlementPosition);
-        assertSame(game.buildSettlement(16), Code.DistanceRuleViolated);
     }
-    @DisplayName("Check valid road placing")
+
+    @DisplayName("Check build road")
     @Test
-    public void validRoad() {
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addNextPlayer("a");
-        game.startGame();
+    public void buildRoad() {
+        assertEquals(game.buildRoad(5, 6), Code.InvalidRoadPosition);
         game.buildSettlement(15);
-        assertNull(game.buildRoad(15,16));
-        assertSame(game.buildRoad(15,16),Code.RoadAlreadyExistent);
-        assertSame(game.buildRoad(17,10), Code.InvalidRoadPosition);
-        assertNull(game.buildRoad(16,17));
-        assertSame(game.buildRoad(5,6),Code.InvalidRoadPosition);
+        assertNull(game.buildRoad(15, 16));
+        assertEquals(game.buildRoad(15, 16), Code.RoadAlreadyExistent);
+        assertEquals(game.buildRoad(17, 10), Code.InvalidRoadPosition);
+        assertNull(game.buildRoad(16, 17));
     }
-    @DisplayName("Check valid settlement buy")
+
+    @DisplayName("Check build settlement")
     @Test
-    public void settlementBuy() {
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addNextPlayer("a");
-        game.startGame();
+    public void buildSettlement() {
+        assertNull(game.buildSettlement(15));
+        assertEquals(game.buildSettlement(60), Code.InvalidSettlementPosition);
+        assertEquals(game.buildSettlement(15), Code.IntersectionAlreadyOccupied);
+        assertEquals(game.buildSettlement(16), Code.DistanceRuleViolated);
+    }
 
+    @DisplayName("Check buy development")
+    @Test
+    public void buyDevelopment() {
+        Player player = game.getPlayer("Ana");
+        player.addResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
+        player.addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
+        player.addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+
+        assertNull(game.buyDevelopment());
+        assertEquals(game.buyDevelopment(), Code.PlayerNotEnoughWool);
+    }
+
+    @DisplayName("Check buy Road")
+    @Test
+    public void buyRoad() {
+        game.buildSettlement(15);
+        game.buildRoad(15, 14);
+
+        Player player = game.getPlayer("Ana");
+        player.addResource(Resource.lumber, Cost.ROAD_LUMBER);
+        player.addResource(Resource.brick, Cost.ROAD_BRICK);
+
+        assertNull(game.buyRoad(15, 16));
+        assertEquals(game.buyRoad(15, 16), Code.PlayerNotEnoughLumber);
+
+        player.addResource(Resource.lumber, Cost.ROAD_LUMBER);
+        assertEquals(game.buyRoad(15, 16), Code.PlayerNotEnoughBrick);
+    }
+
+    @DisplayName("Check buy settlement")
+    @Test
+    public void buySettlement() {
         game.buildSettlement(17);
-        game.buildRoad(16,17);
-        game.buildRoad(15,16);
+        game.buildRoad(16, 17);
+        game.buildRoad(15, 16);
+        game.buildRoad(15, 14);
 
-        game.getPlayer("a").addResource(Resource.lumber,1);
-        game.getPlayer("a").addResource(Resource.grain,1);
-        game.getPlayer("a").addResource(Resource.brick,1);
-        game.getPlayer("a").addResource(Resource.wool,1);
+        Player player = game.getPlayer("Ana");
+        player.addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
+        player.addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
+        player.addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
+        player.addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
 
         assertNull(game.buySettlement(15));
 
-        game.getPlayer("a").addResource(Resource.lumber,1);
-        game.getPlayer("a").addResource(Resource.grain,1);
-        game.getPlayer("a").addResource(Resource.brick,1);
-        game.getPlayer("a").addResource(Resource.wool,1);
+        player.addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
+        player.addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
+        player.addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
+        player.addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
 
-        assertSame(game.buySettlement(18),Code.NotConnectsToRoad);
-
-
+        assertEquals(game.buySettlement(18), Code.NotConnectsToRoad);
     }
-    @DisplayName("Check valid road buy")
+
+    @DisplayName("Check buy city")
     @Test
-    public void roadBuy() {
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addNextPlayer("a");
-        game.startGame();
-
+    public void buyCity() {
         game.buildSettlement(15);
+        game.buildRoad(15, 16);
 
-        game.getPlayer("a").addResource(Resource.lumber,1);
-        game.getPlayer("a").addResource(Resource.brick,1);
-
-        assertNull(game.buyRoad(15,16));
-        assertSame(game.buyRoad(15,16),Code.PlayerNotEnoughLumber);
-        game.getPlayer("a").addResource(Resource.lumber,1);
-        assertSame(game.buyRoad(15,16),Code.PlayerNotEnoughBrick);
-
-    }
-    @DisplayName("Check valid city buy")
-    @Test
-    public void cityBuy() {
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addNextPlayer("a");
-        game.startGame();
-
-        game.buildSettlement(15);
-        game.buildRoad(15,16);
-
-        game.getPlayer("a").addResource(Resource.grain,2);
-        game.getPlayer("a").addResource(Resource.ore,3);
+        Player player = game.getPlayer("Ana");
+        player.addResource(Resource.grain, Cost.CITY_GRAIN);
+        player.addResource(Resource.ore, Cost.CITY_ORE);
 
         assertNull(game.buyCity(15));
-        assertSame(game.buyCity(15),Code.InvalidRequest);
-        assertNotNull(game.buyCity(17));
+
+        assertEquals(game.buyCity(15), Code.InvalidRequest);
+        assertEquals(game.buyCity(17), Code.InvalidRequest);
+
         game.buildSettlement(17);
-        assertSame(game.buyCity(17),Code.PlayerNotEnoughGrain);
-        game.getPlayer("a").addResource(Resource.grain,3);
-        assertSame(game.buyCity(17),Code.PlayerNotEnoughOre);
-        game.getPlayer("a").addResource(Resource.ore,3);
-        assertSame(game.buyCity(17),Code.NotConnectsToRoad);
-        game.buildRoad(16,17);
+        assertEquals(game.buyCity(17), Code.PlayerNotEnoughGrain);
+
+        player.addResource(Resource.grain, 3);
+        assertEquals(game.buyCity(17), Code.PlayerNotEnoughOre);
+
+        player.addResource(Resource.ore, 3);
+        assertEquals(game.buyCity(17), Code.NotConnectsToRoad);
+
+        game.buildRoad(16, 17);
         assertNull(game.buyCity(17));
     }
 
-    @DisplayName("Check valid dev buy")
+    @DisplayName("Check player trade")
     @Test
-    public void devBuy() {
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addNextPlayer("a");
-        game.startGame();
+    public void playerTrade() {
+        game.getCurrentPlayer().addResource(Resource.lumber, 1);
+        Map<Resource, Integer> offer = new HashMap<>();
+        offer.put(Resource.lumber, 1);
+        Map<Resource, Integer> request = new HashMap<>();
+        request.put(Resource.grain, 1);
 
+        assertEquals(game.wantToTrade("Maria"), Code.NoTradeAvailable);
+        game.playerTrade(offer, request);
+        assertEquals(game.wantToTrade("Maria"), Code.PlayerNotEnoughGrain);
 
-        game.getPlayer("a").addResource(Resource.grain,1);
-        game.getPlayer("a").addResource(Resource.ore,1);
-        game.getPlayer("a").addResource(Resource.wool,1);
+        game.getPlayer("Maria").addResource(Resource.grain, 1);
+        assertNull(game.wantToTrade("Maria"));
 
-        assertNull(game.buyDevelopment());
-        assertNotNull(game.buyDevelopment());
+        assertEquals(game.wantToTrade("Maria"), Code.AlreadyInTrade);
 
-    }
-
-    @DisplayName("Check wantToTrade")
-    @Test
-    public void wantToTrade(){
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addPlayer("b",new Player("b",game));
-        game.addNextPlayer("a");
-        game.addNextPlayer("b");
-        game.startGame();
-
-        game.getCurrentPlayer().addResource(Resource.lumber,1);
-        HashMap <Resource,Integer> offer=new HashMap<>();
-        offer.put(Resource.lumber,1);
-        HashMap <Resource,Integer> request=new HashMap<>();
-        request.put(Resource.grain,1);
-        game.playerTrade( offer,request);
-
-        assertSame(game.wantToTrade("b"),Code.PlayerNotEnoughGrain);
-
-        game.getPlayer("b").addResource(Resource.grain,1);
-        assertNull(game.wantToTrade("b"));
-
-        game.getPlayer("b").addResource(Resource.grain,1);
-        assertSame(game.wantToTrade("b"),Code.AlreadyInTrade);
-
-    }
-
-    @DisplayName("Check select partner")
-    @Test
-    public void selectPartner(){
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addPlayer("b",new Player("b",game));
-        game.addNextPlayer("a");
-        game.addNextPlayer("b");
-        game.startGame();
-
-
-        game.getCurrentPlayer().addResource(Resource.lumber,1);
-        game.getPlayer("b").addResource(Resource.grain,1);
-
-        HashMap <Resource,Integer> offer=new HashMap<>();
-        offer.put(Resource.lumber,1);
-        HashMap <Resource,Integer> request=new HashMap<>();
-        request.put(Resource.grain,1);
-
-        game.playerTrade( offer,request);
-        game.wantToTrade("b");
-
-        assertSame(game.selectPartner("c"),Code.NotInTrade);
-        assertNull(game.selectPartner("b"));
-    }
-
-    @DisplayName("Check port trade")
-    @Test
-    public void portTrade(){
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addPlayer("b",new Player("b",game));
-        game.addNextPlayer("a");
-        game.addNextPlayer("b");
-        game.startGame();
-
-
-        assertSame(game.portTrade(19,"lumber","wool"),Code.InvalidRequest);
-        int id=game.getBoard().getPorts().indexOf(Port.ThreeForOne);
-        game.getCurrentPlayer().addResource(Resource.lumber,3);
-
-        assertNull(game.portTrade(id,"lumber","grain"));
-        assertSame(game.portTrade(id,"lumber","grain"),Code.PlayerNotEnoughLumber);
-
-        id=game.getBoard().getPorts().indexOf(Port.Lumber);
-        game.getCurrentPlayer().addResource(Resource.lumber,2);
-        assertNull(game.portTrade(id,"lumber","grain"));
-
-
-
+        assertEquals(game.selectPartner("Elena"), Code.NotInTrade);
+        assertNull(game.selectPartner("Maria"));
     }
 
     @DisplayName("Check bank trade")
     @Test
-    public void bankTrade(){
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addPlayer("b",new Player("b",game));
-        game.addNextPlayer("a");
-        game.addNextPlayer("b");
-        game.startGame();
+    public void bankTrade() {
+        Player currentPlayer = game.getCurrentPlayer();
+        currentPlayer.addResource(Resource.lumber, 3);
 
+        assertEquals(game.bankTrade("lumber", "desert"), Code.InvalidRequest);
+        assertEquals(game.bankTrade("desert", "grain"), Code.InvalidRequest);
 
-        game.getCurrentPlayer().addResource(Resource.lumber,3);
-
-        assertSame(game.bankTrade("lumber","ceva"),Code.InvalidRequest);
-        assertSame(game.bankTrade("altceva","grain"),Code.InvalidRequest);
-
-        assertSame(game.bankTrade("lumber","grain"),Code.PlayerNotEnoughLumber);
-        game.getCurrentPlayer().addResource(Resource.lumber,1);
-        assertNull(game.bankTrade("lumber","grain"));
-
-
-
+        assertEquals(game.bankTrade("lumber", "grain"), Code.PlayerNotEnoughLumber);
+        currentPlayer.addResource(Resource.lumber, 1);
+        assertNull(game.bankTrade("lumber", "grain"));
     }
 
+    @DisplayName("Check port trade")
+    @Test
+    public void portTrade() {
+        assertEquals(game.portTrade(19, "lumber", "wool"), Code.InvalidRequest);
+        int port = game.getBoard().getPorts().indexOf(Port.ThreeForOne);
+        Player currentPlayer = game.getCurrentPlayer();
+        currentPlayer.addResource(Resource.lumber, 3);
+
+        assertNull(game.portTrade(port, "lumber", "grain"));
+        assertEquals(game.portTrade(port, "lumber", "grain"), Code.PlayerNotEnoughLumber);
+
+        port = game.getBoard().getPorts().indexOf(Port.Lumber);
+        currentPlayer.addResource(Resource.lumber, 2);
+        assertNull(game.portTrade(port, "lumber", "grain"));
+    }
 
     @DisplayName("Check move robber")
     @Test
-    public void moveRobber(){
-        Game game=new BaseGame();
-        game.addPlayer("a",new Player("a",game));
-        game.addPlayer("b",new Player("b",game));
-        game.addNextPlayer("a");
-        game.addNextPlayer("b");
-        game.startGame();
+    public void moveRobber() {
+        int tile = game.getBoard().getRobberPosition().getId();
+        assertEquals(game.moveRobber(tile), Code.SameTile);
 
-        int id=game.getBoard().getRobberPosition().getId();
-        assertSame(game.moveRobber(id),Code.SameTile);
-        assertNull(game.moveRobber(id+1));
-        assertSame(game.getBoard().getRobberPosition().getId(),id+1);
-
-
-
+        assertNull(game.moveRobber((tile + 1) % Component.TILES));
+        assertEquals(game.getBoard().getRobberPosition().getId(), (tile + 1) % Component.TILES);
     }
-
 }
