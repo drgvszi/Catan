@@ -49,11 +49,11 @@ public class Player {
 
         active = true;
         resources = new HashMap<>();
-        resources.put(Resource.Lumber, 0);
-        resources.put(Resource.Wool, 0);
-        resources.put(Resource.Grain, 0);
-        resources.put(Resource.Brick, 0);
-        resources.put(Resource.Ore, 0);
+        resources.put(Resource.lumber, 0);
+        resources.put(Resource.wool, 0);
+        resources.put(Resource.grain, 0);
+        resources.put(Resource.brick, 0);
+        resources.put(Resource.ore, 0);
 
         developments = new HashMap<>();
         developments.put(Development.knight, 0);
@@ -360,7 +360,7 @@ public class Player {
     //region Steal
 
     public Resource getRandomResource() {
-        Resource[] resources = {Resource.Lumber, Resource.Wool, Resource.Grain, Resource.Brick, Resource.Ore};
+        Resource[] resources = {Resource.lumber, Resource.wool, Resource.grain, Resource.brick, Resource.ore};
         Random random = new Random();
         int index = random.nextInt(resources.length);
         while (getResourcesNumber(resources[index]) <= 0) {
@@ -378,13 +378,13 @@ public class Player {
     }
 
     public Code hasDevelopmentResources() {
-        if (resources.get(Resource.Wool) < Cost.DEVELOPMENT_WOOL) {
+        if (resources.get(Resource.wool) < Cost.DEVELOPMENT_WOOL) {
             return Code.PlayerNotEnoughWool;
         }
-        if (resources.get(Resource.Grain) < Cost.DEVELOPMENT_GRAIN) {
+        if (resources.get(Resource.grain) < Cost.DEVELOPMENT_GRAIN) {
             return Code.PlayerNotEnoughGrain;
         }
-        if (resources.get(Resource.Ore) < Cost.DEVELOPMENT_ORE) {
+        if (resources.get(Resource.ore) < Cost.DEVELOPMENT_ORE) {
             return Code.PlayerNotEnoughOre;
         }
         return null;
@@ -404,15 +404,15 @@ public class Player {
     }
 
     private Code removeDevelopmentResources() {
-        Code code = removeResource(Resource.Wool, Cost.DEVELOPMENT_WOOL);
+        Code code = removeResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
         if (code != null) {
             return code;
         }
-        code = removeResource(Resource.Grain, Cost.DEVELOPMENT_GRAIN);
+        code = removeResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
         if (code != null) {
             return code;
         }
-        code = removeResource(Resource.Ore, Cost.DEVELOPMENT_ORE);
+        code = removeResource(Resource.ore, Cost.DEVELOPMENT_ORE);
         return code;
     }
 
@@ -432,10 +432,10 @@ public class Player {
     }
 
     public Code hasRoadResources() {
-        if (resources.get(Resource.Lumber) < Cost.ROAD_LUMBER) {
+        if (resources.get(Resource.lumber) < Cost.ROAD_LUMBER) {
             return Code.PlayerNotEnoughLumber;
         }
-        if (resources.get(Resource.Brick) < Cost.ROAD_BRICK) {
+        if (resources.get(Resource.brick) < Cost.ROAD_BRICK) {
             return Code.PlayerNotEnoughBrick;
         }
         return null;
@@ -460,11 +460,11 @@ public class Player {
     }
 
     private Code removeRoadResources() {
-        Code code = removeResource(Resource.Lumber, Cost.ROAD_LUMBER);
+        Code code = removeResource(Resource.lumber, Cost.ROAD_LUMBER);
         if (code != null) {
             return code;
         }
-        return removeResource(Resource.Brick, Cost.ROAD_BRICK);
+        return removeResource(Resource.brick, Cost.ROAD_BRICK);
     }
 
     // endregion
@@ -480,16 +480,16 @@ public class Player {
     }
 
     public Code hasSettlementResources() {
-        if (resources.get(Resource.Lumber) < Cost.SETTLEMENT_LUMBER) {
+        if (resources.get(Resource.lumber) < Cost.SETTLEMENT_LUMBER) {
             return Code.PlayerNotEnoughLumber;
         }
-        if (resources.get(Resource.Wool) < Cost.SETTLEMENT_WOOL) {
+        if (resources.get(Resource.wool) < Cost.SETTLEMENT_WOOL) {
             return Code.PlayerNotEnoughWool;
         }
-        if (resources.get(Resource.Grain) < Cost.SETTLEMENT_GRAIN) {
+        if (resources.get(Resource.grain) < Cost.SETTLEMENT_GRAIN) {
             return Code.PlayerNotEnoughGrain;
         }
-        if (resources.get(Resource.Brick) < Cost.SETTLEMENT_BRICK) {
+        if (resources.get(Resource.brick) < Cost.SETTLEMENT_BRICK) {
             return Code.PlayerNotEnoughBrick;
         }
         return null;
@@ -515,16 +515,16 @@ public class Player {
     }
 
     private Code removeSettlementResources() {
-        Code code = removeResource(Resource.Lumber, Cost.SETTLEMENT_LUMBER);
+        Code code = removeResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
         if (code != null) {
             return code;
         }
-        code = removeResource(Resource.Wool, Cost.SETTLEMENT_WOOL);
+        code = removeResource(Resource.wool, Cost.SETTLEMENT_WOOL);
         if (code != null) {
             return code;
         }
-        removeResource(Resource.Grain, Cost.SETTLEMENT_GRAIN);
-        return removeResource(Resource.Brick, Cost.SETTLEMENT_BRICK);
+        removeResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
+        return removeResource(Resource.brick, Cost.SETTLEMENT_BRICK);
     }
 
     // endregion
@@ -552,10 +552,10 @@ public class Player {
     }
 
     public Code hasCityResources() {
-        if (resources.get(Resource.Grain) < Cost.CITY_GRAIN) {
+        if (resources.get(Resource.grain) < Cost.CITY_GRAIN) {
             return Code.PlayerNotEnoughGrain;
         }
-        if (resources.get(Resource.Ore) < Cost.CITY_ORE) {
+        if (resources.get(Resource.ore) < Cost.CITY_ORE) {
             return Code.PlayerNotEnoughOre;
         }
         return null;
@@ -577,11 +577,11 @@ public class Player {
     }
 
     private Code removeCityResources() {
-        Code code = removeResource(Resource.Grain, Cost.CITY_GRAIN);
+        Code code = removeResource(Resource.grain, Cost.CITY_GRAIN);
         if (code != null) {
             return code;
         }
-        return removeResource(Resource.Ore, Cost.CITY_ORE);
+        return removeResource(Resource.ore, Cost.CITY_ORE);
     }
 
     // endregion

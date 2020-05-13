@@ -444,14 +444,14 @@ public abstract class Game {
         }
         Map<String, Integer> resources = new HashMap<>();
         for (Resource resource : Resource.values()) {
-            if (resource != Resource.Desert) {
+            if (resource != Resource.desert) {
                 resources.put(resource.toString(), 0);
             }
         }
         Intersection settlement = currentPlayer.getSettlements().get(1);
         for (int tile : board.getAdjacentTilesToIntersection(settlement.getId())) {
             Resource resource = board.getTile(tile).getResource();
-            if (resource != Resource.Desert) {
+            if (resource != Resource.desert) {
                 bank.removeResource(resource);
                 currentPlayer.addResource(resource);
                 String resourceString = resource.toString();
@@ -550,7 +550,7 @@ public abstract class Game {
             int playerIndex = playersOrder.indexOf(player);
             result.put("player_" + playerIndex, player.getId());
             for (Resource resource : Resource.values()) {
-                if (resource != Resource.Desert) {
+                if (resource != Resource.desert) {
                     result.put(resource.toString() + '_' + playerIndex, 0);
                 }
             }
@@ -968,7 +968,7 @@ public abstract class Game {
 
     public Map<String, Object> getPlayersToStealResourceFrom(int tileId) {
         Tile tile = board.getTile(tileId);
-        if (tile.getResource() == Resource.Desert) {
+        if (tile.getResource() == Resource.desert) {
             return null;
         }
         Map<String, Object> players = new HashMap<>();
