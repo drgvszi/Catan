@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ConnectivitySimulation {
+public class ConnectivitySimulation implements Runnable {
     private String username = "catan";
     private String password = "catan";
     private String gameId = null;
@@ -260,62 +260,67 @@ public class ConnectivitySimulation {
 
     //endregion
 
-    public void simulation() throws IOException {
-        createGame("SettlersOfCatan");
-        setMaxPlayers(gameId, 2);
-        addPlayer(gameId);
-        addPlayer(gameId);
-        setMaxPlayers(gameId, 1);
-        addPlayer(gameId);
-        startGame(gameId);
+    @Override
+    public void run() {
+        try {
+            createGame("SettlersOfCatan");
+            setMaxPlayers(gameId, 2);
+            addPlayer(gameId);
+            addPlayer(gameId);
+            setMaxPlayers(gameId, 1);
+            addPlayer(gameId);
+            startGame(gameId);
 
-        buildSettlement(gameId, playerIds.get(0), 20);
-        buildRoad(gameId, playerIds.get(0), 18, 19);
-        buildRoad(gameId, playerIds.get(0), 19, 20);
-        buildSettlement(gameId, playerIds.get(1), 40);
-        buildRoad(gameId, playerIds.get(1), 41, 40);
+            buildSettlement(gameId, playerIds.get(0), 20);
+            buildRoad(gameId, playerIds.get(0), 18, 19);
+            buildRoad(gameId, playerIds.get(0), 19, 20);
+            buildSettlement(gameId, playerIds.get(1), 40);
+            buildRoad(gameId, playerIds.get(1), 41, 40);
 
-        buildSettlement(gameId, playerIds.get(1), 10);
-        buildRoad(gameId, playerIds.get(1), 10, 11);
-        buildSettlement(gameId, playerIds.get(0), 30);
-        buildRoad(gameId, playerIds.get(0), 30, 31);
+            buildSettlement(gameId, playerIds.get(1), 10);
+            buildRoad(gameId, playerIds.get(1), 10, 11);
+            buildSettlement(gameId, playerIds.get(0), 30);
+            buildRoad(gameId, playerIds.get(0), 30, 31);
 
-        update(gameId, playerIds.get(0));
+            update(gameId, playerIds.get(0));
 
-        for (int i = 0; i < 2; ++i) {
-            rollDice(gameId, playerIds.get(0));
-            discardResources(gameId, playerIds.get(0), null);
-            moveRobber(gameId, playerIds.get(0), 3);
-            stealResource(gameId, playerIds.get(0), playerIds.get(1));
+            for (int i = 0; i < 2; ++i) {
+                rollDice(gameId, playerIds.get(0));
+                discardResources(gameId, playerIds.get(0), null);
+                moveRobber(gameId, playerIds.get(0), 3);
+                stealResource(gameId, playerIds.get(0), playerIds.get(1));
 
-            playerTrade(gameId, playerIds.get(0), null, null);
-            wantToTrade(gameId, playerIds.get(1));
-            sendPartners(gameId, playerIds.get(0));
-            selectPartner(gameId, playerIds.get(0), playerIds.get(1));
+                playerTrade(gameId, playerIds.get(0), null, null);
+                wantToTrade(gameId, playerIds.get(1));
+                sendPartners(gameId, playerIds.get(0));
+                selectPartner(gameId, playerIds.get(0), playerIds.get(1));
 
-            buySettlement(gameId, playerIds.get(0), 20);
-            rollDice(gameId, playerIds.get(0));
-            buyRoad(gameId, playerIds.get(0), 10, 11);
+                buySettlement(gameId, playerIds.get(0), 20);
+                rollDice(gameId, playerIds.get(0));
+                buyRoad(gameId, playerIds.get(0), 10, 11);
 
-            buyDevelopment(gameId, playerIds.get(0));
-            useDevelopment(gameId, playerIds.get(0), "roadBuilding");
-            buildDevelopmentRoad(gameId, playerIds.get(0), 2, 3);
-            takeResourceFromAll(gameId, playerIds.get(0), "desert");
-            takeTwoResources(gameId, playerIds.get(0), "wool", "lumber");
+                buyDevelopment(gameId, playerIds.get(0));
+                useDevelopment(gameId, playerIds.get(0), "roadBuilding");
+                buildDevelopmentRoad(gameId, playerIds.get(0), 2, 3);
+                takeResourceFromAll(gameId, playerIds.get(0), "desert");
+                takeTwoResources(gameId, playerIds.get(0), "wool", "lumber");
 
-            buildRoad(gameId, playerIds.get(0), 20, 30);
-            endTurn(gameId, playerIds.get(0));
+                buildRoad(gameId, playerIds.get(0), 20, 30);
+                endTurn(gameId, playerIds.get(0));
 
-            rollDice(gameId, playerIds.get(1));
-            buySettlement(gameId, playerIds.get(0), 25);
-            buyCity(gameId, playerIds.get(1), 22);
-            endTurn(gameId, playerIds.get(0));
-            endTurn(gameId, playerIds.get(1));
+                rollDice(gameId, playerIds.get(1));
+                buySettlement(gameId, playerIds.get(0), 25);
+                buyCity(gameId, playerIds.get(1), 22);
+                endTurn(gameId, playerIds.get(0));
+                endTurn(gameId, playerIds.get(1));
+                getRanking(gameId);
+            }
+
             getRanking(gameId);
+            endGame(gameId);
+            getRanking(gameId);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        getRanking(gameId);
-        endGame(gameId);
-        getRanking(gameId);
     }
 }
