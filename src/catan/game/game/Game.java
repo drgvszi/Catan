@@ -1003,7 +1003,10 @@ public abstract class Game {
             return null;
         }
         Resource resource = player.getRandomResource();
-        player.removeResource(resource);
+        Code code = player.removeResource(resource);
+        if (code != null) {
+            return null;
+        }
         currentPlayer.addResource(resource);
         return resource;
     }

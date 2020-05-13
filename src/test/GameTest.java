@@ -50,6 +50,18 @@ public class GameTest {
         assertEquals(game.buildSettlement(16), Code.DistanceRuleViolated);
     }
 
+    @DisplayName("Check discard resources")
+    @Test
+    public void discardResources() {
+        Player currentPlayer = game.getCurrentPlayer();
+        currentPlayer.addResource(Resource.brick, 5);
+        Map<Resource, Integer> resources = new HashMap<>();
+        resources.put(Resource.brick, 5);
+        game.discardResources(currentPlayer.getId(), resources);
+        assertFalse(game.getCurrentPlayer().hasResource(Resource.brick, 5));
+        assertEquals(game.discardResources(currentPlayer.getId(), resources), Code.PlayerNotEnoughBrick);
+    }
+
     @DisplayName("Check buy development")
     @Test
     public void buyDevelopment() {
@@ -131,64 +143,6 @@ public class GameTest {
         assertNull(game.buyCity(17));
     }
 
-    @DisplayName("Check use development")
-    @Test
-    public void useDevelopment() {
-        assertEquals(Code.PlayerNoKnight, game.useDevelopment(Development.knight));
-        game.getCurrentPlayer().addDevelopment(Development.knight);
-        assertNull(game.useDevelopment(Development.knight));
-        assertFalse(game.getCurrentPlayer().hasDevelopment(Development.knight));
-    }
-
-    @DisplayName("Check Monopoly")
-    @Test
-    public void takeResourceFromAll() {
-        assertEquals(Code.InvalidRequest, game.takeResourceFromAll("desert").getKey());
-        Map<String, Object> expectedResult = new HashMap<>();
-        int index = 0;
-        for (Player player : game.getPlayerOrder()) {
-            if (!player.equals(game.getCurrentPlayer())) {
-                player.addResource(Resource.brick, 2);
-                int resourcesNumber = player.getResourcesNumber(Resource.brick);
-                player.removeResource(Resource.brick, resourcesNumber);
-                game.getCurrentPlayer().addResource(Resource.brick, resourcesNumber);
-                expectedResult.put("player_" + index, player.getId());
-                expectedResult.put("resources_" + index, resourcesNumber);
-                ++index;
-            }
-        }
-        for (Player player : game.getPlayerOrder()) {
-            player.addResource(Resource.brick, 2);
-        }
-        assertEquals(new Pair<Code, Map<String, Object>>(null, expectedResult), game.takeResourceFromAll("brick"));
-    }
-
-    @DisplayName("Check YearOfPlenty")
-    @Test
-    public void takeTwoResources() {
-        assertEquals(Code.InvalidRequest, game.takeTwoResources("testStr1", "testStr2"));
-        assertEquals(Code.InvalidRequest, game.takeTwoResources("brick", "testStr2"));
-        assertEquals(Code.InvalidRequest, game.takeTwoResources("testStr1", "lumber"));
-
-        assertNull(game.takeTwoResources("brick", "lumber"));
-        game.getBank().removeResource(Resource.brick, game.getBank().getResourcesNumber(Resource.brick));
-
-        assertEquals(Code.BankNoBrick, game.takeTwoResources("brick", "lumber"));
-        assertEquals(Code.BankNoBrick, game.takeTwoResources("lumber", "brick"));
-        assertNull(game.takeTwoResources("lumber", "lumber"));
-    }
-
-    @DisplayName("Check discard resources")
-    @Test
-    public void discardResources() {
-        game.getCurrentPlayer().addResource(Resource.brick, 5);
-        Map<Resource, Integer> resources = new HashMap<>();
-        resources.put(Resource.brick, 5);
-        game.discardResources(game.getCurrentPlayer().getId(), resources);
-        assertFalse(game.getCurrentPlayer().hasResource());
-        assertEquals(Code.PlayerNotEnoughBrick, game.discardResources(game.getCurrentPlayer().getId(), resources));
-    }
-
     @DisplayName("Check player trade")
     @Test
     public void playerTrade() {
@@ -241,6 +195,54 @@ public class GameTest {
         assertNull(game.portTrade(port, "lumber", "grain"));
     }
 
+    @DisplayName("Check use development")
+    @Test
+    public void useDevelopment() {
+        assertEquals(game.useDevelopment(Development.knight), Code.PlayerNoKnight);
+        Player currentPlayer = game.getCurrentPlayer();
+        currentPlayer.addDevelopment(Development.knight);
+        assertNull(game.useDevelopment(Development.knight));
+        assertFalse(currentPlayer.hasDevelopment(Development.knight));
+    }
+
+    @DisplayName("Check Monopoly")
+    @Test
+    public void takeResourceFromAll() {
+        assertEquals(game.takeResourceFromAll("desert").getKey(), Code.InvalidRequest);
+        Map<String, Object> result = new HashMap<>();
+        int index = 0;
+        for (Player player : game.getPlayerOrder()) {
+            if (!player.equals(game.getCurrentPlayer())) {
+                player.addResource(Resource.brick, 2);
+                int resourcesNumber = player.getResourcesNumber(Resource.brick);
+                player.removeResource(Resource.brick, resourcesNumber);
+                game.getCurrentPlayer().addResource(Resource.brick, resourcesNumber);
+                result.put("player_" + index, player.getId());
+                result.put("resources_" + index, resourcesNumber);
+                ++index;
+            }
+        }
+        for (Player player : game.getPlayerOrder()) {
+            player.addResource(Resource.brick, 2);
+        }
+        assertEquals(new Pair<Code, Map<String, Object>>(null, result), game.takeResourceFromAll("brick"));
+    }
+
+    @DisplayName("Check YearOfPlenty")
+    @Test
+    public void takeTwoResources() {
+        assertEquals(game.takeTwoResources("desert", "desert"), Code.InvalidRequest);
+        assertEquals(game.takeTwoResources("brick", "desert"), Code.InvalidRequest);
+        assertEquals(game.takeTwoResources("desert", "lumber"), Code.InvalidRequest);
+
+        assertNull(game.takeTwoResources("brick", "lumber"));
+
+        game.getBank().removeResource(Resource.brick, game.getBank().getResourcesNumber(Resource.brick));
+        assertEquals(Code.BankNoBrick, game.takeTwoResources("brick", "lumber"));
+
+        assertNull(game.takeTwoResources("lumber", "lumber"));
+    }
+
     @DisplayName("Check move robber")
     @Test
     public void moveRobber() {
@@ -251,7 +253,7 @@ public class GameTest {
         assertEquals(game.getBoard().getRobberPosition().getId(), (tile + 1) % Component.TILES);
     }
 
-    @DisplayName("Steal resource")
+    @DisplayName("Check steal resource")
     @Test
     public void stealResource() {
         Player currentPlayer = game.getCurrentPlayer();
