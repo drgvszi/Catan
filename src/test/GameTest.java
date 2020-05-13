@@ -71,7 +71,7 @@ public class GameTest {
         player.addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
         player.addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
 
-        assertNull(game.buyDevelopment());
+        assertNull(game.buyDevelopment().getKey());
         assertEquals(game.buyDevelopment().getKey(), Code.PlayerNotEnoughWool);
     }
 
