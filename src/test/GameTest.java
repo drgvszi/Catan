@@ -55,11 +55,11 @@ public class GameTest {
     @Test
     public void discardResources() {
         Player currentPlayer = game.getCurrentPlayer();
-        currentPlayer.addResource(Resource.brick, 5);
+        currentPlayer.addResource(Resource.Brick, 5);
         Map<Resource, Integer> resources = new HashMap<>();
-        resources.put(Resource.brick, 5);
+        resources.put(Resource.Brick, 5);
         game.discardResources(currentPlayer.getId(), resources);
-        assertFalse(game.getCurrentPlayer().hasResource(Resource.brick, 5));
+        assertFalse(game.getCurrentPlayer().hasResource(Resource.Brick, 5));
         assertEquals(game.discardResources(currentPlayer.getId(), resources), Code.PlayerNotEnoughBrick);
     }
 
@@ -67,9 +67,9 @@ public class GameTest {
     @Test
     public void buyDevelopment() {
         Player player = game.getPlayer("Ana");
-        player.addResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
-        player.addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
-        player.addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+        player.addResource(Resource.Wool, Cost.DEVELOPMENT_WOOL);
+        player.addResource(Resource.Grain, Cost.DEVELOPMENT_GRAIN);
+        player.addResource(Resource.Ore, Cost.DEVELOPMENT_ORE);
 
         assertNull(game.buyDevelopment());
         assertEquals(game.buyDevelopment(), Code.PlayerNotEnoughWool);
@@ -82,13 +82,13 @@ public class GameTest {
         game.buildRoad(15, 14);
 
         Player player = game.getPlayer("Ana");
-        player.addResource(Resource.lumber, Cost.ROAD_LUMBER);
-        player.addResource(Resource.brick, Cost.ROAD_BRICK);
+        player.addResource(Resource.Lumber, Cost.ROAD_LUMBER);
+        player.addResource(Resource.Brick, Cost.ROAD_BRICK);
 
         assertNull(game.buyRoad(15, 16));
         assertEquals(game.buyRoad(15, 16), Code.PlayerNotEnoughLumber);
 
-        player.addResource(Resource.lumber, Cost.ROAD_LUMBER);
+        player.addResource(Resource.Lumber, Cost.ROAD_LUMBER);
         assertEquals(game.buyRoad(15, 16), Code.PlayerNotEnoughBrick);
     }
 
@@ -101,17 +101,17 @@ public class GameTest {
         game.buildRoad(15, 14);
 
         Player player = game.getPlayer("Ana");
-        player.addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
-        player.addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
-        player.addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
-        player.addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
+        player.addResource(Resource.Lumber, Cost.SETTLEMENT_LUMBER);
+        player.addResource(Resource.Wool, Cost.SETTLEMENT_WOOL);
+        player.addResource(Resource.Grain, Cost.SETTLEMENT_GRAIN);
+        player.addResource(Resource.Brick, Cost.SETTLEMENT_BRICK);
 
         assertNull(game.buySettlement(15));
 
-        player.addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
-        player.addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
-        player.addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
-        player.addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
+        player.addResource(Resource.Lumber, Cost.SETTLEMENT_LUMBER);
+        player.addResource(Resource.Wool, Cost.SETTLEMENT_WOOL);
+        player.addResource(Resource.Grain, Cost.SETTLEMENT_GRAIN);
+        player.addResource(Resource.Brick, Cost.SETTLEMENT_BRICK);
 
         assertEquals(game.buySettlement(18), Code.NotConnectsToRoad);
     }
@@ -123,8 +123,8 @@ public class GameTest {
         game.buildRoad(15, 16);
 
         Player player = game.getPlayer("Ana");
-        player.addResource(Resource.grain, Cost.CITY_GRAIN);
-        player.addResource(Resource.ore, Cost.CITY_ORE);
+        player.addResource(Resource.Grain, Cost.CITY_GRAIN);
+        player.addResource(Resource.Ore, Cost.CITY_ORE);
 
         assertNull(game.buyCity(15));
 
@@ -134,10 +134,10 @@ public class GameTest {
         game.buildSettlement(17);
         assertEquals(game.buyCity(17), Code.PlayerNotEnoughGrain);
 
-        player.addResource(Resource.grain, 3);
+        player.addResource(Resource.Grain, 3);
         assertEquals(game.buyCity(17), Code.PlayerNotEnoughOre);
 
-        player.addResource(Resource.ore, 3);
+        player.addResource(Resource.Ore, 3);
         assertEquals(game.buyCity(17), Code.NotConnectsToRoad);
 
         game.buildRoad(16, 17);
@@ -147,17 +147,17 @@ public class GameTest {
     @DisplayName("Check player trade")
     @Test
     public void playerTrade() {
-        game.getCurrentPlayer().addResource(Resource.lumber, 1);
+        game.getCurrentPlayer().addResource(Resource.Lumber, 1);
         Map<Resource, Integer> offer = new HashMap<>();
-        offer.put(Resource.lumber, 1);
+        offer.put(Resource.Lumber, 1);
         Map<Resource, Integer> request = new HashMap<>();
-        request.put(Resource.grain, 1);
+        request.put(Resource.Grain, 1);
 
         assertEquals(game.wantToTrade("Maria"), Code.NoTradeAvailable);
         game.playerTrade(offer, request);
         assertEquals(game.wantToTrade("Maria"), Code.PlayerNotEnoughGrain);
 
-        game.getPlayer("Maria").addResource(Resource.grain, 1);
+        game.getPlayer("Maria").addResource(Resource.Grain, 1);
         assertNull(game.wantToTrade("Maria"));
 
         assertEquals(game.wantToTrade("Maria"), Code.AlreadyInTrade);
@@ -170,13 +170,13 @@ public class GameTest {
     @Test
     public void bankTrade() {
         Player currentPlayer = game.getCurrentPlayer();
-        currentPlayer.addResource(Resource.lumber, 3);
+        currentPlayer.addResource(Resource.Lumber, 3);
 
         assertEquals(game.bankTrade("lumber", "desert"), Code.InvalidRequest);
         assertEquals(game.bankTrade("desert", "grain"), Code.InvalidRequest);
 
         assertEquals(game.bankTrade("lumber", "grain"), Code.PlayerNotEnoughLumber);
-        currentPlayer.addResource(Resource.lumber, 1);
+        currentPlayer.addResource(Resource.Lumber, 1);
         assertNull(game.bankTrade("lumber", "grain"));
     }
 
@@ -186,13 +186,13 @@ public class GameTest {
         assertEquals(game.portTrade(19, "lumber", "wool"), Code.InvalidRequest);
         int port = game.getBoard().getPorts().indexOf(Port.ThreeForOne);
         Player currentPlayer = game.getCurrentPlayer();
-        currentPlayer.addResource(Resource.lumber, 3);
+        currentPlayer.addResource(Resource.Lumber, 3);
 
         assertNull(game.portTrade(port, "lumber", "grain"));
         assertEquals(game.portTrade(port, "lumber", "grain"), Code.PlayerNotEnoughLumber);
 
         port = game.getBoard().getPorts().indexOf(Port.Lumber);
-        currentPlayer.addResource(Resource.lumber, 2);
+        currentPlayer.addResource(Resource.Lumber, 2);
         assertNull(game.portTrade(port, "lumber", "grain"));
     }
 
@@ -214,17 +214,17 @@ public class GameTest {
         int index = 0;
         for (Player player : game.getPlayersOrder()) {
             if (!player.equals(game.getCurrentPlayer())) {
-                player.addResource(Resource.brick, 2);
-                int resourcesNumber = player.getResourcesNumber(Resource.brick);
-                player.removeResource(Resource.brick, resourcesNumber);
-                game.getCurrentPlayer().addResource(Resource.brick, resourcesNumber);
+                player.addResource(Resource.Brick, 2);
+                int resourcesNumber = player.getResourcesNumber(Resource.Brick);
+                player.removeResource(Resource.Brick, resourcesNumber);
+                game.getCurrentPlayer().addResource(Resource.Brick, resourcesNumber);
                 result.put("player_" + index, player.getId());
                 result.put("resources_" + index, resourcesNumber);
                 ++index;
             }
         }
         for (Player player : game.getPlayersOrder()) {
-            player.addResource(Resource.brick, 2);
+            player.addResource(Resource.Brick, 2);
         }
         assertEquals(new Pair<Code, Map<String, Object>>(null, result), game.takeResourceFromAll("brick"));
     }
@@ -238,7 +238,7 @@ public class GameTest {
 
         assertNull(game.takeTwoResources("brick", "lumber"));
 
-        game.getBank().removeResource(Resource.brick, game.getBank().getResourcesNumber(Resource.brick));
+        game.getBank().removeResource(Resource.Brick, game.getBank().getResourcesNumber(Resource.Brick));
         assertEquals(Code.BankNoBrick, game.takeTwoResources("brick", "lumber"));
 
         assertNull(game.takeTwoResources("lumber", "lumber"));
@@ -264,13 +264,13 @@ public class GameTest {
         anotherPlayer.addSettlement(board.getIntersection(0));
         assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.PlayerNoResource);
 
-        anotherPlayer.addResource(Resource.lumber);
-        assertEquals(game.stealResource(anotherPlayer.getId()).getValue(), Resource.lumber);
-        assertFalse(anotherPlayer.hasResource(Resource.lumber));
-        assertTrue(currentPlayer.hasResource(Resource.lumber));
+        anotherPlayer.addResource(Resource.Lumber);
+        assertEquals(game.stealResource(anotherPlayer.getId()).getValue(), Resource.Lumber);
+        assertFalse(anotherPlayer.hasResource(Resource.Lumber));
+        assertTrue(currentPlayer.hasResource(Resource.Lumber));
 
         assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.PlayerNoResource);
-        assertFalse(currentPlayer.hasResource(Resource.lumber, 2));
+        assertFalse(currentPlayer.hasResource(Resource.Lumber, 2));
 
         board.setRobberPosition(board.getTile(1));
         assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.InvalidRequest);

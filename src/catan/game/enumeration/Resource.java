@@ -1,5 +1,5 @@
 package catan.game.enumeration;
 
 public enum Resource {
-    lumber, wool, grain, brick, ore, desert
+    Lumber, Wool, Grain, Brick, Ore, Desert
 }

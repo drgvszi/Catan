@@ -192,6 +192,6 @@ class BoardTest {
     @DisplayName("Check robber position")
     @Test
     public void checkRobberPosition() {
-        assertEquals(board.getRobberPosition().getResource(), Resource.desert);
+        assertEquals(board.getRobberPosition().getResource(), Resource.Desert);
     }
 }

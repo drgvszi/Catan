@@ -37,7 +37,7 @@ class BankTest {
         //region Cards
 
         for (Resource resource : Resource.values()) {
-            if (resource != Resource.desert) {
+            if (resource != Resource.Desert) {
                 assertTrue(bank.hasResource(resource, Component.RESOURCES_BY_TYPE));
             }
         }
@@ -66,14 +66,14 @@ class BankTest {
     public void removeCards() {
         //region Resources
 
-        assertNull(bank.removeResource(Resource.lumber));
-        assertNull(bank.removeResource(Resource.wool));
-        assertNull(bank.removeResource(Resource.grain));
-        assertNull(bank.removeResource(Resource.brick));
-        assertNull(bank.removeResource(Resource.ore));
+        assertNull(bank.removeResource(Resource.Lumber));
+        assertNull(bank.removeResource(Resource.Wool));
+        assertNull(bank.removeResource(Resource.Grain));
+        assertNull(bank.removeResource(Resource.Brick));
+        assertNull(bank.removeResource(Resource.Ore));
 
         for (Resource resource : Resource.values()) {
-            if (resource != Resource.desert) {
+            if (resource != Resource.Desert) {
                 assertFalse(bank.hasResource(resource, Component.RESOURCES_BY_TYPE));
             }
         }
@@ -124,11 +124,11 @@ class BankTest {
     public void sellDevelopments() {
         assertNull(bank.sellDevelopment(Development.knight));
 
-        assertTrue(bank.hasResource(Resource.lumber, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.wool, Component.RESOURCES_BY_TYPE + Cost.DEVELOPMENT_WOOL));
-        assertTrue(bank.hasResource(Resource.grain, Component.RESOURCES_BY_TYPE + Cost.DEVELOPMENT_GRAIN));
-        assertTrue(bank.hasResource(Resource.brick, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.ore, Component.RESOURCES_BY_TYPE + Cost.DEVELOPMENT_ORE));
+        assertTrue(bank.hasResource(Resource.Lumber, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Wool, Component.RESOURCES_BY_TYPE + Cost.DEVELOPMENT_WOOL));
+        assertTrue(bank.hasResource(Resource.Grain, Component.RESOURCES_BY_TYPE + Cost.DEVELOPMENT_GRAIN));
+        assertTrue(bank.hasResource(Resource.Brick, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Ore, Component.RESOURCES_BY_TYPE + Cost.DEVELOPMENT_ORE));
     }
 
     @DisplayName("Check sell properties")
@@ -138,11 +138,11 @@ class BankTest {
 
         assertNull(bank.sellRoad(players.get(0)));
 
-        assertTrue(bank.hasResource(Resource.lumber, Component.RESOURCES_BY_TYPE + Cost.ROAD_LUMBER));
-        assertTrue(bank.hasResource(Resource.wool, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.grain, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.brick, Component.RESOURCES_BY_TYPE + Cost.ROAD_BRICK));
-        assertTrue(bank.hasResource(Resource.ore, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Lumber, Component.RESOURCES_BY_TYPE + Cost.ROAD_LUMBER));
+        assertTrue(bank.hasResource(Resource.Wool, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Grain, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Brick, Component.RESOURCES_BY_TYPE + Cost.ROAD_BRICK));
+        assertTrue(bank.hasResource(Resource.Ore, Component.RESOURCES_BY_TYPE));
 
         //endregion
 
@@ -150,11 +150,11 @@ class BankTest {
 
         assertNull(bank.sellSettlement(players.get(0)));
 
-        assertTrue(bank.hasResource(Resource.lumber, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_LUMBER));
-        assertTrue(bank.hasResource(Resource.wool, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_WOOL));
-        assertTrue(bank.hasResource(Resource.grain, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_GRAIN));
-        assertTrue(bank.hasResource(Resource.brick, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_BRICK));
-        assertTrue(bank.hasResource(Resource.ore, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Lumber, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_LUMBER));
+        assertTrue(bank.hasResource(Resource.Wool, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_WOOL));
+        assertTrue(bank.hasResource(Resource.Grain, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_GRAIN));
+        assertTrue(bank.hasResource(Resource.Brick, Component.RESOURCES_BY_TYPE + Cost.SETTLEMENT_BRICK));
+        assertTrue(bank.hasResource(Resource.Ore, Component.RESOURCES_BY_TYPE));
 
         //endregion
 
@@ -162,11 +162,11 @@ class BankTest {
 
         assertNull(bank.sellCity(players.get(0)));
 
-        assertTrue(bank.hasResource(Resource.lumber, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.wool, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.grain, Component.RESOURCES_BY_TYPE + Cost.CITY_GRAIN));
-        assertTrue(bank.hasResource(Resource.brick, Component.RESOURCES_BY_TYPE));
-        assertTrue(bank.hasResource(Resource.ore, Component.RESOURCES_BY_TYPE + Cost.CITY_ORE));
+        assertTrue(bank.hasResource(Resource.Lumber, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Wool, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Grain, Component.RESOURCES_BY_TYPE + Cost.CITY_GRAIN));
+        assertTrue(bank.hasResource(Resource.Brick, Component.RESOURCES_BY_TYPE));
+        assertTrue(bank.hasResource(Resource.Ore, Component.RESOURCES_BY_TYPE + Cost.CITY_ORE));
 
         //endregion
     }

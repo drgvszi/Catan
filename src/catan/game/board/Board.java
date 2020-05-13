@@ -252,23 +252,23 @@ public class Board {
         List<Resource> resources = new ArrayList<>();
 
         for (int i = 0; i < Component.FIELD_TILES; i++)
-            resources.add(Resource.grain);
+            resources.add(Resource.Grain);
         for (int i = 0; i < Component.FOREST_TILES; i++)
-            resources.add(Resource.lumber);
+            resources.add(Resource.Lumber);
         for (int i = 0; i < Component.PASTURE_TILES; i++)
-            resources.add(Resource.wool);
+            resources.add(Resource.Wool);
         for (int i = 0; i < Component.MOUNTAINS_TILES; i++)
-            resources.add(Resource.ore);
+            resources.add(Resource.Ore);
         for (int i = 0; i < Component.HILLS_TILES; i++)
-            resources.add(Resource.brick);
+            resources.add(Resource.Brick);
         for (int i = 0; i < Component.DESERT_TILES; i++)
-            resources.add(Resource.desert);
+            resources.add(Resource.Desert);
         Collections.shuffle(resources);
 
         int i = 0;
         for (Tile tile : tiles) {
             tile.setResource(resources.get(i++));
-            if (tile.getResource() == Resource.desert) {
+            if (tile.getResource() == Resource.Desert) {
                 setRobberPosition(tile);
             }
         }
@@ -283,7 +283,7 @@ public class Board {
             Collections.shuffle(numberList);
             int i = 0;
             for (Tile tile : tiles) {
-                if (tile.getResource() != Resource.desert) {
+                if (tile.getResource() != Resource.Desert) {
                     tile.setNumber(numberList.get(i));
                     i++;
                 } else {

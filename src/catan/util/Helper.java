@@ -9,15 +9,15 @@ public class Helper {
     public static Resource getResourceFromString(String resource) {
         switch (resource) {
             case "lumber":
-                return Resource.lumber;
+                return Resource.Lumber;
             case "wool":
-                return Resource.wool;
+                return Resource.Wool;
             case "grain":
-                return Resource.grain;
+                return Resource.Grain;
             case "brick":
-                return Resource.brick;
+                return Resource.Brick;
             case "ore":
-                return Resource.ore;
+                return Resource.Ore;
             default:
                 return null;
         }
@@ -26,15 +26,15 @@ public class Helper {
     public static Resource getResourceOfferFromString(String resource) {
         switch (resource) {
             case "lumber_o":
-                return Resource.lumber;
+                return Resource.Lumber;
             case "wool_o":
-                return Resource.wool;
+                return Resource.Wool;
             case "grain_o":
-                return Resource.grain;
+                return Resource.Grain;
             case "brick_o":
-                return Resource.brick;
+                return Resource.Brick;
             case "ore_o":
-                return Resource.ore;
+                return Resource.Ore;
             default:
                 return null;
         }
@@ -43,15 +43,15 @@ public class Helper {
     public static Resource getResourceRequestFromString(String resource) {
         switch (resource) {
             case "lumber_r":
-                return Resource.lumber;
+                return Resource.Lumber;
             case "wool_r":
-                return Resource.wool;
+                return Resource.Wool;
             case "grain_r":
-                return Resource.grain;
+                return Resource.Grain;
             case "brick_r":
-                return Resource.brick;
+                return Resource.Brick;
             case "ore_r":
-                return Resource.ore;
+                return Resource.Ore;
             default:
                 return null;
         }
@@ -60,15 +60,15 @@ public class Helper {
     public static Resource getResourceFromPort(Port port) {
         switch (port) {
             case Lumber:
-                return Resource.lumber;
+                return Resource.Lumber;
             case Wool:
-                return Resource.wool;
+                return Resource.Wool;
             case Grain:
-                return Resource.grain;
+                return Resource.Grain;
             case Brick:
-                return Resource.brick;
+                return Resource.Brick;
             case Ore:
-                return Resource.ore;
+                return Resource.Ore;
             default:
                 return null;
         }
@@ -93,15 +93,15 @@ public class Helper {
 
     public static Code getPlayerNoResourceFromResource(Resource resource) {
         switch (resource) {
-            case lumber:
+            case Lumber:
                 return Code.PlayerNoLumber;
-            case wool:
+            case Wool:
                 return Code.PlayerNoWool;
-            case grain:
+            case Grain:
                 return Code.PlayerNoGrain;
-            case brick:
+            case Brick:
                 return Code.PlayerNoBrick;
-            case ore:
+            case Ore:
                 return Code.PlayerNoOre;
             default:
                 return null;
@@ -110,15 +110,15 @@ public class Helper {
 
     public static Code getPlayerNotEnoughResourceFromResource(Resource resource) {
         switch (resource) {
-            case lumber:
+            case Lumber:
                 return Code.PlayerNotEnoughLumber;
-            case wool:
+            case Wool:
                 return Code.PlayerNotEnoughWool;
-            case grain:
+            case Grain:
                 return Code.PlayerNotEnoughGrain;
-            case brick:
+            case Brick:
                 return Code.PlayerNotEnoughBrick;
-            case ore:
+            case Ore:
                 return Code.PlayerNotEnoughOre;
             default:
                 return null;
@@ -142,15 +142,15 @@ public class Helper {
 
     public static Code getBankNoResourceFromResource(Resource resource) {
         switch (resource) {
-            case lumber:
+            case Lumber:
                 return Code.BankNoLumber;
-            case wool:
+            case Wool:
                 return Code.BankNoWool;
-            case grain:
+            case Grain:
                 return Code.BankNoGrain;
-            case brick:
+            case Brick:
                 return Code.BankNoBrick;
-            case ore:
+            case Ore:
                 return Code.BankNoOre;
             default:
                 return null;
@@ -159,15 +159,15 @@ public class Helper {
 
     public static Code getBankNotEnoughResourceFromResource(Resource resource) {
         switch (resource) {
-            case lumber:
+            case Lumber:
                 return Code.BankNotEnoughLumber;
-            case wool:
+            case Wool:
                 return Code.BankNotEnoughWool;
-            case grain:
+            case Grain:
                 return Code.BankNotEnoughGrain;
-            case brick:
+            case Brick:
                 return Code.BankNotEnoughBrick;
-            case ore:
+            case Ore:
                 return Code.BankNotEnoughOre;
             default:
                 return null;

@@ -82,16 +82,16 @@ public class PlayerTest {
     @DisplayName("Check buy development")
     @Test
     void buyDevelopment() {
-        player.addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
-        assertEquals(player.getResourcesNumber(Resource.grain), Cost.DEVELOPMENT_GRAIN);
+        player.addResource(Resource.Grain, Cost.DEVELOPMENT_GRAIN);
+        assertEquals(player.getResourcesNumber(Resource.Grain), Cost.DEVELOPMENT_GRAIN);
         assertNotNull(player.canBuyDevelopment());
 
-        player.addResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
-        assertEquals(player.getResourcesNumber(Resource.wool), Cost.DEVELOPMENT_WOOL);
+        player.addResource(Resource.Wool, Cost.DEVELOPMENT_WOOL);
+        assertEquals(player.getResourcesNumber(Resource.Wool), Cost.DEVELOPMENT_WOOL);
         assertNotNull(player.canBuyDevelopment());
 
-        player.addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
-        assertEquals(player.getResourcesNumber(Resource.ore), Cost.DEVELOPMENT_ORE);
+        player.addResource(Resource.Ore, Cost.DEVELOPMENT_ORE);
+        assertEquals(player.getResourcesNumber(Resource.Ore), Cost.DEVELOPMENT_ORE);
         assertNull(player.canBuyDevelopment());
         assertNull(player.buyDevelopment(Development.victoryPoint));
 
@@ -104,12 +104,12 @@ public class PlayerTest {
         player.addRoad(new Road(new Intersection(3), new Intersection(4)));
         assertNotNull(player.canBuyRoad(4, 5));
 
-        player.addResource(Resource.lumber, Cost.ROAD_LUMBER);
-        assertEquals(player.getResourcesNumber(Resource.lumber), Cost.ROAD_LUMBER);
+        player.addResource(Resource.Lumber, Cost.ROAD_LUMBER);
+        assertEquals(player.getResourcesNumber(Resource.Lumber), Cost.ROAD_LUMBER);
         assertNotNull(player.canBuyRoad(4, 5));
 
-        player.addResource(Resource.brick, Cost.ROAD_BRICK);
-        assertEquals(player.getResourcesNumber(Resource.brick), Cost.ROAD_BRICK);
+        player.addResource(Resource.Brick, Cost.ROAD_BRICK);
+        assertEquals(player.getResourcesNumber(Resource.Brick), Cost.ROAD_BRICK);
         assertNull(player.canBuyRoad(4, 5));
         assertNull(player.buyRoad());
     }
@@ -131,20 +131,20 @@ public class PlayerTest {
 
         player.addRoad(new Road(new Intersection(10), new Intersection(11)));
 
-        player.addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
-        assertEquals(player.getResourcesNumber(Resource.lumber), Cost.SETTLEMENT_LUMBER);
+        player.addResource(Resource.Lumber, Cost.SETTLEMENT_LUMBER);
+        assertEquals(player.getResourcesNumber(Resource.Lumber), Cost.SETTLEMENT_LUMBER);
         assertNotNull(player.canBuySettlement(11));
 
-        player.addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
-        assertEquals(player.getResourcesNumber(Resource.wool), Cost.SETTLEMENT_WOOL);
+        player.addResource(Resource.Wool, Cost.SETTLEMENT_WOOL);
+        assertEquals(player.getResourcesNumber(Resource.Wool), Cost.SETTLEMENT_WOOL);
         assertNotNull(player.canBuySettlement(11));
 
-        player.addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
-        assertEquals(player.getResourcesNumber(Resource.grain), Cost.SETTLEMENT_GRAIN);
+        player.addResource(Resource.Grain, Cost.SETTLEMENT_GRAIN);
+        assertEquals(player.getResourcesNumber(Resource.Grain), Cost.SETTLEMENT_GRAIN);
         assertNotNull(player.canBuySettlement(11));
 
-        player.addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
-        assertEquals(player.getResourcesNumber(Resource.brick), Cost.SETTLEMENT_BRICK);
+        player.addResource(Resource.Brick, Cost.SETTLEMENT_BRICK);
+        assertEquals(player.getResourcesNumber(Resource.Brick), Cost.SETTLEMENT_BRICK);
         assertNull(player.canBuySettlement(11));
         assertNull(player.buySettlement());
     }
@@ -167,12 +167,12 @@ public class PlayerTest {
         player.addSettlement(new Intersection(11));
         assertNotNull(player.canBuyCity(11));
 
-        player.addResource(Resource.grain, Cost.CITY_GRAIN);
-        assertEquals(player.getResourcesNumber(Resource.grain), Cost.CITY_GRAIN);
+        player.addResource(Resource.Grain, Cost.CITY_GRAIN);
+        assertEquals(player.getResourcesNumber(Resource.Grain), Cost.CITY_GRAIN);
         assertNotNull(player.canBuyCity(11));
 
-        player.addResource(Resource.ore, Cost.CITY_ORE);
-        assertEquals(player.getResourcesNumber(Resource.ore), Cost.CITY_ORE);
+        player.addResource(Resource.Ore, Cost.CITY_ORE);
+        assertEquals(player.getResourcesNumber(Resource.Ore), Cost.CITY_ORE);
         assertNotNull(player.canBuyCity(11));
 
         player.addRoad(new Road(new Intersection(10), new Intersection(11)));

@@ -159,7 +159,7 @@ public class Bank {
     private void createResources() {
         resources = new HashMap<>();
         for (Resource resource : Resource.values()) {
-            if (resource != Resource.desert) {
+            if (resource != Resource.Desert) {
                 resources.put(resource, Component.RESOURCES_BY_TYPE);
             }
         }
@@ -314,9 +314,9 @@ public class Bank {
     }
 
     private void addDevelopmentResources() {
-        addResource(Resource.wool, Cost.DEVELOPMENT_WOOL);
-        addResource(Resource.grain, Cost.DEVELOPMENT_GRAIN);
-        addResource(Resource.ore, Cost.DEVELOPMENT_ORE);
+        addResource(Resource.Wool, Cost.DEVELOPMENT_WOOL);
+        addResource(Resource.Grain, Cost.DEVELOPMENT_GRAIN);
+        addResource(Resource.Ore, Cost.DEVELOPMENT_ORE);
     }
 
     //endregion
@@ -333,8 +333,8 @@ public class Bank {
     }
 
     private void addRoadResources() {
-        addResource(Resource.lumber, Cost.ROAD_LUMBER);
-        addResource(Resource.brick, Cost.ROAD_BRICK);
+        addResource(Resource.Lumber, Cost.ROAD_LUMBER);
+        addResource(Resource.Brick, Cost.ROAD_BRICK);
     }
 
     //endregion
@@ -351,10 +351,10 @@ public class Bank {
     }
 
     private void addSettlementResources() {
-        addResource(Resource.lumber, Cost.SETTLEMENT_LUMBER);
-        addResource(Resource.wool, Cost.SETTLEMENT_WOOL);
-        addResource(Resource.grain, Cost.SETTLEMENT_GRAIN);
-        addResource(Resource.brick, Cost.SETTLEMENT_BRICK);
+        addResource(Resource.Lumber, Cost.SETTLEMENT_LUMBER);
+        addResource(Resource.Wool, Cost.SETTLEMENT_WOOL);
+        addResource(Resource.Grain, Cost.SETTLEMENT_GRAIN);
+        addResource(Resource.Brick, Cost.SETTLEMENT_BRICK);
     }
 
     //endregion
@@ -371,8 +371,8 @@ public class Bank {
     }
 
     private void addCityResources() {
-        addResource(Resource.grain, Cost.CITY_GRAIN);
-        addResource(Resource.ore, Cost.CITY_ORE);
+        addResource(Resource.Grain, Cost.CITY_GRAIN);
+        addResource(Resource.Ore, Cost.CITY_ORE);
     }
 
     //endregion
