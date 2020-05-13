@@ -313,6 +313,8 @@ public class ConnectivitySimulation {
             endTurn(gameId, playerIds.get(1));
             getRanking(gameId);
         }
+
+        getRanking(gameId);
         endGame(gameId);
         getRanking(gameId);
     }

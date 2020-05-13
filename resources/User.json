@@ -71,6 +71,13 @@
     "arguments": {
       "dice_1": "a number between 1 and 6",
       "dice_2": "a number between 1 and 6",
+      "player_0": "playerId",
+      "lumber_0": "number of received lumbers",
+      "wool_0": "number of received wools",
+      "grain_0": "number of received grains",
+      "brick_0": "number of received bricks",
+      "ore_0": "number of received ores",
+      "resourcesToDiscard_0": "0 or half (rounded down) if rolled seven and has 8 or more resources",
       "player_1": "playerId",
       "lumber_1": "number of received lumbers",
       "wool_1": "number of received wools",
@@ -78,13 +85,6 @@
       "brick_1": "number of received bricks",
       "ore_1": "number of received ores",
       "resourcesToDiscard_1": "0 or half (rounded down) if rolled seven and has 8 or more resources",
-      "player_2": "playerId",
-      "lumber_2": "number of received lumbers",
-      "wool_2": "number of received wools",
-      "grain_2": "number of received grains",
-      "brick_2": "number of received bricks",
-      "ore_2": "number of received ores",
-      "resourcesToDiscard_2": "0 or half (rounded down) if rolled seven and has 8 or more resources"
     }
   },
   {

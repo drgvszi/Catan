@@ -48,7 +48,7 @@
         <MESSAGE id="useRoadBuilding" action="useRoadBuilding" nextState="UsingRoadBuilding"/>
         <MESSAGE id="useYearOfPlenty" action="useYearOfPlenty" nextState="UsingYearOfPlenty"/>
         <MESSAGE id="endTurn" action="endTurn" nextState="Start"/>
-        <MESSAGE id="end" action="end" nextState="EndGame"/>
+        <MESSAGE id="endGame" action="endGame" nextState="EndGame"/>
     </STATE>
     <STATE id="Trading">
         <MESSAGE id="sendPartners" action="sendPartners" nextState="Trading"/>

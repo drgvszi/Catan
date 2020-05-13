@@ -14,8 +14,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GameTest {
     private Game game;
@@ -190,5 +189,21 @@ public class GameTest {
 
         assertNull(game.moveRobber((tile + 1) % Component.TILES));
         assertEquals(game.getBoard().getRobberPosition().getId(), (tile + 1) % Component.TILES);
+    }
+
+    @DisplayName("Steal resource")
+    @Test
+    public void stealResource() {
+        Player currentPlayer = game.getCurrentPlayer();
+        Player anotherPlayer = game.getPlayerOrder().get(game.getPlayersNumber() - 1);
+        assertNull(game.stealResource(anotherPlayer.getId()));
+
+        anotherPlayer.addResource(Resource.lumber);
+        assertEquals(game.stealResource(anotherPlayer.getId()), Resource.lumber);
+        assertFalse(anotherPlayer.hasResource(Resource.lumber));
+        assertTrue(currentPlayer.hasResource(Resource.lumber));
+
+        assertNull(game.stealResource(anotherPlayer.getId()));
+        assertFalse(currentPlayer.hasResource(Resource.lumber, 2));
     }
 }

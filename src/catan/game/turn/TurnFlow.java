@@ -534,7 +534,7 @@ public class TurnFlow {
                 if (game.changeTurn(1)) {
                     response = new UserResponse(HttpStatus.SC_OK, "The turn was changed successfully.", null);
                 } else {
-                    fsm.ProcessFSM("end");
+                    fsm.ProcessFSM("endGame");
                     response = new UserResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
                 }
                 return true;
