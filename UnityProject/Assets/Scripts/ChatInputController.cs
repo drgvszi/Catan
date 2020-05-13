@@ -9,7 +9,7 @@ namespace UIChat
         public ChatController chatController;
         
         // Update is called once per frame
-        void Update()
+        public void Update()
         {
             if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
             {
