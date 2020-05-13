@@ -4,6 +4,10 @@ var path = require('path');
 const axios = require('axios');
 var all_lobbies = [];
 
+String.prototype.replaceAt=function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+}
+
 ref.on("value", function(snapshot) {
 	all_lobbies = [];
 	snapshot.forEach(function(child) {
@@ -21,13 +25,13 @@ ref.on("value", function(snapshot) {
 	
 
 const getLobbies = async(req, res) => {
-	res.send(all_lobbies);
+	res.send({'lobbies' : all_lobbies});
 }
 
 
 
 function get_user_extension(username) {
-    return db.ref('/users/'+username+'/extension')
+    return db.ref('/users/'+username+'/userextension')
     .once('value')
     .then(function(bref) {
         var extension= bref.val();
@@ -71,19 +75,19 @@ const addLobby = async(req,resp) => {
 	axios
 	  .post('https://catan-engine.herokuapp.com/Catan/managerRequest/', create_game_data)
 	  .then(res => {	
-	   	if(res.data.code == 100)	{
-	   		var game_id = res.data.data.slice(11, res.data.data.length - 2);
+	   	if(res.data.code == 200)	{
+	   		var game_id = res.data.arguments.slice(11, res.data.arguments.length - 2);
 		   	var new_lobby = lobbies.push();
 		   	var username = req.body.username;
 		   	get_user_extension(req.body.username).then(function(data) {
-		   	new_lobby.set({
-		   			first : "-",
-		   			second: "-",
-		   			third: "-",
-		   			master : username,
-		   			extension : data.extension,
-		   			gameid : game_id
-		   		});
+			   	new_lobby.set({
+			   			first : "-",
+			   			second: "-",
+			   			third: "-",
+			   			master : username,
+			   			extension : data.extension,
+			   			gameid : game_id
+			   		});
 		   	});
 		   
 		   	resp.send(`{"lobbyid" : "${new_lobby.key}", "gameid" : "${game_id}"}`);	
@@ -92,14 +96,15 @@ const addLobby = async(req,resp) => {
 			    "username": "catan",
 				"password": "catan",
 				"command": "setMaxPlayers",
-   				"arguments": "{\"gameId\":\""+game_id+"\",\"maxPlayers\":\"3\"}" 
+   				"arguments": "{\"gameId\":\""+game_id+"\",\"maxPlayers\":\"2\"}" 
 			};
 
 			axios
 				  .post('https://catan-engine.herokuapp.com/Catan/managerRequest/', set_maxplayers_data)
 				  .then(res => {	
-				   	if(res.data.code == 100)	{
+				   	if(res.data.code == 200)	{
 				   		console.log(res.data);
+				   		add_player_req_to_ge(game_id, username);
 				   	}
 				   	else
 				   		console.log(res.data);
@@ -107,7 +112,7 @@ const addLobby = async(req,resp) => {
 				  .catch(error => {
 				   	console.error(error);
 				  }); 
-			request_to_ge(game_id);
+			
 	   	}
 	   	else
 	   		console.log(res);
@@ -124,22 +129,23 @@ function sleep(ms) {
 } 
 
 
-
-
-async function request_to_ge(game_id) {
-	await sleep(500);
+async function add_player_req_to_ge(game_id, username) {
 	var add_player_data = {
 			    "username": "catan",
 			    "password": "catan",
 			    "command": "addPlayer",
 			    "arguments": "{\"gameId\":\"" + game_id + "\"}"
 			};
-			
+
 			axios
 				  .post('https://catan-engine.herokuapp.com/Catan/managerRequest/', add_player_data)
 				  .then(res => {	
-				   	if(res.data.code == 100)	{
-				   		console.log(res.data);
+				   	if(res.data.code == 200)	{
+				   		console.log(res.data.arguments);
+				   		db.ref('users').child(username).update({
+				   			"gameengineuserid" : res.data.arguments.slice(13, res.data.arguments.length - 2)
+				   		});
+
 				   	}
 				   	else
 				   		console.log(res.data);
@@ -152,18 +158,26 @@ async function request_to_ge(game_id) {
 const joinLobby = async(req, res) => {
 	var lobby_id = req.body.lobbyid;
 	var username = req.body.username;
+
 	var lobby = db.ref("lobbies").child(lobby_id);
 	get_user_extension(username).then(function(data) {
-		if(data.extension == all_lobbies[lobby_id].extension) {
-			if(all_lobbies[lobby_id].first === '-' || all_lobbies[lobby_id].second === '-' || all_lobbies[lobby_id].third === '-') {
-				if(all_lobbies[lobby_id].first === '-') {
+		
+		var index = 0;
+		for(index = 0; index < all_lobbies.length; index++)
+			if(lobby_id == all_lobbies[index].lobbyid)
+				break;
+
+		if(data.extension == all_lobbies[index].extension) {
+			if(all_lobbies[index].first === '-' || all_lobbies[index].second === '-' || all_lobbies[index].third === '-') {
+				add_player_req_to_ge(all_lobbies[index].gameid, username);
+				if(all_lobbies[index].first === '-') {
 					lobby.update({
 						"first":username
 					});
 					res.send(`{"place" : "1", "error" : "-"}`);
 					return;
 				}
-				else if(all_lobbies[lobby_id].second === '-'){
+				else if(all_lobbies[index].second === '-'){
 					lobby.update({
 						"second":username
 					});
@@ -231,17 +245,14 @@ const startGame = async(req, response) => {
 	axios
 		.post('https://catan-engine.herokuapp.com/Catan/managerRequest/', add_player_data)
 		.then(res => {	
-			if(res.data.code == 100)	{
-				console.log(res.data);
+			console.log(res.data);
+			var board = JSON.parse(res.data.arguments.replaceAt(9, " ").replaceAt(res.data.arguments.length - 2, " ").replaceAt(721, " ").replaceAt(731, " ").split("\\").join(""));;
+			if(res.data.code == 200) {
 				boards = db.ref('boards');
 				boards.child(game_id).set({
-					data : res.data.data
+					data:board
 				});
-				response.send({"ports" : ["None", 
-"None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","Grain","Grain","None","ThreeForOne","ThreeForOne","None","None","Lumber","Lumber","None","Brick","Brick","None","None","ThreeForOne","ThreeForOne","None","ThreeForOne","ThreeForOne","None","Ore","Ore","None","ThreeForOne","ThreeForOne","None","Wool","Wool","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
-
-
-"board":[{"resource":"Ore","number":5},{"resource":"Lumber","number":3},{"resource":"Wool","number":12},{"resource":"Grain","number":2},{"resource":"Grain","number":8},{"resource":"Wool","number":4},{"resource":"Grain","number":6},{"resource":"Wool","number":3},{"resource":"Desert","number":0},{"resource":"Brick","number":10},{"resource":"Lumber","number":8},{"resource":"Brick","number":5},{"resource":"Lumber","number":11},{"resource":"Lumber","number":11},{"resource":"Grain","number":9},{"resource":"Ore","number":9},{"resource":"Brick","number":4},{"resource":"Ore","number":6},{"resource":"Wool","number":10}]});
+				response.send(board);
 		}
 			else{
 				console.log(res.data);
