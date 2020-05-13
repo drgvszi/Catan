@@ -41,7 +41,7 @@ public class provizoriu : MonoBehaviour
                 if(req.code==200)
                 {
                     allPieces.SetActive(false);
-                    Instantiate(newPiece, piece.transform.position, piece.transform.rotation);
+                    AfiseazaDrum.afiseaza(newPiece, piece);
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
@@ -67,13 +67,13 @@ public class provizoriu : MonoBehaviour
                 if (req.code == 200)
                 {
                     allPieces.SetActive(false);
-                    Instantiate(newPiece, piece.transform.position, piece.transform.rotation);
+                    AfiseazaDrum.afiseaza(newPiece, piece);
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
             }).Catch(err => { Debug.Log(err); });
         }
-
+        
        
 
     }
