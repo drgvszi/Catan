@@ -126,11 +126,11 @@ namespace UIChat
                 string message = inputField.text;
                 if (message.Length > 0)
                 {
-                    // string username = LoginScript.CurrentUser;
-                    string username = "123";
+                    string username = LoginScript.CurrentUser;
+                    //string username = "123";
                     SendMessageString(username + ": " + message);
                     JSONObject json_message = new JSONObject();
-                    json_message.AddField("lobbyid", "lobbyid123");
+                    json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
                     json_message.AddField("name", username);
                     json_message.AddField("message", message);
                     socket.Emit("chat message", json_message);
@@ -255,8 +255,8 @@ namespace UIChat
         void onDisplayMess(SocketIOEvent e)
         {
             Debug.Log(e.data[0].ToString());
-            //if(e.data[0].str == LoginScript.CurrentUserLobbyId)
-            if (e.data[0].str == "lobbyid123")
+            if(e.data[0].str == LoginScript.CurrentUserLobbyId)
+            //if (e.data[0].str == "lobbyid123")
                 AddMessageToChat(e.data[1].str + ": " + e.data[2].str);
         }
     }
