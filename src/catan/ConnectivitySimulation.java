@@ -262,7 +262,8 @@ public class ConnectivitySimulation {
 
     public void simulation() throws IOException {
         createGame("SettlersOfCatan");
-        setMaxPlayers(gameId, 2);
+        setMaxPlayers(gameId, 3);
+        addPlayer(gameId);
         addPlayer(gameId);
         addPlayer(gameId);
         setMaxPlayers(gameId, 1);
@@ -274,7 +275,11 @@ public class ConnectivitySimulation {
         buildRoad(gameId, playerIds.get(0), 19, 20);
         buildSettlement(gameId, playerIds.get(1), 40);
         buildRoad(gameId, playerIds.get(1), 41, 40);
+        buildSettlement(gameId, playerIds.get(2), 15);
+        buildRoad(gameId, playerIds.get(2), 15, 14);
 
+        buildSettlement(gameId, playerIds.get(2), 35);
+        buildRoad(gameId, playerIds.get(2), 34, 35);
         buildSettlement(gameId, playerIds.get(1), 10);
         buildRoad(gameId, playerIds.get(1), 10, 11);
         buildSettlement(gameId, playerIds.get(0), 30);
@@ -282,7 +287,7 @@ public class ConnectivitySimulation {
 
         update(gameId, playerIds.get(0));
 
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 10; ++i) {
             rollDice(gameId, playerIds.get(0));
             discardResources(gameId, playerIds.get(0), null);
             moveRobber(gameId, playerIds.get(0), 3);

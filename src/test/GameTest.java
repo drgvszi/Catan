@@ -1,6 +1,7 @@
 package test;
 
 import catan.API.response.Code;
+import catan.game.board.Board;
 import catan.game.enumeration.Development;
 import catan.game.enumeration.Port;
 import catan.game.enumeration.Resource;
@@ -211,7 +212,7 @@ public class GameTest {
         assertEquals(game.takeResourceFromAll("desert").getKey(), Code.InvalidRequest);
         Map<String, Object> result = new HashMap<>();
         int index = 0;
-        for (Player player : game.getPlayerOrder()) {
+        for (Player player : game.getPlayersOrder()) {
             if (!player.equals(game.getCurrentPlayer())) {
                 player.addResource(Resource.brick, 2);
                 int resourcesNumber = player.getResourcesNumber(Resource.brick);
@@ -222,7 +223,7 @@ public class GameTest {
                 ++index;
             }
         }
-        for (Player player : game.getPlayerOrder()) {
+        for (Player player : game.getPlayersOrder()) {
             player.addResource(Resource.brick, 2);
         }
         assertEquals(new Pair<Code, Map<String, Object>>(null, result), game.takeResourceFromAll("brick"));
@@ -256,16 +257,22 @@ public class GameTest {
     @DisplayName("Check steal resource")
     @Test
     public void stealResource() {
+        Board board = game.getBoard();
+        board.setRobberPosition(board.getTile(0));
         Player currentPlayer = game.getCurrentPlayer();
-        Player anotherPlayer = game.getPlayerOrder().get(game.getPlayersNumber() - 1);
-        assertNull(game.stealResource(anotherPlayer.getId()));
+        Player anotherPlayer = game.getPlayersOrder().get(game.getPlayersNumber() - 1);
+        anotherPlayer.addSettlement(board.getIntersection(0));
+        assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.PlayerNoResource);
 
         anotherPlayer.addResource(Resource.lumber);
-        assertEquals(game.stealResource(anotherPlayer.getId()), Resource.lumber);
+        assertEquals(game.stealResource(anotherPlayer.getId()).getValue(), Resource.lumber);
         assertFalse(anotherPlayer.hasResource(Resource.lumber));
         assertTrue(currentPlayer.hasResource(Resource.lumber));
 
-        assertNull(game.stealResource(anotherPlayer.getId()));
+        assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.PlayerNoResource);
         assertFalse(currentPlayer.hasResource(Resource.lumber, 2));
+
+        board.setRobberPosition(board.getTile(1));
+        assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.InvalidRequest);
     }
 }

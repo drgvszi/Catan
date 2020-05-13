@@ -184,13 +184,13 @@ public class TurnFlow {
                         new TypeReference<HashMap<String, String>>() {
                         });
                 String player = requestArguments.get("player");
-                Resource resource = game.stealResource(player);
-                if (resource == null) {
-                    response = new UserResponse(HttpStatus.SC_OK, "The player does not have resource cards.",
+                Pair<Code, Resource> result = game.stealResource(player);
+                if (result.getValue() == null) {
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(result.getKey()),
                             null);
                 }
                 Map<String, Object> responseArguments = new HashMap<>();
-                responseArguments.put("resource", resource);
+                responseArguments.put("resource", result.getValue());
                 response = new UserResponse(HttpStatus.SC_OK, "The resource card was stolen successfully.",
                         responseArguments);
                 return true;

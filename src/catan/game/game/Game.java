@@ -28,7 +28,7 @@ public abstract class Game {
 
     protected int maxPlayers;
     protected Map<String, Player> players;
-    protected List<Player> playerOrder;
+    protected List<Player> playersOrder;
     protected Player currentPlayer;
 
     protected Map<Resource, Integer> tradeOffer;
@@ -49,7 +49,7 @@ public abstract class Game {
 
         maxPlayers = 0;
         players = new HashMap<>();
-        playerOrder = new ArrayList<>();
+        playersOrder = new ArrayList<>();
         currentPlayer = null;
 
         tradeOffer = null;
@@ -87,8 +87,8 @@ public abstract class Game {
         return players.size();
     }
 
-    public List<Player> getPlayerOrder() {
-        return playerOrder;
+    public List<Player> getPlayersOrder() {
+        return playersOrder;
     }
 
     public Player getCurrentPlayer() {
@@ -151,8 +151,8 @@ public abstract class Game {
         this.players = players;
     }
 
-    public void setPlayerOrder(List<Player> playerOrder) {
-        this.playerOrder = playerOrder;
+    public void setPlayersOrder(List<Player> playersOrder) {
+        this.playersOrder = playersOrder;
     }
 
     public void setCurrentPlayer(Player currentPlayer) {
@@ -218,15 +218,15 @@ public abstract class Game {
     }
 
     public void addNextPlayer(String playerId) {
-        playerOrder.add(players.get(playerId));
+        playersOrder.add(players.get(playerId));
     }
 
     public boolean startGame() {
-        if (playerOrder.size() == 0) {
+        if (playersOrder.size() == 0) {
             return false;
         }
-        bank = new Bank(new ArrayList<>(playerOrder));
-        currentPlayer = playerOrder.get(0);
+        bank = new Bank(new ArrayList<>(playersOrder));
+        currentPlayer = playersOrder.get(0);
         return true;
     }
 
@@ -288,8 +288,8 @@ public abstract class Game {
         if (currentPlayerWon()) {
             return false;
         }
-        int nextPlayer = (playerOrder.indexOf(currentPlayer) + direction) % playerOrder.size();
-        currentPlayer = playerOrder.get(nextPlayer);
+        int nextPlayer = (playersOrder.indexOf(currentPlayer) + direction) % playersOrder.size();
+        currentPlayer = playersOrder.get(nextPlayer);
         return true;
     }
 
@@ -474,8 +474,8 @@ public abstract class Game {
     }
 
     public void changeTurn() {
-        Player firstPlayer = playerOrder.get(0);
-        Player lastPlayer = playerOrder.get(getPlayersNumber() - 1);
+        Player firstPlayer = playersOrder.get(0);
+        Player lastPlayer = playersOrder.get(getPlayersNumber() - 1);
         if (currentPlayer.equals(lastPlayer)) {
             if (currentPlayer.getRoadsNumber() == 1) {
                 changeTurn(0);
@@ -502,18 +502,17 @@ public abstract class Game {
         Random dice = new Random();
         int firstDice = dice.nextInt(6) + 1;
         int secondDice = dice.nextInt(6) + 1;
-        //TODO: Remove "while" after GI adds robber.
-        while (firstDice + secondDice == 7) {
-            firstDice = dice.nextInt(6) + 1;
-            secondDice = dice.nextInt(6) + 1;
-        }
+//        while (firstDice + secondDice == 7) {
+//            firstDice = dice.nextInt(6) + 1;
+//            secondDice = dice.nextInt(6) + 1;
+//        }
         return new Pair<>(firstDice, secondDice);
     }
 
     public Map<String, Object> getRollSevenResult() {
         Map<String, Object> result = initializeRollDiceResult();
-        for (Player player : playerOrder) {
-            int playerIndex = playerOrder.indexOf(player);
+        for (Player player : playersOrder) {
+            int playerIndex = playersOrder.indexOf(player);
             int resourceNumber = player.getResourcesNumber();
             if (resourceNumber > 7) {
                 result.put("resourcesToDiscard_" + playerIndex, resourceNumber / 2);
@@ -538,7 +537,7 @@ public abstract class Game {
             for (Intersection intersection : intersections) {
                 Player owner = intersection.getOwner();
                 if (owner != null) {
-                    String argument = resource.toString() + '_' + playerOrder.indexOf(owner);
+                    String argument = resource.toString() + '_' + playersOrder.indexOf(owner);
                     int previousValue = (int) result.get(argument);
                     switch (intersection.getBuilding()) {
                         case Settlement:
@@ -559,8 +558,8 @@ public abstract class Game {
 
     protected Map<String, Object> initializeRollDiceResult() {
         Map<String, Object> result = new HashMap<>();
-        for (Player player : playerOrder) {
-            int playerIndex = playerOrder.indexOf(player);
+        for (Player player : playersOrder) {
+            int playerIndex = playersOrder.indexOf(player);
             result.put("player_" + playerIndex, player.getId());
             for (Resource resource : Resource.values()) {
                 if (resource != Resource.desert) {
@@ -618,7 +617,7 @@ public abstract class Game {
     }
 
     protected boolean checkAllHaveSent() {
-        for (Player player : playerOrder) {
+        for (Player player : playersOrder) {
             if (player.getResourcesNumber() > 7) {
                 return false;
             }
@@ -997,18 +996,36 @@ public abstract class Game {
         return players;
     }
 
-    public Resource stealResource(String playerId) {
+    public Pair<Code, Resource> stealResource(String playerId) {
         Player player = players.get(playerId);
+        if (!hasBuildingOnTile(board.getRobberPosition(), player)) {
+            return new Pair<>(Code.InvalidRequest, null);
+        }
         if (!player.hasResource()) {
-            return null;
+            return new Pair<>(Code.PlayerNoResource, null);
         }
         Resource resource = player.getRandomResource();
         Code code = player.removeResource(resource);
         if (code != null) {
-            return null;
+            return new Pair<>(Code.PlayerNoResource, null);
         }
         currentPlayer.addResource(resource);
-        return resource;
+        return new Pair<>(null, resource);
+    }
+
+    private boolean hasBuildingOnTile(Tile tile, Player player) {
+        List<Intersection> adjacentIntersections = board.getAdjacentIntersections(tile);
+        for (Intersection settlement : player.getSettlements()) {
+            if (adjacentIntersections.contains(settlement)) {
+                return true;
+            }
+        }
+        for (Intersection city : player.getSettlements()) {
+            if (adjacentIntersections.contains(city)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     //endregion
@@ -1045,7 +1062,7 @@ public abstract class Game {
         Code code;
         int index = 0;
         Map<String, Object> result = new HashMap<>();
-        for (Player player : playerOrder) {
+        for (Player player : playersOrder) {
             if (!player.equals(currentPlayer)) {
                 int resourcesNumber = player.getResourcesNumber(resource);
                 code = player.removeResource(resource, resourcesNumber);
