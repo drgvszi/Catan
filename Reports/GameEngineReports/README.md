@@ -599,6 +599,7 @@
 # Robber
 ## Error Messages
 - You can not let the robber on the same tile.
+- You can not steal a resource card from yourself.
 - The player does not have resource cards.
 ## Success Messages
 - The robber was moved successfully.
