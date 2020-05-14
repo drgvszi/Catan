@@ -99,12 +99,12 @@ public class TurnFlow {
                 result.put("dice_2", secondDice);
                 int diceSum = firstDice + secondDice;
                 if (diceSum == 7) {
-                    game.setInDiscardState(true);
+                    game.setInDiscardState(game.stayInDiscardState());
                     result.putAll(game.getRollSevenResult());
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollSeven");
                 } else {
-                    game.setInDiscardState(false);
+                    game.setInDiscardState(game.stayInDiscardState());
                     result.putAll(game.getRollNotSevenResult(diceSum));
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollNotSeven");
@@ -291,7 +291,9 @@ public class TurnFlow {
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                 }
-                response = new UserResponse(HttpStatus.SC_OK, "The trade was made successfully.", null);
+                else {
+                    response = new UserResponse(HttpStatus.SC_OK, "The trade was made successfully.", null);
+                }
                 return true;
             }
         });

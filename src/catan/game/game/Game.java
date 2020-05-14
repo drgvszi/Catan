@@ -250,13 +250,15 @@ public abstract class Game {
         Map<String, Object> responseArguments = new HashMap<>();
         switch (command) {
             case "discardResources": {
+                if (requestArguments == null) {
+                    return new Pair<>(Code.InvalidRequest, null);
+                }
                 Code code = checkDiscardResources(playerId, requestArguments);
                 if (code != null) {
                     return new Pair<>(code, null);
                 }
-                boolean sentAll = checkAllHaveSent();
-                inDiscardState = !sentAll;
-                responseArguments.put("sentAll", sentAll);
+                inDiscardState = stayInDiscardState();
+                responseArguments.put("sentAll", !inDiscardState);
                 return new Pair<>(null, responseArguments);
             }
             case "wantToTrade": {
@@ -514,6 +516,9 @@ public abstract class Game {
         Random dice = new Random();
         int firstDice = dice.nextInt(6) + 1;
         int secondDice = dice.nextInt(6) + 1;
+        if (firstDice + secondDice == 7) {
+            System.out.println(1);
+        }
 //        while (firstDice + secondDice == 7) {
 //            firstDice = dice.nextInt(6) + 1;
 //            secondDice = dice.nextInt(6) + 1;
@@ -628,13 +633,13 @@ public abstract class Game {
         return null;
     }
 
-    protected boolean checkAllHaveSent() {
+    public boolean stayInDiscardState() {
         for (Player player : playersOrder) {
             if (player.getResourcesNumber() > 7) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     //endregion
@@ -859,7 +864,7 @@ public abstract class Game {
 
     public Code wantToTrade(String player) {
         if (player.equals(currentPlayer.getId())) {
-            return Code.InvalidTradeRequest;
+            return Code.ForbiddenRequest;
         }
         if (tradeOffer == null || tradeRequest == null) {
             return Code.NoTradeAvailable;
