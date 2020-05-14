@@ -608,7 +608,7 @@
 - Intersection already occupied.
 - You have no more settlements to build.
 - The two roads distance rule is not satisfied.
-- You do not connect to one of your roads.
+- It does not connect to one of your roads.
 ## Success Messages
 - The settlement was built successfully.
 - The settlement was bought successfully.
@@ -629,7 +629,6 @@
 # Trade
 ## Player Trade
 ### Error Messages
-- Invalid trade request.
 - No trade available.
 - You are already in trade.
 - The selected player is not in trade.
