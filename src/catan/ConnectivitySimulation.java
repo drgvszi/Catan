@@ -280,57 +280,75 @@ public class ConnectivitySimulation implements Runnable {
             addPlayer(gameId);
             addPlayer(gameId);
             addPlayer(gameId);
+
             setMaxPlayers(gameId, 1);
             addPlayer(gameId);
+
             startGame(gameId);
 
             buildSettlement(gameId, playerIds.get(0), 20);
             buildRoad(gameId, playerIds.get(0), 18, 19);
             buildRoad(gameId, playerIds.get(0), 19, 20);
+
             buildSettlement(gameId, playerIds.get(1), 40);
             buildRoad(gameId, playerIds.get(1), 41, 40);
+
             buildSettlement(gameId, playerIds.get(2), 15);
             buildRoad(gameId, playerIds.get(2), 15, 14);
 
             buildSettlement(gameId, playerIds.get(2), 35);
             buildRoad(gameId, playerIds.get(2), 34, 35);
+
             buildSettlement(gameId, playerIds.get(1), 10);
             buildRoad(gameId, playerIds.get(1), 10, 11);
+
             buildSettlement(gameId, playerIds.get(0), 30);
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
             update(gameId, playerIds.get(0));
             changePlayerStatus(gameId, playerIds.get(1), false);
 
-            for (int i = 0; i < 2; ++i) {
-                rollDice(gameId, playerIds.get(0));
-                discardResources(gameId, playerIds.get(0), null);
-                moveRobber(gameId, playerIds.get(0), 3);
-                stealResource(gameId, playerIds.get(0), "yes", playerIds.get(1));
+            for (int index = 0; index < 9; ++index) {
+                int turn = index % 3;
+                String currentPlayer = playerIds.get(turn);
+                rollDice(gameId, currentPlayer);
+                discardResources(gameId, currentPlayer, null);
+                moveRobber(gameId, currentPlayer, 3);
+                stealResource(gameId, currentPlayer, "yes", playerIds.get(2 - turn));
 
-                playerTrade(gameId, playerIds.get(0), null, null);
-                wantToTrade(gameId, playerIds.get(1));
-                sendPartners(gameId, playerIds.get(0));
-                selectPartner(gameId, playerIds.get(0), playerIds.get(1));
+                playerTrade(gameId, currentPlayer, null, null);
+                wantToTrade(gameId, playerIds.get(turn % 3));
+                wantToTrade(gameId, playerIds.get((turn + 1) % 3));
+                wantToTrade(gameId, playerIds.get((turn + 2) % 3));
+                sendPartners(gameId, currentPlayer);
+                selectPartner(gameId, currentPlayer, currentPlayer);
 
-                buySettlement(gameId, playerIds.get(0), 20);
-                rollDice(gameId, playerIds.get(0));
-                buyRoad(gameId, playerIds.get(0), 10, 11);
+                buySettlement(gameId, currentPlayer, 20);
 
-                buyDevelopment(gameId, playerIds.get(0));
-                useDevelopment(gameId, playerIds.get(0), "roadBuilding");
-                buildDevelopmentRoad(gameId, playerIds.get(0), 2, 3);
-                takeResourceFromAll(gameId, playerIds.get(0), "desert");
-                takeTwoResources(gameId, playerIds.get(0), "wool", "lumber");
+                rollDice(gameId, currentPlayer);
 
-                buildRoad(gameId, playerIds.get(0), 20, 30);
-                endTurn(gameId, playerIds.get(0));
+                buyDevelopment(gameId, currentPlayer);
+                useDevelopment(gameId, currentPlayer, "roadBuilding");
+                buildDevelopmentRoad(gameId, currentPlayer, 2, 3);
+                buildDevelopmentRoad(gameId, currentPlayer, 3, 4);
 
-                rollDice(gameId, playerIds.get(1));
-                buySettlement(gameId, playerIds.get(0), 25);
-                buyCity(gameId, playerIds.get(1), 22);
-                endTurn(gameId, playerIds.get(0));
-                endTurn(gameId, playerIds.get(1));
+                buyDevelopment(gameId, currentPlayer);
+                useDevelopment(gameId, currentPlayer, "monopoly");
+                takeResourceFromAll(gameId, currentPlayer, "desert");
+
+                buyDevelopment(gameId, currentPlayer);
+                useDevelopment(gameId, currentPlayer, "yearOfPlenty");
+                takeTwoResources(gameId, currentPlayer, "wool", "lumber");
+
+                buildRoad(gameId, currentPlayer, 20, 30);
+
+                noPlayerTrade(gameId, currentPlayer, 10, "brick", "lumber");
+                buyRoad(gameId, currentPlayer, 0, 21);
+
+                buyCity(gameId, currentPlayer, 22);
+
+                endTurn(gameId, currentPlayer);
+
                 getRanking(gameId);
             }
 

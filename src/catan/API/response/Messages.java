@@ -72,7 +72,7 @@ public class Messages {
 
         messages.put(Code.IntersectionAlreadyOccupied, "Intersection already occupied.");
         messages.put(Code.DistanceRuleViolated, "The two roads distance rule is not satisfied.");
-        messages.put(Code.NotConnectsToRoad, "You do not connect to one of your roads.");
+        messages.put(Code.NotConnectsToRoad, "It does not connect to one of your roads.");
         messages.put(Code.RoadAlreadyExistent, "Road already existent.");
 
         messages.put(Code.NoRoad, "You have no more roads to build.");
@@ -91,7 +91,6 @@ public class Messages {
 
         //region Trade
 
-        messages.put(Code.InvalidTradeRequest, "Invalid trade request.");
         messages.put(Code.NoTradeAvailable, "No trade available.");
         messages.put(Code.AlreadyInTrade, "You are already in trade.");
         messages.put(Code.NotInTrade, "The selected player is not in trade.");

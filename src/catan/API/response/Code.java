@@ -82,7 +82,6 @@ public enum Code {
 
     //region Trade
 
-    InvalidTradeRequest,
     NoTradeAvailable,
     AlreadyInTrade,
     NotInTrade,
