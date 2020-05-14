@@ -90,6 +90,11 @@ public enum Code {
 
     //endregion Trade
 
+    //region Turn
+    PlayerWon,
+    NotEnoughPlayers,
+    //endregion
+
     //region Unknown
 
     InvalidRequest,

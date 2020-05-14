@@ -271,14 +271,27 @@ public abstract class Game {
         }
     }
 
-    public boolean changeTurn(int direction) {
+    public Code changeTurn(int direction) {
         updateBonusPoints();
         if (currentPlayerWon()) {
-            return false;
+            return Code.PlayerWon;
+        }
+        int activeCounter = 0;
+        for (Player player : playersOrder) {
+            if (player.isActive())
+                activeCounter++;
+        }
+        if(activeCounter < 2){
+            return Code.NotEnoughPlayers;
         }
         int nextPlayer = (playersOrder.indexOf(currentPlayer) + direction) % playersOrder.size();
         currentPlayer = playersOrder.get(nextPlayer);
-        return true;
+        // skip over inactive players!
+        while (!currentPlayer.isActive()) {
+            nextPlayer = (playersOrder.indexOf(currentPlayer) + direction) % playersOrder.size();
+            currentPlayer = playersOrder.get(nextPlayer);
+        }
+        return null;
     }
 
     protected void updateBonusPoints() {
@@ -461,25 +474,36 @@ public abstract class Game {
         return resources;
     }
 
-    public void changeTurn() {
+    public Code changeTurn() {
         Player firstPlayer = playersOrder.get(0);
         Player lastPlayer = playersOrder.get(getPlayersNumber() - 1);
         if (currentPlayer.equals(lastPlayer)) {
             if (currentPlayer.getRoadsNumber() == 1) {
-                changeTurn(0);
+                if(changeTurn(0)==Code.NotEnoughPlayers) {
+                    return Code.NotEnoughPlayers;
+                }
             } else if (currentPlayer.getRoadsNumber() == 2) {
-                changeTurn(-1);
+                if(changeTurn(-1)==Code.NotEnoughPlayers) {
+                    return Code.NotEnoughPlayers;
+                }
             }
         } else {
             if (currentPlayer.equals(firstPlayer) && currentPlayer.getRoadsNumber() == 2) {
-                changeTurn(1);
+                if(changeTurn(1)==Code.NotEnoughPlayers) {
+                    return Code.NotEnoughPlayers;
+                }
             }
             if (lastPlayer.getRoadsNumber() == 0) {
-                changeTurn(1);
+                if(changeTurn(1)==Code.NotEnoughPlayers) {
+                    return Code.NotEnoughPlayers;
+                }
             } else if (lastPlayer.getRoadsNumber() == 2) {
-                changeTurn(-1);
+                if(changeTurn(-1)==Code.NotEnoughPlayers) {
+                    return Code.NotEnoughPlayers;
+                }
             }
         }
+        return null;
     }
 
     //endregion

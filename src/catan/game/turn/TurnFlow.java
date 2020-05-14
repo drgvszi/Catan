@@ -541,11 +541,15 @@ public class TurnFlow {
         fsm.setAction("endTurn", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
-                if (game.changeTurn(1)) {
+                Code changeTurnResult = game.changeTurn(1);
+                if (changeTurnResult == null) {
                     response = new UserResponse(HttpStatus.SC_OK, "The turn was changed successfully.", null);
-                } else {
+                } else if (changeTurnResult == Code.PlayerWon) {
                     fsm.ProcessFSM("endGame");
                     response = new UserResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
+                } else { // TODO Silviu sau cineva care stie mai bine cum functioneaza FSM-ul sa verifice asta.
+                    fsm.ProcessFSM("endGame");
+                    response = new UserResponse(HttpStatus.SC_OK, "The game has ended because there are not enough active players", null);
                 }
                 return true;
             }

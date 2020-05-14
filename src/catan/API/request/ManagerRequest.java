@@ -181,6 +181,7 @@ public class ManagerRequest implements GameRequest {
                 }
                 player.setActive(active);
                 if (game.getCurrentPlayer().getId().equals(playerId) && !active) {
+                    // nu cred ca este important codul returnat in cazul asta
                     game.changeTurn(1);
                 }
                 return new ManagerResponse(HttpStatus.SC_OK, "The player status has been changed.", null);

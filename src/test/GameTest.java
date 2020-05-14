@@ -282,4 +282,46 @@ public class GameTest {
         board.setRobberPosition(board.getTile(1));
         assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.InvalidRequest);
     }
+
+    @DisplayName("Check change of turn")
+    @Test
+    public void skipInactive() {
+        Player currentPlayer = game.getCurrentPlayer();
+        Player anotherPlayer = game.getPlayersOrder().get(
+                (game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
+
+        //verify if the turn changes successfully and the current player is really changed
+        assertNull(game.changeTurn(1));
+        assertEquals(anotherPlayer, game.getCurrentPlayer());
+
+        currentPlayer = game.getCurrentPlayer();
+        anotherPlayer = game.getPlayersOrder().get(
+                (game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
+        String currentPlayerID = currentPlayer.getId();
+        assertTrue(currentPlayer.isActive());
+        assertTrue(anotherPlayer.isActive());
+
+        anotherPlayer.setActive(false);
+        assertFalse(anotherPlayer.isActive());
+
+        //verify if changeTurn skips inactive players and returns "NotEnoughPlayers" when needed
+        Code changeTurnCode = game.changeTurn(1);
+        currentPlayer = game.getCurrentPlayer();
+        assertEquals(currentPlayerID, currentPlayer.getId());
+        assertEquals(Code.NotEnoughPlayers, changeTurnCode);
+
+        currentPlayer = game.getCurrentPlayer();
+        anotherPlayer = game.getPlayersOrder().get(
+                (game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
+        currentPlayerID = currentPlayer.getId();
+        currentPlayer.setActive(true);
+        anotherPlayer.setActive(true);
+
+        // verify if changeTurn returns "PlayerWon" when needed
+        currentPlayer.setHiddenVictoryPoints(11);
+        changeTurnCode = game.changeTurn(1);
+        currentPlayer = game.getCurrentPlayer();
+        assertEquals(currentPlayerID, currentPlayer.getId());
+        assertEquals(Code.PlayerWon, changeTurnCode);
+    }
 }
