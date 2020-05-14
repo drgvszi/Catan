@@ -148,8 +148,9 @@ public class ConnectivitySimulation implements Runnable {
         return HttpClientPost.userPost(new UserRequest(gameId, playerId, "moveRobber", request));
     }
 
-    public UserResponse stealResource(String gameId, String playerId, String player) throws IOException {
+    public UserResponse stealResource(String gameId, String playerId, String answer, String player) throws IOException {
         Map<String, Object> request = new HashMap<>();
+        request.put("answer", answer);
         request.put("player", player);
         return HttpClientPost.userPost(new UserRequest(gameId, playerId, "stealResource", request));
     }
@@ -299,13 +300,13 @@ public class ConnectivitySimulation implements Runnable {
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
             update(gameId, playerIds.get(0));
-            changePlayerStatus(gameId, playerIds.get(0), false);
+            changePlayerStatus(gameId, playerIds.get(1), false);
 
             for (int i = 0; i < 2; ++i) {
                 rollDice(gameId, playerIds.get(0));
                 discardResources(gameId, playerIds.get(0), null);
                 moveRobber(gameId, playerIds.get(0), 3);
-                stealResource(gameId, playerIds.get(0), playerIds.get(1));
+                stealResource(gameId, playerIds.get(0), "yes", playerIds.get(1));
 
                 playerTrade(gameId, playerIds.get(0), null, null);
                 wantToTrade(gameId, playerIds.get(1));

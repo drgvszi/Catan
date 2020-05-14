@@ -183,11 +183,17 @@ public class TurnFlow {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
                         new TypeReference<HashMap<String, String>>() {
                         });
+                String answer = requestArguments.get("answer");
+                if (answer == null || answer.equalsIgnoreCase("no")) {
+                    response = new UserResponse(HttpStatus.SC_OK, "Okay.", null);
+                    return true;
+                }
                 String player = requestArguments.get("player");
                 Pair<Code, Resource> result = game.stealResource(player);
                 if (result.getValue() == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(result.getKey()),
                             null);
+                    return false;
                 }
                 Map<String, Object> responseArguments = new HashMap<>();
                 responseArguments.put("resource", result.getValue());

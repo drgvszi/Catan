@@ -77,14 +77,14 @@
       "grain_0": "number of received grains (integer)",
       "brick_0": "number of received bricks (integer)",
       "ore_0": "number of received ores (integer)",
-      "resourcesToDiscard_0": "0 or half (rounded down) if rolled seven and has 8 or more resources (integer)",
+      "resourcesToDiscard_0": "0 or half (rounded down) if rolled seven and has eight or more resources (integer)",
       "player_1": "playerId",
       "lumber_1": "number of received lumbers (integer)",
       "wool_1": "number of received wools (integer)",
       "grain_1": "number of received grains (integer)",
       "brick_1": "number of received bricks (integer)",
       "ore_1": "number of received ores (integer)",
-      "resourcesToDiscard_1": "0 or half (rounded down) if rolled seven and has 8 or more resources (integer)"
+      "resourcesToDiscard_1": "0 or half (rounded down) if rolled seven and has eight or more resources (integer)"
     }
   },
   {
@@ -127,6 +127,7 @@
     "playerId": "playerId",
     "command": "stealResource",
     "arguments": {
+      "answer": "yes or no (just one per request)",
       "player": "playerId"
     }
   },
