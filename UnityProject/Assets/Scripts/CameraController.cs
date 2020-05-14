@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     public Vector3 newPos;
     public Quaternion newRotation;
     public Vector3 newZoom;
+    public Vector2 panLimit;
     
 
     // Start is called before the first frame update
@@ -37,28 +38,30 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            if (newPos.z <= 18.5)
+          
                 newPos += (transform.forward * movementSpeed);
 
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            if (newPos.z >= -2.3)
+          
                 newPos += (transform.forward * -movementSpeed);
 
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            if (newPos.x <=17.3)
+        
                 newPos += (transform.right * movementSpeed);
 
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            if (newPos.x >= 1.5)
+          
                 newPos += (transform.right * -movementSpeed);
 
         }
+        newPos.x = Mathf.Clamp(newPos.x, -panLimit.x, +panLimit.x);
+        newPos.z = Mathf.Clamp(newPos.z, -panLimit.y, +panLimit.y);
         if (Input.GetKey(KeyCode.Q))
         {
             newRotation *= Quaternion.Euler(Vector3.up * rotation);
