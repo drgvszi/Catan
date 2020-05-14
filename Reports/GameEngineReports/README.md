@@ -643,6 +643,7 @@
 # Game
 ## Success Messages
 - The game has ended successfully.
+- The game has ended because there are not enough active players.
 # Requests
 ## Error Messages
 - Invalid request.
