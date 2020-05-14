@@ -181,7 +181,6 @@ public class ManagerRequest implements GameRequest {
                 }
                 player.setActive(active);
                 if (game.getCurrentPlayer().getId().equals(playerId) && !active) {
-                    // nu cred ca este important codul returnat in cazul asta
                     game.changeTurn(1);
                 }
                 return new ManagerResponse(HttpStatus.SC_OK, "The player status has been changed.", null);
@@ -198,7 +197,6 @@ public class ManagerRequest implements GameRequest {
                 if (game.getBank() == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has not started yet.", null);
                 }
-                //TODO
                 Application.games.remove(gameId);
                 return new ManagerResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
             }

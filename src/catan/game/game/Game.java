@@ -276,23 +276,22 @@ public abstract class Game {
     public Code changeTurn(int direction) {
         updateBonusPoints();
         if (currentPlayerWon()) {
-            return Code.PlayerWon;
+            return Code.FoundWinner;
         }
-        int activeCounter = 0;
+        int activePlayers = 0;
         for (Player player : playersOrder) {
-            if (player.isActive())
-                activeCounter++;
+            if (player.isActive()) {
+                ++activePlayers;
+            }
         }
-        if(activeCounter < 2){
+        if (activePlayers < 2) {
             return Code.NotEnoughPlayers;
         }
-        int nextPlayer = (playersOrder.indexOf(currentPlayer) + direction) % playersOrder.size();
-        currentPlayer = playersOrder.get(nextPlayer);
-        // skip over inactive players!
-        while (!currentPlayer.isActive()) {
+        int nextPlayer;
+        do {
             nextPlayer = (playersOrder.indexOf(currentPlayer) + direction) % playersOrder.size();
             currentPlayer = playersOrder.get(nextPlayer);
-        }
+        } while (!currentPlayer.isActive());
         return null;
     }
 
@@ -481,26 +480,26 @@ public abstract class Game {
         Player lastPlayer = playersOrder.get(getPlayersNumber() - 1);
         if (currentPlayer.equals(lastPlayer)) {
             if (currentPlayer.getRoadsNumber() == 1) {
-                if(changeTurn(0)==Code.NotEnoughPlayers) {
+                if (changeTurn(0) == Code.NotEnoughPlayers) {
                     return Code.NotEnoughPlayers;
                 }
             } else if (currentPlayer.getRoadsNumber() == 2) {
-                if(changeTurn(-1)==Code.NotEnoughPlayers) {
+                if (changeTurn(-1) == Code.NotEnoughPlayers) {
                     return Code.NotEnoughPlayers;
                 }
             }
         } else {
             if (currentPlayer.equals(firstPlayer) && currentPlayer.getRoadsNumber() == 2) {
-                if(changeTurn(1)==Code.NotEnoughPlayers) {
+                if (changeTurn(1) == Code.NotEnoughPlayers) {
                     return Code.NotEnoughPlayers;
                 }
             }
             if (lastPlayer.getRoadsNumber() == 0) {
-                if(changeTurn(1)==Code.NotEnoughPlayers) {
+                if (changeTurn(1) == Code.NotEnoughPlayers) {
                     return Code.NotEnoughPlayers;
                 }
             } else if (lastPlayer.getRoadsNumber() == 2) {
-                if(changeTurn(-1)==Code.NotEnoughPlayers) {
+                if (changeTurn(-1) == Code.NotEnoughPlayers) {
                     return Code.NotEnoughPlayers;
                 }
             }

@@ -262,8 +262,7 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments":
-    {
+    "arguments": {
       "development": "random bought development"
     }
   },

@@ -322,6 +322,6 @@ public class GameTest {
         changeTurnCode = game.changeTurn(1);
         currentPlayer = game.getCurrentPlayer();
         assertEquals(currentPlayerID, currentPlayer.getId());
-        assertEquals(Code.PlayerWon, changeTurnCode);
+        assertEquals(Code.FoundWinner, changeTurnCode);
     }
 }

@@ -290,8 +290,7 @@ public class TurnFlow {
                 Code code = game.noPlayerTrade(port, offer, request);
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
-                }
-                else {
+                } else {
                     response = new UserResponse(HttpStatus.SC_OK, "The trade was made successfully.", null);
                 }
                 return true;
@@ -546,12 +545,13 @@ public class TurnFlow {
                 Code changeTurnResult = game.changeTurn(1);
                 if (changeTurnResult == null) {
                     response = new UserResponse(HttpStatus.SC_OK, "The turn was changed successfully.", null);
-                } else if (changeTurnResult == Code.PlayerWon) {
+                } else if (changeTurnResult == Code.FoundWinner) {
                     fsm.ProcessFSM("endGame");
                     response = new UserResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
-                } else { // TODO Silviu sau cineva care stie mai bine cum functioneaza FSM-ul sa verifice asta.
+                } else {
                     fsm.ProcessFSM("endGame");
-                    response = new UserResponse(HttpStatus.SC_OK, "The game has ended because there are not enough active players", null);
+                    response = new UserResponse(HttpStatus.SC_OK,
+                            "The game has ended because there are not enough active players.", null);
                 }
                 return true;
             }
