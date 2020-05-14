@@ -598,7 +598,8 @@
 - Invalid position for road.
 - Road already existent.
 - You have no more roads to build.
-- You do not connect to one of your roads.
+- It does not connect to one of your intersections.
+- It does not connect to one of your roads.
 ## Success Messages
 - The road was built successfully.
 - The road was bought successfully.
