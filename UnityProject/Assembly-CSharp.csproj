@@ -109,6 +109,7 @@
      <Compile Include="Assets\Scripts\MakeRequest.cs" />
      <Compile Include="Assets\Scripts\MakeRequestResponse.cs" />
      <Compile Include="Assets\Scripts\Map.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\ReceiveBoardScript.cs" />
      <Compile Include="Assets\Scripts\RegisterConnectivityJson.cs" />
      <Compile Include="Assets\Scripts\RegisterScript.cs" />

@@ -25,6 +25,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("SettingsScene");
     }
+    public void goToLobbyList()
+    {
+        SceneManager.LoadScene("LobbyList");
+    }
 
     public void playOnline()
     {
