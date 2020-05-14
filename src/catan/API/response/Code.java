@@ -63,6 +63,7 @@ public enum Code {
 
     IntersectionAlreadyOccupied,
     DistanceRuleViolated,
+    NotConnectsToIntersection,
     NotConnectsToRoad,
     RoadAlreadyExistent,
 

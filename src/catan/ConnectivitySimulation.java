@@ -286,17 +286,24 @@ public class ConnectivitySimulation implements Runnable {
 
             startGame(gameId);
 
+            update(gameId, playerIds.get(1));
+
             buildSettlement(gameId, playerIds.get(0), 20);
             buildRoad(gameId, playerIds.get(0), 18, 19);
             buildRoad(gameId, playerIds.get(0), 19, 20);
 
+            update(gameId, playerIds.get(1));
+
             buildSettlement(gameId, playerIds.get(1), 40);
             buildRoad(gameId, playerIds.get(1), 41, 40);
+
+            update(gameId, playerIds.get(1));
 
             buildSettlement(gameId, playerIds.get(2), 15);
             buildRoad(gameId, playerIds.get(2), 15, 14);
 
             buildSettlement(gameId, playerIds.get(2), 35);
+            buildRoad(gameId, playerIds.get(2), 15, 4);
             buildRoad(gameId, playerIds.get(2), 34, 35);
 
             buildSettlement(gameId, playerIds.get(1), 10);

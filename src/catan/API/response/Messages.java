@@ -72,6 +72,7 @@ public class Messages {
 
         messages.put(Code.IntersectionAlreadyOccupied, "Intersection already occupied.");
         messages.put(Code.DistanceRuleViolated, "The two roads distance rule is not satisfied.");
+        messages.put(Code.NotConnectsToIntersection, "It does not connect to one of your intersections.");
         messages.put(Code.NotConnectsToRoad, "It does not connect to one of your roads.");
         messages.put(Code.RoadAlreadyExistent, "Road already existent.");
 

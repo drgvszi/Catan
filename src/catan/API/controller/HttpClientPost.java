@@ -27,7 +27,7 @@ public class HttpClientPost {
         ObjectMapper objectMapper = new ObjectMapper();
         System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString((request)));
         String requestJson = objectMapper.writeValueAsString(request);
-        URL url = new URL(herokuManagerUrl);
+        URL url = new URL(localhostManagerUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json; utf-8");
@@ -58,7 +58,7 @@ public class HttpClientPost {
         ObjectMapper objectMapper = new ObjectMapper();
         System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString((request)));
         String requestJson = objectMapper.writeValueAsString((request));
-        URL url = new URL(herokuUserUrl);
+        URL url = new URL(localhostUserUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json; utf-8");

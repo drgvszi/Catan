@@ -428,6 +428,10 @@ public class Player {
         if (result != null) {
             return result;
         }
+        result = connectsToIntersection(start, end);
+        if (result == null) {
+            return null;
+        }
         return connectsToRoad(start, end);
     }
 
@@ -439,6 +443,21 @@ public class Player {
             return Code.PlayerNotEnoughBrick;
         }
         return null;
+    }
+
+    public Code connectsToIntersection(int start, int end) {
+        for (Intersection settlement : settlements) {
+            if (start == settlement.getId() || end == settlement.getId()) {
+                return null;
+            }
+        }
+
+        for (Intersection city : cities) {
+            if (start == city.getId() || end == city.getId()) {
+                return null;
+            }
+        }
+        return Code.NotConnectsToIntersection;
     }
 
     public Code connectsToRoad(int start, int end) {

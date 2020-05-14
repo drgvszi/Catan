@@ -6,6 +6,8 @@ import catan.API.response.UserResponse;
 import catan.game.enumeration.Development;
 import catan.game.enumeration.Resource;
 import catan.game.game.Game;
+import catan.game.player.Player;
+import catan.game.property.Intersection;
 import catan.util.Helper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -73,6 +75,16 @@ public class TurnFlow {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
                         new TypeReference<HashMap<String, Integer>>() {
                         });
+                Player currentPlayer = game.getCurrentPlayer();
+                int settlementsNumber = currentPlayer.getSettlementsNumber();
+                Intersection lastSettlement = currentPlayer.getSettlements().get(settlementsNumber - 1);
+                int start = requestArguments.get("start");
+                int end = requestArguments.get("end");
+                if (!(lastSettlement.getId() == start || lastSettlement.getId() == end)) {
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED,
+                            Messages.getMessage(Code.NotConnectsToIntersection), null);
+                    return false;
+                }
                 Code code = game.buildRoad(requestArguments.get("start"), requestArguments.get("end"));
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
