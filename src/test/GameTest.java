@@ -283,45 +283,39 @@ public class GameTest {
         assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.InvalidRequest);
     }
 
-    @DisplayName("Check change of turn")
+    @DisplayName("Check turn manager")
     @Test
-    public void skipInactive() {
-        Player currentPlayer = game.getCurrentPlayer();
-        Player anotherPlayer = game.getPlayersOrder().get(
-                (game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
+    public void skipInactivePlayers() {
+        //region Change Turn
 
-        //verify if the turn changes successfully and the current player is really changed
+        Player currentPlayer = game.getCurrentPlayer();
+        Player anotherPlayer = game.getPlayersOrder()
+                .get((game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
+
         assertNull(game.changeTurn(1));
-        assertEquals(anotherPlayer, game.getCurrentPlayer());
+        assertEquals(game.getCurrentPlayer(), anotherPlayer);
 
         currentPlayer = game.getCurrentPlayer();
-        anotherPlayer = game.getPlayersOrder().get(
-                (game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
-        String currentPlayerID = currentPlayer.getId();
+        anotherPlayer = game.getPlayersOrder()
+                .get((game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
         assertTrue(currentPlayer.isActive());
         assertTrue(anotherPlayer.isActive());
 
         anotherPlayer.setActive(false);
         assertFalse(anotherPlayer.isActive());
+        String currentPlayerId = currentPlayer.getId();
+        assertEquals(game.changeTurn(1), Code.NotEnoughPlayers);
+        assertEquals(currentPlayerId, game.getCurrentPlayer().getId());
 
-        //verify if changeTurn skips inactive players and returns "NotEnoughPlayers" when needed
-        Code changeTurnCode = game.changeTurn(1);
-        currentPlayer = game.getCurrentPlayer();
-        assertEquals(currentPlayerID, currentPlayer.getId());
-        assertEquals(Code.NotEnoughPlayers, changeTurnCode);
+        //endregion
 
-        currentPlayer = game.getCurrentPlayer();
-        anotherPlayer = game.getPlayersOrder().get(
-                (game.getPlayersOrder().indexOf(currentPlayer) + 1) % game.getPlayersOrder().size());
-        currentPlayerID = currentPlayer.getId();
-        currentPlayer.setActive(true);
-        anotherPlayer.setActive(true);
+        //region End Game
 
-        // verify if changeTurn returns "PlayerWon" when needed
-        currentPlayer.setHiddenVictoryPoints(11);
-        changeTurnCode = game.changeTurn(1);
-        currentPlayer = game.getCurrentPlayer();
-        assertEquals(currentPlayerID, currentPlayer.getId());
-        assertEquals(Code.FoundWinner, changeTurnCode);
+        currentPlayer.setPublicVictoryPoints(10);
+        currentPlayerId = currentPlayer.getId();
+        assertEquals(game.changeTurn(1), Code.FoundWinner);
+        assertEquals(currentPlayer.getId(), currentPlayerId);
+
+        //endregion
     }
 }
