@@ -75,6 +75,7 @@ public enum Code {
     //region Robber
 
     SameTile,
+    SamePlayer,
     PlayerNoResource,
 
     //endregion

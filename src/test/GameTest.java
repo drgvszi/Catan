@@ -265,6 +265,8 @@ public class GameTest {
         Board board = game.getBoard();
         board.setRobberPosition(board.getTile(0));
         Player currentPlayer = game.getCurrentPlayer();
+        assertEquals(game.stealResource(currentPlayer.getId()).getKey(), Code.SamePlayer);
+
         Player anotherPlayer = game.getPlayersOrder().get(game.getPlayersNumber() - 1);
         anotherPlayer.addSettlement(board.getIntersection(0));
         assertEquals(game.stealResource(anotherPlayer.getId()).getKey(), Code.PlayerNoResource);

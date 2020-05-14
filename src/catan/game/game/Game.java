@@ -990,6 +990,9 @@ public abstract class Game {
 
     public Pair<Code, Resource> stealResource(String playerId) {
         Player player = players.get(playerId);
+        if (player.equals(currentPlayer)) {
+            return new Pair<>(Code.SamePlayer, null);
+        }
         if (!hasBuildingOnTile(board.getRobberPosition(), player)) {
             return new Pair<>(Code.InvalidRequest, null);
         }

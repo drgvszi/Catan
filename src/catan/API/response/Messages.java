@@ -84,6 +84,7 @@ public class Messages {
         //region Robber
 
         messages.put(Code.SameTile, "You can not let the robber on the same tile.");
+        messages.put(Code.SamePlayer, "You can not steal a resource card from yourself.");
         messages.put(Code.PlayerNoResource, "The player does not have resource cards.");
 
         //endregion
