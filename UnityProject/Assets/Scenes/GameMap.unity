@@ -21529,9 +21529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 963194228}
-  movementSpeed: 0.4
+  movementSpeed: 0.3
   movementTime: 5
-  rotation: 2
+  rotation: 1
   zoomAmount: {x: 0, y: -0.5, z: 0.5}
   newPos: {x: 0, y: 0, z: 0}
   newRotation: {x: 0, y: 0, z: 0, w: 0}
