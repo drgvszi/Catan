@@ -305,12 +305,13 @@ public class ConnectivitySimulation implements Runnable {
             buildSettlement(gameId, playerIds.get(0), 30);
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
-            update(gameId, playerIds.get(0));
+            getRanking(gameId);
             changePlayerStatus(gameId, playerIds.get(1), false);
 
             for (int index = 0; index < 9; ++index) {
                 int turn = index % 3;
                 String currentPlayer = playerIds.get(turn);
+                update(gameId, currentPlayer);
                 rollDice(gameId, currentPlayer);
                 discardResources(gameId, currentPlayer, null);
                 moveRobber(gameId, currentPlayer, 3);
