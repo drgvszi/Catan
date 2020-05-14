@@ -1,4 +1,5 @@
 # Build First Two Settlements and Roads
+## Build a settlement for free
 ``` 
 {
  "gameId": "gameId", 
@@ -18,6 +19,7 @@
  "arguments": null 
 }
 ```
+## Build a road for free
 ```
 { 
  "gameId": "gameId", 
@@ -40,6 +42,7 @@
 }
 ```
 # Dice
+## Roll the dice
 ```
 { 
  "gameId": "gameId", 
@@ -63,14 +66,14 @@
   "grain_0": "number of received grains (integer)", 
   "brick_0": "number of received bricks (integer)", 
   "ore_0": "number of received ores (integer)", 
-  "resourcesToDiscard_0": "0 or half (rounded down) if rolled seven and has 8 or more resources (integer)", 
+  "resourcesToDiscard_0": "0 or half (rounded down) if rolled seven and has eight or more resources (integer)", 
   "player_1": "playerId", 
   "lumber_1": "number of received lumbers (integer)", 
   "wool_1": "number of received wools (integer)", 
   "grain_1": "number of received grains (integer)", 
   "brick_1": "number of received bricks (integer)", 
   "ore_1": "number of received ores (integer)", 
-  "resourcesToDiscard_1": "0 or half (rounded down) if rolled seven and has 8 or more resources (integer)" 
+  "resourcesToDiscard_1": "0 or half (rounded down) if rolled seven and has eight or more resources (integer)" 
  }
 }
 ```
@@ -78,6 +81,7 @@
  - ```player_0``` contains the player identifier for which the information with ```_0``` will be about (and so on)
  - if the dice sum is not seven, ```resourcesToDiscard``` is 0
  - if the dice sum is seven, ```lumber```, ```wool```, ```grain```, ```brick```, ```ore```  are 0
+ ## Discard half of your resource cards if the dice sum is seven and you have eight or more resource cards
 ```
 { 
  "gameId": "gameId", 
@@ -104,10 +108,11 @@
  } 
 }
 ```
- - if the code is 200, the mentioned resources are moved from the player to the bank
+ - if the code is 200, the specified resources are moved from the player to the bank
  - if the code is 202, the player must send again ```discardResources```
  - if ```sentAll``` is true, the game can continue
 # Robber
+## Move the Robber if you rolled seven or you use the Knight development card
 ``` 
 { 
  "gameId": "gameId", 
@@ -133,6 +138,7 @@
 ```
  - if the code is 200, the robber is moved on the requested tile
  - the players identified by these players identifier have buildings on the tile where the robber was moved
+ ## Steal a resource card if you moved the Robber
 ``` 
 { 
  "gameId": "gameId", 
@@ -140,13 +146,14 @@
  "command": "stealResource", 
  "arguments":
  { 
+  "answer": "yes or no (just one per request)",
   "player": "playerId" 
  } 
 }
 ```
+ - if ```answer``` is ```no```, the current player will not steal any resource card and the game continues
  - ```player``` should contain the player identifier from the ```moveRobber``` response arguments
  - if the current player moved the robber or uses the Knight development card, he must send ```stealResource```, otherwise the game will not continue
- - if the code is 200, the stolen resource is moved from the selected player to the current player
 ```
 { 
  "code": "HttpStatus code", 
@@ -157,8 +164,9 @@
  } 
 }
 ```
- - if the code is 200, the stolen resource is moved from the selected player to the current player
+ - if the ```answer``` was ```yes``` and the code is 200, the stolen resource is moved from the selected player to the current player
 # Trade
+## Trade with other player
 ```
 { 
  "gameId": "gameId", 
@@ -187,6 +195,7 @@
  "arguments": null 
 }
 ```
+## Express your intention to take part in the trade set by the current player
 ``` 
 { 
  "gameId": "gameId", 
@@ -203,6 +212,7 @@
  "arguments": null 
 }
 ```
+## Notify the current player about the other players who want to trade with him
 ``` 
 { 
  "gameId": "gameId", 
@@ -223,6 +233,7 @@
  } 
 }
 ```
+## Select the player with who you want to trade
 ``` 
 { 
  "gameId": "gameId", 
@@ -243,7 +254,8 @@
  "arguments": null 
 }
 ```
- - if the code is ```200```, the mentioned resources in ```playerTrade``` are transferred from the current player to the selected player and vice versa
+ - if the code is ```200```, the specified resources in ```playerTrade``` are transferred from the current player to the selected player and vice versa
+## Trade directly with the Bank or via a Port
 ``` 
 { 
  "gameId": "gameId", 
@@ -265,8 +277,9 @@
  "arguments": null 
 }
 ```
- - if the code is ```200```, the mentioned resources are transferred from the current player to the bank and vice versa
+ - if the code is ```200```, the specified resources are transferred from the current player to the bank and vice versa
 # Buy Properties
+## Buy a road
 ```
 { 
  "gameId": "gameId", 
@@ -287,6 +300,7 @@
  "arguments": null 
 }
 ```
+## Buy a settlement
 ```
 { 
  "gameId": "gameId", 
@@ -306,6 +320,7 @@
  "arguments": null 
 }
 ```
+## Buy a city
 ```
 { 
  "gameId": "gameId", 
@@ -326,6 +341,7 @@
 }
 ```
 # Developments
+## Buy a development
 ``` 
 { 
  "gameId": "gameId", 
@@ -345,6 +361,7 @@
  }
 }
 ```
+## Use a development
 ```
 { 
  "gameId": "gameId", 
@@ -368,6 +385,7 @@
  "arguments": null 
 }
 ```
+## Take all resource cards of the specified type from all the other players if you use Monopoly development card
 ``` 
 { 
  "gameId": "gameId", 
@@ -395,6 +413,7 @@
 ``` 
  - ```resources_0``` contains the number of resources of the requested type that were stolen from ```player_0```
  - if the code is 200, all the resources of the requested type are moved from all the players who have ```resources``` greater than 0 to the current player
+## Build two roads for free if you use Road Building development card (use this request twice)
 ```
 { 
  "gameId": "gameId", 
@@ -415,6 +434,7 @@
  "arguments": null 
 }
 ```
+## Take two resource cards if you use Year of Plenty development card
 ```
 { 
  "gameId": "gameId", 
@@ -437,6 +457,7 @@
 ```
  - if the code is 200, the requested resources are moved from the bank to the current player
 # Update
+## See what you can buy, where you can build, if you have the Largest Army or the Longest Road and how many public or hidden Victory Points you have 
 ``` 
 { 
  "gameId": "gameId", 
@@ -487,6 +508,7 @@
  - ```canBuy``` refers to ```affords```
  - ```available``` refers to positions that respect the game rules
 # Turn
+## End you turn in order to let the next player start his
 ``` 
 { 
  "gameId": "gameId", 
