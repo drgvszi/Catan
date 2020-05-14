@@ -680,4 +680,20 @@ public class Player {
     }
 
     //endregion
+    public Map<String,Object> getPlayerDetails(){
+
+        Map<String,Object> details = new HashMap<>();
+        details.put("resources",getResources());
+        details.put("developments",getDevelopments());
+        details.put("roads", getRoads());
+        details.put("settlements",getSettlements());
+        details.put("cities",getCities());
+        details.put("usedKnights",getUsedKnights());
+        details.put("publicVictoryPoints",getPublicVictoryPoints());
+        details.put("hiddenVictoryPoints",getHiddenVictoryPoints());
+
+        return details;
+    }
+
+
 }
