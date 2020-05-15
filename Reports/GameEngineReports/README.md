@@ -532,7 +532,7 @@
  - The dice sum is seven.
  - The dice sum is not seven.
 # Player 
-## Player Resource Cards
+## Resource Cards
 ### Error Messages
 #### Not Enough Resource Cards
  - You do not have enough Lumber resource cards.
@@ -546,7 +546,7 @@
  - You do not have Grain resource cards.
  - You do not have Brick resource cards.
  - You do not have Ore resource cards.
-## Player Development Cards
+## Development Cards
 ### Error Messages
 - You do not have Knight development cards.
 - You do not have Monopoly development cards.
@@ -559,7 +559,6 @@
 - You can use Road Building development card.
 - You can use Year of Plenty development card.
 - The resource cards were stolen successfully.
-- The road was built successfully.
 - The resource cards were taken successfully.
 ## Player Turn
 ### Error Messages
@@ -567,7 +566,7 @@
 ### Success Messages
 - The turn was changed successfully.
 # Bank
-## Bank Resource Cards
+## Resource Cards
 ### Error Messages
 #### Not Enough Resource Cards
 - The bank does not have enough Lumber resource cards.
@@ -581,7 +580,7 @@
 - The bank does not have Grain resource cards.
 - The bank does not have Brick resource cards.
 - The bank does not have Ore resource cards.
-## Bank Development Cards
+## Development Cards
 ### Error Messages
 - The bank does not have any development cards.
 - The bank does not have Knight development cards.
@@ -596,10 +595,11 @@
 # Roads
 ## Error Messages
 - Invalid position for road.
-- Road already existent.
-- You have no more roads to build.
+- It does not connect to your last intersection.
 - It does not connect to one of your intersections.
 - It does not connect to one of your roads.
+- Road already existent.
+- You have no more roads to build.
 ## Success Messages
 - The road was built successfully.
 - The road was bought successfully.
@@ -607,9 +607,9 @@
 ## Error Messages
 - Invalid position for settlement.
 - Intersection already occupied.
-- You have no more settlements to build.
 - The two roads distance rule is not satisfied.
 - It does not connect to one of your roads.
+- You have no more settlements to build.
 ## Success Messages
 - The settlement was built successfully.
 - The settlement was bought successfully.
@@ -638,7 +638,7 @@
 - The trade has started successfully.
 - The trade partners were sent successfully.
 - The trade was made successfully.
-## No Player Trade
+## Bank and Port Trade
 ### Success Messages
 - The trade was made successfully.
 # Game
