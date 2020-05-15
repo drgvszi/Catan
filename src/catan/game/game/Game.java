@@ -235,6 +235,7 @@ public abstract class Game {
             return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.ForbiddenRequest), null);
         }
         if (playerId.equals(currentPlayer.getId())) {
+            System.out.println(currentPlayer.getSynchronizeResult());
             players.get(playerId).getTurnFlow().fsm.setShareData(requestArguments);
             players.get(playerId).getTurnFlow().fsm.ProcessFSM(command);
             UserResponse response = players.get(playerId).getTurnFlow().response;
