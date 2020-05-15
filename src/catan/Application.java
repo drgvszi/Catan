@@ -26,9 +26,9 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
-        /*
         ConnectivitySimulation firstConnectivitySimulation = new ConnectivitySimulation();
         new Thread(firstConnectivitySimulation).start();
+        /*
         ConnectivitySimulation secondConnectivitySimulation = new ConnectivitySimulation();
         new Thread(secondConnectivitySimulation).start();
         */
