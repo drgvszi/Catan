@@ -82,10 +82,10 @@ public class TurnFlow {
                 int end = requestArguments.get("end");
                 if (!(lastSettlement.getId() == start || lastSettlement.getId() == end)) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED,
-                            Messages.getMessage(Code.NotConnectsToIntersection), null);
+                           "It does not connect to your last intersection.", null);
                     return false;
                 }
-                Code code = game.buildRoad(requestArguments.get("start"), requestArguments.get("end"));
+                Code code = game.buildRoad(start, end);
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
