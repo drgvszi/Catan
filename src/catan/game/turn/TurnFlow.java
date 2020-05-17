@@ -82,7 +82,7 @@ public class TurnFlow {
                 int end = requestArguments.get("end");
                 if (!(lastSettlement.getId() == start || lastSettlement.getId() == end)) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED,
-                           "It does not connect to your last intersection.", null);
+                            "It does not connect to your last intersection.", null);
                     return false;
                 }
                 Code code = game.buildRoad(start, end);

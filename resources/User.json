@@ -444,7 +444,7 @@
       "hasLargestArmy": "true or false (boolean)",
       "hasLongestRoad": "true or false (boolean)",
       "publicScore": "number of public points, without Victory Points development cards (integer)",
-      "hiddenScore": "number of public points, with Victory Points development cards (integer)"
+      "hiddenScore": "number of hidden points, with Victory Points development cards (integer)"
     }
   },
   {
