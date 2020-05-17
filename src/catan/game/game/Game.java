@@ -349,6 +349,26 @@ public abstract class Game {
         return result;
     }
 
+    public Map<String, Object> getSynchronizeResult() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("active",currentPlayer.isActive());
+        result.put("lumber",currentPlayer.getResourcesNumber(Resource.lumber));
+        result.put("wool",currentPlayer.getResourcesNumber(Resource.wool));
+        result.put("grain",currentPlayer.getResourcesNumber(Resource.grain));
+        result.put("brick",currentPlayer.getResourcesNumber(Resource.brick));
+        result.put("ore",currentPlayer.getResourcesNumber(Resource.ore));
+        result.put("knight",currentPlayer.getDevelopmentsNumber(Development.knight));
+        result.put("monopoly",currentPlayer.getDevelopmentsNumber(Development.monopoly));
+        result.put("hiddenScore",currentPlayer.getVictoryPoints());
+        result.put("canBuyRoad",canBuyRoad(currentPlayer));
+        result.put("canBuySettlement",canBuySettlement(currentPlayer));
+        result.put("canBuyCity",canBuyCity(currentPlayer));
+        result.put("availableSettlementPositions",getAvailableSettlementPositions());
+        result.put("availableCityPositions",getAvailableCityPositions());
+        result.put("availableRoadPositions",getAvailableRoadPositions());
+        return result;
+    }
+
     //endregion
 
     //region Ranking
