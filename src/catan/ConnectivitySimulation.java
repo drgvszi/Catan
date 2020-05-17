@@ -302,6 +302,7 @@ public class ConnectivitySimulation implements Runnable {
 
             startGame(gameId);
 
+            update(gameId, playerIds.get(1));
             update(gameId, playerIds.get(0));
 
             buildSettlement(gameId, playerIds.get(0), 20);

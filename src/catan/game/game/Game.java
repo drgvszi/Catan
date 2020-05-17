@@ -223,9 +223,6 @@ public abstract class Game {
     //region Turn
 
     public UserResponse playTurn(String playerId, String command, Map<String, Object> requestArguments) {
-        if (command.equals("update")) {
-            return new UserResponse(HttpStatus.SC_OK, "Here is your information.", getUpdateResult());
-        }
         Pair<Code, Map<String, Object>> result = processGeneralCommand(playerId, command, requestArguments);
         Code code = result.getKey();
         if (code != null) {
@@ -235,6 +232,9 @@ public abstract class Game {
             return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.ForbiddenRequest), null);
         }
         if (playerId.equals(currentPlayer.getId())) {
+            if (command.equals("update")) {
+                return new UserResponse(HttpStatus.SC_OK, "Here is your information.", getUpdateResult());
+            }
             players.get(playerId).getTurnFlow().fsm.setShareData(requestArguments);
             players.get(playerId).getTurnFlow().fsm.ProcessFSM(command);
             UserResponse response = players.get(playerId).getTurnFlow().response;
