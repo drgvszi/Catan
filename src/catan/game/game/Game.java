@@ -359,6 +359,16 @@ public abstract class Game {
         result.put("ore",currentPlayer.getResourcesNumber(Resource.ore));
         result.put("knight",currentPlayer.getDevelopmentsNumber(Development.knight));
         result.put("monopoly",currentPlayer.getDevelopmentsNumber(Development.monopoly));
+        result.put("roadBuilding",currentPlayer.getDevelopmentsNumber(Development.roadBuilding));
+        result.put("victoryPoint",currentPlayer.getDevelopmentsNumber(Development.victoryPoint));
+        result.put("yearOfPlenty",currentPlayer.getDevelopmentsNumber(Development.yearOfPlenty));
+        result.put("settlements",currentPlayer.getSettlements());
+        result.put("cities",currentPlayer.getCities());
+        result.put("roads",currentPlayer.getRoads());
+        result.put("usedKnights",currentPlayer.getUsedKnights());
+        result.put("hasLargestArmy",currentPlayer.hasLargestArmy());
+        result.put("hasLongestRoad",currentPlayer.hasLongestRoad());
+        result.put("publicScore",currentPlayer.getPublicVictoryPoints());
         result.put("hiddenScore",currentPlayer.getVictoryPoints());
         result.put("canBuyRoad",canBuyRoad(currentPlayer));
         result.put("canBuySettlement",canBuySettlement(currentPlayer));
