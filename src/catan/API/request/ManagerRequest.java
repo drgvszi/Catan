@@ -137,14 +137,17 @@ public class ManagerRequest implements GameRequest {
                 if (game == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
                 }
+                String playerId = requestJson.get("playerId");
+                Player player = game.getPlayer(playerId);
+                if (player == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
+                }
                 if (game.getBank() != null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", null);
                 }
-                String playerId = requestJson.get("playerId");
                 game.getPlayersOrder().remove(game.getPlayer(playerId));
                 game.getPlayers().remove(playerId);
-                String responseJson = new ObjectMapper().writeValueAsString(null);
-                return new ManagerResponse(HttpStatus.SC_OK, "The player was added successfully.", responseJson);
+                return new ManagerResponse(HttpStatus.SC_OK, "The player was removed successfully.", null);
             }
             case "startGame": {
                 if (requestJson == null) {
@@ -184,16 +187,16 @@ public class ManagerRequest implements GameRequest {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
                 }
                 String gameId = requestJson.get("gameId");
-                String playerId = requestJson.get("playerId");
-                boolean active = Boolean.parseBoolean(requestJson.get("active"));
                 Game game = Application.games.get(gameId);
                 if (game == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
                 }
+                String playerId = requestJson.get("playerId");
                 Player player = game.getPlayer(playerId);
                 if (player == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
                 }
+                boolean active = Boolean.parseBoolean(requestJson.get("active"));
                 if (active == player.isActive()) {
                     return new ManagerResponse(HttpStatus.SC_OK, "The player status has not been changed.", null);
                 }

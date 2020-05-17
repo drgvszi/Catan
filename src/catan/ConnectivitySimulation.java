@@ -70,10 +70,7 @@ public class ConnectivitySimulation implements Runnable {
             ManagerResponse response = HttpClientPost.managerPost(new ManagerRequest(username, password,
                     "removePlayer", requestJson));
             if (response.getCode() == HttpStatus.SC_OK) {
-                Map<String, String> arguments = GameRequest.getMapFromData(response.getArguments());
-                if (arguments != null) {
-                    playerIds.remove(arguments.get("playerId"));
-                }
+                playerIds.remove(playerId);
             }
             return response;
         }
@@ -291,11 +288,13 @@ public class ConnectivitySimulation implements Runnable {
     public void run() {
         try {
             createGame("SettlersOfCatan");
+
             setMaxPlayers(gameId, 3);
             addPlayer(gameId);
             addPlayer(gameId);
             addPlayer(gameId);
-            removePlayer(gameId,playerIds.get(2));
+
+            removePlayer(gameId, playerIds.get(2));
             addPlayer(gameId);
 
             setMaxPlayers(gameId, 1);
@@ -303,7 +302,7 @@ public class ConnectivitySimulation implements Runnable {
 
             startGame(gameId);
 
-            update(gameId, playerIds.get(1));
+            update(gameId, playerIds.get(0));
 
             buildSettlement(gameId, playerIds.get(0), 20);
             buildRoad(gameId, playerIds.get(0), 18, 19);
@@ -314,7 +313,7 @@ public class ConnectivitySimulation implements Runnable {
             buildSettlement(gameId, playerIds.get(1), 40);
             buildRoad(gameId, playerIds.get(1), 41, 40);
 
-            update(gameId, playerIds.get(1));
+            update(gameId, playerIds.get(2));
 
             buildSettlement(gameId, playerIds.get(2), 15);
             buildRoad(gameId, playerIds.get(2), 15, 14);
