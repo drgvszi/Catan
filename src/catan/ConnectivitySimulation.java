@@ -62,6 +62,21 @@ public class ConnectivitySimulation implements Runnable {
         }
         return response;
     }
+    public ManagerResponse removePlayer(String gameId,String playerId) throws IOException {
+            Map<String, Object> request = new HashMap<>();
+            request.put("gameId", gameId);
+            request.put("playerId", playerId);
+            String requestJson = new ObjectMapper().writeValueAsString(request);
+            ManagerResponse response = HttpClientPost.managerPost(new ManagerRequest(username, password,
+                    "removePlayer", requestJson));
+            if (response.getCode() == HttpStatus.SC_OK) {
+                Map<String, String> arguments = GameRequest.getMapFromData(response.getArguments());
+                if (arguments != null) {
+                    playerIds.remove(arguments.get("playerId"));
+                }
+            }
+            return response;
+        }
 
     public ManagerResponse startGame(String gameId) throws IOException {
         Map<String, Object> request = new HashMap<>();
@@ -279,6 +294,8 @@ public class ConnectivitySimulation implements Runnable {
             setMaxPlayers(gameId, 3);
             addPlayer(gameId);
             addPlayer(gameId);
+            addPlayer(gameId);
+            removePlayer(gameId,playerIds.get(2));
             addPlayer(gameId);
 
             setMaxPlayers(gameId, 1);

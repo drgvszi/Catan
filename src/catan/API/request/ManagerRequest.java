@@ -128,6 +128,24 @@ public class ManagerRequest implements GameRequest {
                 String responseJson = new ObjectMapper().writeValueAsString(payload);
                 return new ManagerResponse(HttpStatus.SC_OK, "The player was added successfully.", responseJson);
             }
+            case "removePlayer": {
+                if (requestJson == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
+                }
+                String gameId = requestJson.get("gameId");
+                Game game = Application.games.get(gameId);
+                if (game == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
+                }
+                if (game.getBank() != null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", null);
+                }
+                String playerId = requestJson.get("playerId");
+                game.getPlayersOrder().remove(game.getPlayer(playerId));
+                game.getPlayers().remove(playerId);
+                String responseJson = new ObjectMapper().writeValueAsString(null);
+                return new ManagerResponse(HttpStatus.SC_OK, "The player was added successfully.", responseJson);
+            }
             case "startGame": {
                 if (requestJson == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
