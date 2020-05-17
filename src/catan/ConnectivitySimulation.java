@@ -313,7 +313,6 @@ public class ConnectivitySimulation implements Runnable {
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
             getRanking(gameId);
-            changePlayerStatus(gameId, playerIds.get(1), false);
 
             for (int index = 0; index < 9; ++index) {
                 int turn = index % 3;
@@ -339,6 +338,8 @@ public class ConnectivitySimulation implements Runnable {
                 useDevelopment(gameId, currentPlayer, "roadBuilding");
                 buildDevelopmentRoad(gameId, currentPlayer, 2, 3);
                 buildDevelopmentRoad(gameId, currentPlayer, 3, 4);
+
+                changePlayerStatus(gameId, playerIds.get(1), false);
 
                 buyDevelopment(gameId, currentPlayer);
                 useDevelopment(gameId, currentPlayer, "monopoly");
