@@ -82,6 +82,6 @@ public class RobberMoveScript : MonoBehaviour
     }
     public void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, startPos , Time.deltaTime * 2);
+        transform.position = Vector3.MoveTowards(transform.position, startPos , Time.deltaTime * 5);
     }
 }
