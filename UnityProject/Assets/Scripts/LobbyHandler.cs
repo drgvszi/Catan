@@ -28,28 +28,13 @@ public class Lobby
     }
 }
 
-[System.Serializable]
-public class AllLobbies
-{
-    public Lobby[] lobbies;
-}
 
-public class JoinLobby
-{
-    public string username;
-    public string lobbyid;
-    public JoinLobby(string username, string lobbyid)
-    {
-        this.username = username;
-        this.lobbyid = lobbyid;
-    }
-}
 
 public class LobbyHandler : MonoBehaviour
 {
     public SocketIOComponent socket;                                                               // BETTER ASK Datco Maxim what he have done here. Only God and him know
-    public AllLobbies allLobbies = new AllLobbies();        // deserialized json
-    public List<Lobby> list_lobbies = new List<Lobby>();       // an list in order to operate lobbies
+    //public AllLobbies allLobbies = new AllLobbies();        // deserialized json
+    //public List<Lobby> list_lobbies = new List<Lobby>();       // an list in order to operate lobbies
     public static bool started = false;                                                       // Start is called before the first frame update
     public bool pressed_start_game = false;
     GameObject startbutton;
@@ -58,12 +43,13 @@ public class LobbyHandler : MonoBehaviour
         GameObject go = GameObject.Find("SocketIO");
         socket = go.GetComponent<SocketIOComponent>();
         setupEvents();
+        startbutton = GameObject.Find("Start");
+        startbutton.SetActive(false);
         // the script is being called twice idk why and I dont want to investigate bcs I spent too much time on it
         if (!started)
-        {
+        {/*
             started = true;
-            startbutton = GameObject.Find("Start");
-            startbutton.SetActive(false);
+            
 
             RestClient.Get<AllLobbies>("https://catan-connectivity.herokuapp.com/lobby/all").Then(ReceivedLobby =>                          // find a lobby with a user extension if found and it has a place join else add a lobby
             {
@@ -141,6 +127,7 @@ public class LobbyHandler : MonoBehaviour
             }).Catch(err => { Debug.Log(err); });
 
 
+        */
         }
 
     }
@@ -152,9 +139,10 @@ public class LobbyHandler : MonoBehaviour
             Debug.Log("Open");
         });
         socket.On("gamestart", EmittedStartGame);
-
+        socket.On("masterleft", EmittedMasterLeft);
         socket.On("changed", (E) =>                       // updating lobbies list
         {
+            
             Lobby lobby = new Lobby(
                  E.data.GetField("lobby").GetField("extension").str,
                  E.data.GetField("lobby").GetField("first").str,
@@ -164,33 +152,11 @@ public class LobbyHandler : MonoBehaviour
                  E.data.GetField("lobby").GetField("gameid").str,
                  E.data.GetField("lobby").GetField("lobbyid").str
                  );
-
-            for (int i = 0; i < list_lobbies.Count; i++)
-                if (lobby.gameid == list_lobbies[i].gameid)
-                {
-                    list_lobbies[i] = lobby;
-                }
-        });
-
-        socket.On("added", (E) =>                 // updating lobbies list
-        {
-            Lobby lobby = new Lobby(
-                E.data.GetField("lobby").GetField("extension").str,
-                E.data.GetField("lobby").GetField("first").str,
-                E.data.GetField("lobby").GetField("second").str,
-                E.data.GetField("lobby").GetField("third").str,
-                E.data.GetField("lobby").GetField("master").str,
-                E.data.GetField("lobby").GetField("gameid").str,
-                E.data.GetField("lobby").GetField("lobbyid").str
-                );
-            bool found = false;
-            for (int i = 0; i < list_lobbies.Count; i++)
-                if (lobby.gameid == list_lobbies[i].gameid)
-                    found = true;
-            if (!found)
-            {
-                list_lobbies.Add(lobby);
-            }
+            Debug.Log(lobby.lobbyid);
+            if (lobby.gameid == LoginScript.CurrentLobby.gameid)
+           {
+                LoginScript.CurrentLobby = lobby;
+           }
         });
     }
 
@@ -230,6 +196,7 @@ public class LobbyHandler : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {                                                                                                       // display the names of the members of the lobby. If not master then cannot start game
@@ -241,49 +208,15 @@ public class LobbyHandler : MonoBehaviour
         Text line3 = name3.GetComponent<Text>();
         GameObject name4 = GameObject.Find("Text4");
         Text line4 = name4.GetComponent<Text>();
-       
-        for (int i = 0; i < list_lobbies.Count; i++)
-            if (list_lobbies[i].lobbyid == LoginScript.CurrentUserLobbyId)
-            {
-                if (list_lobbies[i].first == LoginScript.CurrentUser)
-                {
-                    startbutton.SetActive(false);
-                    Debug.Log(list_lobbies[i].master);
-                    line1.text = list_lobbies[i].master;                
-                    line2.text = LoginScript.CurrentUser;                
-                    line3.text = list_lobbies[i].second;                 
-                    line4.text = list_lobbies[i].third;
 
-                }
-                else if(list_lobbies[i].second == LoginScript.CurrentUser)
-                {
-                    startbutton.SetActive(false);
-                    line1.text = list_lobbies[i].master;
-                    line2.text = list_lobbies[i].first;
-                    line3.text = LoginScript.CurrentUser;
-                    line4.text = list_lobbies[i].third;
-                    
-                }
-                else if(list_lobbies[i].third == LoginScript.CurrentUser)
-                {
-                    startbutton.SetActive(false);
-                    line1.text = list_lobbies[i].master;
-                    line2.text = list_lobbies[i].first;
-                    line3.text = list_lobbies[i].second;
-                    line4.text = LoginScript.CurrentUser;
-                    
-                }
-                else
-                {
-                    startbutton.SetActive(false);
-                    line1.text = LoginScript.CurrentUser; 
-                    line2.text = list_lobbies[i].first;
-                    line3.text = list_lobbies[i].second;
-                    line4.text = list_lobbies[i].third;
-                    if (list_lobbies[i].first != "-" && list_lobbies[i].second != "-" && list_lobbies[i].third != "-")
-                        startbutton.SetActive(true);
+        startbutton.SetActive(false);
+        line1.text = LoginScript.CurrentLobby.master;
+        line2.text = LoginScript.CurrentLobby.first;
+        line3.text = LoginScript.CurrentLobby.second;
+        line4.text = LoginScript.CurrentLobby.third;
 
-                }
-            }
+        if (LoginScript.CurrentLobby.first != "-" && LoginScript.CurrentLobby.second != "-" && LoginScript.CurrentLobby.third != "-" && LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+            startbutton.SetActive(true);
+
     }
 }

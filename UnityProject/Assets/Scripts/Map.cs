@@ -30,7 +30,6 @@ public class Map : MonoBehaviour
         // ReceiveBoardScript recive = new ReceiveBoardScript();    /
         //recive.RequestLobbyidAndGameid();
     
-        // i know it should be done in loop but it is async and does not work right in loop
         RestClient.Get<Ext>("https://catan-connectivity.herokuapp.com/extension/getExtensionByName?name=extension" + (1)).Then(result =>
         {
             Debug.Log(result.description);
