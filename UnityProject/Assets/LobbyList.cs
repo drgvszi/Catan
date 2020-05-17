@@ -91,37 +91,38 @@ public class LobbyList : MonoBehaviour
     }
 
 
-    public void joinLobby(int i)                                                                                    // identify a lobby by its number
+    public void joinLobby(string lobbyid)                                                                                    // identify a lobby by its lobbyid
     {
-        if (lobbies[i].extension == LoginScript.CurrentUserExtension && (countPlayers(lobbies[i]) != 4))
-        {
-            JoinLobby jl = new JoinLobby(LoginScript.CurrentUser, lobbies[i].lobbyid);
-            RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/join", jl).Then(joined_lobby =>
+        for(int i = 0; i < lobbies.Count; i++)
+            if (lobbies[i].lobbyid == lobbyid && lobbies[i].extension == LoginScript.CurrentUserExtension && (countPlayers(lobbies[i]) != 4))
             {
-                LoginScript.CurrentUserGameId = lobbies[i].gameid;
-                LoginScript.CurrentUserLobbyId = lobbies[i].lobbyid;
-
-                UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
-                //getgeid.username = "mmoruz";
-                getgeid.username = LoginScript.CurrentUser;
-                RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                JoinLobby jl = new JoinLobby(LoginScript.CurrentUser, lobbies[i].lobbyid);
+                RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/join", jl).Then(joined_lobby =>
                 {
-                    LoginScript.CurrentUserGEId = response.Text;
+                    LoginScript.CurrentUserGameId = lobbies[i].gameid;
+                    LoginScript.CurrentUserLobbyId = lobbies[i].lobbyid;
+
+                    UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
+                    //getgeid.username = "mmoruz";
+                    getgeid.username = LoginScript.CurrentUser;
+                    RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                    {
+                        LoginScript.CurrentUserGEId = response.Text;
 
 
 
 
-                    SceneChanger scene = new SceneChanger();
-                    scene.goToWaitingRoom();
+                        SceneChanger scene = new SceneChanger();
+                        scene.goToWaitingRoom();
 
 
 
 
+
+                    }).Catch(err => { Debug.Log(err); });
 
                 }).Catch(err => { Debug.Log(err); });
-
-            }).Catch(err => { Debug.Log(err); });
-        }
+            }
     }
 
     public void createLobby()   // in case there are no lobby change the button from connect to create and call that function

@@ -139,7 +139,6 @@ public class LobbyHandler : MonoBehaviour
             Debug.Log("Open");
         });
         socket.On("gamestart", EmittedStartGame);
-        socket.On("masterleft", EmittedMasterLeft);
         socket.On("changed", (E) =>                       // updating lobbies list
         {
             
