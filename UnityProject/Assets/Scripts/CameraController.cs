@@ -4,6 +4,9 @@ using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
+using System.Threading;
+
 public class CameraController : MonoBehaviour
 {
 
@@ -23,6 +26,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         newPos = gameObject.transform.position;
         newRotation = gameObject.transform.rotation;
         newZoom = cameraTransform.localPosition;
