@@ -301,7 +301,7 @@ public class ConnectivitySimulation implements Runnable {
             setMaxPlayers(gameId, 1);
             addPlayer(gameId);
 
-            changePlayerStatus(gameId, playerIds.get(2), false);
+            changePlayerStatus(gameId, playerIds.get(2), true);
 
             startGame(gameId);
 
@@ -336,8 +336,12 @@ public class ConnectivitySimulation implements Runnable {
 
             getRanking(gameId);
 
-            for (int index = 0; index < 9; ++index) {
+            for (int index = 0; index < 18; ++index) {
                 int turn = index % 3;
+                if (turn == 0) {
+                    changePlayerStatus(gameId, playerIds.get(0), false);
+                }
+
                 String currentPlayer = playerIds.get(turn);
                 update(gameId, currentPlayer);
                 rollDice(gameId, currentPlayer);
@@ -361,7 +365,9 @@ public class ConnectivitySimulation implements Runnable {
                 buildDevelopmentRoad(gameId, currentPlayer, 31, 32);
                 buildDevelopmentRoad(gameId, currentPlayer, 32, 33);
 
-                changePlayerStatus(gameId, playerIds.get(2), true);
+                if (turn == 0) {
+                    changePlayerStatus(gameId, playerIds.get(0), false);
+                }
 
                 buyDevelopment(gameId, currentPlayer);
                 useDevelopment(gameId, currentPlayer, "monopoly");

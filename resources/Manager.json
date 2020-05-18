@@ -101,6 +101,7 @@
         ]
       ],
       "usedKnights": "number of used Knight development cards (integer)",
+      "roadsToBuild": "number of remaining roads to build when using Road Building development card",
       "hasLargestArmy": "true or false (boolean)",
       "hasLongestRoad": "true or false (boolean)",
       "publicScore": "number of public points, without Victory Points development cards (integer)",

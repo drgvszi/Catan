@@ -3,6 +3,7 @@ package catan.game.turn;
 import catan.API.response.Code;
 import catan.API.response.Messages;
 import catan.API.response.UserResponse;
+import catan.game.bank.Bank;
 import catan.game.enumeration.Development;
 import catan.game.enumeration.Resource;
 import catan.game.game.Game;
@@ -460,21 +461,22 @@ public class TurnFlow {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
-                if(!game.getBank().hasRoad(game.getCurrentPlayer())){
-                    response = new UserResponse(HttpStatus.SC_OK,
-                            "You can not use Road Building development card(You placed all the roads in your possession).",
-                            null);
+                Bank bank = game.getBank();
+                Player currentPlayer = game.getCurrentPlayer();
+                if (!bank.hasRoad(currentPlayer)) {
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.BankNoRoad), null);
                     return false;
                 }
-                game.getCurrentPlayer().setRoadsToBuild(2);
+                currentPlayer.setRoadsToBuild(Math.min(bank.getRoadsNumber(currentPlayer), 0));
                 response = new UserResponse(HttpStatus.SC_OK, "You can use Road Building development card.",
                         null);
                 return true;
             }
         });
+
         fsm.setAction("goNext", new FSMAction() {
             @Override
-            public boolean action(String curState, String message, String nextState, Object args) {
+            public boolean action(String currentState, String message, String nextState, Object arguments) {
                 return true;
             }
         });
@@ -528,22 +530,19 @@ public class TurnFlow {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
                         new TypeReference<HashMap<String, Integer>>() {
                         });
-
                 Code code = game.buildRoad(requestArguments.get("start"), requestArguments.get("end"));
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
-                    if(code==Code.BankNoRoad){
-                        fsm.ProcessFSM("goNext");
-                    }
                     return false;
                 }
-                response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.", null);
-                Integer previousRoads=game.getCurrentPlayer().getRoadsToBuild();
-                game.getCurrentPlayer().setRoadsToBuild(previousRoads-1);
-                if(game.getCurrentPlayer().getRoadsToBuild()==0){
+                Player currentPlayer = game.getCurrentPlayer();
+                currentPlayer.setRoadsToBuild(currentPlayer.getRoadsToBuild() - 1);
+                if (currentPlayer.getRoadsToBuild() < 1) {
+                    response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully. You have no more roads to build.", null);
                     fsm.ProcessFSM("goNext");
                     return false;
                 }
+                response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.", null);
                 return true;
             }
         });

@@ -366,6 +366,7 @@ public abstract class Game {
         result.put("cities", currentPlayer.getCities());
         result.put("roads", currentPlayer.getRoads());
         result.put("usedKnights", currentPlayer.getUsedKnights());
+        result.put("roadsToBuild", currentPlayer.getRoadsToBuild());
         result.put("hasLargestArmy", currentPlayer.hasLargestArmy());
         result.put("hasLongestRoad", currentPlayer.hasLongestRoad());
         result.put("publicScore", currentPlayer.getPublicVictoryPoints());
