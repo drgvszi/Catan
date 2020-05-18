@@ -301,7 +301,11 @@ public class ConnectivitySimulation implements Runnable {
             setMaxPlayers(gameId, 1);
             addPlayer(gameId);
 
+            changePlayerStatus(gameId, playerIds.get(2), false);
+
             startGame(gameId);
+
+            removePlayer(gameId, playerIds.get(2));
 
             update(gameId, playerIds.get(1));
             update(gameId, playerIds.get(0));
@@ -357,7 +361,7 @@ public class ConnectivitySimulation implements Runnable {
                 buildDevelopmentRoad(gameId, currentPlayer, 2, 3);
                 buildDevelopmentRoad(gameId, currentPlayer, 3, 4);
 
-                changePlayerStatus(gameId, playerIds.get(1), false);
+                changePlayerStatus(gameId, playerIds.get(2), true);
 
                 buyDevelopment(gameId, currentPlayer);
                 useDevelopment(gameId, currentPlayer, "monopoly");

@@ -149,6 +149,32 @@ public class ManagerRequest implements GameRequest {
                 game.getPlayers().remove(playerId);
                 return new ManagerResponse(HttpStatus.SC_OK, "The player was removed successfully.", null);
             }
+            case "changePlayerStatus": {
+                if (requestJson == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
+                }
+                String gameId = requestJson.get("gameId");
+                Game game = Application.games.get(gameId);
+                if (game == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
+                }
+                String playerId = requestJson.get("playerId");
+                Player player = game.getPlayer(playerId);
+                if (player == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
+                }
+                boolean active = Boolean.parseBoolean(requestJson.get("active"));
+                if (active == player.isActive()) {
+                    return new ManagerResponse(HttpStatus.SC_OK, "The player status has not been changed.", null);
+                }
+                player.setActive(active);
+                if (game.getBank() != null) {
+                    if (game.getCurrentPlayer().getId().equals(playerId) && !active) {
+                        game.changeTurn(1);
+                    }
+                }
+                return new ManagerResponse(HttpStatus.SC_OK, "The player status has been changed successfully.", null);
+            }
             case "startGame": {
                 if (requestJson == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
@@ -181,30 +207,6 @@ public class ManagerRequest implements GameRequest {
                 }
                 String responseJson = new ObjectMapper().writeValueAsString(game.getRankingResult());
                 return new ManagerResponse(HttpStatus.SC_OK, "Here is the current ranking.", responseJson);
-            }
-            case "changePlayerStatus": {
-                if (requestJson == null) {
-                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
-                }
-                String gameId = requestJson.get("gameId");
-                Game game = Application.games.get(gameId);
-                if (game == null) {
-                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
-                }
-                String playerId = requestJson.get("playerId");
-                Player player = game.getPlayer(playerId);
-                if (player == null) {
-                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
-                }
-                boolean active = Boolean.parseBoolean(requestJson.get("active"));
-                if (active == player.isActive()) {
-                    return new ManagerResponse(HttpStatus.SC_OK, "The player status has not been changed.", null);
-                }
-                player.setActive(active);
-                if (game.getCurrentPlayer().getId().equals(playerId) && !active) {
-                    game.changeTurn(1);
-                }
-                return new ManagerResponse(HttpStatus.SC_OK, "The player status has been changed.", null);
             }
             case "endGame": {
                 if (requestJson == null) {

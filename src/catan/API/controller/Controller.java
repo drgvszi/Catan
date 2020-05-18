@@ -6,10 +6,7 @@ import catan.API.response.ManagerResponse;
 import catan.API.response.UserResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/Catan")
@@ -17,13 +14,13 @@ public class Controller {
     private static final String username = "catan";
     private static final String password = "catan";
 
-    @RequestMapping(value = "/userRequest", method = RequestMethod.POST)
-    public UserResponse sendResponse(@RequestBody UserRequest request) {
+    @PostMapping(value = "/userRequest")
+    public UserResponse processRequest(@RequestBody UserRequest request) {
         return request.run();
     }
 
-    @RequestMapping(value = "/managerRequest", method = RequestMethod.POST)
-    public ManagerResponse sendResponse(@RequestBody ManagerRequest request) {
+    @PostMapping(value = "/managerRequest")
+    public ManagerResponse processRequest(@RequestBody ManagerRequest request) {
         if (request.getUsername().equals(username) && request.getPassword().equals(password)) {
             try {
                 return request.run();
