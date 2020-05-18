@@ -602,7 +602,6 @@
 - You have no more roads to build.
 ## Success Messages
 - The road was built successfully.
-- The road was built successfully. You have no more roads to build using the Road Building development card.
 - The road was bought successfully.
 # Settlements
 ## Error Messages
