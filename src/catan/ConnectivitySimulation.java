@@ -358,8 +358,8 @@ public class ConnectivitySimulation implements Runnable {
 
                 buyDevelopment(gameId, currentPlayer);
                 useDevelopment(gameId, currentPlayer, "roadBuilding");
-                buildDevelopmentRoad(gameId, currentPlayer, 2, 3);
-                buildDevelopmentRoad(gameId, currentPlayer, 3, 4);
+                buildDevelopmentRoad(gameId, currentPlayer, 31, 32);
+                buildDevelopmentRoad(gameId, currentPlayer, 32, 33);
 
                 changePlayerStatus(gameId, playerIds.get(2), true);
 

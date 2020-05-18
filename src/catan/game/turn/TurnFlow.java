@@ -460,8 +460,21 @@ public class TurnFlow {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
+                if(!game.getBank().hasRoad(game.getCurrentPlayer())){
+                    response = new UserResponse(HttpStatus.SC_OK,
+                            "You can not use Road Building development card(You placed all the roads in your possession).",
+                            null);
+                    return false;
+                }
+                game.getCurrentPlayer().setRoadsToBuild(2);
                 response = new UserResponse(HttpStatus.SC_OK, "You can use Road Building development card.",
                         null);
+                return true;
+            }
+        });
+        fsm.setAction("goNext", new FSMAction() {
+            @Override
+            public boolean action(String curState, String message, String nextState, Object args) {
                 return true;
             }
         });
@@ -515,12 +528,22 @@ public class TurnFlow {
                 Map<String, Integer> requestArguments = new ObjectMapper().convertValue(arguments,
                         new TypeReference<HashMap<String, Integer>>() {
                         });
+
                 Code code = game.buildRoad(requestArguments.get("start"), requestArguments.get("end"));
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
+                    if(code==Code.BankNoRoad){
+                        fsm.ProcessFSM("goNext");
+                    }
                     return false;
                 }
                 response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.", null);
+                Integer previousRoads=game.getCurrentPlayer().getRoadsToBuild();
+                game.getCurrentPlayer().setRoadsToBuild(previousRoads-1);
+                if(game.getCurrentPlayer().getRoadsToBuild()==0){
+                    fsm.ProcessFSM("goNext");
+                    return false;
+                }
                 return true;
             }
         });
