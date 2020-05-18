@@ -538,7 +538,7 @@ public class TurnFlow {
                 Player currentPlayer = game.getCurrentPlayer();
                 currentPlayer.setRoadsToBuild(currentPlayer.getRoadsToBuild() - 1);
                 if (currentPlayer.getRoadsToBuild() < 1) {
-                    response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully. You have no more roads to build.", null);
+                    response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully. You have no more roads to build using the Road Building development card.", null);
                     fsm.ProcessFSM("goNext");
                     return false;
                 }
