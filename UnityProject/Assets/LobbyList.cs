@@ -30,7 +30,8 @@ public class LobbyList : MonoBehaviour
         GameObject go = GameObject.Find("SocketIO");
         socket = go.GetComponent<SocketIOComponent>();
         setupEvents();
-        
+        AddToLob();
+
     }
     public int countPlayers(Lobby lobby)
     {
@@ -138,9 +139,11 @@ public class LobbyList : MonoBehaviour
     }
 
 
-    public void joinLobby(string lobbyid)                                                                                    // identify a lobby by its lobbyid
+    public void joinLobby(Text txt)                                                                                    // identify a lobby by its lobbyid
     {
-        for(int i = 0; i < lobbies.Count; i++)
+        string lobbyid = txt.text;
+        print(lobbyid);
+        for (int i = 0; i < lobbies.Count; i++)
             if (lobbies[i].lobbyid == lobbyid && lobbies[i].extension == LoginScript.CurrentUserExtension && (countPlayers(lobbies[i]) != 4))
             {
                 JoinLobby jl = new JoinLobby(LoginScript.CurrentUser, lobbies[i].lobbyid);
@@ -158,7 +161,7 @@ public class LobbyList : MonoBehaviour
                         LoginScript.CurrentLobby = lobbies[i];
 
 
-
+                        
                         SceneChanger scene = new SceneChanger();
                         scene.goToWaitingRoom();
 
@@ -191,7 +194,7 @@ public class LobbyList : MonoBehaviour
                 LoginScript.CurrentUserGEId = response.Text;
                 LoginScript.CurrentLobby = new Lobby(LoginScript.CurrentUserExtension, "-","-", "-",LoginScript.CurrentUser, LoginScript.CurrentUserGameId, LoginScript.CurrentUserLobbyId);
 
-
+                
                 SceneChanger scene = new SceneChanger();
                 scene.goToWaitingRoom();
 
@@ -203,9 +206,41 @@ public class LobbyList : MonoBehaviour
         }).Catch(err => { Debug.Log(err); });
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public Text[] obj1;
+    public Text[] obj2;
+    public Text[] obj3;
+    public void ChangeError(string lobby, string ext, string players, Text obj, Text obj2, Text obj3)
     {
-        
+
+        obj.text = lobby;
+        obj2.text = ext;
+        obj3.text = players;
+
     }
+    /* public void createlob(string lobby, string ext, string players)
+     {
+
+         for (int j = 0; j < 5; j++)
+         {
+             if (obj1[j].text != "")
+                 continue;
+
+             ChangeError(lobby, ext, players, obj1[j], obj2[j], obj3[j]);
+             break;
+
+         }
+     }*/
+   
+    public void AddToLob()
+    {
+        for (int i = 0; i < lobbies.Count; i++)
+        {
+            if (i < 10)
+                ChangeError(lobbies[i].lobbyid, lobbies[i].extension, "" + countPlayers(lobbies[i]) + "/4", obj1[i], obj2[i], obj3[i]);
+        }
+            
+    }
+    // Update is called once per frame
+   
 }
