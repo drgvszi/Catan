@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using SocketIO;
 using Proyecto26;
 
@@ -21,6 +22,7 @@ public class LobbyList : MonoBehaviour
 {
     public static SocketIOComponent socket;
     public List<Lobby> lobbies;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,18 @@ public class LobbyList : MonoBehaviour
         {
             Debug.Log("Open");
         });
-
+        socket.On("removed", (E) =>
+        {
+            Debug.Log(E.data[0][0].str);
+            for (int i = 0; i < lobbies.Count; i++)
+            {
+                if(lobbies[i].lobbyid == E.data[0][0].str)
+                {
+                    lobbies.Remove(lobbies[i]);
+                    break;
+                }
+            }
+        });
         socket.On("changed", (E) =>                       // updating a lobby(ex. a user joined)
         {
             Lobby lobby = new Lobby(
@@ -61,12 +74,26 @@ public class LobbyList : MonoBehaviour
                  E.data.GetField("lobby").GetField("gameid").str,
                  E.data.GetField("lobby").GetField("lobbyid").str
                  );
-            
+            string started = E.data[0][7].str;
             for (int i = 0; i < lobbies.Count; i++)
-                if (lobby.gameid == lobbies[i].gameid)
-                {
-                    Debug.Log(lobby.lobbyid);                                                                       // change a lobby. Update number of players here
+                if (lobby.gameid == lobbies[i].gameid && started != "1")
+                {                                                                     // change a lobby. Update number of players here
                     lobbies[i] = lobby;
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
                 }
         });
 
@@ -81,10 +108,30 @@ public class LobbyList : MonoBehaviour
                   E.data.GetField("lobby").GetField("gameid").str,
                   E.data.GetField("lobby").GetField("lobbyid").str
                   );
-            
-              if(lobbies.Find(currentLobby => currentLobby.gameid == lobby.gameid) == null)
+             string started = E.data[0][7].str;
+             if (lobbies.Find(currentLobby => currentLobby.gameid == lobby.gameid) == null && started != "1")
               {
-                 Debug.Log(lobby.lobbyid);                                                                           // ADD A lobby. add a new gameobject or something here
+                 Debug.Log(lobby.lobbyid);                                                                          // ADD A lobby. add a new gameobject or something here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                  lobbies.Add(lobby);
               }
          });
@@ -108,7 +155,7 @@ public class LobbyList : MonoBehaviour
                     RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
                     {
                         LoginScript.CurrentUserGEId = response.Text;
-
+                        LoginScript.CurrentLobby = lobbies[i];
 
 
 
@@ -122,6 +169,7 @@ public class LobbyList : MonoBehaviour
                     }).Catch(err => { Debug.Log(err); });
 
                 }).Catch(err => { Debug.Log(err); });
+                break;
             }
     }
 
@@ -141,7 +189,7 @@ public class LobbyList : MonoBehaviour
             RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
             {
                 LoginScript.CurrentUserGEId = response.Text;
-                        
+                LoginScript.CurrentLobby = new Lobby(LoginScript.CurrentUserExtension, "-","-", "-",LoginScript.CurrentUser, LoginScript.CurrentUserGameId, LoginScript.CurrentUserLobbyId);
 
 
                 SceneChanger scene = new SceneChanger();

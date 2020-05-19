@@ -2307,7 +2307,6 @@ GameObject:
   - component: {fileID: 1004448934}
   - component: {fileID: 1004448933}
   - component: {fileID: 1004448932}
-  - component: {fileID: 1004448931}
   - component: {fileID: 1004448930}
   m_Layer: 5
   m_Name: Connect button
@@ -2345,21 +2344,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004448928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ad043d99fd9bc42b5775dbff13a841, type: 3}
+  m_Script: {fileID: 11500000, guid: b25cad31ef0180b458fcb5f8d521a792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1004448931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004448928}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffaa4587c57e9304980442e0bca61df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  lobbies: []
 --- !u!114 &1004448932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2403,8 +2391,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1004448930}
-        m_MethodName: goToWaitingRoom
+      - m_Target: {fileID: 1632491945}
+        m_MethodName: createlob
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2970,7 +2958,6 @@ GameObject:
   - component: {fileID: 1261843491}
   - component: {fileID: 1261843490}
   - component: {fileID: 1261843489}
-  - component: {fileID: 1261843488}
   - component: {fileID: 1261843487}
   m_Layer: 5
   m_Name: Create
@@ -3008,21 +2995,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1261843485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ad043d99fd9bc42b5775dbff13a841, type: 3}
+  m_Script: {fileID: 11500000, guid: b25cad31ef0180b458fcb5f8d521a792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1261843488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261843485}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffaa4587c57e9304980442e0bca61df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  lobbies: []
 --- !u!114 &1261843489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,18 +3043,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1261843487}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1632491945}
-        m_MethodName: createlob
+        m_MethodName: createLobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

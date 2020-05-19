@@ -7,8 +7,10 @@ using UnityEngine;
 using FullSerializer;
 using Proyecto26;
 using UnityEngine.SceneManagement;
-using System.IO;
 using System.Text;
+using SocketIO;
+using System;
+
 public class provizoriu : MonoBehaviour
 {
     public GameObject piece;
@@ -18,6 +20,7 @@ public class provizoriu : MonoBehaviour
 
     public int capat1;
     public int capat2;
+    public SocketIOComponent socket;
 
     void Update()
     {
@@ -26,6 +29,8 @@ public class provizoriu : MonoBehaviour
 
     void OnMouseDown()
     {
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
         Text txt = FindTextFiel.find();
 
         if (numar != -1)
@@ -41,12 +46,17 @@ public class provizoriu : MonoBehaviour
                 req.status = Response.status;
                 if (req.code == 200)
                 {
+                    JSONObject json_message = new JSONObject();
+                    json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                    json_message.AddField("username", LoginScript.CurrentUser);
+                    json_message.AddField("intersection", command.intersection);
+                    socket.Emit("buildsettlement", json_message);
                     allPieces.SetActive(false);
                     AfiseazaDrum.afiseaza(newPiece, piece);
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
-
+               
                 txt.text = req.status;
             }).Catch(err => { Debug.Log(err); });
 
@@ -69,6 +79,12 @@ public class provizoriu : MonoBehaviour
                 req.status = Response.status;
                 if (req.code == 200)
                 {
+                    JSONObject json_message = new JSONObject();
+                    json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                    json_message.AddField("username", LoginScript.CurrentUser);
+                    json_message.AddField("start", command.start);
+                    json_message.AddField("end", command.end);
+                    socket.Emit("buildroad", json_message);
                     allPieces.SetActive(false);
                     AfiseazaDrum.afiseaza(newPiece, piece);
                 }

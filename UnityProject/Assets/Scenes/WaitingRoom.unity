@@ -1274,7 +1274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   socket: {fileID: 0}
-  pressed_start_game: 0
 --- !u!1 &457786492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,6 +3360,7 @@ GameObject:
   - component: {fileID: 1364801122}
   - component: {fileID: 1364801121}
   - component: {fileID: 1364801124}
+  - component: {fileID: 1364801125}
   m_Layer: 5
   m_Name: LeaveButton
   m_TagString: Untagged
@@ -3454,6 +3454,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1364801125}
+        m_MethodName: LeaveLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1364801122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3502,6 +3513,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ad043d99fd9bc42b5775dbff13a841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1364801125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364801119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49293c135c38e1c4d8d73afe567c5ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 0}
 --- !u!1 &1375110714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,7 +3841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   socket: {fileID: 0}
-  pressed_start_game: 0
 --- !u!1 &1515751954
 GameObject:
   m_ObjectHideFlags: 0

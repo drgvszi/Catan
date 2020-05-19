@@ -13,7 +13,7 @@ public class create_lobby : MonoBehaviour
     public Text[] obj3;
 
 
-    public void ChangeError(string lobby,string ext, string players,Text obj, Text obj2, Text obj3)
+    public static void ChangeError(string lobby,string ext, string players,Text obj, Text obj2, Text obj3)
     {
         
         obj.text = lobby;

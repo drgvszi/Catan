@@ -20387,6 +20387,7 @@ MonoBehaviour:
   numar: -1
   capat1: 3
   capat2: 2
+  socket: {fileID: 0}
 --- !u!1 &1326518275
 GameObject:
   m_ObjectHideFlags: 0
@@ -30424,6 +30425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1996679330}
+  - component: {fileID: 1996679331}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -30547,6 +30549,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996679331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996679329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786c5f3b18610e9419b5a5dc2d328707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 0}
 --- !u!65 &2005390131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78099,6 +78114,7 @@ MonoBehaviour:
   numar: 44
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667360803883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78151,6 +78167,7 @@ MonoBehaviour:
   numar: 5
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667367050471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78204,6 +78221,7 @@ MonoBehaviour:
   numar: -1
   capat1: 27
   capat2: 26
+  socket: {fileID: 0}
 --- !u!114 &8296172667374243813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78258,6 +78276,7 @@ MonoBehaviour:
   numar: -1
   capat1: 21
   capat2: 22
+  socket: {fileID: 0}
 --- !u!114 &8296172667382271101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78311,6 +78330,7 @@ MonoBehaviour:
   numar: 24
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667397964587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78364,6 +78384,7 @@ MonoBehaviour:
   numar: -1
   capat1: 23
   capat2: 52
+  socket: {fileID: 0}
 --- !u!114 &8296172667432351380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78418,6 +78439,7 @@ MonoBehaviour:
   numar: -1
   capat1: 24
   capat2: 25
+  socket: {fileID: 0}
 --- !u!114 &8296172667436939036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78472,6 +78494,7 @@ MonoBehaviour:
   numar: -1
   capat1: 10
   capat2: 29
+  socket: {fileID: 0}
 --- !u!114 &8296172667446374595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78525,6 +78548,7 @@ MonoBehaviour:
   numar: 0
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667460001061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78577,6 +78601,7 @@ MonoBehaviour:
   numar: 4
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667460969897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78630,6 +78655,7 @@ MonoBehaviour:
   numar: -1
   capat1: 41
   capat2: 42
+  socket: {fileID: 0}
 --- !u!114 &8296172667469938883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78684,6 +78710,7 @@ MonoBehaviour:
   numar: -1
   capat1: 8
   capat2: 27
+  socket: {fileID: 0}
 --- !u!114 &8296172667485663589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78737,6 +78764,7 @@ MonoBehaviour:
   numar: 14
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667516437463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78790,6 +78818,7 @@ MonoBehaviour:
   numar: -1
   capat1: 31
   capat2: 30
+  socket: {fileID: 0}
 --- !u!114 &8296172667528560628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78843,6 +78872,7 @@ MonoBehaviour:
   numar: 40
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667533722488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78912,6 +78942,7 @@ MonoBehaviour:
   numar: -1
   capat1: 46
   capat2: 47
+  socket: {fileID: 0}
 --- !u!114 &8296172667582212017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78966,6 +78997,7 @@ MonoBehaviour:
   numar: -1
   capat1: 7
   capat2: 24
+  socket: {fileID: 0}
 --- !u!114 &8296172667582756400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79019,6 +79051,7 @@ MonoBehaviour:
   numar: 18
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667591957768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79071,6 +79104,7 @@ MonoBehaviour:
   numar: 7
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667619769274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79123,6 +79157,7 @@ MonoBehaviour:
   numar: 16
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667628913316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79176,6 +79211,7 @@ MonoBehaviour:
   numar: -1
   capat1: 12
   capat2: 3
+  socket: {fileID: 0}
 --- !u!114 &8296172667636704367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79229,6 +79265,7 @@ MonoBehaviour:
   numar: 37
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667641055052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79282,6 +79319,7 @@ MonoBehaviour:
   numar: -1
   capat1: 36
   capat2: 35
+  socket: {fileID: 0}
 --- !u!114 &8296172667652648886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79336,6 +79374,7 @@ MonoBehaviour:
   numar: -1
   capat1: 48
   capat2: 49
+  socket: {fileID: 0}
 --- !u!114 &8296172667672891253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79390,6 +79429,7 @@ MonoBehaviour:
   numar: -1
   capat1: 50
   capat2: 51
+  socket: {fileID: 0}
 --- !u!114 &8296172667691120019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79443,6 +79483,7 @@ MonoBehaviour:
   numar: 47
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667695298878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79495,6 +79536,7 @@ MonoBehaviour:
   numar: 52
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667699509540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79547,6 +79589,7 @@ MonoBehaviour:
   numar: 42
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667750978669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79599,6 +79642,7 @@ MonoBehaviour:
   numar: 35
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667752906522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79651,6 +79695,7 @@ MonoBehaviour:
   numar: 32
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667800760726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79703,6 +79748,7 @@ MonoBehaviour:
   numar: 38
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667875280166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79755,6 +79801,7 @@ MonoBehaviour:
   numar: 25
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667886258649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79807,6 +79854,7 @@ MonoBehaviour:
   numar: 20
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667904651484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79859,6 +79907,7 @@ MonoBehaviour:
   numar: 12
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667911242364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79911,6 +79960,7 @@ MonoBehaviour:
   numar: 29
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667924552465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79964,6 +80014,7 @@ MonoBehaviour:
   numar: -1
   capat1: 18
   capat2: 5
+  socket: {fileID: 0}
 --- !u!114 &8296172667929383250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80018,6 +80069,7 @@ MonoBehaviour:
   numar: -1
   capat1: 6
   capat2: 7
+  socket: {fileID: 0}
 --- !u!114 &8296172667943676987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80072,6 +80124,7 @@ MonoBehaviour:
   numar: -1
   capat1: 17
   capat2: 18
+  socket: {fileID: 0}
 --- !u!114 &8296172667944653613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80125,6 +80178,7 @@ MonoBehaviour:
   numar: 49
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667972808190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80178,6 +80232,7 @@ MonoBehaviour:
   numar: -1
   capat1: 32
   capat2: 31
+  socket: {fileID: 0}
 --- !u!114 &8296172667979810313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80232,6 +80287,7 @@ MonoBehaviour:
   numar: -1
   capat1: 0
   capat2: 1
+  socket: {fileID: 0}
 --- !u!114 &8296172667985419224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80285,6 +80341,7 @@ MonoBehaviour:
   numar: 41
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172667995292290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80338,6 +80395,7 @@ MonoBehaviour:
   numar: -1
   capat1: 45
   capat2: 46
+  socket: {fileID: 0}
 --- !u!114 &8296172667996513946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80392,6 +80450,7 @@ MonoBehaviour:
   numar: -1
   capat1: 49
   capat2: 50
+  socket: {fileID: 0}
 --- !u!114 &8296172668004845611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80446,6 +80505,7 @@ MonoBehaviour:
   numar: -1
   capat1: 28
   capat2: 27
+  socket: {fileID: 0}
 --- !u!114 &8296172668013586921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80500,6 +80560,7 @@ MonoBehaviour:
   numar: -1
   capat1: 40
   capat2: 39
+  socket: {fileID: 0}
 --- !u!114 &8296172668020934904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80553,6 +80614,7 @@ MonoBehaviour:
   numar: 39
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668048439202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80640,6 +80702,7 @@ MonoBehaviour:
   numar: 1
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668070884304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80693,6 +80756,7 @@ MonoBehaviour:
   numar: -1
   capat1: 4
   capat2: 3
+  socket: {fileID: 0}
 --- !u!114 &8296172668112832286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80747,6 +80811,7 @@ MonoBehaviour:
   numar: -1
   capat1: 2
   capat2: 9
+  socket: {fileID: 0}
 --- !u!114 &8296172668114831290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80801,6 +80866,7 @@ MonoBehaviour:
   numar: -1
   capat1: 47
   capat2: 48
+  socket: {fileID: 0}
 --- !u!114 &8296172668133980681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80855,6 +80921,7 @@ MonoBehaviour:
   numar: -1
   capat1: 20
   capat2: 47
+  socket: {fileID: 0}
 --- !u!114 &8296172668144795760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80909,6 +80976,7 @@ MonoBehaviour:
   numar: -1
   capat1: 1
   capat2: 2
+  socket: {fileID: 0}
 --- !u!114 &8296172668175720838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80963,6 +81031,7 @@ MonoBehaviour:
   numar: -1
   capat1: 4
   capat2: 5
+  socket: {fileID: 0}
 --- !u!114 &8296172668198368704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81017,6 +81086,7 @@ MonoBehaviour:
   numar: -1
   capat1: 13
   capat2: 12
+  socket: {fileID: 0}
 --- !u!114 &8296172668223550101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81071,6 +81141,7 @@ MonoBehaviour:
   numar: -1
   capat1: 33
   capat2: 32
+  socket: {fileID: 0}
 --- !u!114 &8296172668226273469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81125,6 +81196,7 @@ MonoBehaviour:
   numar: -1
   capat1: 19
   capat2: 20
+  socket: {fileID: 0}
 --- !u!114 &8296172668229222947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81179,6 +81251,7 @@ MonoBehaviour:
   numar: -1
   capat1: 16
   capat2: 17
+  socket: {fileID: 0}
 --- !u!114 &8296172668237892936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81233,6 +81306,7 @@ MonoBehaviour:
   numar: -1
   capat1: 22
   capat2: 49
+  socket: {fileID: 0}
 --- !u!114 &8296172668277606984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81287,6 +81361,7 @@ MonoBehaviour:
   numar: -1
   capat1: 12
   capat2: 11
+  socket: {fileID: 0}
 --- !u!114 &8296172668299382320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81341,6 +81416,7 @@ MonoBehaviour:
   numar: -1
   capat1: 38
   capat2: 37
+  socket: {fileID: 0}
 --- !u!114 &8296172668303559659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81394,6 +81470,7 @@ MonoBehaviour:
   numar: 22
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668313850299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81446,6 +81523,7 @@ MonoBehaviour:
   numar: 19
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668317727584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81498,6 +81576,7 @@ MonoBehaviour:
   numar: 51
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668326843489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81551,6 +81630,7 @@ MonoBehaviour:
   numar: -1
   capat1: 14
   capat2: 13
+  socket: {fileID: 0}
 --- !u!114 &8296172668327026807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81604,6 +81684,7 @@ MonoBehaviour:
   numar: 30
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668361692406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81657,6 +81738,7 @@ MonoBehaviour:
   numar: -1
   capat1: 40
   capat2: 41
+  socket: {fileID: 0}
 --- !u!114 &8296172668362685621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81711,6 +81793,7 @@ MonoBehaviour:
   numar: -1
   capat1: 32
   capat2: 11
+  socket: {fileID: 0}
 --- !u!114 &8296172668377254815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81765,6 +81848,7 @@ MonoBehaviour:
   numar: -1
   capat1: 26
   capat2: 25
+  socket: {fileID: 0}
 --- !u!114 &8296172668408238091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81818,6 +81902,7 @@ MonoBehaviour:
   numar: 9
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668411580889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81871,6 +81956,7 @@ MonoBehaviour:
   numar: -1
   capat1: 5
   capat2: 0
+  socket: {fileID: 0}
 --- !u!114 &8296172668431711662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81924,6 +82010,7 @@ MonoBehaviour:
   numar: 33
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668438558707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81976,6 +82063,7 @@ MonoBehaviour:
   numar: 3
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668459441926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82028,6 +82116,7 @@ MonoBehaviour:
   numar: 28
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668471587950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82080,6 +82169,7 @@ MonoBehaviour:
   numar: 53
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668477646949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82133,6 +82223,7 @@ MonoBehaviour:
   numar: -1
   capat1: 16
   capat2: 15
+  socket: {fileID: 0}
 --- !u!65 &8296172668611997809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82200,6 +82291,7 @@ MonoBehaviour:
   numar: -1
   capat1: 8
   capat2: 7
+  socket: {fileID: 0}
 --- !u!114 &8296172668629508083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82254,6 +82346,7 @@ MonoBehaviour:
   numar: -1
   capat1: 0
   capat2: 21
+  socket: {fileID: 0}
 --- !u!114 &8296172668632768620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82308,6 +82401,7 @@ MonoBehaviour:
   numar: -1
   capat1: 38
   capat2: 39
+  socket: {fileID: 0}
 --- !u!114 &8296172668641397235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82361,6 +82455,7 @@ MonoBehaviour:
   numar: 2
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668652116796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82414,6 +82509,7 @@ MonoBehaviour:
   numar: -1
   capat1: 20
   capat2: 21
+  socket: {fileID: 0}
 --- !u!114 &8296172668653456411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82467,6 +82563,7 @@ MonoBehaviour:
   numar: 6
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668700001645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82519,6 +82616,7 @@ MonoBehaviour:
   numar: 26
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668709328072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82572,6 +82670,7 @@ MonoBehaviour:
   numar: -1
   capat1: 30
   capat2: 29
+  socket: {fileID: 0}
 --- !u!114 &8296172668773157893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82625,6 +82724,7 @@ MonoBehaviour:
   numar: 17
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668785254685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82678,6 +82778,7 @@ MonoBehaviour:
   numar: -1
   capat1: 52
   capat2: 51
+  socket: {fileID: 0}
 --- !u!114 &8296172668842997365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82731,6 +82832,7 @@ MonoBehaviour:
   numar: 13
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668891916204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82783,6 +82885,7 @@ MonoBehaviour:
   numar: 34
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668895137971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82836,6 +82939,7 @@ MonoBehaviour:
   numar: -1
   capat1: 34
   capat2: 33
+  socket: {fileID: 0}
 --- !u!114 &8296172668914598755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82890,6 +82994,7 @@ MonoBehaviour:
   numar: -1
   capat1: 15
   capat2: 4
+  socket: {fileID: 0}
 --- !u!114 &8296172668932574598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82943,6 +83048,7 @@ MonoBehaviour:
   numar: 36
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172668943462707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82996,6 +83102,7 @@ MonoBehaviour:
   numar: -1
   capat1: 14
   capat2: 15
+  socket: {fileID: 0}
 --- !u!114 &8296172668948592283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83050,6 +83157,7 @@ MonoBehaviour:
   numar: -1
   capat1: 10
   capat2: 9
+  socket: {fileID: 0}
 --- !u!114 &8296172668986080152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83104,6 +83212,7 @@ MonoBehaviour:
   numar: -1
   capat1: 44
   capat2: 45
+  socket: {fileID: 0}
 --- !u!114 &8296172669012422856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83157,6 +83266,7 @@ MonoBehaviour:
   numar: 46
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669017974263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83209,6 +83319,7 @@ MonoBehaviour:
   numar: 50
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669023028776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83261,6 +83372,7 @@ MonoBehaviour:
   numar: 43
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669027770806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83313,6 +83425,7 @@ MonoBehaviour:
   numar: 31
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669064256814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83366,6 +83479,7 @@ MonoBehaviour:
   numar: -1
   capat1: 39
   capat2: 16
+  socket: {fileID: 0}
 --- !u!114 &8296172669079165977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83420,6 +83534,7 @@ MonoBehaviour:
   numar: -1
   capat1: 8
   capat2: 9
+  socket: {fileID: 0}
 --- !u!114 &8296172669095086920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83473,6 +83588,7 @@ MonoBehaviour:
   numar: 15
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669110988749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83526,6 +83642,7 @@ MonoBehaviour:
   numar: -1
   capat1: 42
   capat2: 17
+  socket: {fileID: 0}
 --- !u!114 &8296172669119994265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83580,6 +83697,7 @@ MonoBehaviour:
   numar: -1
   capat1: 11
   capat2: 10
+  socket: {fileID: 0}
 --- !u!114 &8296172669124441930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83634,6 +83752,7 @@ MonoBehaviour:
   numar: -1
   capat1: 42
   capat2: 43
+  socket: {fileID: 0}
 --- !u!114 &8296172669125814896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83688,6 +83807,7 @@ MonoBehaviour:
   numar: -1
   capat1: 22
   capat2: 23
+  socket: {fileID: 0}
 --- !u!114 &8296172669132293668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83742,6 +83862,7 @@ MonoBehaviour:
   numar: -1
   capat1: 6
   capat2: 23
+  socket: {fileID: 0}
 --- !u!114 &8296172669154208452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83812,6 +83933,7 @@ MonoBehaviour:
   numar: 10
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669190719105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83864,6 +83986,7 @@ MonoBehaviour:
   numar: 27
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669207303981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83916,6 +84039,7 @@ MonoBehaviour:
   numar: 48
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669209989338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83968,6 +84092,7 @@ MonoBehaviour:
   numar: 45
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669232192153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84021,6 +84146,7 @@ MonoBehaviour:
   numar: -1
   capat1: 29
   capat2: 28
+  socket: {fileID: 0}
 --- !u!114 &8296172669256086586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84075,6 +84201,7 @@ MonoBehaviour:
   numar: -1
   capat1: 52
   capat2: 53
+  socket: {fileID: 0}
 --- !u!114 &8296172669285952937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84129,6 +84256,7 @@ MonoBehaviour:
   numar: -1
   capat1: 36
   capat2: 37
+  socket: {fileID: 0}
 --- !u!114 &8296172669301223471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84183,6 +84311,7 @@ MonoBehaviour:
   numar: -1
   capat1: 1
   capat2: 6
+  socket: {fileID: 0}
 --- !u!114 &8296172669314705302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84236,6 +84365,7 @@ MonoBehaviour:
   numar: 11
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669316916576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84288,6 +84418,7 @@ MonoBehaviour:
   numar: 8
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669329558241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84341,6 +84472,7 @@ MonoBehaviour:
   numar: -1
   capat1: 24
   capat2: 53
+  socket: {fileID: 0}
 --- !u!114 &8296172669338796030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84395,6 +84527,7 @@ MonoBehaviour:
   numar: -1
   capat1: 18
   capat2: 19
+  socket: {fileID: 0}
 --- !u!114 &8296172669361845555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84449,6 +84582,7 @@ MonoBehaviour:
   numar: -1
   capat1: 43
   capat2: 44
+  socket: {fileID: 0}
 --- !u!114 &8296172669373278133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84503,6 +84637,7 @@ MonoBehaviour:
   numar: -1
   capat1: 37
   capat2: 14
+  socket: {fileID: 0}
 --- !u!114 &8296172669435010323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84557,6 +84692,7 @@ MonoBehaviour:
   numar: -1
   capat1: 34
   capat2: 13
+  socket: {fileID: 0}
 --- !u!114 &8296172669457606670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84610,6 +84746,7 @@ MonoBehaviour:
   numar: 23
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669463085553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84663,6 +84800,7 @@ MonoBehaviour:
   numar: -1
   capat1: 44
   capat2: 19
+  socket: {fileID: 0}
 --- !u!114 &8296172669473487613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84717,6 +84855,7 @@ MonoBehaviour:
   numar: -1
   capat1: 35
   capat2: 34
+  socket: {fileID: 0}
 --- !u!114 &8296172669475345813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84770,6 +84909,7 @@ MonoBehaviour:
   numar: 21
   capat1: 0
   capat2: 0
+  socket: {fileID: 0}
 --- !u!65 &8296172669477449052
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class Map : MonoBehaviour
             }
         }).Catch(err => { Debug.Log(err); });
 
-        RestClient.Get<Ext>("https://catan-connectivity.herokuapp.com/extension/getExtensionByName?name=extension" + (2)).Then(result =>
+        /*RestClient.Get<Ext>("https://catan-connectivity.herokuapp.com/extension/getExtensionByName?name=extension" + (2)).Then(result =>
         {
             if (result.available != "true")
             {
@@ -68,7 +68,7 @@ public class Map : MonoBehaviour
                 line.text = "Not avalabile";
             }
         }).Catch(err => { Debug.Log(err); });
-
+        */
     }
   
 
