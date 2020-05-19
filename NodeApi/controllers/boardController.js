@@ -1,94 +1,31 @@
 var path = require('path');
 var bodyParser = require("body-parser");
-
-const boards = [{
-    lobbyid: 1,
-    board: [ {
-        "resource" : "Grain",
-        "number" : 5
-      }, {
-        "resource" : "Grain",
-        "number" : 8
-      }, {
-        "resource" : "Brick",
-        "number" : 4
-      }, {
-        "resource" : "Ore",
-        "number" : 10
-      }, {
-        "resource" : "Wool",
-        "number" : 11
-      }, {
-        "resource" : "Ore",
-        "number" : 10
-      }, {
-        "resource" : "Wool",
-        "number" : 2
-      }, {
-        "resource" : "Lumber",
-        "number" : 4
-      }, {
-        "resource" : "Grain",
-        "number" : 3
-      }, {
-        "resource" : "Lumber",
-        "number" : 12
-      }, {
-        "resource" : "Grain",
-        "number" : 3
-      }, {
-        "resource" : "Brick",
-        "number" : 9
-      }, {
-        "resource" : "Lumber",
-        "number" : 8
-      }, {
-        "resource" : "Wool",
-        "number" : 5
-      }, {
-        "resource" : "Wool",
-        "number" : 6
-      }, {
-        "resource" : "Lumber",
-        "number" : 6
-      }, {
-        "resource" : "Ore",
-        "number" : 9
-      }, {
-        "resource" : "Desert",
-        "number" : 0
-      }, {
-        "resource" : "Brick",
-        "number" : 11
-      } ]
-},
-{
-   lobbyid: 2,
-    board: { "field2" : "abc" , "field2" : "def" }
-} ];
- 
+var db = require('./firebaseService').getDb();
 
 const getAllBoards = async(req, res) => {
     return res.status(200).json({boards: boards});
 };
 
+function get_board_from_db(gameid) {
+    return db.ref('/boards/'+gameid)
+    .once('value')
+    .then(function(bref) {
+        var val= bref.val();
+        return {
+            board: val.data
+        };
+    });
+}
+
 const getBoard = async(req, res) => {
     // Get Single Table
-    console.log('Accepted Get Request');
-    if(req.body.hasOwnProperty('lobbyid')) {
+    console.log('Accepted post Request');
+    if(req.body.hasOwnProperty('gameid')) {
     
-        console.log('Good lobby id');
-        if(boards == null) {
-            return res.status(400).json({status : 'error', message: 'No board available.'});
-        }
-
-        const found = boards.some(board => board.lobbyid === parseInt(req.body.lobbyid)); //daca exista sau nu
-
-        if(found) {
-            res.json( (boards.filter(board => board.lobbyid === parseInt(req.body.lobbyid)))[0].board );
-        } else {
-            res.status(400).json({status : 'error', message: `No board with the id of ${req.body.lobbyid}`});
-        }
+        console.log(req.body.gameid);
+        get_board_from_db(req.body.gameid).then(function(data) {
+            res.send(data.board);
+        });
     } 
     else {
         console.log(req.body);

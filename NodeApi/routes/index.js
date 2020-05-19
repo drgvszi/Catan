@@ -12,4 +12,7 @@ router.use('/auth', auth);
 const lobby=require('./lobby');
 router.use('/lobby', lobby);
 
+const game=require('./game');
+router.use('/game', game);
+
 module.exports=router;

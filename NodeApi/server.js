@@ -6,9 +6,9 @@ var jwt=require('jsonwebtoken');
 var db = require('./controllers/firebaseService').getDb();
 var ref = db.ref("lobbies");
 
-const PORT = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
-const server = app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+const server = app.listen(port, () => console.log(`Server started on port ${port}`));
 const socket = require('socket.io');
 var io = socket(server);
 
@@ -26,23 +26,27 @@ app.use(express.json());
 
 io.on('connection', (socket) => {
 	ref.on('child_changed', function(data) {
-		socket.emit('changed',JSON.parse(`{"${data.key}": {
-	  		"extension": "${data.val().extension}",
-			"first": "${data.val().first}",
-			"master": "${data.val().master}",
- 			"second": "${data.val().second}",
- 			"third": "${data.val().third}"
-	  		}}`
-		));
-	});
-
-	ref.on('child_added', function(data) {
-		socket.emit('added',JSON.parse(`{"${data.key}": {
+		socket.emit('changed',JSON.parse(`{"lobby": {
 	  		"extension": "${data.val().extension}",
 	  		"first": "${data.val().first}",
 	  		"master": "${data.val().master}",
 	 		"second": "${data.val().second}",
-	  		"third": "${data.val().third}"
+	  		"third": "${data.val().third}",
+	  		"gameid": "${data.val().gameid}",
+	  		"lobbyid": "${data.key}"
+		  	}}`
+		));
+	});
+
+	ref.on('child_added', function(data) {
+		socket.emit('added',JSON.parse(`{"lobby": {
+	  		"extension": "${data.val().extension}",
+	  		"first": "${data.val().first}",
+	  		"master": "${data.val().master}",
+	 		"second": "${data.val().second}",
+	  		"third": "${data.val().third}",
+	  		"gameid": "${data.val().gameid}",
+	  		"lobbyid": "${data.key}"
 		  	}}`
 	  	));
 	});
@@ -50,4 +54,21 @@ io.on('connection', (socket) => {
 	ref.on('child_removed', function(oldChildSnapshot) {
 		socket.emit('removed', `{"lobby_key":"${oldChildSnapshot.key}"}`);
 	});
+
+	socket.on("chat message", (msg) => {
+		console.log(msg);
+		socket.broadcast.emit("chat message", msg);
+	});
+	socket.on("gamestart", (msg) => {
+		console.log(msg);
+		socket.broadcast.emit("gamestart", msg);
+	});
+	
+	socket.on('disconnect', function() {
+      console.log('Got disconnect!');
+  	});
 });
+
+
+
+
