@@ -60,7 +60,7 @@ public class UserRequest implements GameRequest {
         if (game.getPlayer(playerId) == null) {
             return new UserResponse(HttpStatus.SC_ACCEPTED, "The player does not exist.", null);
         }
-        if(game.getBank() != null){
+        if (game.getBank() == null) {
             return new UserResponse(HttpStatus.SC_ACCEPTED, "The game has not started yet.", null);
         }
         return game.playTurn(playerId, command, arguments);
