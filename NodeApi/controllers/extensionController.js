@@ -35,7 +35,25 @@ var userReference = db.ref(referencePath);
 	);
 }
 
+const setExtensionForUser = async(req,res)=>{
+	var username = req.body.username;
+	var extension = req.body.extension;
+	var user = db.ref("users").child(username);
+	user.update({
+		"userextension":extension
+	}, function(error) {
+		if (error) {
+			res.json({status:'error',message:error});
+		} 
+		else {
+			res.json({status:'succes',message:''});
+		}
+	});
+
+}
+
 module.exports={
     getExtensionByName,
-    insertExtension
+    insertExtension,
+    setExtensionForUser
 }
