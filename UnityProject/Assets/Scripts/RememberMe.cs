@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,27 +58,27 @@ namespace Catan {
         }
 
         //rememberMe functions
-
+        
         public void save(String username, String userpassword) {
-/**/            if (mainForm.rememberBox.Checked) {
+            if (mainForm.rememberBox.Checked) {
                     SetLastLogin(username, userpassword);
-
+       
                 String settings;
-/**/                if (mainForm.updateButton.Checked) {
+                if (mainForm.updateButton.Checked) {
                     settings = "1";
                 }
                 else {
                     settings = "0";
                 }
 
-/**/                if (mainForm.consoleButton.Checked) {
+                if (mainForm.consoleButton.Checked) {
                     settings += "1";
                 }
                 else {
                     settings += "0";
                 }
 
-/**/                if (mainForm.snapshotButton.Checked) {
+                if (mainForm.snapshotButton.Checked) {
                     settings += "1";
                 }
                 else {
@@ -99,8 +99,8 @@ namespace Catan {
             if (File.Exists(Path.Combine(rootPath, "rememberMe.txt"))) {
                 if (File.Exists(Path.Combine(rootPath, "lastlogin"))) {
                     String[] loginInfo = GetLastLogin();
-/**/                    mainForm.userText.Text = loginInfo[0];
-/**/                    mainForm.passText.Text = loginInfo[1];
+                    mainForm.userText.Text = loginInfo[0];
+                    mainForm.passText.Text = loginInfo[1];
                 }
                 String settings;
                 using (StreamReader sr = File.OpenText(Path.Combine(rootPath, "rememberMe.txt"))) {
@@ -114,36 +114,37 @@ namespace Catan {
                     switch (i) {
                         case 0:
                             if (settingArray[0] == '1') {
-/**/                                mainForm.updateButton.Checked = true;
+                                mainForm.updateButton.Checked = true;
                             }
                             else {
-/**/                                mainForm.updateButton.Checked = false;
+                                mainForm.updateButton.Checked = false;
                             }
                             break;
                         case 1:
                             if (settingArray[1] == '1') {
-/**/                                mainForm.consoleButton.Checked = true;
+                                mainForm.consoleButton.Checked = true;
                             }
                             else {
-/**/                                mainForm.consoleButton.Checked = false;
+                                mainForm.consoleButton.Checked = false;
                             }
                             break;
                         case 2:
                             if (settingArray[2] == '1') {
-/**/                                mainForm.snapshotButton.Checked = true;
+                                mainForm.snapshotButton.Checked = true;
                             }
                             else {
-/**/                                mainForm.normalButton.Checked = true;
+                                mainForm.normalButton.Checked = true;
                             }
                             break;
                     }
                     i++;
                 }
 
-/**/                mainForm.rememberBox.Checked = true;
+                mainForm.rememberBox.Checked = true;
             }
         }
 
 
     }
 }
+*/
