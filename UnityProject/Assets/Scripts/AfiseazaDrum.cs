@@ -16,7 +16,7 @@ public class AfiseazaDrum : MonoBehaviour
         
     }
 
-    public static void afiseaza(GameObject o,GameObject x)
+    public static void afiseaza(GameObject o, GameObject x)
     {
         Instantiate(o, x.transform.position, x.transform.rotation);
     }

@@ -20425,12 +20425,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668057223907}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 3
   capat2: 2
   socket: {fileID: 0}
+  culoare: 1
 --- !u!1 &1326518275
 GameObject:
   m_ObjectHideFlags: 0
@@ -102273,12 +102284,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667360803881}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 44
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667360803883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102326,12 +102348,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667367050469}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 5
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667367050471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102380,12 +102413,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667374243811}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 27
   capat2: 26
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667374243813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102435,12 +102479,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667382271099}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 21
   capat2: 22
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667382271101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102489,12 +102544,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667397964585}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 24
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667397964587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102543,12 +102609,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667432351378}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 23
   capat2: 52
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667432351380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102598,12 +102675,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667436939034}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 24
   capat2: 25
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667436939036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102653,12 +102741,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667446374593}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 10
   capat2: 29
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667446374595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102707,12 +102806,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667460001059}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 0
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667460001061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102760,12 +102870,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667460969895}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 4
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667460969897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102814,12 +102935,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667469938881}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 41
   capat2: 42
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667469938883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102869,12 +103001,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667485663587}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 8
   capat2: 27
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667485663589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102923,12 +103066,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667516437461}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 14
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667516437463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102977,12 +103131,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667528560626}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 31
   capat2: 30
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667528560628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103031,12 +103196,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667533722486}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 40
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667533722488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103101,12 +103277,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667582212015}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 46
   capat2: 47
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667582212017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103156,12 +103343,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667582756398}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 7
   capat2: 24
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667582756400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103210,12 +103408,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667591957766}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 18
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667591957768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103263,12 +103472,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667619769272}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 7
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667619769274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103316,12 +103536,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667628913314}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 16
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667628913316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103370,12 +103601,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667636704365}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 12
   capat2: 3
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667636704367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103424,12 +103666,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667641055050}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 37
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667641055052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103478,12 +103731,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667652648884}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 36
   capat2: 35
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667652648886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103533,12 +103797,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667672891251}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 48
   capat2: 49
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667672891253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103588,12 +103863,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667691120017}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 50
   capat2: 51
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667691120019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103642,12 +103928,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667695298876}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 47
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667695298878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103695,12 +103992,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667699509538}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 52
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667699509540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103748,12 +104056,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667750978667}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 42
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667750978669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103801,12 +104120,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667752906520}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 35
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667752906522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103854,12 +104184,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667800760724}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 32
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667800760726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103907,12 +104248,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667875280164}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 38
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667875280166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103960,12 +104312,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667886258647}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 25
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667886258649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104013,12 +104376,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667904651482}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 20
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667904651484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104066,12 +104440,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667911242362}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 12
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667911242364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104119,12 +104504,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667924552463}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 29
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667924552465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104173,12 +104569,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667929383248}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 18
   capat2: 5
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667929383250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104228,12 +104635,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667943676985}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 6
   capat2: 7
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667943676987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104283,12 +104701,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667944653611}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 17
   capat2: 18
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667944653613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104337,12 +104766,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667972808188}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 49
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667972808190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104391,12 +104831,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667979810311}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 32
   capat2: 31
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667979810313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104446,12 +104897,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667985419222}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 0
   capat2: 1
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667985419224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104500,12 +104962,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667995292288}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 41
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172667995292290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104554,12 +105027,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172667996513944}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 45
   capat2: 46
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172667996513946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104609,12 +105093,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668004845609}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 49
   capat2: 50
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668004845611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104664,12 +105159,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668013586919}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 28
   capat2: 27
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668013586921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104719,12 +105225,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668020934902}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 40
   capat2: 39
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668020934904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104773,12 +105290,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668048439200}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 39
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668048439202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104861,12 +105389,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668070884302}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 1
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668070884304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104915,12 +105454,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668112832284}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 4
   capat2: 3
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668112832286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104970,12 +105520,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668114831288}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 2
   capat2: 9
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668114831290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105025,12 +105586,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668133980679}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 47
   capat2: 48
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668133980681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105080,12 +105652,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668144795758}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 20
   capat2: 47
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668144795760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105135,12 +105718,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668175720836}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 1
   capat2: 2
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668175720838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105190,12 +105784,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668198368702}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 4
   capat2: 5
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668198368704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105245,12 +105850,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668223550099}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 13
   capat2: 12
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668223550101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105300,12 +105916,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668226273467}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 33
   capat2: 32
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668226273469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105355,12 +105982,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668229222945}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 19
   capat2: 20
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668229222947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105410,12 +106048,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668237892934}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 16
   capat2: 17
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668237892936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105465,12 +106114,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668277606982}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 22
   capat2: 49
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668277606984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105520,12 +106180,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668299382318}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 12
   capat2: 11
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668299382320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105575,12 +106246,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668303559657}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 38
   capat2: 37
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668303559659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105629,12 +106311,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668313850297}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 22
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668313850299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105682,12 +106375,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668317727582}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 19
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668317727584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105735,12 +106439,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668326843487}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 51
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668326843489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105789,12 +106504,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668327026805}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 14
   capat2: 13
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668327026807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105843,12 +106569,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668361692404}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 30
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668361692406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105897,12 +106634,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668362685619}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 40
   capat2: 41
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668362685621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105952,12 +106700,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668377254813}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 32
   capat2: 11
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668377254815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106007,12 +106766,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668408238089}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 26
   capat2: 25
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668408238091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106061,12 +106831,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668411580887}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 9
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668411580889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106115,12 +106896,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668431711660}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 5
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668431711662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106169,12 +106961,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668438558705}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 33
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668438558707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106222,12 +107025,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668459441924}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 3
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668459441926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106275,12 +107089,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668471587948}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 28
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668471587950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106328,12 +107153,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668477646947}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 53
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668477646949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106382,12 +107218,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668611997807}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 16
   capat2: 15
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668611997809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106450,12 +107297,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668629508081}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 8
   capat2: 7
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668629508083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106505,12 +107363,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668632768618}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 0
   capat2: 21
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668632768620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106560,12 +107429,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668641397233}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 38
   capat2: 39
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668641397235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106614,12 +107494,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668652116794}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 2
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668652116796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106668,12 +107559,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668653456409}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 20
   capat2: 21
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668653456411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106722,12 +107624,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668700001643}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 6
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668700001645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106775,12 +107688,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668709328070}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 26
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668709328072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106829,12 +107753,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668773157891}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 30
   capat2: 29
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668773157893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106883,12 +107818,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668785254683}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 17
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668785254685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106937,12 +107883,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668842997363}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 52
   capat2: 51
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668842997365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106991,12 +107948,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668891916202}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 13
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668891916204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107044,12 +108012,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668895137969}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 34
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668895137971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107098,12 +108077,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668914598753}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 34
   capat2: 33
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668914598755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107153,12 +108143,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668932574596}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 15
   capat2: 4
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668932574598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107207,12 +108208,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668943462705}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 36
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172668943462707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107261,12 +108273,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668948592281}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 14
   capat2: 15
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668948592283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107316,12 +108339,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172668986080150}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 10
   capat2: 9
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172668986080152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107371,12 +108405,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669012422854}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 44
   capat2: 45
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669012422856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107425,12 +108470,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669017974261}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 46
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669017974263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107478,12 +108534,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669023028774}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 50
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669023028776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107531,12 +108598,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669027770804}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 43
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669027770806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107584,12 +108662,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669064256812}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 31
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669064256814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107638,12 +108727,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669079165975}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 39
   capat2: 16
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669079165977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107693,12 +108793,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669095086918}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 8
   capat2: 9
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669095086920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107747,12 +108858,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669110988747}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 15
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669110988749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107801,12 +108923,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669119994263}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 42
   capat2: 17
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669119994265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107856,12 +108989,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669124441928}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 11
   capat2: 10
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669124441930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107911,12 +109055,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669125814894}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 42
   capat2: 43
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669125814896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107966,12 +109121,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669132293666}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 22
   capat2: 23
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669132293668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108021,12 +109187,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669154208450}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 6
   capat2: 23
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669154208452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108092,12 +109269,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669190719103}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 10
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669190719105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108145,12 +109333,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669207303979}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 27
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669207303981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108198,12 +109397,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669209989336}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 48
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669209989338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108251,12 +109461,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669232192151}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 45
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669232192153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108305,12 +109526,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669256086584}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 29
   capat2: 28
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669256086586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108360,12 +109592,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669285952935}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 52
   capat2: 53
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669285952937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108415,12 +109658,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669301223469}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 36
   capat2: 37
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669301223471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108470,12 +109724,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669314705300}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 1
   capat2: 6
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669314705302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108524,12 +109789,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669316916574}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 11
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669316916576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108577,12 +109853,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669329558239}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 8
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669329558241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108631,12 +109918,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669338796028}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 24
   capat2: 53
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669338796030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108686,12 +109984,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669361845553}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 18
   capat2: 19
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669361845555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108741,12 +110050,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669373278131}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 43
   capat2: 44
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669373278133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108796,12 +110116,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669435010321}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 37
   capat2: 14
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669435010323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108851,12 +110182,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669457606668}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 34
   capat2: 13
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669457606670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108905,12 +110247,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669463085551}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 23
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669463085553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108959,12 +110312,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669473487611}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 44
   capat2: 19
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669473487613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109014,12 +110378,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669475345811}
   allPieces: {fileID: 1585835860}
-  newPiece: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
+  newPiece1: {fileID: 8205810946140492980, guid: 3767cb91614bd364b92e9f640058cd38,
     type: 3}
+  newPiece2: {fileID: 5458408072149248509, guid: d22719abe3896294687a801ad8d2a750,
+    type: 3}
+  newPiece3: {fileID: 8688188110810470745, guid: 54f77e09ceacf8c4a839cc2b25f1f6ac,
+    type: 3}
+  newPiece4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: -1
   capat1: 35
   capat2: 34
   socket: {fileID: 0}
+  culoare: 1
 --- !u!114 &8296172669475345813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109068,12 +110443,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece: {fileID: 8296172669477449050}
   allPieces: {fileID: 1899658961}
-  newPiece: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
+  newPiece1: {fileID: 8167304820134488674, guid: 37735ce73c171e44280e1d07b936566b,
     type: 3}
+  newPiece2: {fileID: 4349329514726950387, guid: 6b34ae1d7e80d944e9888887602c5099,
+    type: 3}
+  newPiece3: {fileID: 3787309170817996813, guid: 0f63b3ff28547dc4880096a8315e46e0,
+    type: 3}
+  newPiece4: {fileID: 5905805622486774419, guid: 23331b3121f4aa94d95c7d4f722ab0b8,
+    type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   numar: 21
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
+  culoare: 1
 --- !u!65 &8296172669477449052
 BoxCollider:
   m_ObjectHideFlags: 0

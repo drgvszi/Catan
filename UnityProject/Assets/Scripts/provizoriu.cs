@@ -15,12 +15,20 @@ public class provizoriu : MonoBehaviour
 {
     public GameObject piece;
     public GameObject allPieces;
-    public GameObject newPiece;
+    public GameObject newPiece1;
+    public GameObject newPiece2;
+    public GameObject newPiece3;
+    public GameObject newPiece4;
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
     public int numar;
 
     public int capat1;
     public int capat2;
     public SocketIOComponent socket;
+    public int culoare = 1;
 
     void Update()
     {
@@ -52,7 +60,22 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("intersection", command.intersection);
                     socket.Emit("buildsettlement", json_message);
                     allPieces.SetActive(false);
-                    AfiseazaDrum.afiseaza(newPiece, piece);
+                    if (player1.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece1, piece);
+                    }
+                    else if (player2.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece2, piece);
+                    }
+                    else if (player3.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece3, piece);
+                    }
+                    if (player4.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                    }
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
@@ -86,7 +109,22 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("end", command.end);
                     socket.Emit("buildroad", json_message);
                     allPieces.SetActive(false);
-                    AfiseazaDrum.afiseaza(newPiece, piece);
+                    if (player1.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece1, piece);
+                    }
+                    else if (player2.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece2, piece);
+                    }
+                    else if (player3.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece3, piece);
+                    }
+                    if (player4.activeSelf == true)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                    }
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);
