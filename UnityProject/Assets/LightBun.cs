@@ -7,6 +7,8 @@ public class LightBun : MonoBehaviour
     bool ok=false;
     public GameObject lighton;
     public GameObject lightoff;
+    public GameObject fire;
+    
     void OnMouseDown()
     {
         if (ok == false)
@@ -19,6 +21,7 @@ public void Show()
 {
     lighton.SetActive(false);
     lightoff.SetActive(true);
+        fire.SetActive(false);
     
     ok = true;
 }
@@ -26,7 +29,8 @@ public void Hide()
 {
     lighton.SetActive(true);
     lightoff.SetActive(false);
-    
-    ok = false;
+        fire.SetActive(true);
+
+        ok = false;
 }
 }
