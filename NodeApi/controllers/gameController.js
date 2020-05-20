@@ -25,6 +25,7 @@ const buildSettlement = async(req, res) => {
     }
 }
 
+
 const buySettlement = async(req, res) => {
 
   if(req.body.hasOwnProperty('gameId') && req.body.hasOwnProperty('playerId') && req.body.hasOwnProperty('intersection') ) {
@@ -47,6 +48,7 @@ const buySettlement = async(req, res) => {
       res.status(400).json({status : 'error', message: 'Malformed JSON body.Missing required fields'});
   }
 }
+
 
 const buildRoad = async(req, res) => {
 
@@ -71,8 +73,9 @@ const buildRoad = async(req, res) => {
       res.status(400).json({status : 'error', message: 'Malformed JSON body.Missing required fields'});
   }
 }
-const buyRoad = async(req, res) => {
 
+
+const buyRoad = async(req, res) => {
   if(req.body.hasOwnProperty('gameId') && req.body.hasOwnProperty('playerId') && req.body.hasOwnProperty('start') && req.body.hasOwnProperty('end')) {
       axios.post('https://catan-engine.herokuapp.com/Catan/userRequest/', {
           gameId: req.body.gameId,
@@ -94,6 +97,8 @@ const buyRoad = async(req, res) => {
       res.status(400).json({status : 'error', message: 'Malformed JSON body.Missing required fields'});
   }
 }
+
+
 const rollDice = async(req, res) => {
   if(req.body.hasOwnProperty('gameId') && req.body.hasOwnProperty('playerId')) {
       axios.post('https://catan-engine.herokuapp.com/Catan/userRequest/', {

@@ -21,19 +21,17 @@ const login=async(req,res)=>
             return res.status(404).json({status : 'error', message: 'User not found'});
         }
         var userCred=Object.values(user)[0];
-        
-        if(userCred.password!=password)
+        console.log(userCred);
+        if(userCred.userpassword!=password)
         {
             console.log("Wrong password");
             return res.status(400).json({status:'error',message:'Wrong password'});
         }
-        const accessToken=jwt.sign(user[username]['id'],process.env.ACCESS_TOKEN_SECRET);
-        return res.status(200).json({status:'success',message:'Logged in succesfully',access_token:accessToken});
+        return res.status(200).json({status:'success',message:'Logged in succesfully',user_id:userCred.userId});
     })
     .catch(function(error){
         console.log(error);
     });
-
 }
 
 const register=async(req,res)=>
