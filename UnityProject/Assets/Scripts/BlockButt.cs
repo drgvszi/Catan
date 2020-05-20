@@ -9,8 +9,8 @@ public class BlockButt : MonoBehaviour
     public GameObject makeitGONE1;
     public GameObject makeitGONE2;
     public GameObject makeitGONE3;
-    public GameObject EndTURN;
-    public GameObject EndTURN1;
+  //  public GameObject EndTURN;
+    //public GameObject EndTURN1;
     //public GameObject dices;
     public bool ok = false;
     public void ShowOrHide()
@@ -27,8 +27,8 @@ public class BlockButt : MonoBehaviour
         makeitGONE2.SetActive(false);
         makeitGONE3.SetActive(true);
         block.SetActive(true);
-        EndTURN.SetActive(false);
-        EndTURN1.SetActive(true);
+   //     EndTURN.SetActive(false);
+      //  EndTURN1.SetActive(true);
         ok = true;
     }
     public void Hide()
@@ -38,8 +38,8 @@ public class BlockButt : MonoBehaviour
         makeitGONE2.SetActive(true);
         makeitGONE3.SetActive(false);
         block.SetActive(false);
-        EndTURN.SetActive(true);
-        EndTURN.SetActive(false);
+  //      EndTURN.SetActive(true);
+  //      EndTURN.SetActive(false);
         ok = false;
     }
     

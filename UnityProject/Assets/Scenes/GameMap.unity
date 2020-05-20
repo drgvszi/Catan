@@ -12140,7 +12140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804495309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61114,8 +61114,6 @@ MonoBehaviour:
   makeitGONE1: {fileID: 8916641832126587273}
   makeitGONE2: {fileID: 8916641832850750094}
   makeitGONE3: {fileID: 2070711686}
-  EndTURN: {fileID: 2205872310042122126}
-  EndTURN1: {fileID: 804495308}
   ok: 0
 --- !u!1 &2205872310811053926
 GameObject:
@@ -91325,7 +91323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
