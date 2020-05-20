@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
 using System.Runtime.InteropServices;
-using System.Security.Policy;
 
 public class SocketIoscript : MonoBehaviour
 {
@@ -24,7 +23,6 @@ public class SocketIoscript : MonoBehaviour
     public GameObject player4;
     public GameObject casute;
     public GameObject drumuri;
-    public GameObject verificare;
     bool ok1 = false;
 
 
@@ -87,7 +85,7 @@ public class SocketIoscript : MonoBehaviour
                 if (inter == null)
                     inter = inter1;
 
-                if (user_who_built_road == LoginScript.CurrentLobby.master && !verificare.activeSelf)
+                if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 == false)
                 {
                     
                     AfiseazaDrum.afiseaza(newPieceR1, inter);
@@ -98,7 +96,7 @@ public class SocketIoscript : MonoBehaviour
                     
                 }
 
-                else if (user_who_built_road == LoginScript.CurrentLobby.first && !verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1 == false)
                 {
               
                     AfiseazaDrum.afiseaza(newPieceR2, inter);
@@ -107,7 +105,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player4.SetActive(false);
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.second && !verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ok1 == false)
                 {
               
                     AfiseazaDrum.afiseaza(newPieceR3, inter);
@@ -116,7 +114,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player2.SetActive(false);
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.third && !verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ok1 == false)
                 {
        
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -124,10 +122,9 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player3.SetActive(false);
                     player2.SetActive(false);
-                    //ok1 = true;
-                    verificare.SetActive(true);
+                    ok1 = true;
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.third && verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ok1)
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -137,7 +134,7 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(false);
               
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.second && verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ok1)
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -147,7 +144,7 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(true);
        
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.first && verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1)
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -157,7 +154,7 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(false);
             
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.master && verificare.activeSelf)
+                else if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 )
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
