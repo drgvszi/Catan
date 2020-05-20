@@ -322,24 +322,34 @@ public class ConnectivitySimulation implements Runnable {
             update(gameId, playerIds.get(1));
 
             buildSettlement(gameId, playerIds.get(1), 40);
+            update(gameId, playerIds.get(1));
             buildRoad(gameId, playerIds.get(1), 41, 40);
 
             update(gameId, playerIds.get(2));
 
             buildSettlement(gameId, playerIds.get(2), 15);
+            update(gameId, playerIds.get(2));
             buildRoad(gameId, playerIds.get(2), 15, 14);
 
+            update(gameId, playerIds.get(2));
             buildSettlement(gameId, playerIds.get(2), 35);
+            update(gameId, playerIds.get(2));
             buildRoad(gameId, playerIds.get(2), 15, 4);
             buildRoad(gameId, playerIds.get(2), 34, 35);
 
+            update(gameId, playerIds.get(1));
             buildSettlement(gameId, playerIds.get(1), 10);
+            update(gameId, playerIds.get(1));
             buildRoad(gameId, playerIds.get(1), 10, 11);
 
+            update(gameId, playerIds.get(0));
             buildSettlement(gameId, playerIds.get(0), 30);
+            update(gameId, playerIds.get(0));
             buildRoad(gameId, playerIds.get(0), 30, 31);
 
             getRanking(gameId);
+
+            update(gameId, playerIds.get(0));
 
             for (int index = 0; index < 18; ++index) {
                 int turn = index % 3;
