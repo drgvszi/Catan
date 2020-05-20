@@ -145,6 +145,7 @@
      <Compile Include="Assets\Scripts\provisoriuO.cs" />
      <Compile Include="Assets\Scripts\provizoriu.cs" />
      <Compile Include="Assets\Scripts\showCards.cs" />
+     <Compile Include="Assets\Scripts\test.cs" />
      <Compile Include="Assets\Source\Aot\fsAotCompilationManager.cs" />
      <Compile Include="Assets\Source\Aot\fsAotConfiguration.cs" />
      <Compile Include="Assets\Source\Aot\fsAotVersionInfo.cs" />

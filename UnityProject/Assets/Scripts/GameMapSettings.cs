@@ -5,10 +5,20 @@ using UnityEngine;
 public class GameMapSettings : MonoBehaviour
 {
     public GameObject settings;
+    bool ok = false;
 
-    public void showSettings()
+    public void showAndHideSettings()
     {
-        settings.transform.gameObject.SetActive(true);
+        if (ok == false)
+        {
+            settings.transform.gameObject.SetActive(true);
+            ok = true;
+        }
+        else
+        {
+            settings.transform.gameObject.SetActive(false);
+            ok = false;
+        }
     }
 
     public void hideSettings()

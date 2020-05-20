@@ -81,16 +81,6 @@ public class LobbyList : MonoBehaviour
                 {                                                                     // change a lobby. Update number of players here
                     lobbies[i] = lobby;
 
-     
-
-
-
-
-
-
-
-
-
 
 
 
@@ -113,25 +103,6 @@ public class LobbyList : MonoBehaviour
              if (lobbies.Find(currentLobby => currentLobby.gameid == lobby.gameid) == null && started != "1")
               {
                  Debug.Log(lobby.lobbyid);                                                                          // ADD A lobby. add a new gameobject or something here
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                  lobbies.Add(lobby);
               }
@@ -231,7 +202,7 @@ public class LobbyList : MonoBehaviour
 
          }
      }*/
-   
+
     public void AddToLob()
     {
         for (int i = 0; i < lobbies.Count; i++)
@@ -239,7 +210,6 @@ public class LobbyList : MonoBehaviour
             if (i < 10)
                 ChangeError(lobbies[i].lobbyid, lobbies[i].extension, "" + countPlayers(lobbies[i]) + "/4", obj1[i], obj2[i], obj3[i]);
         }
-            
     }
     // Update is called once per frame
    

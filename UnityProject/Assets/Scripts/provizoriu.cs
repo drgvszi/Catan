@@ -60,19 +60,20 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("intersection", command.intersection);
                     socket.Emit("buildsettlement", json_message);
                     allPieces.SetActive(false);
-                    if (player1.activeSelf == true)
+
+                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece1, piece);
                     }
-                    else if (player2.activeSelf == true)
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece2, piece);
                     }
-                    else if (player3.activeSelf == true)
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece3, piece);
                     }
-                    if (player4.activeSelf == true)
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece4, piece);
                     }
@@ -109,19 +110,19 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("end", command.end);
                     socket.Emit("buildroad", json_message);
                     allPieces.SetActive(false);
-                    if (player1.activeSelf == true)
+                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece1, piece);
                     }
-                    else if (player2.activeSelf == true)
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece2, piece);
                     }
-                    else if (player3.activeSelf == true)
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece3, piece);
                     }
-                    if (player4.activeSelf == true)
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece4, piece);
                     }
