@@ -81,8 +81,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
-    com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/GameMap.unity:
     - Class: 1
@@ -222,7 +220,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14052}
     - Class: 114
-      Script: {instanceID: 23290}
+      Script: {instanceID: 28460}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -628,7 +626,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14004}
     - Class: 114
-      Script: {instanceID: 150134}
+      Script: {instanceID: 17898}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -833,7 +831,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13988}
     - Class: 114
-      Script: {instanceID: 87018}
+      Script: {instanceID: 70854}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1845,4 +1843,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/GameMap.unity
   - Assets/Scenes/WaitingRoom.unity
   - Assets/Scenes/LobbyList.unity
-  playerPath: C:/Users/herp1/Desktop/asd/Catan.exe
+  playerPath: C:/Users/herp1/Desktop/New folder (2)/Catan.exe

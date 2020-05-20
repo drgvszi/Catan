@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 using System.Text;
 using SocketIO;
 using System;
+using System.Runtime.InteropServices;
 
 public class provizoriu : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class provizoriu : MonoBehaviour
     public int capat2;
     public SocketIOComponent socket;
     public int culoare = 1;
+    bool ok = false;
 
     void Update()
     {
@@ -64,46 +66,21 @@ public class provizoriu : MonoBehaviour
                     if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece1, piece);
-                        if (allPieces.name == "Roads")
-                        {
-                            player1.SetActive(false);
-                            player2.SetActive(true);
-                            player3.SetActive(false);
-                            player4.SetActive(false);
-                        }
+
                     }
                     else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece2, piece);
-                        if (allPieces.name == "Roads")
-                        {
-                            player2.SetActive(false);
-                            player3.SetActive(true);
-                            player1.SetActive(false);
-                            player4.SetActive(false);
-                        }
                     }
                     else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece3, piece);
-                        if (allPieces.name == "Roads")
-                        {
-                            player3.SetActive(false);
-                            player4.SetActive(true);
-                            player1.SetActive(false);
-                            player2.SetActive(false);
-                        }
+
                     }
                     else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
                     {
                         AfiseazaDrum.afiseaza(newPiece4, piece);
-                        if (allPieces.name == "Roads")
-                        {
-                            player4.SetActive(false);
-                            player1.SetActive(true);
-                            player3.SetActive(false);
-                            player2.SetActive(false);
-                        }
+
                     }
                 }
                 Debug.Log(req.code);
@@ -138,50 +115,86 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("end", command.end);
                     socket.Emit("buildroad", json_message);
                     allPieces.SetActive(false);
-                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && !ok)
                     {
                         AfiseazaDrum.afiseaza(newPiece1, piece);
-                        if (allPieces.name == "Roads")
-                        {
-                            player1.SetActive(false);
-                            player2.SetActive(true);
-                            player3.SetActive(false);
-                            player4.SetActive(false);
-                        }
+                        player1.SetActive(false);
+                        player2.SetActive(true);
+                        player3.SetActive(false);
+                        player4.SetActive(false);
+
                     }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && !ok)
                     {
-                        AfiseazaDrum.afiseaza(newPiece2, piece);
-                        if (allPieces.name == "Roads")
-                        {
+                        AfiseazaDrum.afiseaza(newPiece2, piece );
+            
                             player2.SetActive(false);
                             player3.SetActive(true);
                             player1.SetActive(false);
                             player4.SetActive(false);
-                        }
+                        
                     }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && !ok)
                     {
                         AfiseazaDrum.afiseaza(newPiece3, piece);
-                        if (allPieces.name == "Roads")
-                        {
+                  
                             player3.SetActive(false);
                             player4.SetActive(true);
                             player1.SetActive(false);
                             player2.SetActive(false);
-                        }
+                        
                     }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && !ok)
                     {
                   
                         AfiseazaDrum.afiseaza(newPiece4, piece);
-                        if (allPieces.name == "Roads")
-                        {
+       
                             player4.SetActive(false);
                             player1.SetActive(true);
                             player3.SetActive(false);
                             player2.SetActive(false);
-                        }
+                        ok = true;
+                        
+                    }
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentLobby.third && ok)
+                    {
+
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        player4.SetActive(true);
+                        player1.SetActive(false);
+                        player3.SetActive(false);
+                        player2.SetActive(false);
+
+                    }
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentLobby.second && ok)
+                    {
+
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        player4.SetActive(false);
+                        player1.SetActive(false);
+                        player3.SetActive(true);
+                        player2.SetActive(false);
+
+                    }
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentLobby.first && ok)
+                    {
+
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        player4.SetActive(false);
+                        player1.SetActive(false);
+                        player3.SetActive(false);
+                        player2.SetActive(true);
+
+                    }
+                    else if (LoginScript.CurrentLobby.master == LoginScript.CurrentLobby.master && ok)
+                    {
+
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        player4.SetActive(false);
+                        player1.SetActive(true);
+                        player3.SetActive(false);
+                        player2.SetActive(false);
+
                     }
                 }
                 Debug.Log(req.code);

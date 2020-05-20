@@ -23,6 +23,8 @@ public class SocketIoscript : MonoBehaviour
     public GameObject player4;
     public GameObject casute;
     public GameObject drumuri;
+    bool ok1 = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,83 +82,89 @@ public class SocketIoscript : MonoBehaviour
                 drumuri.SetActive(true);
                 inter = GameObject.Find(start + " " + end);
                 inter1 = GameObject.Find(end + " " + start);
-        
-                if (!(inter == null && inter1 == null))
+                if (inter == null)
+                    inter = inter1;
+
+                if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 == false)
                 {
-                    if (inter != null)
-                    {
-                        if (user_who_built_road == LoginScript.CurrentLobby.master)
-                        {
-                            AfiseazaDrum.afiseaza(newPieceR1, inter);
-                            player1.SetActive(false);
-                            player2.SetActive(true);
-                            player3.SetActive(false);
-                            player4.SetActive(false);
-                        }
-
-                        else if (user_who_built_road == LoginScript.CurrentLobby.first)
-                        {
-                            AfiseazaDrum.afiseaza(newPieceR2, inter);
-                            player2.SetActive(false);
-                            player3.SetActive(true);
-                            player1.SetActive(false);
-                            player4.SetActive(false);
-                        }
-                        else if (user_who_built_road == LoginScript.CurrentLobby.second)
-                        {
-                            AfiseazaDrum.afiseaza(newPieceR3, inter);
-                            player3.SetActive(false);
-                            player4.SetActive(true);
-                            player1.SetActive(false);
-                            player2.SetActive(false);
-                        }
-                        else if (user_who_built_road == LoginScript.CurrentLobby.third)
-                        {
-                            AfiseazaDrum.afiseaza(newPieceR4, inter);
-                            player4.SetActive(false);
-                            player1.SetActive(true);
-                            player3.SetActive(false);
-                            player2.SetActive(false);
-                        }
-                    }
-
+                    
+                    AfiseazaDrum.afiseaza(newPieceR1, inter);
+                    player1.SetActive(false);
+                    player2.SetActive(true);
+                    player3.SetActive(false);
+                    player4.SetActive(false);
+                    
                 }
-                else
+
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1 == false)
                 {
-                    if (user_who_built_road == LoginScript.CurrentLobby.master)
-                    {
-                        AfiseazaDrum.afiseaza(newPieceR1, inter1);
-                        player1.SetActive(false);
-                        player2.SetActive(true);
-                        player3.SetActive(false);
-                        player4.SetActive(false);
-                    }
-
-                    else if (user_who_built_road == LoginScript.CurrentLobby.first)
-                    {
-                        AfiseazaDrum.afiseaza(newPieceR2, inter1);
-                        player2.SetActive(false);
-                        player3.SetActive(true);
-                        player1.SetActive(false);
-                        player4.SetActive(false);
-                    }
-                    else if (user_who_built_road == LoginScript.CurrentLobby.second)
-                    {
-                        AfiseazaDrum.afiseaza(newPieceR3, inter1);
-                        player3.SetActive(false);
-                        player4.SetActive(true);
-                        player1.SetActive(false);
-                        player2.SetActive(false);
-                    }
-                    else if (user_who_built_road == LoginScript.CurrentLobby.third)
-                    {
-                        AfiseazaDrum.afiseaza(newPieceR4, inter1);
-                        player4.SetActive(false);
-                        player1.SetActive(true);
-                        player3.SetActive(false);
-                        player2.SetActive(false);
-                    }
+              
+                    AfiseazaDrum.afiseaza(newPieceR2, inter);
+                    player2.SetActive(false);
+                    player3.SetActive(true);
+                    player1.SetActive(false);
+                    player4.SetActive(false);
                 }
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ok1 == false)
+                {
+              
+                    AfiseazaDrum.afiseaza(newPieceR3, inter);
+                    player3.SetActive(false);
+                    player4.SetActive(true);
+                    player1.SetActive(false);
+                    player2.SetActive(false);
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ok1 == false)
+                {
+       
+                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    player4.SetActive(false);
+                    player1.SetActive(true);
+                    player3.SetActive(false);
+                    player2.SetActive(false);
+                    ok1 = true;
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ok1)
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    player4.SetActive(true);
+                    player1.SetActive(false);
+                    player3.SetActive(false);
+                    player2.SetActive(false);
+              
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ok1)
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    player4.SetActive(false);
+                    player1.SetActive(false);
+                    player3.SetActive(true);
+                    player2.SetActive(false);
+       
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1)
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    player4.SetActive(false);
+                    player1.SetActive(false);
+                    player3.SetActive(false);
+                    player2.SetActive(true);
+            
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 )
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    player4.SetActive(false);
+                    player1.SetActive(true);
+                    player3.SetActive(false);
+                    player2.SetActive(false);
+          
+                }
+
                 drumuri.SetActive(false);
             }
 
