@@ -9,4 +9,8 @@ using Proyecto26;
 public class UnityConnectivityCommand
 {
     public String username;
+    public String lobbyid = "";
+    public bool active = false;
+    public String gameId;
+    public String playerId;
 }
