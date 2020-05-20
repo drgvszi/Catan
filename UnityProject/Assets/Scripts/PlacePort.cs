@@ -10,7 +10,6 @@ public class PlacePort : MonoBehaviour
     public GameObject port3;
     public GameObject port4;
     public GameObject port5;
-    BoardConnectivityJson board = null;
     public int nr;
     bool done = false;
     void Start()
@@ -29,7 +28,7 @@ public class PlacePort : MonoBehaviour
                 done = true;
                 string str = "";
                 str = board.ports[nr];
-               
+                print(str);
                 switch (str)
                 {
                     case "ThreeForOne":
