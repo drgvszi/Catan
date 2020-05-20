@@ -231,10 +231,10 @@ public abstract class Game {
         if (inDiscardState) {
             return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.ForbiddenRequest), null);
         }
+        if (command.equals("update")) {
+            return new UserResponse(HttpStatus.SC_OK, "Here is your information.", getUpdateResult(players.get(playerId)));
+        }
         if (playerId.equals(currentPlayer.getId())) {
-            if (command.equals("update")) {
-                return new UserResponse(HttpStatus.SC_OK, "Here is your information.", getUpdateResult());
-            }
             players.get(playerId).getTurnFlow().fsm.setShareData(requestArguments);
             players.get(playerId).getTurnFlow().fsm.ProcessFSM(command);
             UserResponse response = players.get(playerId).getTurnFlow().response;
@@ -333,19 +333,30 @@ public abstract class Game {
 
     //region Update
 
-    public Map<String, Object> getUpdateResult() {
+    public Map<String, Object> getUpdateResult(Player player) {
         Map<String, Object> result = new HashMap<>();
-        result.put("canBuyRoad", canBuyRoad(currentPlayer));
-        result.put("canBuySettlement", canBuySettlement(currentPlayer));
-        result.put("canBuyCity", canBuyCity(currentPlayer));
-        result.put("canBuyDevelopment", canBuyDevelopment(currentPlayer));
-        result.put("availableRoadPositions", getAvailableRoadPositions(currentPlayer));
-        result.put("availableSettlementPositions", getAvailableSettlementPositions(currentPlayer));
-        result.put("availableCityPositions", getAvailableCityPositions(currentPlayer));
-        result.put("hasLargestArmy", currentPlayer.hasLargestArmy());
-        result.put("hasLongestRoad", currentPlayer.hasLongestRoad());
-        result.put("publicScore", currentPlayer.getPublicVictoryPoints());
-        result.put("hiddenScore", currentPlayer.getVictoryPoints());
+        result.put("canBuyRoad", canBuyRoad(player));
+        result.put("canBuySettlement", canBuySettlement(player));
+        result.put("canBuyCity", canBuyCity(player));
+        result.put("canBuyDevelopment", canBuyDevelopment(player));
+        result.put("availableRoadPositions", getAvailableRoadPositions(player));
+        result.put("availableSettlementPositions", getAvailableSettlementPositions(player));
+        result.put("availableCityPositions", getAvailableCityPositions(player));
+        result.put("hasLargestArmy", player.hasLargestArmy());
+        result.put("hasLongestRoad", player.hasLongestRoad());
+        result.put("publicScore", player.getPublicVictoryPoints());
+        result.put("hiddenScore", player.getVictoryPoints());
+
+        result.put("lumber", player.getResourcesNumber(Resource.lumber));
+        result.put("wool", player.getResourcesNumber(Resource.wool));
+        result.put("grain", player.getResourcesNumber(Resource.grain));
+        result.put("brick", player.getResourcesNumber(Resource.brick));
+        result.put("ore", player.getResourcesNumber(Resource.ore));
+        result.put("knight", player.getDevelopmentsNumber(Development.knight));
+        result.put("monopoly", player.getDevelopmentsNumber(Development.monopoly));
+        result.put("roadBuilding", player.getDevelopmentsNumber(Development.roadBuilding));
+        result.put("victoryPoint", player.getHiddenVictoryPoints());
+        result.put("yearOfPlenty", player.getDevelopmentsNumber(Development.yearOfPlenty));
         return result;
     }
 
