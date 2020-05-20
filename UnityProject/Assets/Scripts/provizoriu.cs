@@ -149,8 +149,8 @@ public class provizoriu : MonoBehaviour
                   
                         AfiseazaDrum.afiseaza(newPiece4, piece);
        
-                            player4.SetActive(false);
-                            player1.SetActive(true);
+                            player4.SetActive(true);
+                            player1.SetActive(false);
                             player3.SetActive(false);
                             player2.SetActive(false);
                         ok = true;
@@ -160,9 +160,9 @@ public class provizoriu : MonoBehaviour
                     {
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
-                        player4.SetActive(true);
+                        player4.SetActive(false);
                         player1.SetActive(false);
-                        player3.SetActive(false);
+                        player3.SetActive(true);
                         player2.SetActive(false);
 
                     }
@@ -172,8 +172,8 @@ public class provizoriu : MonoBehaviour
                         AfiseazaDrum.afiseaza(newPiece4, piece);
                         player4.SetActive(false);
                         player1.SetActive(false);
-                        player3.SetActive(true);
-                        player2.SetActive(false);
+                        player3.SetActive(false);
+                        player2.SetActive(true);
 
                     }
                     else if (LoginScript.CurrentLobby.first == LoginScript.CurrentLobby.first && ok)
@@ -181,9 +181,9 @@ public class provizoriu : MonoBehaviour
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
                         player4.SetActive(false);
-                        player1.SetActive(false);
+                        player1.SetActive(true);
                         player3.SetActive(false);
-                        player2.SetActive(true);
+                        player2.SetActive(false);
 
                     }
                     else if (LoginScript.CurrentLobby.master == LoginScript.CurrentLobby.master && ok)

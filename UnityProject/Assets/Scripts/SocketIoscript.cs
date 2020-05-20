@@ -118,8 +118,8 @@ public class SocketIoscript : MonoBehaviour
                 {
        
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
-                    player4.SetActive(false);
-                    player1.SetActive(true);
+                    player4.SetActive(true);
+                    player1.SetActive(false);
                     player3.SetActive(false);
                     player2.SetActive(false);
                     ok1 = true;
@@ -128,9 +128,9 @@ public class SocketIoscript : MonoBehaviour
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
-                    player4.SetActive(true);
+                    player4.SetActive(false);
                     player1.SetActive(false);
-                    player3.SetActive(false);
+                    player3.SetActive(true);
                     player2.SetActive(false);
               
                 }
@@ -140,8 +140,8 @@ public class SocketIoscript : MonoBehaviour
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
                     player4.SetActive(false);
                     player1.SetActive(false);
-                    player3.SetActive(true);
-                    player2.SetActive(false);
+                    player3.SetActive(false);
+                    player2.SetActive(true);
        
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1)
@@ -149,9 +149,9 @@ public class SocketIoscript : MonoBehaviour
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
                     player4.SetActive(false);
-                    player1.SetActive(false);
+                    player1.SetActive(true);
                     player3.SetActive(false);
-                    player2.SetActive(true);
+                    player2.SetActive(false);
             
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 )

@@ -220,7 +220,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14052}
     - Class: 114
-      Script: {instanceID: 28460}
+      Script: {instanceID: 23330}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -626,7 +626,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14004}
     - Class: 114
-      Script: {instanceID: 17898}
+      Script: {instanceID: 67984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -831,7 +831,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13988}
     - Class: 114
-      Script: {instanceID: 70854}
+      Script: {instanceID: 79160}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1843,4 +1843,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/GameMap.unity
   - Assets/Scenes/WaitingRoom.unity
   - Assets/Scenes/LobbyList.unity
-  playerPath: C:/Users/herp1/Desktop/New folder (2)/Catan.exe
+  playerPath: C:/Users/herp1/Desktop/New folder/Catan.exe
