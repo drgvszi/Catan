@@ -68,6 +68,8 @@ public class provizoriu : MonoBehaviour
                         {
                             player1.SetActive(false);
                             player2.SetActive(true);
+                            player3.SetActive(false);
+                            player4.SetActive(false);
                         }
                     }
                     else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
@@ -77,6 +79,8 @@ public class provizoriu : MonoBehaviour
                         {
                             player2.SetActive(false);
                             player3.SetActive(true);
+                            player1.SetActive(false);
+                            player4.SetActive(false);
                         }
                     }
                     else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
@@ -86,6 +90,8 @@ public class provizoriu : MonoBehaviour
                         {
                             player3.SetActive(false);
                             player4.SetActive(true);
+                            player1.SetActive(false);
+                            player2.SetActive(false);
                         }
                     }
                     else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
@@ -95,6 +101,8 @@ public class provizoriu : MonoBehaviour
                         {
                             player4.SetActive(false);
                             player1.SetActive(true);
+                            player3.SetActive(false);
+                            player2.SetActive(false);
                         }
                     }
                 }
@@ -137,6 +145,8 @@ public class provizoriu : MonoBehaviour
                         {
                             player1.SetActive(false);
                             player2.SetActive(true);
+                            player3.SetActive(false);
+                            player4.SetActive(false);
                         }
                     }
                     else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
@@ -146,6 +156,8 @@ public class provizoriu : MonoBehaviour
                         {
                             player2.SetActive(false);
                             player3.SetActive(true);
+                            player1.SetActive(false);
+                            player4.SetActive(false);
                         }
                     }
                     else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
@@ -155,15 +167,20 @@ public class provizoriu : MonoBehaviour
                         {
                             player3.SetActive(false);
                             player4.SetActive(true);
+                            player1.SetActive(false);
+                            player2.SetActive(false);
                         }
                     }
                     else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
                     {
+                  
                         AfiseazaDrum.afiseaza(newPiece4, piece);
                         if (allPieces.name == "Roads")
                         {
                             player4.SetActive(false);
                             player1.SetActive(true);
+                            player3.SetActive(false);
+                            player2.SetActive(false);
                         }
                     }
                 }

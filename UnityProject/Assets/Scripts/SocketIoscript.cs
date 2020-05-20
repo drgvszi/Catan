@@ -90,6 +90,8 @@ public class SocketIoscript : MonoBehaviour
                             AfiseazaDrum.afiseaza(newPieceR1, inter);
                             player1.SetActive(false);
                             player2.SetActive(true);
+                            player3.SetActive(false);
+                            player4.SetActive(false);
                         }
 
                         else if (user_who_built_road == LoginScript.CurrentLobby.first)
@@ -97,18 +99,24 @@ public class SocketIoscript : MonoBehaviour
                             AfiseazaDrum.afiseaza(newPieceR2, inter);
                             player2.SetActive(false);
                             player3.SetActive(true);
+                            player1.SetActive(false);
+                            player4.SetActive(false);
                         }
                         else if (user_who_built_road == LoginScript.CurrentLobby.second)
                         {
                             AfiseazaDrum.afiseaza(newPieceR3, inter);
                             player3.SetActive(false);
                             player4.SetActive(true);
+                            player1.SetActive(false);
+                            player2.SetActive(false);
                         }
                         else if (user_who_built_road == LoginScript.CurrentLobby.third)
                         {
                             AfiseazaDrum.afiseaza(newPieceR4, inter);
                             player4.SetActive(false);
                             player1.SetActive(true);
+                            player3.SetActive(false);
+                            player2.SetActive(false);
                         }
                     }
 
@@ -120,6 +128,8 @@ public class SocketIoscript : MonoBehaviour
                         AfiseazaDrum.afiseaza(newPieceR1, inter1);
                         player1.SetActive(false);
                         player2.SetActive(true);
+                        player3.SetActive(false);
+                        player4.SetActive(false);
                     }
 
                     else if (user_who_built_road == LoginScript.CurrentLobby.first)
@@ -127,18 +137,24 @@ public class SocketIoscript : MonoBehaviour
                         AfiseazaDrum.afiseaza(newPieceR2, inter1);
                         player2.SetActive(false);
                         player3.SetActive(true);
+                        player1.SetActive(false);
+                        player4.SetActive(false);
                     }
                     else if (user_who_built_road == LoginScript.CurrentLobby.second)
                     {
                         AfiseazaDrum.afiseaza(newPieceR3, inter1);
                         player3.SetActive(false);
                         player4.SetActive(true);
+                        player1.SetActive(false);
+                        player2.SetActive(false);
                     }
                     else if (user_who_built_road == LoginScript.CurrentLobby.third)
                     {
                         AfiseazaDrum.afiseaza(newPieceR4, inter1);
                         player4.SetActive(false);
                         player1.SetActive(true);
+                        player3.SetActive(false);
+                        player2.SetActive(false);
                     }
                 }
                 drumuri.SetActive(false);
