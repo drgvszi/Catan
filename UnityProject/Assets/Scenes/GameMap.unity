@@ -20187,6 +20187,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 3
   capat2: 2
@@ -29901,6 +29902,7 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   casute: {fileID: 1899658961}
   drumuri: {fileID: 1585835860}
+  verificare: {fileID: 2115276375}
 --- !u!65 &2005390131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31548,6 +31550,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996679330}
   m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2115276375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115276376}
+  m_Layer: 0
+  m_Name: Verificare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2115276376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115276375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -127.91665, y: -99.99998, z: 0}
+  m_LocalScale: {x: 0.4166666, y: 0.41666663, z: 0.41666663}
+  m_Children: []
+  m_Father: {fileID: 7550251942605062664}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119143999
 GameObject:
@@ -88997,7 +89029,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -89264,7 +89296,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -89336,6 +89368,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.4000003, y: 2.4000003, z: 2.4000003}
   m_Children:
+  - {fileID: 2115276376}
   - {fileID: 7550251943528983037}
   - {fileID: 7550251942720986798}
   - {fileID: 7550251943039922234}
@@ -89619,7 +89652,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -89646,7 +89679,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -90088,7 +90121,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -90165,7 +90198,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -90447,7 +90480,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -90974,7 +91007,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -91078,7 +91111,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -91343,7 +91376,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -91443,7 +91476,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -92479,7 +92512,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -92706,7 +92739,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7550251942605062664}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -101385,6 +101418,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 44
   capat1: 0
   capat2: 0
@@ -101449,6 +101483,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 5
   capat1: 0
   capat2: 0
@@ -101514,6 +101549,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 27
   capat2: 26
@@ -101580,6 +101616,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 21
   capat2: 22
@@ -101645,6 +101682,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 24
   capat1: 0
   capat2: 0
@@ -101710,6 +101748,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 23
   capat2: 52
@@ -101776,6 +101815,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 24
   capat2: 25
@@ -101842,6 +101882,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 10
   capat2: 29
@@ -101907,6 +101948,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 0
   capat1: 0
   capat2: 0
@@ -101971,6 +102013,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 4
   capat1: 0
   capat2: 0
@@ -102036,6 +102079,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 41
   capat2: 42
@@ -102102,6 +102146,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 8
   capat2: 27
@@ -102167,6 +102212,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 14
   capat1: 0
   capat2: 0
@@ -102232,6 +102278,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 31
   capat2: 30
@@ -102297,6 +102344,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 40
   capat1: 0
   capat2: 0
@@ -102378,6 +102426,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 46
   capat2: 47
@@ -102444,6 +102493,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 7
   capat2: 24
@@ -102509,6 +102559,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 18
   capat1: 0
   capat2: 0
@@ -102573,6 +102624,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 7
   capat1: 0
   capat2: 0
@@ -102637,6 +102689,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 16
   capat1: 0
   capat2: 0
@@ -102702,6 +102755,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 12
   capat2: 3
@@ -102767,6 +102821,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 37
   capat1: 0
   capat2: 0
@@ -102832,6 +102887,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 36
   capat2: 35
@@ -102898,6 +102954,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 48
   capat2: 49
@@ -102964,6 +103021,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 50
   capat2: 51
@@ -103029,6 +103087,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 47
   capat1: 0
   capat2: 0
@@ -103093,6 +103152,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 52
   capat1: 0
   capat2: 0
@@ -103157,6 +103217,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 42
   capat1: 0
   capat2: 0
@@ -103221,6 +103282,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 35
   capat1: 0
   capat2: 0
@@ -103285,6 +103347,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 32
   capat1: 0
   capat2: 0
@@ -103349,6 +103412,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 38
   capat1: 0
   capat2: 0
@@ -103413,6 +103477,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 25
   capat1: 0
   capat2: 0
@@ -103477,6 +103542,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 20
   capat1: 0
   capat2: 0
@@ -103541,6 +103607,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 12
   capat1: 0
   capat2: 0
@@ -103605,6 +103672,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 29
   capat1: 0
   capat2: 0
@@ -103670,6 +103738,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 18
   capat2: 5
@@ -103736,6 +103805,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 6
   capat2: 7
@@ -103802,6 +103872,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 17
   capat2: 18
@@ -103867,6 +103938,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 49
   capat1: 0
   capat2: 0
@@ -103932,6 +104004,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 32
   capat2: 31
@@ -103998,6 +104071,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 0
   capat2: 1
@@ -104063,6 +104137,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 41
   capat1: 0
   capat2: 0
@@ -104128,6 +104203,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 45
   capat2: 46
@@ -104194,6 +104270,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 49
   capat2: 50
@@ -104260,6 +104337,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 28
   capat2: 27
@@ -104326,6 +104404,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 40
   capat2: 39
@@ -104391,6 +104470,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 39
   capat1: 0
   capat2: 0
@@ -104490,6 +104570,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 1
   capat1: 0
   capat2: 0
@@ -104555,6 +104636,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 4
   capat2: 3
@@ -104621,6 +104703,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 2
   capat2: 9
@@ -104687,6 +104770,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 47
   capat2: 48
@@ -104753,6 +104837,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 20
   capat2: 47
@@ -104819,6 +104904,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 1
   capat2: 2
@@ -104885,6 +104971,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 4
   capat2: 5
@@ -104951,6 +105038,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 13
   capat2: 12
@@ -105017,6 +105105,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 33
   capat2: 32
@@ -105083,6 +105172,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 19
   capat2: 20
@@ -105149,6 +105239,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 16
   capat2: 17
@@ -105215,6 +105306,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 22
   capat2: 49
@@ -105281,6 +105373,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 12
   capat2: 11
@@ -105347,6 +105440,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 38
   capat2: 37
@@ -105412,6 +105506,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 22
   capat1: 0
   capat2: 0
@@ -105476,6 +105571,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 19
   capat1: 0
   capat2: 0
@@ -105540,6 +105636,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 51
   capat1: 0
   capat2: 0
@@ -105605,6 +105702,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 14
   capat2: 13
@@ -105670,6 +105768,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 30
   capat1: 0
   capat2: 0
@@ -105735,6 +105834,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 40
   capat2: 41
@@ -105801,6 +105901,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 32
   capat2: 11
@@ -105867,6 +105968,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 26
   capat2: 25
@@ -105932,6 +106034,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 9
   capat1: 0
   capat2: 0
@@ -105997,6 +106100,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 5
   capat2: 0
@@ -106062,6 +106166,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 33
   capat1: 0
   capat2: 0
@@ -106126,6 +106231,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 3
   capat1: 0
   capat2: 0
@@ -106190,6 +106296,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 28
   capat1: 0
   capat2: 0
@@ -106254,6 +106361,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 53
   capat1: 0
   capat2: 0
@@ -106319,6 +106427,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 16
   capat2: 15
@@ -106398,6 +106507,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 8
   capat2: 7
@@ -106464,6 +106574,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 0
   capat2: 21
@@ -106530,6 +106641,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 38
   capat2: 39
@@ -106595,6 +106707,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 2
   capat1: 0
   capat2: 0
@@ -106660,6 +106773,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 20
   capat2: 21
@@ -106725,6 +106839,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 6
   capat1: 0
   capat2: 0
@@ -106789,6 +106904,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 26
   capat1: 0
   capat2: 0
@@ -106854,6 +106970,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 30
   capat2: 29
@@ -106919,6 +107036,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 17
   capat1: 0
   capat2: 0
@@ -106984,6 +107102,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 52
   capat2: 51
@@ -107049,6 +107168,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 13
   capat1: 0
   capat2: 0
@@ -107113,6 +107233,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 34
   capat1: 0
   capat2: 0
@@ -107178,6 +107299,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 34
   capat2: 33
@@ -107244,6 +107366,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 15
   capat2: 4
@@ -107309,6 +107432,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 36
   capat1: 0
   capat2: 0
@@ -107374,6 +107498,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 14
   capat2: 15
@@ -107440,6 +107565,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 10
   capat2: 9
@@ -107506,6 +107632,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 44
   capat2: 45
@@ -107571,6 +107698,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 46
   capat1: 0
   capat2: 0
@@ -107635,6 +107763,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 50
   capat1: 0
   capat2: 0
@@ -107699,6 +107828,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 43
   capat1: 0
   capat2: 0
@@ -107763,6 +107893,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 31
   capat1: 0
   capat2: 0
@@ -107828,6 +107959,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 39
   capat2: 16
@@ -107894,6 +108026,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 8
   capat2: 9
@@ -107959,6 +108092,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 15
   capat1: 0
   capat2: 0
@@ -108024,6 +108158,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 42
   capat2: 17
@@ -108090,6 +108225,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 11
   capat2: 10
@@ -108156,6 +108292,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 42
   capat2: 43
@@ -108222,6 +108359,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 22
   capat2: 23
@@ -108288,6 +108426,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 6
   capat2: 23
@@ -108370,6 +108509,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 10
   capat1: 0
   capat2: 0
@@ -108434,6 +108574,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 27
   capat1: 0
   capat2: 0
@@ -108498,6 +108639,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 48
   capat1: 0
   capat2: 0
@@ -108562,6 +108704,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 45
   capat1: 0
   capat2: 0
@@ -108627,6 +108770,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 29
   capat2: 28
@@ -108693,6 +108837,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 52
   capat2: 53
@@ -108759,6 +108904,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 36
   capat2: 37
@@ -108825,6 +108971,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 1
   capat2: 6
@@ -108890,6 +109037,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 11
   capat1: 0
   capat2: 0
@@ -108954,6 +109102,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 8
   capat1: 0
   capat2: 0
@@ -109019,6 +109168,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 24
   capat2: 53
@@ -109085,6 +109235,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 18
   capat2: 19
@@ -109151,6 +109302,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 43
   capat2: 44
@@ -109217,6 +109369,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 37
   capat2: 14
@@ -109283,6 +109436,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 34
   capat2: 13
@@ -109348,6 +109502,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 23
   capat1: 0
   capat2: 0
@@ -109413,6 +109568,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 44
   capat2: 19
@@ -109479,6 +109635,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 2115276375}
   numar: -1
   capat1: 35
   capat2: 34
@@ -109544,6 +109701,7 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  verificare: {fileID: 0}
   numar: 21
   capat1: 0
   capat2: 0

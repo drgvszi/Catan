@@ -24,6 +24,7 @@ public class provizoriu : MonoBehaviour
     public GameObject player2;
     public GameObject player3;
     public GameObject player4;
+    public GameObject verificare;
     public int numar;
 
     public int capat1;
@@ -115,7 +116,7 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("end", command.end);
                     socket.Emit("buildroad", json_message);
                     allPieces.SetActive(false);
-                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && !ok)
+                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && !verificare.activeSelf)
                     {
                         AfiseazaDrum.afiseaza(newPiece1, piece);
                         player1.SetActive(false);
@@ -124,7 +125,7 @@ public class provizoriu : MonoBehaviour
                         player4.SetActive(false);
 
                     }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && !ok)
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && !verificare.activeSelf)
                     {
                         AfiseazaDrum.afiseaza(newPiece2, piece );
             
@@ -134,7 +135,7 @@ public class provizoriu : MonoBehaviour
                             player4.SetActive(false);
                         
                     }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && !ok)
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && !verificare.activeSelf)
                     {
                         AfiseazaDrum.afiseaza(newPiece3, piece);
                   
@@ -144,7 +145,7 @@ public class provizoriu : MonoBehaviour
                             player2.SetActive(false);
                         
                     }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && !ok)
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && !verificare.activeSelf)
                     {
                   
                         AfiseazaDrum.afiseaza(newPiece4, piece);
@@ -153,10 +154,11 @@ public class provizoriu : MonoBehaviour
                             player1.SetActive(false);
                             player3.SetActive(false);
                             player2.SetActive(false);
-                        ok = true;
+                            verificare.SetActive(true);
+                      //  ok = true;
                         
                     }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentLobby.third && ok)
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentLobby.third && verificare.activeSelf)
                     {
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
@@ -166,7 +168,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(false);
 
                     }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentLobby.second && ok)
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentLobby.second && verificare.activeSelf)
                     {
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
@@ -176,7 +178,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(true);
 
                     }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentLobby.first && ok)
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentLobby.first && verificare.activeSelf)
                     {
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
@@ -186,7 +188,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(false);
 
                     }
-                    else if (LoginScript.CurrentLobby.master == LoginScript.CurrentLobby.master && ok)
+                    else if (LoginScript.CurrentLobby.master == LoginScript.CurrentLobby.master && verificare.activeSelf)
                     {
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
