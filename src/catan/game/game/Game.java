@@ -695,29 +695,42 @@ public abstract class Game {
 
     protected Set<int[]> getAvailableRoadPositions() {
         Set<int[]> availableRoadPositions = new HashSet<>();
-        for (Road road : currentPlayer.getRoads()) {
-            for (Intersection intersection : board.getAdjacentIntersections(road.getStart())) {
-                int start = road.getStart().getId();
-                int end = intersection.getId();
-                if (start > end) {
-                    int aux = start;
-                    start = end;
-                    end = aux;
-                }
-                if (!board.hasRoad(start, end)) {
-                    availableRoadPositions.add(new int[]{start, end});
+        if (currentPlayer.getSettlements().size() > 0 && currentPlayer.getSettlements().size() < 2) {    // for the first 2 rounds
+            Intersection lastBuilding = currentPlayer.getSettlements().get(currentPlayer.getSettlements().size() - 1);
+            int firstPos = lastBuilding.getId();
+            for (Intersection intersection : board.getAdjacentIntersections(lastBuilding)) {
+                int secondPos = intersection.getId();
+                if (secondPos < firstPos) {
+                    availableRoadPositions.add(new int[]{secondPos, firstPos});
+                } else {
+                    availableRoadPositions.add(new int[]{firstPos, secondPos});
                 }
             }
-            for (Intersection intersection : board.getAdjacentIntersections(road.getEnd())) {
-                int start = road.getEnd().getId();
-                int end = intersection.getId();
-                if (start > end) {
-                    int aux = start;
-                    start = end;
-                    end = aux;
+        } else {                                            // for the rest of the game
+            for (Road road : currentPlayer.getRoads()) {
+                for (Intersection intersection : board.getAdjacentIntersections(road.getStart())) {
+                    int start = road.getStart().getId();
+                    int end = intersection.getId();
+                    if (start > end) {
+                        int aux = start;
+                        start = end;
+                        end = aux;
+                    }
+                    if (!board.hasRoad(start, end)) {
+                        availableRoadPositions.add(new int[]{start, end});
+                    }
                 }
-                if (!board.hasRoad(start, end)) {
-                    availableRoadPositions.add(new int[]{start, end});
+                for (Intersection intersection : board.getAdjacentIntersections(road.getEnd())) {
+                    int start = road.getEnd().getId();
+                    int end = intersection.getId();
+                    if (start > end) {
+                        int aux = start;
+                        start = end;
+                        end = aux;
+                    }
+                    if (!board.hasRoad(start, end)) {
+                        availableRoadPositions.add(new int[]{start, end});
+                    }
                 }
             }
         }
@@ -726,14 +739,22 @@ public abstract class Game {
 
     protected Set<Integer> getAvailableSettlementPositions() {
         Set<Integer> availableSettlementPositions = new HashSet<>();
-        for (Road road : currentPlayer.getRoads()) {
-            Intersection start = road.getStart();
-            Intersection end = road.getEnd();
-            if (isAvailableSettlementPosition(start)) {
-                availableSettlementPositions.add(start.getId());
+        if (currentPlayer.getSettlements().size() < 2) {    // for the first 2 rounds
+            for (Intersection intersection : board.getIntersections()) {
+                if (isAvailableSettlementPosition(intersection)) {
+                    availableSettlementPositions.add(intersection.getId());
+                }
             }
-            if (isAvailableSettlementPosition(end)) {
-                availableSettlementPositions.add(end.getId());
+        } else {                                            // for the rest of the game
+            for (Road road : currentPlayer.getRoads()) {
+                Intersection start = road.getStart();
+                Intersection end = road.getEnd();
+                if (isAvailableSettlementPosition(start)) {
+                    availableSettlementPositions.add(start.getId());
+                }
+                if (isAvailableSettlementPosition(end)) {
+                    availableSettlementPositions.add(end.getId());
+                }
             }
         }
         return availableSettlementPositions;
