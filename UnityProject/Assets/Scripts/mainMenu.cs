@@ -24,16 +24,11 @@ public class mainMenu : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("volum");
         volumeSlider.value = PlayerPrefs.GetFloat("volum");
         audioMixer.SetFloat("volume", PlayerPrefs.GetFloat("volum"));
-
-        //music.volume = PlayerPrefs.GetFloat("music");
-        //musicSlider.value = PlayerPrefs.GetFloat("music");
-
+        music.volume = PlayerPrefs.GetFloat("music");
+        musicSlider.value = PlayerPrefs.GetFloat("music");
         QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("qualityIndex"));
         qualityDropdown.value= PlayerPrefs.GetInt("qualityIndex");
-        qualityDropdown.RefreshShownValue();
-
         Screen.fullScreen = PlayerPrefs.GetInt("fullScreen") == 1 ? true : false;
-
         Resolution res = resolutions[PlayerPrefs.GetInt("resolution")];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
 
@@ -77,8 +72,8 @@ public class mainMenu : MonoBehaviour
 
     public void SetQuality (int qualityIndex)
     {
+        PlayerPrefs.SetFloat("qualityIndex", qualityIndex);
         QualitySettings.SetQualityLevel(qualityIndex);
-        PlayerPrefs.SetInt("qualityIndex", qualityIndex);
     }
 
     public void SetFullscreen (bool isFullscreen)
