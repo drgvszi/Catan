@@ -13755,7 +13755,7 @@ GameObject:
   - component: {fileID: 939539847}
   - component: {fileID: 939539846}
   m_Layer: 5
-  m_Name: ' Player 1'
+  m_Name: Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22835,7 +22835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585835860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6637874, y: 0.67523, z: 21.516241}
+  m_LocalPosition: {x: 3.6637874, y: 0.994, z: 21.516241}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 5006512735391498876}
@@ -27361,7 +27361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899658961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6637874, y: 0.67523, z: 21.516241}
+  m_LocalPosition: {x: 3.6637874, y: 0.994, z: 21.516241}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 5006512736840878895}
@@ -29461,6 +29461,10 @@ MonoBehaviour:
     type: 3}
   newPieceR4: {fileID: 7515958218454762607, guid: ef47a4b0259336549b029428810c62a7,
     type: 3}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
   casute: {fileID: 1899658961}
   drumuri: {fileID: 1585835860}
 --- !u!65 &2005390131

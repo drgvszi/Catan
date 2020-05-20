@@ -17,6 +17,10 @@ public class SocketIoscript : MonoBehaviour
     public GameObject newPieceR2;
     public GameObject newPieceR3;
     public GameObject newPieceR4;
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
     public GameObject casute;
     public GameObject drumuri;
 
@@ -84,19 +88,27 @@ public class SocketIoscript : MonoBehaviour
                         if (user_who_built_road == LoginScript.CurrentLobby.master)
                         {
                             AfiseazaDrum.afiseaza(newPieceR1, inter);
+                            player1.SetActive(false);
+                            player2.SetActive(true);
                         }
 
                         else if (user_who_built_road == LoginScript.CurrentLobby.first)
                         {
                             AfiseazaDrum.afiseaza(newPieceR2, inter);
+                            player2.SetActive(false);
+                            player3.SetActive(true);
                         }
                         else if (user_who_built_road == LoginScript.CurrentLobby.second)
                         {
                             AfiseazaDrum.afiseaza(newPieceR3, inter);
+                            player3.SetActive(false);
+                            player4.SetActive(true);
                         }
                         else if (user_who_built_road == LoginScript.CurrentLobby.third)
                         {
                             AfiseazaDrum.afiseaza(newPieceR4, inter);
+                            player4.SetActive(false);
+                            player1.SetActive(true);
                         }
                     }
 
@@ -106,19 +118,27 @@ public class SocketIoscript : MonoBehaviour
                     if (user_who_built_road == LoginScript.CurrentLobby.master)
                     {
                         AfiseazaDrum.afiseaza(newPieceR1, inter1);
+                        player1.SetActive(false);
+                        player2.SetActive(true);
                     }
 
                     else if (user_who_built_road == LoginScript.CurrentLobby.first)
                     {
                         AfiseazaDrum.afiseaza(newPieceR2, inter1);
+                        player2.SetActive(false);
+                        player3.SetActive(true);
                     }
                     else if (user_who_built_road == LoginScript.CurrentLobby.second)
                     {
                         AfiseazaDrum.afiseaza(newPieceR3, inter1);
+                        player3.SetActive(false);
+                        player4.SetActive(true);
                     }
                     else if (user_who_built_road == LoginScript.CurrentLobby.third)
                     {
                         AfiseazaDrum.afiseaza(newPieceR4, inter1);
+                        player4.SetActive(false);
+                        player1.SetActive(true);
                     }
                 }
                 drumuri.SetActive(false);
