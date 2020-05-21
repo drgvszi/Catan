@@ -2,6 +2,7 @@ package catan.API.response;
 
 public enum Code {
     //region Dice
+
     DiceSeven,
     DiceNotSeven,
     NotDiscard,

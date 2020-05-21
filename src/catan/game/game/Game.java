@@ -227,10 +227,9 @@ public abstract class Game {
             return new UserResponse(HttpStatus.SC_OK, "Here is your information.",
                     getUpdateResult(players.get(playerId)));
         }
-        Pair<Code, Map<String, Object>> result = processGeneralCommand(playerId, command, requestArguments);
-        Code code = result.getKey();
-        if (code != null) {
-            return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), result.getValue());
+        UserResponse result = processGeneralCommand(playerId, command, requestArguments);
+        if (result != null) {
+            return result;
         }
         if (inDiscardState) {
             return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.ForbiddenRequest), null);
@@ -246,31 +245,31 @@ public abstract class Game {
         return new UserResponse(HttpStatus.SC_ACCEPTED, "It is not your turn.", null);
     }
 
-    public Pair<Code, Map<String, Object>> processGeneralCommand(String playerId, String command, Map<String,
+    public UserResponse processGeneralCommand(String playerId, String command, Map<String,
             Object> requestArguments) {
         Map<String, Object> responseArguments = new HashMap<>();
         switch (command) {
             case "discardResources": {
                 if (requestArguments == null) {
-                    return new Pair<>(Code.InvalidRequest, null);
+                    return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest), null);
                 }
                 Code code = checkDiscardResources(playerId, requestArguments);
                 if (code != null) {
-                    return new Pair<>(code, null);
+                    return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                 }
-                inDiscardState = stayInDiscardState();
+                inDiscardState = checkInDiscardState(7);
                 responseArguments.put("sentAll", !inDiscardState);
-                return new Pair<>(null, responseArguments);
+                return new UserResponse(HttpStatus.SC_OK, "The resource cards were discarded successfully.", responseArguments);
             }
             case "wantToTrade": {
                 Code code = wantToTrade(playerId);
                 if (code != null) {
-                    return new Pair<>(code, null);
+                    return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                 }
-                return new Pair<>(null, null);
+                return new UserResponse(HttpStatus.SC_OK, "You can take part in the trade.", null);
             }
             default:
-                return new Pair<>(null, null);
+                return null;
         }
     }
 
@@ -658,7 +657,10 @@ public abstract class Game {
         return null;
     }
 
-    public boolean stayInDiscardState() {
+    public boolean checkInDiscardState(int diceSum) {
+        if (diceSum != 7) {
+            return false;
+        }
         for (Player player : playersOrder) {
             if (player.getResourcesNumber() > 7) {
                 return true;

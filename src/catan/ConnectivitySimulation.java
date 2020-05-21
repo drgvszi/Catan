@@ -350,7 +350,7 @@ public class ConnectivitySimulation implements Runnable {
 
             for (int index = 0; index < 18; ++index) {
                 int turn = index % 3;
-                if (turn == 0) {
+                if (turn == 1) {
                     changePlayerStatus(gameId, playerIds.get(0), false);
                 }
 
@@ -362,11 +362,13 @@ public class ConnectivitySimulation implements Runnable {
                 stealResource(gameId, currentPlayer, "yes", playerIds.get(2 - turn));
 
                 playerTrade(gameId, currentPlayer, null, null);
-                wantToTrade(gameId, playerIds.get(turn % 3));
+                wantToTrade(gameId, playerIds.get(turn));
                 wantToTrade(gameId, playerIds.get((turn + 1) % 3));
                 wantToTrade(gameId, playerIds.get((turn + 2) % 3));
                 sendPartners(gameId, currentPlayer);
-                selectPartner(gameId, currentPlayer, currentPlayer);
+                selectPartner(gameId, currentPlayer, playerIds.get((turn + 1) % 3));
+                update(gameId, currentPlayer);
+                update(gameId, playerIds.get((turn + 1) % 3));
 
                 buySettlement(gameId, currentPlayer, 20);
 

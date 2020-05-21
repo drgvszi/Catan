@@ -92,6 +92,9 @@ public class TurnFlow {
                     return false;
                 }
                 game.changeTurn();
+//                Map<String, Object> result = new HashMap<>();
+//                result.put("nextPlayer", game.getCurrentPlayer().getId());
+//                response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.", result);
                 response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.", null);
                 return true;
             }
@@ -111,13 +114,12 @@ public class TurnFlow {
                 result.put("dice_1", firstDice);
                 result.put("dice_2", secondDice);
                 int diceSum = firstDice + secondDice;
+                game.setInDiscardState(game.checkInDiscardState(diceSum));
                 if (diceSum == 7) {
-                    game.setInDiscardState(game.stayInDiscardState());
                     result.putAll(game.getRollSevenResult());
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollSeven");
                 } else {
-                    game.setInDiscardState(game.stayInDiscardState());
                     result.putAll(game.getRollNotSevenResult(diceSum));
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollNotSeven");
