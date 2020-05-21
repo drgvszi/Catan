@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockButt : MonoBehaviour
 {
@@ -9,16 +10,25 @@ public class BlockButt : MonoBehaviour
     public GameObject makeitGONE1;
     public GameObject makeitGONE2;
     public GameObject makeitGONE3;
-  //  public GameObject EndTURN;
-    //public GameObject EndTURN1;
+    public Text ver;
+    public GameObject EndTURN;
+    public GameObject EndTURN1;
     //public GameObject dices;
     public bool ok = false;
+    void Start()
+    {
+        ShowForFirst();
+    }
     public void ShowOrHide()
     {
-        if (ok == false)
-            Show();
-        else
-            Hide();
+        if (ver.text == "2")
+        {
+            ok = true;
+            if (ok == false)
+                Show();
+            else
+                Hide();
+        }
     }
     public void Show()
     {
@@ -27,8 +37,8 @@ public class BlockButt : MonoBehaviour
         makeitGONE2.SetActive(false);
         makeitGONE3.SetActive(true);
         block.SetActive(true);
-   //     EndTURN.SetActive(false);
-      //  EndTURN1.SetActive(true);
+        EndTURN.SetActive(false);
+        EndTURN1.SetActive(true);
         ok = true;
     }
     public void Hide()
@@ -38,9 +48,18 @@ public class BlockButt : MonoBehaviour
         makeitGONE2.SetActive(true);
         makeitGONE3.SetActive(false);
         block.SetActive(false);
-  //      EndTURN.SetActive(true);
-  //      EndTURN.SetActive(false);
+        EndTURN.SetActive(true);
+        EndTURN.SetActive(false);
         ok = false;
+    }
+
+    void ShowForFirst()
+    {
+        makeitGONE1.SetActive(false);
+        makeitGONE2.SetActive(false);
+        block.SetActive(true);
+        EndTURN.SetActive(false);
+        EndTURN1.SetActive(true);
     }
     
 

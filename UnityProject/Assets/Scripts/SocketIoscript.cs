@@ -25,6 +25,10 @@ public class SocketIoscript : MonoBehaviour
     public GameObject casute;
     public GameObject drumuri;
     public Text ver;
+    public Text user1;
+    public Text user2;
+    public Text user3;
+    public Text user4;
     bool ok1 = false;
 
 
@@ -34,6 +38,10 @@ public class SocketIoscript : MonoBehaviour
         GameObject go = GameObject.Find("SocketIO");
         socket = go.GetComponent<SocketIOComponent>();
         setupEvents();
+        user1.text = LoginScript.CurrentLobby.master;
+        user2.text = LoginScript.CurrentLobby.first;
+        user3.text = LoginScript.CurrentLobby.second;
+        user4.text = LoginScript.CurrentLobby.third;
 
     }
 

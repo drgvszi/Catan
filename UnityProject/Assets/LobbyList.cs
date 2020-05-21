@@ -22,6 +22,8 @@ public class LobbyList : MonoBehaviour
 {
     public static SocketIOComponent socket;
     public List<Lobby> lobbies;
+    bool ok = false;
+    bool okJoin = false;
 
 
     // Start is called before the first frame update
@@ -112,69 +114,77 @@ public class LobbyList : MonoBehaviour
 
     public void joinLobby(Text txt)                                                                                    // identify a lobby by its lobbyid
     {
-        string lobbyid = txt.text;
-        print(lobbyid);
-        for (int i = 0; i < lobbies.Count; i++)
-            if (lobbies[i].lobbyid == lobbyid && lobbies[i].extension == LoginScript.CurrentUserExtension && (countPlayers(lobbies[i]) != 4))
-            {
-                JoinLobby jl = new JoinLobby(LoginScript.CurrentUser, lobbies[i].lobbyid);
-                RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/join", jl).Then(joined_lobby =>
+        if (okJoin == false)
+        {
+            string lobbyid = txt.text;
+            print(lobbyid);
+            for (int i = 0; i < lobbies.Count; i++)
+                if (lobbies[i].lobbyid == lobbyid && lobbies[i].extension == LoginScript.CurrentUserExtension && (countPlayers(lobbies[i]) != 4))
                 {
-                    LoginScript.CurrentUserGameId = lobbies[i].gameid;
-                    LoginScript.CurrentUserLobbyId = lobbies[i].lobbyid;
+                    okJoin = true;
+                    JoinLobby jl = new JoinLobby(LoginScript.CurrentUser, lobbies[i].lobbyid);
+                    RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/join", jl).Then(joined_lobby =>
+                    {
+                        LoginScript.CurrentUserGameId = lobbies[i].gameid;
+                        LoginScript.CurrentUserLobbyId = lobbies[i].lobbyid;
 
-                    UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
+                        UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
                     //getgeid.username = "mmoruz";
                     getgeid.username = LoginScript.CurrentUser;
-                    RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
-                    {
-                        LoginScript.CurrentUserGEId = response.Text;
-                        LoginScript.CurrentLobby = lobbies[i];
-
-
-                        
-                        SceneChanger scene = new SceneChanger();
-                        scene.goToWaitingRoom();
+                        RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                        {
+                            LoginScript.CurrentUserGEId = response.Text;
+                            LoginScript.CurrentLobby = lobbies[i];
 
 
 
+                            SceneChanger scene = new SceneChanger();
+                            scene.goToWaitingRoom();
 
+
+
+
+
+                        }).Catch(err => { Debug.Log(err); });
 
                     }).Catch(err => { Debug.Log(err); });
-
-                }).Catch(err => { Debug.Log(err); });
-                break;
-            }
+                    break;
+                }
+        }
     }
 
     public void createLobby()   // in case there are no lobby change the button from connect to create and call that function
     {
-        UnityConnectivityCommand command = new UnityConnectivityCommand();
-        //command.username = "mmoruz";
-        command.username = LoginScript.CurrentUser;
-        RestClient.Post<LobbyConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/add", command).Then(added_Lobby =>
+        if (ok == false)
         {
-            LoginScript.CurrentUserGameId = added_Lobby.gameid;
-            LoginScript.CurrentUserLobbyId = added_Lobby.lobbyid;
+            ok = true;
+            UnityConnectivityCommand command = new UnityConnectivityCommand();
+            //command.username = "mmoruz";
+            command.username = LoginScript.CurrentUser;
+            RestClient.Post<LobbyConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/add", command).Then(added_Lobby =>
+            {
+                LoginScript.CurrentUserGameId = added_Lobby.gameid;
+                LoginScript.CurrentUserLobbyId = added_Lobby.lobbyid;
 
-            UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
+                UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
             //getgeid.username = "mmoruz";
             getgeid.username = LoginScript.CurrentUser;
-            RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
-            {
-                LoginScript.CurrentUserGEId = response.Text;
-                LoginScript.CurrentLobby = new Lobby(LoginScript.CurrentUserExtension, "-","-", "-",LoginScript.CurrentUser, LoginScript.CurrentUserGameId, LoginScript.CurrentUserLobbyId);
-
-                
-                SceneChanger scene = new SceneChanger();
-                scene.goToWaitingRoom();
+                RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
+                {
+                    LoginScript.CurrentUserGEId = response.Text;
+                    LoginScript.CurrentLobby = new Lobby(LoginScript.CurrentUserExtension, "-", "-", "-", LoginScript.CurrentUser, LoginScript.CurrentUserGameId, LoginScript.CurrentUserLobbyId);
 
 
+                    SceneChanger scene = new SceneChanger();
+                    scene.goToWaitingRoom();
 
+
+
+
+                }).Catch(err => { Debug.Log(err); });
 
             }).Catch(err => { Debug.Log(err); });
-
-        }).Catch(err => { Debug.Log(err); });
+        }
     }
 
     
