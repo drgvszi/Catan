@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
 using System.Runtime.InteropServices;
+using UnityEngine.UI;
 
 public class SocketIoscript : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class SocketIoscript : MonoBehaviour
     public GameObject player4;
     public GameObject casute;
     public GameObject drumuri;
+    public Text ver;
     bool ok1 = false;
 
 
@@ -85,7 +87,7 @@ public class SocketIoscript : MonoBehaviour
                 if (inter == null)
                     inter = inter1;
 
-                if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 == false)
+                if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "0")
                 {
                     
                     AfiseazaDrum.afiseaza(newPieceR1, inter);
@@ -96,7 +98,7 @@ public class SocketIoscript : MonoBehaviour
                     
                 }
 
-                else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1 == false)
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ver.text == "0")
                 {
               
                     AfiseazaDrum.afiseaza(newPieceR2, inter);
@@ -105,7 +107,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player4.SetActive(false);
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.second && ok1 == false)
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ver.text == "0")
                 {
               
                     AfiseazaDrum.afiseaza(newPieceR3, inter);
@@ -114,7 +116,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player2.SetActive(false);
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.third && ok1 == false)
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ver.text == "0")
                 {
        
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -122,9 +124,10 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player3.SetActive(false);
                     player2.SetActive(false);
-                    ok1 = true;
+                    //ok1 = true;
+                    ver.text = "1";
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.third && ok1)
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ver.text == "1")
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -134,7 +137,7 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(false);
               
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.second && ok1)
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ver.text == "1")
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -144,7 +147,7 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(true);
        
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.first && ok1)
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ver.text == "1")
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -154,7 +157,7 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(false);
             
                 }
-                else if (user_who_built_road == LoginScript.CurrentLobby.master && ok1 )
+                else if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "1")
                 {
 
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
@@ -162,7 +165,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(true);
                     player3.SetActive(false);
                     player2.SetActive(false);
-          
+                    ver.text = "2";
                 }
 
                 drumuri.SetActive(false);

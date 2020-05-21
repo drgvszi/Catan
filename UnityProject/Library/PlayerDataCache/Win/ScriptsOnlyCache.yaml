@@ -81,6 +81,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/GameMap.unity:
     - Class: 1
@@ -220,7 +222,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14052}
     - Class: 114
-      Script: {instanceID: 23330}
+      Script: {instanceID: 23338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -626,7 +628,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14004}
     - Class: 114
-      Script: {instanceID: 67984}
+      Script: {instanceID: 121320}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -831,7 +833,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13988}
     - Class: 114
-      Script: {instanceID: 79160}
+      Script: {instanceID: 132506}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1550,7 +1552,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 5014b3f070b562bd6e4f90b5ba5145bb
+      Hash: debd9d56db76b8bbf5daa407824d0f34
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SocketIoscript
@@ -1634,7 +1636,7 @@ ScriptsOnlyBuild:
     className: LoginScript
   - hash:
       serializedVersion: 2
-      Hash: 9a305fae3e1fa1f8d7d5f75d732d29f6
+      Hash: 5f19a6189469343dd5184f624722a2a5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: provizoriu
@@ -1843,4 +1845,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/GameMap.unity
   - Assets/Scenes/WaitingRoom.unity
   - Assets/Scenes/LobbyList.unity
-  playerPath: C:/Users/herp1/Desktop/New folder/Catan.exe
+  playerPath: C:/Users/herp1/Desktop/Catan.exe
