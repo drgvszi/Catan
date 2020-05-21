@@ -509,16 +509,12 @@ public abstract class Game {
     public Code changeTurn() {
         Player firstPlayer = playersOrder.get(0);
         Player lastPlayer = playersOrder.get(getPlayersNumber() - 1);
-        if (changeTurn(changeTurnDirection) == Code.NotEnoughPlayers) {
-            return Code.NotEnoughPlayers;
-        }
-        if (lastPlayer.getRoadsNumber() == 1) {
-            changeTurnDirection = -1;
-            changeTurn(changeTurnDirection);
-        }
-        if (firstPlayer.getRoadsNumber() == 2) {
-            changeTurnDirection = 1;
-            changeTurn(changeTurnDirection);
+        if(lastPlayer.getRoadsNumber() !=1 && firstPlayer.getRoadsNumber() != 2)
+            if (changeTurn(changeTurnDirection) == Code.NotEnoughPlayers) {
+                return Code.NotEnoughPlayers;
+            }
+        if (lastPlayer.getRoadsNumber() == 1 || firstPlayer.getRoadsNumber() == 2) {
+            changeTurnDirection = changeTurnDirection*-1;
         }
         return null;
     }
