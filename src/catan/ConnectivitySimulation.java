@@ -311,22 +311,17 @@ public class ConnectivitySimulation implements Runnable {
 
             update(gameId, playerIds.get(1));
             update(gameId, playerIds.get(0));
-
             buildSettlement(gameId, playerIds.get(0), 20);
-
             update(gameId, playerIds.get(0));
-
             buildRoad(gameId, playerIds.get(0), 18, 19);
             buildRoad(gameId, playerIds.get(0), 19, 20);
 
             update(gameId, playerIds.get(1));
-
             buildSettlement(gameId, playerIds.get(1), 40);
             update(gameId, playerIds.get(1));
             buildRoad(gameId, playerIds.get(1), 41, 40);
 
             update(gameId, playerIds.get(2));
-
             buildSettlement(gameId, playerIds.get(2), 15);
             update(gameId, playerIds.get(2));
             buildRoad(gameId, playerIds.get(2), 15, 14);
@@ -350,6 +345,8 @@ public class ConnectivitySimulation implements Runnable {
             getRanking(gameId);
 
             update(gameId, playerIds.get(0));
+            update(gameId, playerIds.get(1));
+            update(gameId, playerIds.get(2));
 
             for (int index = 0; index < 18; ++index) {
                 int turn = index % 3;
@@ -358,8 +355,8 @@ public class ConnectivitySimulation implements Runnable {
                 }
 
                 String currentPlayer = playerIds.get(turn);
-                update(gameId, currentPlayer);
                 rollDice(gameId, currentPlayer);
+                update(gameId, currentPlayer);
                 discardResources(gameId, currentPlayer, null);
                 moveRobber(gameId, currentPlayer, 3);
                 stealResource(gameId, currentPlayer, "yes", playerIds.get(2 - turn));
@@ -377,6 +374,7 @@ public class ConnectivitySimulation implements Runnable {
 
                 buyDevelopment(gameId, currentPlayer);
                 useDevelopment(gameId, currentPlayer, "roadBuilding");
+                update(gameId, currentPlayer);
                 buildDevelopmentRoad(gameId, currentPlayer, 31, 32);
                 buildDevelopmentRoad(gameId, currentPlayer, 32, 33);
 

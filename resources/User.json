@@ -419,6 +419,41 @@
     "code": "HttpStatus code",
     "status": "message (success or error type)",
     "arguments": {
+      "active": "true or false (boolean)",
+      "lumber": "number of owned lumbers (integer)",
+      "wool": "number of owned wools (integer)",
+      "grain": "number of owned grains (integer)",
+      "brick": "number of owned bricks (integer)",
+      "ore": "number of owned ores (integer)",
+      "knight": "number of owned knights (integer)",
+      "monopoly": "number of owned monopolies (integer)",
+      "roadBuilding": "number of owned roadBuildings (integer)",
+      "victoryPoint": "number of owned victoryPoints (integer)",
+      "yearOfPlenty": "number of owned yearsOfPlenty (integer)",
+      "settlements": [
+        "number of owned intersection (integer)",
+        "number of owned intersection (integer)"
+      ],
+      "cities": [
+        "number of owned intersection (integer)",
+        "number of owned intersection (integer)"
+      ],
+      "roads": [
+        [
+          "number of start intersection (integer)",
+          "number of end intersection (integer)"
+        ],
+        [
+          "number of start intersection (integer)",
+          "number of end intersection (integer)"
+        ]
+      ],
+      "usedKnights": "number of used Knight development cards (integer)",
+      "roadsToBuild": "number of remaining roads to build when using Road Building development card",
+      "hasLargestArmy": "true or false (boolean)",
+      "hasLongestRoad": "true or false (boolean)",
+      "publicScore": "number of public points, without Victory Points development cards (integer)",
+      "hiddenScore": "number of hidden points, with Victory Points development cards (integer)",
       "canBuyRoad": "true or false (boolean)",
       "canBuySettlement": "true or false (boolean)",
       "canBuyCity": "true or false (boolean)",
@@ -440,11 +475,7 @@
           "number of start intersection (integer)",
           "number of end intersection (integer)"
         ]
-      ],
-      "hasLargestArmy": "true or false (boolean)",
-      "hasLongestRoad": "true or false (boolean)",
-      "publicScore": "number of public points, without Victory Points development cards (integer)",
-      "hiddenScore": "number of hidden points, with Victory Points development cards (integer)"
+      ]
     }
   },
   {
@@ -456,6 +487,8 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments": null
+    "arguments": {
+      "nextPlayer": "playerId"
+    }
   }
 ]

@@ -223,6 +223,10 @@ public abstract class Game {
     //region Turn
 
     public UserResponse playTurn(String playerId, String command, Map<String, Object> requestArguments) {
+        if (command.equals("update")) {
+            return new UserResponse(HttpStatus.SC_OK, "Here is your information.",
+                    getUpdateResult(players.get(playerId)));
+        }
         Pair<Code, Map<String, Object>> result = processGeneralCommand(playerId, command, requestArguments);
         Code code = result.getKey();
         if (code != null) {
@@ -230,9 +234,6 @@ public abstract class Game {
         }
         if (inDiscardState) {
             return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.ForbiddenRequest), null);
-        }
-        if (command.equals("update")) {
-            return new UserResponse(HttpStatus.SC_OK, "Here is your information.", getUpdateResult(players.get(playerId)));
         }
         if (playerId.equals(currentPlayer.getId())) {
             players.get(playerId).getTurnFlow().fsm.setShareData(requestArguments);
@@ -335,37 +336,6 @@ public abstract class Game {
 
     public Map<String, Object> getUpdateResult(Player player) {
         Map<String, Object> result = new HashMap<>();
-        result.put("canBuyRoad", canBuyRoad(player));
-        result.put("canBuySettlement", canBuySettlement(player));
-        result.put("canBuyCity", canBuyCity(player));
-        result.put("canBuyDevelopment", canBuyDevelopment(player));
-        result.put("availableRoadPositions", getAvailableRoadPositions(player));
-        result.put("availableSettlementPositions", getAvailableSettlementPositions(player));
-        result.put("availableCityPositions", getAvailableCityPositions(player));
-        result.put("hasLargestArmy", player.hasLargestArmy());
-        result.put("hasLongestRoad", player.hasLongestRoad());
-        result.put("publicScore", player.getPublicVictoryPoints());
-        result.put("hiddenScore", player.getVictoryPoints());
-
-        result.put("lumber", player.getResourcesNumber(Resource.lumber));
-        result.put("wool", player.getResourcesNumber(Resource.wool));
-        result.put("grain", player.getResourcesNumber(Resource.grain));
-        result.put("brick", player.getResourcesNumber(Resource.brick));
-        result.put("ore", player.getResourcesNumber(Resource.ore));
-        result.put("knight", player.getDevelopmentsNumber(Development.knight));
-        result.put("monopoly", player.getDevelopmentsNumber(Development.monopoly));
-        result.put("roadBuilding", player.getDevelopmentsNumber(Development.roadBuilding));
-        result.put("victoryPoint", player.getHiddenVictoryPoints());
-        result.put("yearOfPlenty", player.getDevelopmentsNumber(Development.yearOfPlenty));
-        return result;
-    }
-
-    public Map<String, Object> getSynchronizeResult(Player player) {
-        Map<String, Object> result = new HashMap<>();
-        Set<Integer> settlements = new HashSet<>();
-        Set<Integer> cities = new HashSet<>();
-        Set<int[]> roads = new HashSet<>();
-
         result.put("active", player.isActive());
         result.put("lumber", player.getResourcesNumber(Resource.lumber));
         result.put("wool", player.getResourcesNumber(Resource.wool));
@@ -377,22 +347,21 @@ public abstract class Game {
         result.put("roadBuilding", player.getDevelopmentsNumber(Development.roadBuilding));
         result.put("victoryPoint", player.getHiddenVictoryPoints());
         result.put("yearOfPlenty", player.getDevelopmentsNumber(Development.yearOfPlenty));
-
-        for (Intersection settlement : player.getSettlements()) {
-            settlements.add(settlement.getId());
-        }
-
-        result.put("settlements", settlements);
-
-        for (Intersection city : player.getCities()) {
-            cities.add(city.getId());
-        }
-        result.put("cities", cities);
-
+        Set<int[]> roads = new HashSet<>();
         for (Road road : player.getRoads()) {
             roads.add(new int[]{road.getStart().getId(), road.getEnd().getId()});
         }
         result.put("roads", roads);
+        Set<Integer> settlements = new HashSet<>();
+        for (Intersection settlement : player.getSettlements()) {
+            settlements.add(settlement.getId());
+        }
+        result.put("settlements", settlements);
+        Set<Integer> cities = new HashSet<>();
+        for (Intersection city : player.getCities()) {
+            cities.add(city.getId());
+        }
+        result.put("cities", cities);
         result.put("usedKnights", player.getUsedKnights());
         result.put("roadsToBuild", player.getRoadsToBuild());
         result.put("hasLargestArmy", player.hasLargestArmy());
@@ -402,9 +371,10 @@ public abstract class Game {
         result.put("canBuyRoad", canBuyRoad(player));
         result.put("canBuySettlement", canBuySettlement(player));
         result.put("canBuyCity", canBuyCity(player));
+        result.put("canBuyDevelopment", canBuyDevelopment(player));
+        result.put("availableRoadPositions", getAvailableRoadPositions(player));
         result.put("availableSettlementPositions", getAvailableSettlementPositions(player));
         result.put("availableCityPositions", getAvailableCityPositions(player));
-        result.put("availableRoadPositions", getAvailableRoadPositions(player));
         return result;
     }
 
@@ -574,10 +544,10 @@ public abstract class Game {
         Random dice = new Random();
         int firstDice = dice.nextInt(6) + 1;
         int secondDice = dice.nextInt(6) + 1;
-//        while (firstDice + secondDice == 7) {
-//            firstDice = dice.nextInt(6) + 1;
-//            secondDice = dice.nextInt(6) + 1;
-//        }
+        while (firstDice + secondDice == 7) {
+            firstDice = dice.nextInt(6) + 1;
+            secondDice = dice.nextInt(6) + 1;
+        }
         return new Pair<>(firstDice, secondDice);
     }
 
@@ -723,18 +693,18 @@ public abstract class Game {
 
     protected Set<int[]> getAvailableRoadPositions(Player player) {
         Set<int[]> availableRoadPositions = new HashSet<>();
-        if (player.getRoads().size() < 2 && player.getSettlements().size() > 0) {    // for the first 2 rounds
+        if (player.getSettlements().size() > 0 && player.getRoads().size() < 2) {
             Intersection lastBuilding = player.getSettlements().get(player.getSettlements().size() - 1);
-            int firstPos = lastBuilding.getId();
+            int start = lastBuilding.getId();
             for (Intersection intersection : board.getAdjacentIntersections(lastBuilding)) {
-                int secondPos = intersection.getId();
-                if (secondPos < firstPos) {
-                    availableRoadPositions.add(new int[]{secondPos, firstPos});
+                int end = intersection.getId();
+                if (end < start) {
+                    availableRoadPositions.add(new int[]{end, start});
                 } else {
-                    availableRoadPositions.add(new int[]{firstPos, secondPos});
+                    availableRoadPositions.add(new int[]{start, end});
                 }
             }
-        } else {                                            // for the rest of the game
+        } else {
             for (Road road : player.getRoads()) {
                 for (Intersection intersection : board.getAdjacentIntersections(road.getStart())) {
                     int start = road.getStart().getId();
@@ -767,13 +737,13 @@ public abstract class Game {
 
     protected Set<Integer> getAvailableSettlementPositions(Player player) {
         Set<Integer> availableSettlementPositions = new HashSet<>();
-        if (player.getSettlements().size() < 2) {    // for the first 2 rounds
+        if (player.getSettlements().size() < 2) {
             for (Intersection intersection : board.getIntersections()) {
                 if (isAvailableSettlementPosition(intersection)) {
                     availableSettlementPositions.add(intersection.getId());
                 }
             }
-        } else {                                            // for the rest of the game
+        } else {
             for (Road road : player.getRoads()) {
                 Intersection start = road.getStart();
                 Intersection end = road.getEnd();

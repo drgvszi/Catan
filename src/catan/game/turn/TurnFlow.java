@@ -579,9 +579,9 @@ public class TurnFlow {
                 Code changeTurnResult = game.changeTurn(1);
                 if (changeTurnResult == null) {
                     Map<String, Object> result = new HashMap<>();
-                    String playerId= game.getCurrentPlayer().getId();
-                    result.put("nextPlayer", playerId);
+                    result.put("nextPlayer", game.getCurrentPlayer().getId());
                     response = new UserResponse(HttpStatus.SC_OK, "The turn was changed successfully.", result);
+                    return true;
                 } else if (changeTurnResult == Code.FoundWinner) {
                     fsm.ProcessFSM("endGame");
                     response = new UserResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
@@ -592,7 +592,6 @@ public class TurnFlow {
                             "The game has ended because there are not enough active players.", null);
                     return false;
                 }
-                return true;
             }
         });
 
