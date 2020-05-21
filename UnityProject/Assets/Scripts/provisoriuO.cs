@@ -17,7 +17,7 @@ public class provisoriuO : MonoBehaviour
 
     void Update()
     {
-        print(ok);
+       // print(ok);
     }
 
     void OnMouseDown()

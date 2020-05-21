@@ -34,12 +34,6 @@ public class provizoriu : MonoBehaviour
     bool ok = false;
 
 
-
-    void Update()
-    {
-        this.numar = numar;
-    }
-
     void OnMouseDown()
     {
         GameObject go = GameObject.Find("SocketIO");
@@ -63,6 +57,7 @@ public class provizoriu : MonoBehaviour
                     json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
                     json_message.AddField("username", LoginScript.CurrentUser);
                     json_message.AddField("intersection", command.intersection);
+                    print(command.intersection);
                     socket.Emit("buildsettlement", json_message);
                     allPieces.SetActive(false);
 
@@ -105,6 +100,8 @@ public class provizoriu : MonoBehaviour
             //Debug.Log(CurrentUserGame);
             //Debug.Log(CurrentUserId);
             RequestJson req = new RequestJson();
+
+
             RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildRoad", command).Then(Response =>
             {
                 req.code = Response.code;
@@ -199,6 +196,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(false);
                         ver.text = "2";
                     }
+
                 }
                 Debug.Log(req.code);
                 Debug.Log(req.status);

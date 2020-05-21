@@ -74,7 +74,7 @@ public class SocketIoscript : MonoBehaviour
                 string intesection = E.data[2].ToString();
                 casute.SetActive(true);
                 inter = GameObject.Find(intesection);
-                Debug.Log("asd" + user_who_built_settelment);
+                print(inter.name);
                 
                 if (user_who_built_settelment == LoginScript.CurrentLobby.master)
                 {
@@ -112,7 +112,7 @@ public class SocketIoscript : MonoBehaviour
                 inter = GameObject.Find(start + " " + end);
                 inter1 = GameObject.Find(end + " " + start);
                 if (inter == null)
-                    inter = inter1;
+                    inter = GameObject.Find(end + " " + start);
 
                 if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "0")
                 {
