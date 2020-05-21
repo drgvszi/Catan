@@ -172,7 +172,7 @@ public class provizoriu : MonoBehaviour
                     else if (LoginScript.CurrentLobby.second == LoginScript.CurrentLobby.second && ver.text == "1")
                     {
 
-                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        AfiseazaDrum.afiseaza(newPiece3, piece);
                         player4.SetActive(false);
                         player1.SetActive(false);
                         player3.SetActive(false);
@@ -182,7 +182,7 @@ public class provizoriu : MonoBehaviour
                     else if (LoginScript.CurrentLobby.first == LoginScript.CurrentLobby.first && ver.text == "1")
                     {
 
-                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        AfiseazaDrum.afiseaza(newPiece2, piece);
                         player4.SetActive(false);
                         player1.SetActive(true);
                         player3.SetActive(false);
@@ -192,7 +192,7 @@ public class provizoriu : MonoBehaviour
                     else if (LoginScript.CurrentLobby.master == LoginScript.CurrentLobby.master && ver.text == "1")
                     {
 
-                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                        AfiseazaDrum.afiseaza(newPiece1, piece);
                         player4.SetActive(false);
                         player1.SetActive(true);
                         player3.SetActive(false);

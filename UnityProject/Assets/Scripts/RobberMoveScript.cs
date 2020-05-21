@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RobberMoveScript : MonoBehaviour
 {
+    /*
     public GameObject robber;
 
     Vector3 startPos = new Vector3(3.625f, -634.0f, 3.0f);
@@ -84,4 +85,5 @@ public class RobberMoveScript : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, startPos , Time.deltaTime * 5);
     }
+    */
 }

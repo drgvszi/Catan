@@ -10,7 +10,9 @@ public class ChangeTexture : MonoBehaviour
     public Transform SpawnHills;
     public Transform SpawnPasture;
     public Transform SpawnDesertField;
+    public Transform robber;
     public GameObject objForest;
+    public GameObject robbler;
     public GameObject objPasture;
     public GameObject objBrick;
     public GameObject objOre;
@@ -58,6 +60,7 @@ public class ChangeTexture : MonoBehaviour
                         break;
                     case "desert":
                         Instantiate(objDesert, SpawnDesertField.position, SpawnDesertField.rotation);
+                        Instantiate(robbler, robber.position, robber.rotation);
                         break;
                     case "brick":
                         Instantiate(objBrick, SpawnHills.position, SpawnHills.rotation);

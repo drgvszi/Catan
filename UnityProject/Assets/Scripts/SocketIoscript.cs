@@ -148,7 +148,7 @@ public class SocketIoscript : MonoBehaviour
                 else if (user_who_built_road == LoginScript.CurrentLobby.second && ver.text == "1")
                 {
 
-                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    AfiseazaDrum.afiseaza(newPieceR3, inter);
                     player4.SetActive(false);
                     player1.SetActive(false);
                     player3.SetActive(false);
@@ -158,7 +158,7 @@ public class SocketIoscript : MonoBehaviour
                 else if (user_who_built_road == LoginScript.CurrentLobby.first && ver.text == "1")
                 {
 
-                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    AfiseazaDrum.afiseaza(newPieceR2, inter);
                     player4.SetActive(false);
                     player1.SetActive(true);
                     player3.SetActive(false);
@@ -168,7 +168,7 @@ public class SocketIoscript : MonoBehaviour
                 else if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "1")
                 {
 
-                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+                    AfiseazaDrum.afiseaza(newPieceR1, inter);
                     player4.SetActive(false);
                     player1.SetActive(true);
                     player3.SetActive(false);
