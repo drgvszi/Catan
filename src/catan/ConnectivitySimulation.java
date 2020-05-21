@@ -307,6 +307,8 @@ public class ConnectivitySimulation implements Runnable {
 
             startGame(gameId);
 
+            startGame(gameId);
+
             removePlayer(gameId, playerIds.get(2));
 
             update(gameId, playerIds.get(1));

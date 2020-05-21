@@ -184,6 +184,9 @@ public class ManagerRequest implements GameRequest {
                 if (game == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
                 }
+                if (game.getBank() != null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", null);
+                }
                 if (game.startGame()) {
                     Map<String, String> payload = new HashMap<>();
                     payload.put("board", game.getBoard().getBoardJson());

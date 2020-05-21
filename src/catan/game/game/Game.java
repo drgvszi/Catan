@@ -38,8 +38,8 @@ public abstract class Game {
     protected Pair<String, Integer> currentLargestArmy;
     protected Pair<String, Integer> currentLongestRoad;
 
+    protected int changeTurnDirection;
     protected boolean inDiscardState;
-    protected int changeTurnDirection = 1;
 
     public Game() {
         bank = null;
@@ -58,6 +58,7 @@ public abstract class Game {
         currentLargestArmy = null;
         currentLongestRoad = null;
 
+        changeTurnDirection = 1;
         inDiscardState = false;
 
     }
@@ -120,6 +121,10 @@ public abstract class Game {
         return currentLongestRoad;
     }
 
+    public int getChangeTurnDirection() {
+        return changeTurnDirection;
+    }
+
     public boolean isInDiscardState() {
         return inDiscardState;
     }
@@ -174,6 +179,10 @@ public abstract class Game {
 
     public void setCurrentLongestRoad(Pair<String, Integer> currentLongestRoad) {
         this.currentLongestRoad = currentLongestRoad;
+    }
+
+    public void setChangeTurnDirection(int changeTurnDirection) {
+        this.changeTurnDirection = changeTurnDirection;
     }
 
     public void setInDiscardState(boolean inDiscardState) {
@@ -291,8 +300,6 @@ public abstract class Game {
         int nextPlayer;
         do {
             nextPlayer = (playersOrder.indexOf(currentPlayer) + direction) % playersOrder.size();
-            if (nextPlayer < 0)
-                nextPlayer = playersOrder.size() - 1;
             currentPlayer = playersOrder.get(nextPlayer);
         } while (!currentPlayer.isActive());
         return null;
@@ -509,12 +516,13 @@ public abstract class Game {
     public Code changeTurn() {
         Player firstPlayer = playersOrder.get(0);
         Player lastPlayer = playersOrder.get(getPlayersNumber() - 1);
-        if(lastPlayer.getRoadsNumber() !=1 && firstPlayer.getRoadsNumber() != 2)
+        if (lastPlayer.getRoadsNumber() != 1 && firstPlayer.getRoadsNumber() != 2) {
             if (changeTurn(changeTurnDirection) == Code.NotEnoughPlayers) {
                 return Code.NotEnoughPlayers;
             }
+        }
         if (lastPlayer.getRoadsNumber() == 1 || firstPlayer.getRoadsNumber() == 2) {
-            changeTurnDirection = changeTurnDirection*-1;
+            changeTurnDirection = changeTurnDirection * -1;
         }
         return null;
     }
