@@ -135,15 +135,8 @@ public class LobbyList : MonoBehaviour
                         {
                             LoginScript.CurrentUserGEId = response.Text;
                             LoginScript.CurrentLobby = lobbies[i];
-
-
-
                             SceneChanger scene = new SceneChanger();
                             scene.goToWaitingRoom();
-
-
-
-
 
                         }).Catch(err => { Debug.Log(err); });
 

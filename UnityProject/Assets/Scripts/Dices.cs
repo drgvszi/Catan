@@ -9,6 +9,7 @@ using Proyecto26;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Text;
+using SocketIO;
 public class Dices : MonoBehaviour
 {
     public GameObject side1;
@@ -23,9 +24,12 @@ public class Dices : MonoBehaviour
     public GameObject sside4;
     public GameObject sside5;
     public GameObject sside6;
+    public SocketIOComponent socket;
 
-     public void Show()
+    public void Show()
     {
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
         int j,i;
         Text txt = FindTextFiel.find();
         MakeRequestResponse command = new MakeRequestResponse();
@@ -38,9 +42,39 @@ public class Dices : MonoBehaviour
             req.status = Response.status;
             Debug.Log(Response.code);
             Debug.Log(Response.status);
+            JSONObject json_message = new JSONObject();
+            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+            json_message.AddField("username", LoginScript.CurrentUser);
+            json_message.AddField("dice_1", Response.arguments.dice_1);
+        json_message.AddField("dice_2", Response.arguments.dice_2);
+        json_message.AddField("player_0", Response.arguments.player_0);
+        json_message.AddField("lumber_0", Response.arguments.lumber_0);
+        json_message.AddField("wool_0", Response.arguments.wool_0);
+        json_message.AddField("grain_0", Response.arguments.grain_0);
+        json_message.AddField("brick_0", Response.arguments.brick_0);
+        json_message.AddField("ore_0", Response.arguments.ore_0);
+            json_message.AddField("player_1", Response.arguments.player_1);
+            json_message.AddField("lumber_1", Response.arguments.lumber_1);
+            json_message.AddField("wool_1", Response.arguments.wool_1);
+            json_message.AddField("grain_1", Response.arguments.grain_1);
+            json_message.AddField("brick_1", Response.arguments.brick_1);
+            json_message.AddField("ore_1", Response.arguments.ore_1);
+            json_message.AddField("player_2", Response.arguments.player_2);
+            json_message.AddField("lumber_2", Response.arguments.lumber_2);
+            json_message.AddField("wool_2", Response.arguments.wool_2);
+            json_message.AddField("grain_2", Response.arguments.grain_2);
+            json_message.AddField("brick_2", Response.arguments.brick_2);
+            json_message.AddField("ore_2", Response.arguments.ore_2);
+            json_message.AddField("player_3", Response.arguments.player_3);
+            json_message.AddField("lumber_3", Response.arguments.lumber_3);
+            json_message.AddField("wool_3", Response.arguments.wool_3);
+            json_message.AddField("grain_3", Response.arguments.grain_3);
+            json_message.AddField("brick_3", Response.arguments.brick_3);
+            json_message.AddField("ore_3", Response.arguments.ore_3);
+            socket.Emit("RollDice", json_message);
 
-            j = int.Parse(req.arguments[0]);
-            i = int.Parse(req.arguments[1]);
+            j = Response.arguments.dice_1;
+            i = Response.arguments.dice_2;
             switch (j)
             {
                 case 1:

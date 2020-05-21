@@ -17,15 +17,13 @@ public class MakeRequest
         MakeRequestResponse command = new MakeRequestResponse();
         command.gameId = CurrentUserGame;
         command.playerId = CurrentUserId;
-        //Debug.Log(CurrentUserGame);
-        //Debug.Log(CurrentUserId);
         RequestJson req = new RequestJson();
         RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/rollDice", command).Then(Response=>
         {
             req.code = Response.code;
             req.status = Response.status;
-            Debug.Log(Response.code);
-            Debug.Log(Response.status);
+            Debug.Log("Raspunsul este: " + CurrentUserGame);
+            Debug.Log("Raspunsul2 este: " + CurrentUserId);
         }).Catch(err => { Debug.Log(err); });
 
     }

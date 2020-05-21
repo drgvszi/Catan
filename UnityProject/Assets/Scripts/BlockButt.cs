@@ -21,14 +21,15 @@ public class BlockButt : MonoBehaviour
     }
     public void ShowOrHide()
     {
-        if (ver.text == "2")
+        Show();
+        /*if (ver.text == "2")
         {
             ok = true;
             if (ok == false)
                 Show();
             else
                 Hide();
-        }
+        }*/
     }
     public void Show()
     {

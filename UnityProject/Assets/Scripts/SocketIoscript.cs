@@ -30,9 +30,10 @@ public class SocketIoscript : MonoBehaviour
     public Text user3;
     public Text user4;
     bool ok1 = false;
+    public static int turn = 1;
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         GameObject go = GameObject.Find("SocketIO");
@@ -84,6 +85,7 @@ public class SocketIoscript : MonoBehaviour
         });
         socket.On("buildroad", (E) =>
         {
+            turn++;
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
                 string user_who_built_road = E.data[1].str;
@@ -180,6 +182,13 @@ public class SocketIoscript : MonoBehaviour
             }
 
             
+        });
+        socket.On("RollDice", (E) =>
+        {
+            string dice_1 = E.data[2].ToString();
+            string dice_2 = E.data[3].ToString();
+            Debug.Log(dice_1);
+            Debug.Log(dice_2);
         });
        
     }
