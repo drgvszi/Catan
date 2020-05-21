@@ -569,6 +569,7 @@
 ## Success messages
  - The dice sum is seven.
  - The dice sum is not seven.
+ - The resource cards were discarded successfully.
 # Player 
 ## Resource Cards
 ### Error Messages
@@ -675,6 +676,7 @@
 - The offer does not match the port.
 ### Success Messages
 - The trade has started successfully.
+- You can take part in the trade.
 - The trade partners were sent successfully.
 - The trade was made successfully.
 ## Bank and Port Trade
