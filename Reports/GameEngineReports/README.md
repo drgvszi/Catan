@@ -51,7 +51,7 @@
  "arguments": null 
 }
 ```
- - works only after the turn starts (after ```startGame``` or ```endTurn```)
+ - works only after the turn starts (after the last ```buildRoad``` or after ```endTurn```)
 ``` 
 { 
  "code": "HttpStatus code", 
@@ -457,7 +457,7 @@
 ```
  - if the code is 200, the requested resources are moved from the bank to the current player
 # Update
-## See what you can buy, where you can build, if you have the Largest Army or the Longest Road and how many public or hidden Victory Points you have 
+## See what you already own, what you can buy, where you can build, if you have the Largest Army or the Longest Road and how many public or hidden Victory Points you have 
 ``` 
 { 
  "gameId": "gameId", 
@@ -468,43 +468,78 @@
 ```
  - ```update``` can be sent whenever
 ```
-{ 
- "code": "HttpStatus code", 
- "status": "message (success or error type)", 
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
  "arguments":
- { 
-  "canBuyRoad": "true or false (boolean)", 
-  "canBuySettlement": "true or false (boolean)", 
-  "canBuyCity": "true or false (boolean)", 
-  "canBuyDevelopment": "true or false (boolean)", 
+ {
+  "active": "true or false (boolean)",
+  "lumber": "number of owned lumbers (integer)",
+  "wool": "number of owned wools (integer)",
+  "grain": "number of owned grains (integer)",
+  "brick": "number of owned bricks (integer)",
+  "ore": "number of owned ores (integer)",
+  "knight": "number of owned knights (integer)",
+  "monopoly": "number of owned monopolies (integer)",
+  "roadBuilding": "number of owned roadBuildings (integer)",
+  "victoryPoint": "number of owned victoryPoints (integer)",
+  "yearOfPlenty": "number of owned yearsOfPlenty (integer)",
+  "settlements":
+  [
+   "number of owned intersection (integer)",
+   "number of owned intersection (integer)"
+  ],
+  "cities":
+  [
+   "number of owned intersection (integer)",
+   "number of owned intersection (integer)"
+  ],
+  "roads":
+  [
+   [
+    "number of start intersection (integer)",
+    "number of end intersection (integer)"
+   ],
+   [
+    "number of start intersection (integer)",
+    "number of end intersection (integer)"
+   ]
+  ],
+  "usedKnights": "number of used Knight development cards (integer)",
+  "roadsToBuild": "number of remaining roads to build when using Road Building development card",
+  "hasLargestArmy": "true or false (boolean)",
+  "hasLongestRoad": "true or false (boolean)",
+  "publicScore": "number of public points, without Victory Points development cards (integer)",
+  "hiddenScore": "number of hidden points, with Victory Points development cards (integer)",
+  "canBuyRoad": "true or false (boolean)",
+  "canBuySettlement": "true or false (boolean)",
+  "canBuyCity": "true or false (boolean)",
+  "canBuyDevelopment": "true or false (boolean)",
   "availableSettlementPositions":
-  [ 
-   "number of available intersection (integer)", 
-   "number of available intersection (integer)" 
-  ], 
+  [
+   "number of available intersection (integer)",
+   "number of available intersection (integer)"
+  ],
   "availableCityPositions":
-  [ 
-   "number of available intersection (integer)", 
-   "number of available intersection (integer)" 
-  ], 
+  [
+   "number of available intersection (integer)",
+   "number of available intersection (integer)"
+  ],
   "availableRoadPositions":
-  [ 
-   [ 
-    "number of start intersection (integer)", 
-    "number of end intersection (integer)" 
-   ], 
-   [ 
-    "number of start intersection (integer)", 
-    "number of end intersection (integer)" 
-   ] 
-  ], 
-  "hasLargestArmy": "true or false (boolean)", 
-  "hasLongestRoad": "true or false (boolean)", 
-  "publicScore": "number of public points, without Victory Points development cards (integer)", 
-  "hiddenScore": "number of hidden points, with Victory Points development cards (integer)" 
- } 
+  [
+   [
+    "number of start intersection (integer)",
+    "number of end intersection (integer)"
+   ],
+   [
+    "number of start intersection (integer)",
+    "number of end intersection (integer)"
+   ]
+  ]
+ }
 }
 ```
+ - ```active``` refers to in the game (not stepped over when when it is your turn)
  - ```canBuy``` refers to ```affords```
  - ```available``` refers to positions that respect the game rules
 # Turn
@@ -522,7 +557,10 @@
 { 
  "code": "HttpStatus code", 
  "status": "message (success or error type)", 
- "arguments": null 
+ "arguments":
+ {
+  "nextPlayer": "playerId"
+ }
 } 
 ```
 # Dice
