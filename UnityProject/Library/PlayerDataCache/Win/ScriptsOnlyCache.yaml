@@ -80,6 +80,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/GameMap.unity:
     - Class: 1
@@ -623,7 +625,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 96858}
+      Script: {instanceID: 113808}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -828,7 +830,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14218}
     - Class: 114
-      Script: {instanceID: 78226}
+      Script: {instanceID: 125042}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
