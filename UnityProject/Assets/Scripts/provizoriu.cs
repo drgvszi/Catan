@@ -159,7 +159,7 @@ public class provizoriu : MonoBehaviour
                         //  ok = true;
                         ver.text = "1";
                     }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentLobby.third && ver.text == "1")
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && ver.text == "1")
                     {
 
                         AfiseazaDrum.afiseaza(newPiece4, piece);
@@ -169,7 +169,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(false);
 
                     }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentLobby.second && ver.text == "1")
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && ver.text == "1")
                     {
 
                         AfiseazaDrum.afiseaza(newPiece3, piece);
@@ -179,7 +179,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(true);
 
                     }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentLobby.first && ver.text == "1")
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && ver.text == "1")
                     {
 
                         AfiseazaDrum.afiseaza(newPiece2, piece);
@@ -189,7 +189,7 @@ public class provizoriu : MonoBehaviour
                         player2.SetActive(false);
 
                     }
-                    else if (LoginScript.CurrentLobby.master == LoginScript.CurrentLobby.master && ver.text == "1")
+                    else if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && ver.text == "1")
                     {
 
                         AfiseazaDrum.afiseaza(newPiece1, piece);
