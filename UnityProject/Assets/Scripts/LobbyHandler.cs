@@ -15,6 +15,7 @@ public class Lobby
     public string master;
     public string lobbyid;
     public string gameid;
+    
 
     public Lobby(string extension, string first, string second, string third, string master, string gameid, string lobbyid)
     {
@@ -34,6 +35,7 @@ public class LobbyHandler : MonoBehaviour
 {
     public SocketIOComponent socket;                                                               // BETTER ASK Datco Maxim what he have done here. Only God and him know
     GameObject startbutton;
+    bool ok = false;
     void Start()
     {
         GameObject go = GameObject.Find("SocketIO");
@@ -72,23 +74,26 @@ public class LobbyHandler : MonoBehaviour
 
     public void EmitStartGame()
     {
-        Debug.Log(LoginScript.CurrentUserGEId);
-        GameIDConnectivityJson gameid = new GameIDConnectivityJson();
-        gameid.gameid = LoginScript.CurrentUserGameId;
-        RestClient.Post<BoardConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/startgame", gameid).Then(board =>
+        if (ok == false)
         {
-            ReceiveBoardScript.ReceivedBoard.ports = board.ports;
-            ReceiveBoardScript.ReceivedBoard.board = board.board;
+            ok = true;
+            Debug.Log(LoginScript.CurrentUserGEId);
+            GameIDConnectivityJson gameid = new GameIDConnectivityJson();
+            gameid.gameid = LoginScript.CurrentUserGameId;
+            RestClient.Post<BoardConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/startgame", gameid).Then(board =>
+            {
+                ReceiveBoardScript.ReceivedBoard.ports = board.ports;
+                ReceiveBoardScript.ReceivedBoard.board = board.board;
 
-            JSONObject json_message = new JSONObject();
-            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-            socket.Emit("gamestart", json_message);
+                JSONObject json_message = new JSONObject();
+                json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                socket.Emit("gamestart", json_message);
 
-            SceneChanger n = new SceneChanger();
-            n.startGame();
+                SceneChanger n = new SceneChanger();
+                n.startGame();
 
-        }).Catch(err => { Debug.Log(err); });
-
+            }).Catch(err => { Debug.Log(err); });
+        }
     }
 
     public void EmittedStartGame(SocketIOEvent e)

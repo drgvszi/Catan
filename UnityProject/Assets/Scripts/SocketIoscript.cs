@@ -364,7 +364,47 @@ public class SocketIoscript : MonoBehaviour
             Debug.Log(dice_1);
             Debug.Log(dice_2);
         });
-       
+
+
+        socket.On("endturn", (E) =>
+        {
+            if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+            {
+                string user_who_end_turn = E.data[1].str;
+                if (LoginScript.CurrentLobby.master == user_who_end_turn)
+            {
+                player1.SetActive(false);
+                player2.SetActive(true);
+                player3.SetActive(false);
+                player4.SetActive(false);
+
+            }
+            else if (LoginScript.CurrentLobby.first == user_who_end_turn)
+            {
+                player2.SetActive(false);
+                player3.SetActive(true);
+                player1.SetActive(false);
+                player4.SetActive(false);
+            }
+            else if (LoginScript.CurrentLobby.second == user_who_end_turn)
+            {
+
+                player3.SetActive(false);
+                player4.SetActive(true);
+                player1.SetActive(false);
+                player2.SetActive(false);
+            }
+            else if (LoginScript.CurrentLobby.third == user_who_end_turn)
+            {
+
+                player4.SetActive(false);
+                player1.SetActive(true);
+                player3.SetActive(false);
+                player2.SetActive(false);
+            }
+            }
+        });
+
     }
 
     // Update is called once per frame

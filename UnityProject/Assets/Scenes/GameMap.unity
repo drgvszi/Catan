@@ -61937,6 +61937,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ba90d0ebeeaa3468e9be1363d915c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ver: {fileID: 1431064208}
+  player1: {fileID: 939539844}
+  player2: {fileID: 1427787477}
+  player3: {fileID: 2009676157}
+  player4: {fileID: 247054990}
+  socket: {fileID: 0}
 --- !u!114 &2205872310042122224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62040,17 +62046,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ShowOrHide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
       - m_Target: {fileID: 2205872310042122127}
         m_MethodName: endTurn
         m_Mode: 1
@@ -62074,17 +62069,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 279553253}
-        m_MethodName: turn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
 --- !u!222 &2205872310042122229
 CanvasRenderer:
   m_ObjectHideFlags: 0
