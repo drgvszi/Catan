@@ -4,6 +4,7 @@ using UnityEngine;
 using SocketIO;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
+using Proyecto26;
 
 public class SocketIoscript : MonoBehaviour
 {
@@ -75,26 +76,26 @@ public class SocketIoscript : MonoBehaviour
                 casute.SetActive(true);
                 inter = GameObject.Find(intesection);
                 print(inter.name);
-                
+
                 if (user_who_built_settelment == LoginScript.CurrentLobby.master)
                 {
-                    
+
                     AfiseazaDrum.afiseaza(newPiece1, inter);
                 }
 
                 else if (user_who_built_settelment == LoginScript.CurrentLobby.first)
                 {
-          
+
                     AfiseazaDrum.afiseaza(newPiece2, inter);
                 }
                 else if (user_who_built_settelment == LoginScript.CurrentLobby.second)
                 {
-              
+
                     AfiseazaDrum.afiseaza(newPiece3, inter);
                 }
                 else if (user_who_built_settelment == LoginScript.CurrentLobby.third)
                 {
-        
+
                     AfiseazaDrum.afiseaza(newPiece4, inter);
                 }
                 casute.SetActive(false);
@@ -116,18 +117,18 @@ public class SocketIoscript : MonoBehaviour
 
                 if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "0")
                 {
-                    
+
                     AfiseazaDrum.afiseaza(newPieceR1, inter);
                     player1.SetActive(false);
                     player2.SetActive(true);
                     player3.SetActive(false);
                     player4.SetActive(false);
-                    
+
                 }
 
                 else if (user_who_built_road == LoginScript.CurrentLobby.first && ver.text == "0")
                 {
-              
+
                     AfiseazaDrum.afiseaza(newPieceR2, inter);
                     player2.SetActive(false);
                     player3.SetActive(true);
@@ -136,7 +137,7 @@ public class SocketIoscript : MonoBehaviour
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.second && ver.text == "0")
                 {
-              
+
                     AfiseazaDrum.afiseaza(newPieceR3, inter);
                     player3.SetActive(false);
                     player4.SetActive(true);
@@ -145,7 +146,7 @@ public class SocketIoscript : MonoBehaviour
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.third && ver.text == "0")
                 {
-       
+
                     AfiseazaDrum.afiseaza(newPieceR4, inter);
                     player4.SetActive(true);
                     player1.SetActive(false);
@@ -162,7 +163,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player3.SetActive(true);
                     player2.SetActive(false);
-              
+
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.second && ver.text == "1")
                 {
@@ -172,7 +173,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(false);
                     player3.SetActive(false);
                     player2.SetActive(true);
-       
+
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.first && ver.text == "1")
                 {
@@ -182,7 +183,7 @@ public class SocketIoscript : MonoBehaviour
                     player1.SetActive(true);
                     player3.SetActive(false);
                     player2.SetActive(false);
-            
+
                 }
                 else if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "1")
                 {
@@ -198,7 +199,7 @@ public class SocketIoscript : MonoBehaviour
                 drumuri.SetActive(false);
             }
 
-            
+
         });
         socket.On("RollDice", (E) =>
         {
@@ -372,43 +373,55 @@ public class SocketIoscript : MonoBehaviour
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
                 string user_who_end_turn = E.data[1].str;
-                          if (LoginScript.CurrentLobby.master == user_who_end_turn)
-                    {
-                        player1.SetActive(false);
-                        player2.SetActive(true);
-                        player3.SetActive(false);
-                        player4.SetActive(false);
+                if (LoginScript.CurrentLobby.master == user_who_end_turn)
+                {
+                    player1.SetActive(false);
+                    player2.SetActive(true);
+                    player3.SetActive(false);
+                    player4.SetActive(false);
 
-                    }
-                    else if (LoginScript.CurrentLobby.first == user_who_end_turn)
-                    {
-                        player2.SetActive(false);
-                        player3.SetActive(true);
-                        player1.SetActive(false);
-                        player4.SetActive(false);
-                    }
-                    else if (LoginScript.CurrentLobby.second == user_who_end_turn)
-                    {
+                }
+                else if (LoginScript.CurrentLobby.first == user_who_end_turn)
+                {
+                    player2.SetActive(false);
+                    player3.SetActive(true);
+                    player1.SetActive(false);
+                    player4.SetActive(false);
+                }
+                else if (LoginScript.CurrentLobby.second == user_who_end_turn)
+                {
 
-                        player3.SetActive(false);
-                        player4.SetActive(true);
-                        player1.SetActive(false);
-                        player2.SetActive(false);
-                    }
-                    else if (LoginScript.CurrentLobby.third == user_who_end_turn)
-                    {
+                    player3.SetActive(false);
+                    player4.SetActive(true);
+                    player1.SetActive(false);
+                    player2.SetActive(false);
+                }
+                else if (LoginScript.CurrentLobby.third == user_who_end_turn)
+                {
 
-                        player4.SetActive(false);
-                        player1.SetActive(true);
-                        player3.SetActive(false);
-                        player2.SetActive(false);
-                    }
+                    player4.SetActive(false);
+                    player1.SetActive(true);
+                    player3.SetActive(false);
+                    player2.SetActive(false);
+                }
             }
-        });
+            MakeRequestResponse command = new MakeRequestResponse();
+            command.gameId = LoginScript.CurrentUserGameId;
+            command.playerId = LoginScript.CurrentUserGEId;
+            RequestJson req = new RequestJson();
+            RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command).Then(Response =>
+            {
+                Debug.Log("Update code " +Response.code);
+                Debug.Log("Update status " + Response.status);
+                Debug.Log("Update arguments lumber " + Response.arguments.lumber);
+                Debug.Log("Update arguments settle " + Response.arguments.settlements[1]);
+                Debug.Log("Update roads " + Response.arguments.roads[0][1]);//NU MERGE ASTA
+                Debug.Log("Update roads " + Response.arguments.roads[0][0]);//NU MERGE NICI ASTA
+            }).Catch(err => { Debug.Log(err); });
 
+        });
     }
 
-    // Update is called once per frame
     void Update()
     {
         
