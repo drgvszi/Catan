@@ -8,10 +8,13 @@ using FullSerializer;
 using Proyecto26;
 using UnityEngine.SceneManagement;
 using System.IO;
+using SocketIO;
 using System.Text;
 
-public class MakeRequest 
+public class MakeRequest   
 {
+    public static SocketIOComponent socket;
+
     public static void rollDice( string CurrentUserGame, string CurrentUserId)
     {
         MakeRequestResponse command = new MakeRequestResponse();
@@ -80,6 +83,29 @@ public class MakeRequest
             Debug.Log(req.code);
             Debug.Log(req.arguments);
             Debug.Log(req.status);
+        }).Catch(err => { Debug.Log(err); });
+    }
+    public static void buyCity(string CurrentUserGame, string CurrentUserId)
+    {
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.intersection = 20;
+        RequestJson req = new RequestJson();
+        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buyCity", command).Then(Response =>
+        {
+            Debug.Log(Response.code);
+            Debug.Log(Response.status);
+            if (Response.code == 202)
+            {
+                JSONObject json_message = new JSONObject();
+                json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                json_message.AddField("username", LoginScript.CurrentUser);
+                json_message.AddField("intersection", command.intersection);
+                socket.Emit("buyCity", json_message);
+            }
         }).Catch(err => { Debug.Log(err); });
     }
 }

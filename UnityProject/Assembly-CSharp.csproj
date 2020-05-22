@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\AfiseazaDrum.cs" />
      <Compile Include="Assets\Scripts\BlockButt.cs" />
      <Compile Include="Assets\Scripts\BoardConnectivityJson.cs" />
+     <Compile Include="Assets\Scripts\BuildCity.cs" />
      <Compile Include="Assets\Scripts\BuildRoad.cs" />
      <Compile Include="Assets\Scripts\BuildSettlement.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />

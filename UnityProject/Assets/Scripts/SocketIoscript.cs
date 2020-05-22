@@ -420,6 +420,18 @@ public class SocketIoscript : MonoBehaviour
             }).Catch(err => { Debug.Log(err); });
 
         });
+        socket.On("buyCity", (E) =>
+        {
+            Debug.Log("buyCity");
+            if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+            {
+                Debug.Log("buyCity");
+                string user_who_built_settelment = E.data[1].str;
+                string intesection = E.data[2].ToString();
+                Debug.Log(intesection);
+                
+            }
+        });
     }
 
     void Update()
