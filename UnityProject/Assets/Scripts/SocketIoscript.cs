@@ -415,8 +415,8 @@ public class SocketIoscript : MonoBehaviour
                 Debug.Log("Update status " + Response.status);
                 Debug.Log("Update arguments lumber " + Response.arguments.lumber);
                 Debug.Log("Update arguments settle " + Response.arguments.settlements[1]);
-                Debug.Log("Update roads " + Response.arguments.roads[0][1]);//NU MERGE ASTA
-                Debug.Log("Update roads " + Response.arguments.roads[0][0]);//NU MERGE NICI ASTA
+               // Debug.Log("Update roads " + Response.arguments.roads[0][1]);//NU MERGE ASTA
+               // Debug.Log("Update roads " + Response.arguments.roads[0][0]);//NU MERGE NICI ASTA
             }).Catch(err => { Debug.Log(err); });
 
         });
