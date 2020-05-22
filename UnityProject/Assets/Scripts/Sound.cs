@@ -6,6 +6,8 @@ public class Sound : MonoBehaviour
 {
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(this.gameObject);
+        AudioSource music = GameObject.Find("Audio Source").GetComponent<AudioSource>();
+        music.volume = PlayerPrefs.GetFloat("music");
     }
 }
