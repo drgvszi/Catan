@@ -163,3 +163,90 @@ public int number;
 ```
 Where we have a field resources in arguments, it will be mapped to HexagonConnectivityJson.resource and so will happen to number.
 ### SocketIO in C# scripts
+If we broadcast information in the server side (NodeAPI) we shoudl do that also in C#.
+In the EmitStartGame() we have :
+```
+JSONObject json_message = new JSONObject(); 
+json_message.AddField("lobbyid",LoginScript.CurrentUserLobbyId);
+socket.Emit("gamestart", json_message);
+```
+What happens is that we create  JSON that will be emited, as I said before, to our server socketIO functionality. 
+### De continuat SOCKETIO
+### Tests for NodeAPI
+[https://github.com/georgiana-ojoc/Catan/blob/Connectivity/NodeApi/test/unitTests.js](https://github.com/georgiana-ojoc/Catan/blob/Connectivity/NodeApi/test/unitTests.js)
+
+For Tests we used different frameworks like Mocha and an assertion library that is often used alongside Mocha, Chai.
+How it works is that we randomize data for fake players.
+```
+const players=[
+
+	{email:Math.random().toString(36).slice(2),username:Math.random().toString(36).slice(2), password:Math.random().toString(36).slice(2)},
+
+	{email:Math.random().toString(36).slice(2),username:Math.random().toString(36).slice(2), password:Math.random().toString(36).slice(2)},
+
+	{email:Math.random().toString(36).slice(2),username:Math.random().toString(36).slice(2), password:Math.random().toString(36).slice(2)},
+
+	{email:Math.random().toString(36).slice(2),username:Math.random().toString(36).slice(2), password:Math.random().toString(36).slice(2)}
+
+]
+```
+Mocha uses describe() as a method to say how or what the test is supposed to do or test.
+This is how a register functionality is tested using Mocha:
+```
+describe('register unit test',function(){
+	it('returns OK on succesfull register',function(done){
+
+	for(var index=0;index<players.length;index++)
+
+	{
+
+		request.post({url:baseUrl+'/auth/register/',
+
+		json:{
+
+			email:players[index].email,
+
+			username:players[index].username,
+
+			password:players[index].password,
+
+			confirmpassword:players[index].password
+
+		},
+
+		timeout:300000},
+
+		function(error,response,body){
+
+			expect(response.statusCode).to.equal(200);
+
+		});
+
+	}
+	done();});
+
+});
+```
+To check if the result of the function is the result we are looking for (if the function was successful) we will use Chai.
+```
+var  expect=require("chai").expect;
+```
+Its ```expect``` keyword to compare the result of our feature’s implementation and the result we _expect_ to get.
+Because we are testing a server's response via HTTP protocol, we can use request.
+```
+var  request=require("request");
+request.post({url:baseUrl+'/auth/register/', json:{ 
+	email:players[index].email, 
+	username:players[index].username, 
+	password:players[index].password, 	
+	confirmpassword:players[index].password }, 
+	timeout:300000}, 
+	function(error,response,body){ 	
+			expect(response.statusCode).to.equal(200); 
+		});
+```
+```request``` requires 2 parameters. First is the url we are making the request to. In this case we attach a json to out reques, so we wrap the parameter in {}. The second parameter is a function that will be executed after the request is done. The in the callback function we set our expectations.
+```
+expect(response.statusCode).to.equal(200)
+```
+If the statusCode is actually 200, the test will be succesfully.
