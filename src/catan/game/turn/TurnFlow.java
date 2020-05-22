@@ -513,11 +513,12 @@ public class TurnFlow {
                 Map<String, Object> responseArguments = result.getValue();
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
+                    return false;
                 } else {
                     response = new UserResponse(HttpStatus.SC_OK, "The resource cards were stolen successfully.",
                             responseArguments);
+                    return true;
                 }
-                return true;
             }
         });
 
