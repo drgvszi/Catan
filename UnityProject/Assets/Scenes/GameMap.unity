@@ -2441,7 +2441,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &129085993
 MonoBehaviour:
@@ -2456,11 +2456,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 129085992}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 53
 --- !u!1 &132249589
 GameObject:
@@ -10543,7 +10544,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &607771346
 MonoBehaviour:
@@ -10558,11 +10559,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 607771345}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 33
 --- !u!1 &609269233
 GameObject:
@@ -11624,7 +11626,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &708904072
 MonoBehaviour:
@@ -11639,11 +11641,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 708904071}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 43
 --- !u!1 &723676454
 GameObject:
@@ -16214,7 +16217,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &997119180
 MonoBehaviour:
@@ -16229,11 +16232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 997119179}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 46
 --- !u!1 &999044877
 GameObject:
@@ -16569,7 +16573,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1011529050
 MonoBehaviour:
@@ -16584,11 +16588,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 1011529049}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 29
 --- !u!1 &1012286148
 GameObject:
@@ -18599,7 +18604,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1128984807
 MonoBehaviour:
@@ -18614,11 +18619,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 1128984806}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 36
 --- !u!1 &1129157420
 GameObject:
@@ -20069,12 +20075,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192715086}
   m_CullTransparentMesh: 0
---- !u!4 &1194240211 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3647371318331683944}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1198193139
 GameObject:
   m_ObjectHideFlags: 0
@@ -24784,7 +24784,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1534432260
 MonoBehaviour:
@@ -24799,11 +24799,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 1534432259}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 26
 --- !u!1 &1536630337
 GameObject:
@@ -35050,7 +35051,6 @@ Transform:
   m_LocalPosition: {x: -0.61378527, y: 7.8393555, z: -3.728589}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1194240211}
   - {fileID: 129085992}
   - {fileID: 1534432259}
   - {fileID: 1011529049}
@@ -35313,7 +35313,7 @@ Transform:
   m_LocalScale: {x: 0.68890923, y: 0.6889092, z: 0.6889092}
   m_Children: []
   m_Father: {fileID: 2099205420}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &2119144002
 MonoBehaviour:
@@ -35328,11 +35328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 2119144001}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port1: {fileID: 6744483349563749564, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
+  port2: {fileID: 1392585299305405153, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
+  port3: {fileID: 4725731725731256658, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
+  port4: {fileID: 7536138964318563485, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
+  port5: {fileID: 264636358163218813, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
+  port6: {fileID: 8166513148728297053, guid: 848d97ae8feeed44ca424d7a984a083e, type: 3}
   nr: 40
 --- !u!1 &2126992863
 GameObject:
@@ -70934,110 +70935,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3017324942126776183}
   m_Mesh: {fileID: -3531300166310004648, guid: 6bec00f6d70833e48bb775c8c2733010, type: 3}
---- !u!1001 &3647371318331683944
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2099205420}
-    m_Modifications:
-    - target: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_Name
-      value: Ports-01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976954, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.443785
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.347351
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3647371319490976955, guid: 733aa87fbb7009a45890f6464528447c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
---- !u!1 &3647371318331683945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3647371318331683944}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3647371318331683946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3647371318331683945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba7e46e6798704d49ae1ec1bf6e4362a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spawn: {fileID: 1194240211}
-  port1: {fileID: 3647371319490976953, guid: 733aa87fbb7009a45890f6464528447c, type: 3}
-  port2: {fileID: 4475763297589508394, guid: d6bff523047e29c46aa38d7f7be5d4a3, type: 3}
-  port3: {fileID: 5518216546988982090, guid: 349dfd294f6e39f44a9698fb1a216695, type: 3}
-  port4: {fileID: 5897795878376658475, guid: 373b2e34220fac343930744de5b1dce6, type: 3}
-  port5: {fileID: 7875961836658898044, guid: 3cd7d17f83f5029448039ef24dc59304, type: 3}
-  nr: 49
 --- !u!33 &3685010783814967086
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92214,7 +92111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 0
 --- !u!222 &7550251942412074531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92318,7 +92215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 9
+  m_Text: 0
 --- !u!1 &7550251942414723909
 GameObject:
   m_ObjectHideFlags: 0
@@ -92441,7 +92338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 7
+  m_Text: 0
 --- !u!222 &7550251942423273551
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92545,7 +92442,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 0
 --- !u!1 &7550251942427290957
 GameObject:
   m_ObjectHideFlags: 0
@@ -92681,7 +92578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 8
+  m_Text: 0
 --- !u!222 &7550251942543751729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93610,7 +93507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 6
+  m_Text: 0
 --- !u!1 &7550251943039922237
 GameObject:
   m_ObjectHideFlags: 0
@@ -94142,7 +94039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 0
 --- !u!1 &7550251943334331699
 GameObject:
   m_ObjectHideFlags: 0
@@ -94219,7 +94116,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 6
+  m_Text: 0
 --- !u!1 &7550251943341932423
 GameObject:
   m_ObjectHideFlags: 0
@@ -94296,7 +94193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 0
 --- !u!1 &7550251943374417343
 GameObject:
   m_ObjectHideFlags: 0
@@ -94346,7 +94243,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 8
+  m_Text: 0
 --- !u!222 &7550251943380657359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94523,7 +94420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 0
 --- !u!1 &7550251943555801225
 GameObject:
   m_ObjectHideFlags: 0
@@ -95115,7 +95012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!1 &7550251943818324155
 GameObject:
   m_ObjectHideFlags: 0
@@ -95478,7 +95375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 0
 --- !u!222 &7550251944072807771
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -95701,7 +95598,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 0
 --- !u!222 &7550251944274234529
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -95778,7 +95675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 7
+  m_Text: 0
 --- !u!222 &7550251944284914917
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96151,7 +96048,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 0
 --- !u!222 &7550251944464733563
 CanvasRenderer:
   m_ObjectHideFlags: 0

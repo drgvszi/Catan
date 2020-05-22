@@ -10,6 +10,7 @@ public class PlacePort : MonoBehaviour
     public GameObject port3;
     public GameObject port4;
     public GameObject port5;
+    public GameObject port6;
     public int nr;
     bool done = false;
     void Start()
@@ -47,7 +48,7 @@ public class PlacePort : MonoBehaviour
                         Instantiate(port5, Spawn.position, Spawn.rotation);
                         break;
                     case "Grain":
-                        Instantiate(port5, Spawn.position, Spawn.rotation);
+                        Instantiate(port6, Spawn.position, Spawn.rotation);
                         break;
 
 
