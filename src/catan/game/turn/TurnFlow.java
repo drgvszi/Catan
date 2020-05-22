@@ -469,7 +469,7 @@ public class TurnFlow {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.BankNoRoad), null);
                     return false;
                 }
-                currentPlayer.setRoadsToBuild(Math.min(bank.getRoadsNumber(currentPlayer), 0));
+                currentPlayer.setRoadsToBuild(Math.min(bank.getRoadsNumber(currentPlayer), 2));
                 response = new UserResponse(HttpStatus.SC_OK, "You can use Road Building development card.",
                         null);
                 return true;
