@@ -74,7 +74,9 @@ public class ManagerRequest implements GameRequest {
                             gameId = randomString.nextString();
                         } while (Application.games.containsKey(gameId) || Application.players.contains(gameId));
                     }
-                    Application.games.put(gameId, new BaseGame());
+                    synchronized (Application.games) {
+                        Application.games.put(gameId, new BaseGame());
+                    }
                     Map<String, String> payload = new HashMap<>();
                     payload.put("gameId", gameId);
                     String responseJson = new ObjectMapper().writeValueAsString(payload);
@@ -121,8 +123,13 @@ public class ManagerRequest implements GameRequest {
                         playerId = randomString.nextString();
                     } while (Application.games.containsKey(playerId) || Application.players.contains(playerId));
                 }
-                game.addPlayer(playerId, new Player(playerId, Application.games.get(gameId)));
-                game.addNextPlayer(playerId);
+                synchronized (Application.players) {
+                    Application.players.add(playerId);
+                }
+                synchronized (Application.games.get(gameId)) {
+                    game.addPlayer(playerId, new Player(playerId, Application.games.get(gameId)));
+                    game.addNextPlayer(playerId);
+                }
                 Map<String, String> payload = new HashMap<>();
                 payload.put("playerId", playerId);
                 String responseJson = new ObjectMapper().writeValueAsString(payload);

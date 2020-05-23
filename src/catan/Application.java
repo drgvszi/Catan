@@ -15,8 +15,8 @@ import java.util.Map;
 @Controller
 @SpringBootApplication
 public class Application {
-    public static Map<String, Game> games = new HashMap<>();
-    public static List<String> players = new ArrayList<>();
+    public static final Map<String, Game> games = new HashMap<>();
+    public static final List<String> players = new ArrayList<>();
 
     @RequestMapping("/")
     @ResponseBody
