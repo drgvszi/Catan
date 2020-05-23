@@ -305,6 +305,7 @@ public class TurnFlow {
                 Code code = game.noPlayerTrade(port, offer, request);
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
+                    return false;
                 } else {
                     response = new UserResponse(HttpStatus.SC_OK, "The trade was made successfully.", null);
                 }
