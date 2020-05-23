@@ -11,6 +11,7 @@ public class SocketIoscript : MonoBehaviour
     public SocketIOComponent socket;
     GameObject inter;
     GameObject inter1;
+    GameObject interO;
     public GameObject newPiece1;
     public GameObject newPiece2;
     public GameObject newPiece3;
@@ -19,6 +20,10 @@ public class SocketIoscript : MonoBehaviour
     public GameObject newPieceR2;
     public GameObject newPieceR3;
     public GameObject newPieceR4;
+    public GameObject newPieceO1;
+    public GameObject newPieceO2;
+    public GameObject newPieceO3;
+    public GameObject newPieceO4;
     public GameObject player1;
     public GameObject player2;
     public GameObject player3;
@@ -428,8 +433,29 @@ public class SocketIoscript : MonoBehaviour
                 Debug.Log("buyCity");
                 string user_who_built_settelment = E.data[1].str;
                 string intesection = E.data[2].ToString();
-                Debug.Log(intesection);
-                
+                interO = GameObject.Find(intesection);
+                ///Debug.Log(intesection);
+
+                if (user_who_built_settelment == LoginScript.CurrentLobby.master)
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceO1, interO);
+                }
+
+                else if (user_who_built_settelment == LoginScript.CurrentLobby.first)
+                {
+                    AfiseazaDrum.afiseaza(newPieceO2, interO);
+                }
+                else if (user_who_built_settelment == LoginScript.CurrentLobby.second)
+                {
+                    AfiseazaDrum.afiseaza(newPieceO3, interO);
+                }
+                else if (user_who_built_settelment == LoginScript.CurrentLobby.third)
+                {
+                    AfiseazaDrum.afiseaza(newPieceO4, interO);
+                }
+
+
             }
         });
         socket.On("playerTrade", (E) =>

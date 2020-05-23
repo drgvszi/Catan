@@ -10,7 +10,8 @@ public class test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inter = GameObject.Find("4" + " " + "3");
-        print(inter.name);
+        inter = GameObject.Find("51");
+        string asd = inter.name;
+        print(asd);
     }
 }
