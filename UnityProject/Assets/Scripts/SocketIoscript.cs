@@ -432,6 +432,15 @@ public class SocketIoscript : MonoBehaviour
                 
             }
         });
+        socket.On("playerTrade", (E) =>
+        {
+            Debug.Log("playerTrade");
+            if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+            {
+                Debug.Log("intra in if");
+
+            }
+        });
     }
 
     void Update()

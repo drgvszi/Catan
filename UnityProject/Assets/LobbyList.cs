@@ -161,18 +161,13 @@ public class LobbyList : MonoBehaviour
 
                 UnityConnectivityCommand getgeid = new UnityConnectivityCommand();
             //getgeid.username = "mmoruz";
-            getgeid.username = LoginScript.CurrentUser;
+                getgeid.username = LoginScript.CurrentUser;
                 RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/geid", getgeid).Then(response =>
                 {
                     LoginScript.CurrentUserGEId = response.Text;
                     LoginScript.CurrentLobby = new Lobby(LoginScript.CurrentUserExtension, "-", "-", "-", LoginScript.CurrentUser, LoginScript.CurrentUserGameId, LoginScript.CurrentUserLobbyId);
-
-
                     SceneChanger scene = new SceneChanger();
                     scene.goToWaitingRoom();
-
-
-
 
                 }).Catch(err => { Debug.Log(err); });
 

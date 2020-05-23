@@ -10,4 +10,7 @@ public class MakeRequestResponse
     public int intersection;
     public int start;
     public int end;
+    public int port;
+    public string offer;
+    public string request;
 }

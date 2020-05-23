@@ -108,6 +108,62 @@ public class MakeRequest
             }
         }).Catch(err => { Debug.Log(err); });
     }
+    public static void bankTrade(string CurrentUserGame, string CurrentUserId)
+    {
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.port = -1;
+        command.offer = "wool";
+        command.request = "lumber";
+        RequestJson req = new RequestJson();
+        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/noPlayerTrade", command).Then(Response =>
+        {
+            Debug.Log(Response.code);
+            Debug.Log(Response.status);
+        }).Catch(err => { Debug.Log(err); });
+    }
+    public static void playerTrade(string CurrentUserGame, string CurrentUserId)
+    {
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
+        TradePlayerJson command = new TradePlayerJson();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.lumber_o = 1;
+        command.wool_o = 2;
+        command.grain_o = 3;
+        command.brick_o = 4;
+        command.ore_o = 5;
+        command.lumber_r = 6;
+        command.wool_r = 7;
+        command.grain_r = 8;
+        command.brick_r = 9;
+        command.ore_r = 10;
+        RequestJson req = new RequestJson();
+        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/playerTrade", command).Then(Response =>
+        {
+            Debug.Log(Response.code);
+            Debug.Log(Response.status);
+
+            JSONObject json_message = new JSONObject();
+            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+            json_message.AddField("username", LoginScript.CurrentUser);
+            json_message.AddField("lumber_o", command.lumber_o);
+            json_message.AddField("wool_o", command.wool_o);
+            json_message.AddField("grain_o", command.grain_o);
+            json_message.AddField("brick_o", command.brick_o);
+            json_message.AddField("ore_o", command.ore_o);
+            json_message.AddField("lumber_r", command.lumber_r);
+            json_message.AddField("wool_r", command.wool_r);
+            json_message.AddField("grain_r", command.grain_r);
+            json_message.AddField("brick_r", command.brick_r);
+            json_message.AddField("ore_r", command.ore_r);
+
+            socket.Emit("playerTrade", json_message);
+
+        }).Catch(err => { Debug.Log(err); });
+    }
 }
 
 
