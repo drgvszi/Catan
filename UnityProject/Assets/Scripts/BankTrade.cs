@@ -28,7 +28,7 @@ public class BankTrade : MonoBehaviour
     
     public void Trade()
     {
-        
+        print("banktrade");
         string str=null;
         string str1=null;
         if (togle0.isOn)
