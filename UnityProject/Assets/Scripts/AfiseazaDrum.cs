@@ -20,4 +20,5 @@ public class AfiseazaDrum : MonoBehaviour
     {
         Instantiate(o, x.transform.position, x.transform.rotation);
     }
+
 }

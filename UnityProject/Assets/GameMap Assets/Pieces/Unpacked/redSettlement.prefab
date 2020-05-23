@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5117005820959479921}
   - component: {fileID: 4204188393865372231}
   - component: {fileID: 7594421897280986814}
-  - component: {fileID: -6748027888488355676}
   - component: {fileID: -2891805662041124487}
   m_Layer: 0
   m_Name: redSettlement
@@ -81,19 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-6748027888488355676
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8167304820134488674}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.007, y: 0.006, z: 0.004}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-2891805662041124487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +96,9 @@ MonoBehaviour:
   newPiece: {fileID: 4638112797438592866, guid: 0b7e26b7ca49e08439f06de2854a4fa1,
     type: 3}
   ok: 0
+  newPieceO1: {fileID: 0}
+  newPieceO2: {fileID: 0}
+  newPieceO3: {fileID: 0}
+  newPieceO4: {fileID: 0}
+  numar: 0
+  socket: {fileID: 0}

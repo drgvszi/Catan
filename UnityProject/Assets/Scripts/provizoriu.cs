@@ -47,6 +47,7 @@ public class provizoriu : MonoBehaviour
             command.playerId = LoginScript.CurrentUserGEId;
             command.intersection = numar;
             RequestJson req = new RequestJson();
+            
             RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildSettlement", command).Then(Response =>
             {
                 req.code = Response.code;
