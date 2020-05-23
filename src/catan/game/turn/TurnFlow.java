@@ -306,9 +306,8 @@ public class TurnFlow {
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
-                } else {
-                    response = new UserResponse(HttpStatus.SC_OK, "The trade was made successfully.", null);
                 }
+                response = new UserResponse(HttpStatus.SC_OK, "The trade was made successfully.", null);
                 return true;
             }
         });
@@ -515,11 +514,10 @@ public class TurnFlow {
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
-                } else {
-                    response = new UserResponse(HttpStatus.SC_OK, "The resource cards were stolen successfully.",
-                            responseArguments);
-                    return true;
                 }
+                response = new UserResponse(HttpStatus.SC_OK, "The resource cards were stolen successfully.",
+                        responseArguments);
+                return true;
             }
         });
 
@@ -590,12 +588,11 @@ public class TurnFlow {
                     fsm.ProcessFSM("endGame");
                     response = new UserResponse(HttpStatus.SC_OK, "The game has ended successfully.", null);
                     return false;
-                } else {
-                    fsm.ProcessFSM("endGame");
-                    response = new UserResponse(HttpStatus.SC_OK,
-                            "The game has ended because there are not enough active players.", null);
-                    return false;
                 }
+                fsm.ProcessFSM("endGame");
+                response = new UserResponse(HttpStatus.SC_OK,
+                        "The game has ended because there are not enough active players.", null);
+                return false;
             }
         });
 
