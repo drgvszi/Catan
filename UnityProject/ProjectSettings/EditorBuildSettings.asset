@@ -9,36 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/WelcomeScene.unity
     guid: a5a06ca349139534f8cc1094d2fc7747
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/RegisterScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/LoginScene.unity
     guid: d7897c01e6c19574ea48543545faf635
   - enabled: 1
-    path: Assets/Scenes/RegisterScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/SettingsScene.unity
-    guid: d456bcbfa0ff36b4fbb7d4aea9389d34
+    path: Assets/Scenes/MenuScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/ProfileSettingsScene.unity
     guid: 3f4d3eb64d4b016489dc86363ab361a6
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LobbyScene.unity
     guid: 02e77d5ad8922214f929fb3d358d7f02
   - enabled: 1
-    path: Assets/Scenes/TermsScene.unity
-    guid: d0e4bffd1fa384f089f87a2785a36585
+    path: Assets/Scenes/SettingsScene.unity
+    guid: d456bcbfa0ff36b4fbb7d4aea9389d34
   - enabled: 1
     path: Assets/Scenes/GameMap.unity
     guid: c10aca8f1ff7cfe4fb12a6afcb6e185d
   - enabled: 1
-    path: Assets/Scenes/WaitingRoom.unity
-    guid: 1d6061eacc34bad43bc7492e6e9fb381
-  - enabled: 1
     path: Assets/Scenes/LobbyList.unity
     guid: 9933db651204147e1aff3a72c320a477
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: d82e39cef758b5d4b8ebf80bf285c51d
   m_configObjects: {}
