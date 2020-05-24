@@ -84,46 +84,47 @@ public class Dices : MonoBehaviour
 
             j = Response.arguments.dice_1;
             i = Response.arguments.dice_2;
-                if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
-                {
 
-                    lumber.text = Response.arguments.lumber_3.ToString();
-                    ore.text = Response.arguments.ore_3.ToString();
-                    grain.text = Response.arguments.grain_3.ToString();
-                    brick.text = Response.arguments.brick_3.ToString();
-                    wool.text = Response.arguments.wool_3.ToString();
+            if(LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
+            {
 
-                }
-                else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
-                {
+                lumber.text = (int.Parse(lumber.text) + Response.arguments.lumber_3).ToString();
+                ore.text = (int.Parse(ore.text) + Response.arguments.ore_3).ToString();
+                grain.text = (int.Parse(grain.text) + Response.arguments.grain_3).ToString();
+                brick.text = (int.Parse(brick.text) + Response.arguments.brick_3).ToString();
+                wool.text = (int.Parse(wool.text) + Response.arguments.wool_3).ToString();
 
-                    lumber.text = Response.arguments.lumber_2.ToString();
-                    ore.text = Response.arguments.ore_2.ToString();
-                    grain.text = Response.arguments.grain_2.ToString();
-                    brick.text = Response.arguments.brick_2.ToString();
-                    wool.text = Response.arguments.wool_2.ToString();
+            }
+            else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
+            {
 
-                }
-                else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
-                {
+                lumber.text = (int.Parse(lumber.text) + Response.arguments.lumber_2).ToString();
+                ore.text = (int.Parse(ore.text) + Response.arguments.ore_2).ToString();
+                grain.text = (int.Parse(grain.text) + Response.arguments.grain_2).ToString();
+                brick.text = (int.Parse(brick.text) + Response.arguments.brick_2).ToString();
+                wool.text = (int.Parse(wool.text) + Response.arguments.wool_2).ToString();
 
-                    lumber.text = Response.arguments.lumber_1.ToString();
-                    ore.text = Response.arguments.ore_1.ToString();
-                    grain.text = Response.arguments.grain_1.ToString();
-                    brick.text = Response.arguments.brick_1.ToString();
-                    wool.text = Response.arguments.wool_1.ToString();
+            }
+            else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
+            {
 
-                }
-                else if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
-                {
+                lumber.text = (int.Parse(lumber.text) + Response.arguments.lumber_1).ToString();
+                ore.text = (int.Parse(ore.text) + Response.arguments.ore_1).ToString();
+                grain.text = (int.Parse(grain.text) + Response.arguments.grain_1).ToString();
+                brick.text = (int.Parse(brick.text) + Response.arguments.brick_1).ToString();
+                wool.text = (int.Parse(wool.text) + Response.arguments.wool_1).ToString();
 
-                    lumber.text = Response.arguments.lumber_0.ToString();
-                    ore.text = Response.arguments.ore_0.ToString();
-                    grain.text = Response.arguments.grain_0.ToString();
-                    brick.text = Response.arguments.brick_0.ToString();
-                    wool.text = Response.arguments.wool_0.ToString();
+            }
+            else if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+            {
 
-                }
+                lumber.text = (int.Parse(lumber.text) + Response.arguments.lumber_0).ToString();
+                ore.text = (int.Parse(ore.text) + Response.arguments.ore_0).ToString();
+                grain.text = (int.Parse(grain.text) + Response.arguments.grain_0).ToString();
+                brick.text = (int.Parse(brick.text) + Response.arguments.brick_0).ToString();
+                wool.text = (int.Parse(wool.text) + Response.arguments.wool_0).ToString();
+
+            }
 
 
                 switch (j)
