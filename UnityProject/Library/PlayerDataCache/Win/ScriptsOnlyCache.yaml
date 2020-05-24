@@ -628,7 +628,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 67644}
+      Script: {instanceID: 67148}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -823,7 +823,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13424}
     - Class: 114
-      Script: {instanceID: 80004}
+      Script: {instanceID: 79488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1050,7 +1050,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 98e3e3002f1afa15a5f1efda0f13050a
+      Hash: dde9d47c2456e77cc4359dd7018b0e66
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BankTrade
@@ -1542,7 +1542,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 6aea6c1e188f29809d50100ede839f52
+      Hash: 3221d8f1bf7eba515d6662883e52d1aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: changetogle
@@ -1745,4 +1745,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LobbyList.unity
   - Assets/Scenes/WaitingRoom.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/4321/UnityProject.exe
+  playerPath: D:/234/UnityProject.exe

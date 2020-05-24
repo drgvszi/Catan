@@ -13900,8 +13900,8 @@ MonoBehaviour:
   sside5: {fileID: 569374663}
   sside6: {fileID: 176303715}
   lumber: {fileID: 371030346}
-  ore: {fileID: 694343209}
-  brick: {fileID: 1301698132}
+  ore: {fileID: 1301698132}
+  brick: {fileID: 694343209}
   grain: {fileID: 1215494028}
   wool: {fileID: 145854600}
   socket: {fileID: 0}
