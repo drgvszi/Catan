@@ -85,7 +85,6 @@ public class SocketIoscript : MonoBehaviour
 
     public void setupEvents()
     {
-        
         socket.On("wantToTrade", (E) =>
         {
             
@@ -104,6 +103,18 @@ public class SocketIoscript : MonoBehaviour
                         Debug.Log("SendParteners " + Response.code);
                         Debug.Log("Send Parteners " + Response.status);
                         Debug.Log("Send Partenets " + Response.arguments.player_0);
+                        SelectedPartener commandSelect = new SelectedPartener();
+                        commandSelect.gameId = LoginScript.CurrentUserGameId;
+                        commandSelect.playerId = LoginScript.CurrentUserGEId;
+                        commandSelect.player = Response.arguments.player_0;
+                        Debug.Log("Playerul este: " + commandSelect.player);
+                        RequestJson request = new RequestJson();
+                        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/selectPartner", commandSelect).Then(Response2 =>
+                        {
+                            Debug.Log("SelectPartener " + Response2.code);
+                            Debug.Log("SelectPartener " + Response2.status);
+
+                        }).Catch(err => { Debug.Log(err); });
 
                     }).Catch(err => { Debug.Log(err); });
                 }
