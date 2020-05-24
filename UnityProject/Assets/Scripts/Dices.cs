@@ -46,9 +46,7 @@ public class Dices : MonoBehaviour
             req.code = Response.code;
             req.status = Response.status;
            
-
-            if (req.code == 200)
-            { 
+ 
                 Debug.Log(Response.code);
             Debug.Log(Response.status);
             JSONObject json_message = new JSONObject();
@@ -242,7 +240,6 @@ public class Dices : MonoBehaviour
                         sside6.SetActive(true);
                         break;
                 }
-            }
             txt.text = req.status;
         }).Catch(err => { Debug.Log(err); });
 
