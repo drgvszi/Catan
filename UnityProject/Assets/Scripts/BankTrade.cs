@@ -25,7 +25,13 @@ public class BankTrade : MonoBehaviour
     public Toggle togle8;
     public Toggle togle9;
 
-    
+    public Text lumber;
+    public Text ore;
+    public Text brick;
+    public Text grain;
+    public Text wool;
+
+
     public void Trade()
     {
         print("banktrade");
@@ -79,5 +85,27 @@ public class BankTrade : MonoBehaviour
 
 
         }).Catch(err => { Debug.Log(err); });
+        
+        command = new MakeRequestResponse();
+        command.gameId = LoginScript.CurrentUserGameId;
+        command.playerId = LoginScript.CurrentUserGEId;
+        req = new RequestJson();
+        RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command).Then(Response =>
+        {
+            Debug.Log("Update code " + Response.code);
+            Debug.Log("Update status " + Response.status);
+            Debug.Log("Update arguments lumber " + Response.arguments.lumber);
+            Debug.Log("Update arguments settle " + Response.arguments.settlements[1]);
+            // Debug.Log("Update roads " + Response.arguments.roads[0][1]);//NU MERGE ASTA
+            // Debug.Log("Update roads " + Response.arguments.roads[0][0]);//NU MERGE NICI ASTA
+
+            lumber.text = Response.arguments.lumber.ToString();
+            ore.text = Response.arguments.ore.ToString();
+            grain.text = Response.arguments.grain.ToString();
+            brick.text = Response.arguments.brick.ToString();
+            wool.text = Response.arguments.wool.ToString();
+
+        }).Catch(err => { Debug.Log(err); });
+
     }
 }
