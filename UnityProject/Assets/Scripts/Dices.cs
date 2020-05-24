@@ -45,7 +45,11 @@ public class Dices : MonoBehaviour
         {
             req.code = Response.code;
             req.status = Response.status;
-            Debug.Log(Response.code);
+           
+
+            if (req.code == 200)
+            { 
+                Debug.Log(Response.code);
             Debug.Log(Response.status);
             JSONObject json_message = new JSONObject();
             json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
@@ -80,9 +84,6 @@ public class Dices : MonoBehaviour
 
             j = Response.arguments.dice_1;
             i = Response.arguments.dice_2;
-
-            if (req.code == 200)
-            {
                 if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
                 {
 
