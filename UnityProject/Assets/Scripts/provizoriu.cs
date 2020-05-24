@@ -27,6 +27,12 @@ public class provizoriu : MonoBehaviour
     public Text ver;
     public int numar;
 
+    public Text lumber;
+    public Text ore;
+    public Text brick;
+    public Text grain;
+    public Text wool;
+
     public int capat1;
     public int capat2;
     public SocketIOComponent socket;
@@ -42,171 +48,304 @@ public class provizoriu : MonoBehaviour
 
         if (numar != -1)
         {
-            MakeRequestResponse command = new MakeRequestResponse();
-            command.gameId = LoginScript.CurrentUserGameId;
-            command.playerId = LoginScript.CurrentUserGEId;
-            command.intersection = numar;
-            RequestJson req = new RequestJson();
-            
-            RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildSettlement", command).Then(Response =>
+
+            if (ver.text == "2")
             {
-                req.code = Response.code;
-                req.status = Response.status;
-                if (req.code == 200)
+
+                MakeRequestResponse command = new MakeRequestResponse();
+                command.gameId = LoginScript.CurrentUserGameId;
+                command.playerId = LoginScript.CurrentUserGEId;
+                command.intersection = numar;
+                RequestJson req = new RequestJson();
+
+                RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buySettlement", command).Then(Response =>
                 {
-                    JSONObject json_message = new JSONObject();
-                    json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                    json_message.AddField("username", LoginScript.CurrentUser);
-                    json_message.AddField("intersection", command.intersection);
-                    print(command.intersection);
-                    socket.Emit("buildsettlement", json_message);
-                    allPieces.SetActive(false);
-
-                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+                    req.code = Response.code;
+                    req.status = Response.status;
+                    if (req.code == 200)
                     {
-                        AfiseazaDrum.afiseaza(newPiece1, piece);
+                        
+                        allPieces.SetActive(false);
 
+                        if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece1, piece);
+
+                        }
+                        else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece2, piece);
+                        }
+                        else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece3, piece);
+
+                        }
+                        else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece4, piece);
+
+                        }
+                        
+
+                        int x = int.Parse(lumber.text) - 1;
+                        lumber.text = x.ToString();
+                        x = int.Parse(brick.text) - 1;
+                        brick.text = x.ToString();
+                        x = int.Parse(grain.text) - 1;
+                        grain.text = x.ToString();
+                        x = int.Parse(wool.text) - 1;
+                        wool.text = x.ToString();
+
+                        JSONObject json_message = new JSONObject();
+                        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                        json_message.AddField("username", LoginScript.CurrentUser);
+                        json_message.AddField("intersection", command.intersection);
+                        print(command.intersection);
+                        socket.Emit("buildsettlement", json_message);
                     }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
+
+                    Debug.Log(req.code);
+                    Debug.Log(req.status);
+
+                    txt.text = req.status;
+                }).Catch(err => { Debug.Log(err); });
+
+            }
+            else
+            {
+                MakeRequestResponse command = new MakeRequestResponse();
+                command.gameId = LoginScript.CurrentUserGameId;
+                command.playerId = LoginScript.CurrentUserGEId;
+                command.intersection = numar;
+                RequestJson req = new RequestJson();
+
+                RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildSettlement", command).Then(Response =>
+                {
+                    req.code = Response.code;
+                    req.status = Response.status;
+                    if (req.code == 200)
                     {
-                        AfiseazaDrum.afiseaza(newPiece2, piece);
+                        JSONObject json_message = new JSONObject();
+                        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                        json_message.AddField("username", LoginScript.CurrentUser);
+                        json_message.AddField("intersection", command.intersection);
+                        print(command.intersection);
+                        socket.Emit("buildsettlement", json_message);
+                        allPieces.SetActive(false);
+
+                        if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece1, piece);
+
+                        }
+                        else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece2, piece);
+                        }
+                        else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece3, piece);
+
+                        }
+                        else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece4, piece);
+
+                        }
                     }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
-                    {
-                        AfiseazaDrum.afiseaza(newPiece3, piece);
+                    Debug.Log(req.code);
+                    Debug.Log(req.status);
 
-                    }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
-                    {
-                        AfiseazaDrum.afiseaza(newPiece4, piece);
+                    
 
-                    }
-                }
-                Debug.Log(req.code);
-                Debug.Log(req.status);
-               
-                txt.text = req.status;
-            }).Catch(err => { Debug.Log(err); });
+                    txt.text = req.status;
+                }).Catch(err => { Debug.Log(err); });
 
-
+            }
         }
         else
         {
-            MakeRequestResponse command = new MakeRequestResponse();
-            command.gameId = LoginScript.CurrentUserGameId;
-            command.playerId = LoginScript.CurrentUserGEId;
-            command.intersection = 0;
-            command.start = capat1;
-            command.end = capat2;
-            //Debug.Log(CurrentUserGame);
-            //Debug.Log(CurrentUserId);
-            RequestJson req = new RequestJson();
-
-
-            RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildRoad", command).Then(Response =>
+            if (ver.text == "2")
             {
-                req.code = Response.code;
-                req.status = Response.status;
-                if (req.code == 200)
+                MakeRequestResponse command = new MakeRequestResponse();
+                command.gameId = LoginScript.CurrentUserGameId;
+                command.playerId = LoginScript.CurrentUserGEId;
+                command.intersection = 0;
+                command.start = capat1;
+                command.end = capat2;
+                //Debug.Log(CurrentUserGame);
+                //Debug.Log(CurrentUserId);
+                RequestJson req = new RequestJson();
+
+
+                RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buyRoad", command).Then(Response =>
                 {
-                    JSONObject json_message = new JSONObject();
-                    json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                    json_message.AddField("username", LoginScript.CurrentUser);
-                    json_message.AddField("start", command.start);
-                    json_message.AddField("end", command.end);
-                    socket.Emit("buildroad", json_message);
-                    allPieces.SetActive(false);
-                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && ver.text=="0")
+                    req.code = Response.code;
+                    req.status = Response.status;
+                    if (req.code == 200)
                     {
-                        AfiseazaDrum.afiseaza(newPiece1, piece);
-                        player1.SetActive(false);
-                        player2.SetActive(true);
-                        player3.SetActive(false);
-                        player4.SetActive(false);
+                          JSONObject json_message = new JSONObject();
+                        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                        json_message.AddField("username", LoginScript.CurrentUser);
+                        json_message.AddField("start", command.start);
+                        json_message.AddField("end", command.end);
+                        socket.Emit("buildroad", json_message);
+                        allPieces.SetActive(false);
+                        if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece1, piece);
+
+                        }
+                        else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece2, piece);
+                        }
+                        else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece3, piece);
+
+                        }
+                        else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
+                        {
+                            AfiseazaDrum.afiseaza(newPiece4, piece);
+
+                        }
+
+                        int x = int.Parse(lumber.text) - 1;
+                        lumber.text = x.ToString();
+                        x = int.Parse(brick.text) - 1;
+                        brick.text = x.ToString();
+
+                       
 
                     }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && ver.text == "0")
+                    Debug.Log(req.code);
+                    Debug.Log(req.status);
+
+                    txt.text = req.status;
+                }).Catch(err => { Debug.Log(err); });
+                allPieces.SetActive(false);
+            }
+
+            else
+            {
+                MakeRequestResponse command = new MakeRequestResponse();
+                command.gameId = LoginScript.CurrentUserGameId;
+                command.playerId = LoginScript.CurrentUserGEId;
+                command.intersection = 0;
+                command.start = capat1;
+                command.end = capat2;
+                //Debug.Log(CurrentUserGame);
+                //Debug.Log(CurrentUserId);
+                RequestJson req = new RequestJson();
+
+
+                RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildRoad", command).Then(Response =>
+                {
+                    req.code = Response.code;
+                    req.status = Response.status;
+                    if (req.code == 200)
                     {
-                        AfiseazaDrum.afiseaza(newPiece2, piece );
-            
+                        JSONObject json_message = new JSONObject();
+                        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                        json_message.AddField("username", LoginScript.CurrentUser);
+                        json_message.AddField("start", command.start);
+                        json_message.AddField("end", command.end);
+                        socket.Emit("buildroad", json_message);
+                        allPieces.SetActive(false);
+                        if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && ver.text == "0")
+                        {
+                            AfiseazaDrum.afiseaza(newPiece1, piece);
+                            player1.SetActive(false);
+                            player2.SetActive(true);
+                            player3.SetActive(false);
+                            player4.SetActive(false);
+
+                        }
+                        else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && ver.text == "0")
+                        {
+                            AfiseazaDrum.afiseaza(newPiece2, piece);
+
                             player2.SetActive(false);
                             player3.SetActive(true);
                             player1.SetActive(false);
                             player4.SetActive(false);
-                        
-                    }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && ver.text == "0")
-                    {
-                        AfiseazaDrum.afiseaza(newPiece3, piece);
-                  
+
+                        }
+                        else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && ver.text == "0")
+                        {
+                            AfiseazaDrum.afiseaza(newPiece3, piece);
+
                             player3.SetActive(false);
                             player4.SetActive(true);
                             player1.SetActive(false);
                             player2.SetActive(false);
-                        
-                    }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && ver.text == "0")
-                    {
-                  
-                        AfiseazaDrum.afiseaza(newPiece4, piece);
-       
+
+                        }
+                        else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && ver.text == "0")
+                        {
+
+                            AfiseazaDrum.afiseaza(newPiece4, piece);
+
                             player4.SetActive(true);
                             player1.SetActive(false);
                             player3.SetActive(false);
                             player2.SetActive(false);
-                        //  ok = true;
-                        ver.text = "1";
+                            //  ok = true;
+                            ver.text = "1";
+                        }
+                        else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && ver.text == "1")
+                        {
+
+                            AfiseazaDrum.afiseaza(newPiece4, piece);
+                            player4.SetActive(false);
+                            player1.SetActive(false);
+                            player3.SetActive(true);
+                            player2.SetActive(false);
+
+                        }
+                        else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && ver.text == "1")
+                        {
+
+                            AfiseazaDrum.afiseaza(newPiece3, piece);
+                            player4.SetActive(false);
+                            player1.SetActive(false);
+                            player3.SetActive(false);
+                            player2.SetActive(true);
+
+                        }
+                        else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && ver.text == "1")
+                        {
+
+                            AfiseazaDrum.afiseaza(newPiece2, piece);
+                            player4.SetActive(false);
+                            player1.SetActive(true);
+                            player3.SetActive(false);
+                            player2.SetActive(false);
+
+                        }
+                        else if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && ver.text == "1")
+                        {
+
+                            AfiseazaDrum.afiseaza(newPiece1, piece);
+                            player4.SetActive(false);
+                            player1.SetActive(true);
+                            player3.SetActive(false);
+                            player2.SetActive(false);
+                            ver.text = "2";
+                        }
+
                     }
-                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser && ver.text == "1")
-                    {
+                    Debug.Log(req.code);
+                    Debug.Log(req.status);
+                    txt.text = req.status;
+                }).Catch(err => { Debug.Log(err); });
+            }
 
-                        AfiseazaDrum.afiseaza(newPiece4, piece);
-                        player4.SetActive(false);
-                        player1.SetActive(false);
-                        player3.SetActive(true);
-                        player2.SetActive(false);
 
-                    }
-                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser && ver.text == "1")
-                    {
-
-                        AfiseazaDrum.afiseaza(newPiece3, piece);
-                        player4.SetActive(false);
-                        player1.SetActive(false);
-                        player3.SetActive(false);
-                        player2.SetActive(true);
-
-                    }
-                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser && ver.text == "1")
-                    {
-
-                        AfiseazaDrum.afiseaza(newPiece2, piece);
-                        player4.SetActive(false);
-                        player1.SetActive(true);
-                        player3.SetActive(false);
-                        player2.SetActive(false);
-
-                    }
-                    else if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser && ver.text == "1")
-                    {
-
-                        AfiseazaDrum.afiseaza(newPiece1, piece);
-                        player4.SetActive(false);
-                        player1.SetActive(true);
-                        player3.SetActive(false);
-                        player2.SetActive(false);
-                        ver.text = "2";
-                    }
-
-                }
-                Debug.Log(req.code);
-                Debug.Log(req.status);
-                txt.text = req.status;
-            }).Catch(err => { Debug.Log(err); });
+            allPieces.SetActive(false);
         }
-
-
-        allPieces.SetActive(false);
     }
 
 }
