@@ -476,6 +476,7 @@ public class SocketIoscript : MonoBehaviour
             Debug.Log("playerTrade");
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
+                tradePanel.SetActive(true);
                 playerName.text = "Player " + E.data[1].str + " want to trade";
                 of1.text = E.data[2].str;
                 of2.text = E.data[3].str;

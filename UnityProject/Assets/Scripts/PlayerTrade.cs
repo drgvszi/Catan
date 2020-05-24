@@ -34,16 +34,62 @@ public class PlayerTrade : MonoBehaviour
         TradePlayerJson command = new TradePlayerJson();
         command.gameId = LoginScript.CurrentUserGameId;
         command.playerId = LoginScript.CurrentUserGEId;
+       
+        if (infild0.text == "")
+            command.lumber_o = 0;
+        else
         command.lumber_o = int.Parse(infild0.text);
+
+        if (infild1.text =="")
+            command.wool_o = 0;
+        else
         command.wool_o = int.Parse(infild1.text);
+
+        if (infild2.text =="")
+            command.grain_o = 0;
+        else
         command.grain_o = int.Parse(infild2.text);
-        command.brick_o = int.Parse(infild3.text);
+
+        if (infild3.text == "")
+            command.brick_o = 0;
+        else
+            command.brick_o = int.Parse(infild3.text);
+
+        if (infild4.text == "")
+            command.ore_o = 0;
+        else
         command.ore_o = int.Parse(infild4.text);
-        command.lumber_r = int.Parse(infild5.text);
-        command.wool_r = int.Parse(infild6.text);
-        command.grain_r = int.Parse(infild7.text);
-        command.brick_r = int.Parse(infild8.text);
-        command.ore_r = int.Parse(infild9.text);
+
+        if (infild5.text == "")
+            command.lumber_r = 0;
+        else
+            command.lumber_r = int.Parse(infild5.text);
+
+        if (infild6.text == "")
+            command.wool_r = 0;
+        else
+            command.wool_r = int.Parse(infild6.text);
+
+        if (infild7.text == "")
+            command.grain_r = 0;
+        else
+            command.grain_r = int.Parse(infild7.text);
+
+        if (infild8.text == "")
+            command.brick_r = 0;
+        else
+            command.brick_r = int.Parse(infild8.text);
+
+        if (infild9.text == "")
+            command.ore_r = 0;
+        else
+            command.ore_r = int.Parse(infild9.text);
+
+        print(command.lumber_o);
+        print(command.brick_o);
+        print(command.brick_r);
+        print(command.ore_r);
+        print("aaaaaa");
         RequestJson req = new RequestJson();
         Text txt = FindTextFiel.find();
         RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/playerTrade", command).Then(Response =>
