@@ -47,137 +47,47 @@ public class provizoriu : MonoBehaviour
             command.playerId = LoginScript.CurrentUserGEId;
             command.intersection = numar;
             RequestJson req = new RequestJson();
-
-            if (ver.text == "2")
+            
+            RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildSettlement", command).Then(Response =>
             {
-                RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buySettlement", command).Then(Response =>
+                req.code = Response.code;
+                req.status = Response.status;
+                if (req.code == 200)
                 {
-                    req.code = Response.code;
-                    req.status = Response.status;
-                    if (req.code == 200)
+                    JSONObject json_message = new JSONObject();
+                    json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                    json_message.AddField("username", LoginScript.CurrentUser);
+                    json_message.AddField("intersection", command.intersection);
+                    print(command.intersection);
+                    socket.Emit("buildsettlement", json_message);
+                    allPieces.SetActive(false);
+
+                    if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                     {
-                        /*  JSONObject json_message = new JSONObject();
-                          json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                          json_message.AddField("username", LoginScript.CurrentUser);
-                          json_message.AddField("intersection", command.intersection);
-                          print(command.intersection);
-                          socket.Emit("buildsettlement", json_message);*/
-                          allPieces.SetActive(false);
-                          
-                        if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
-                        {
-                            AfiseazaDrum.afiseaza(newPiece1, piece);
+                        AfiseazaDrum.afiseaza(newPiece1, piece);
 
-                        }
-                        else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
-                        {
-                            AfiseazaDrum.afiseaza(newPiece2, piece);
-                        }
-                        else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
-                        {
-                            AfiseazaDrum.afiseaza(newPiece3, piece);
-
-                        }
-                        else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
-                        {
-                            AfiseazaDrum.afiseaza(newPiece4, piece);
-
-                        }
                     }
-                    Debug.Log(req.code);
-                    Debug.Log(req.status);
-
-                    txt.text = req.status;
-                }).Catch(err => { Debug.Log(err); });
-            }
-            else
-            {
-                if (ver.text == "2")
-                {
-                    RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buySettlement", command).Then(Response =>
+                    else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
                     {
-                        req.code = Response.code;
-                        req.status = Response.status;
-                        if (req.code == 200)
-                        {
-                           /* JSONObject json_message = new JSONObject();
-                            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                            json_message.AddField("username", LoginScript.CurrentUser);
-                            json_message.AddField("intersection", command.intersection);
-                            print(command.intersection);
-                            socket.Emit("buildsettlement", json_message);
-                            */
-                            allPieces.SetActive(false);
-
-                            if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece1, piece);
-
-                            }
-                            else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece2, piece);
-                            }
-                            else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece3, piece);
-
-                            }
-                            else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece4, piece);
-
-                            }
-                        }
-                        Debug.Log(req.code);
-                        Debug.Log(req.status);
-
-                        txt.text = req.status;
-                    }).Catch(err => { Debug.Log(err); });
-                }
-                else
-                {
-                    RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/buildSettlement", command).Then(Response =>
+                        AfiseazaDrum.afiseaza(newPiece2, piece);
+                    }
+                    else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
                     {
-                        req.code = Response.code;
-                        req.status = Response.status;
-                        if (req.code == 200)
-                        {
-                            JSONObject json_message = new JSONObject();
-                            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                            json_message.AddField("username", LoginScript.CurrentUser);
-                            json_message.AddField("intersection", command.intersection);
-                            print(command.intersection);
-                            socket.Emit("buildsettlement", json_message);
-                            allPieces.SetActive(false);
+                        AfiseazaDrum.afiseaza(newPiece3, piece);
 
-                            if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece1, piece);
+                    }
+                    else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
+                    {
+                        AfiseazaDrum.afiseaza(newPiece4, piece);
 
-                            }
-                            else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece2, piece);
-                            }
-                            else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece3, piece);
-
-                            }
-                            else if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
-                            {
-                                AfiseazaDrum.afiseaza(newPiece4, piece);
-
-                            }
-                        }
-                        Debug.Log(req.code);
-                        Debug.Log(req.status);
-
-                        txt.text = req.status;
-                    }).Catch(err => { Debug.Log(err); });
+                    }
                 }
-            }
+                Debug.Log(req.code);
+                Debug.Log(req.status);
+               
+                txt.text = req.status;
+            }).Catch(err => { Debug.Log(err); });
+
 
         }
         else
