@@ -55,8 +55,21 @@ public class SocketIoscript : MonoBehaviour
     bool ok1 = false;
     public static int turn = 1;
 
+    public GameObject tradePanel;
+    public Text of1;
+    public Text of2;
+    public Text of3;
+    public Text of4;
+    public Text of5;
+    public Text rq1;
+    public Text rq2;
+    public Text rq3;
+    public Text rq4;
+    public Text rq5;
+    public Text playerName;
 
-    
+
+
     void Start()
     {
         GameObject go = GameObject.Find("SocketIO");
@@ -463,7 +476,19 @@ public class SocketIoscript : MonoBehaviour
             Debug.Log("playerTrade");
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
-                Debug.Log("intra in if");
+                playerName.text = "Player " + E.data[1].str + " want to trade";
+                of1.text = E.data[2].str;
+                of2.text = E.data[3].str;
+                of3.text = E.data[4].str;
+                of4.text = E.data[5].str;
+                of5.text = E.data[6].str;
+
+                rq1.text = E.data[7].str;
+                rq2.text = E.data[8].str;
+                rq3.text = E.data[9].str;
+                rq4.text = E.data[10].str;
+                rq5.text = E.data[11].str;
+
 
             }
         });
