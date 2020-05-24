@@ -478,17 +478,27 @@ public class SocketIoscript : MonoBehaviour
             {
                 tradePanel.SetActive(true);
                 playerName.text = "Player " + E.data[1].str + " want to trade";
-                of1.text = E.data[2].str;
-                of2.text = E.data[3].str;
-                of3.text = E.data[4].str;
-                of4.text = E.data[5].str;
-                of5.text = E.data[6].str;
+                print(E.data[2].ToString());
+                print(E.data[3].ToString());
+                print(E.data[4].ToString());
+                print(E.data[5].ToString());
+                print(E.data[6].ToString());
+                print(E.data[7].ToString());
+                print(E.data[8].ToString());
+                print(E.data[9].ToString());
+                print(E.data[10].ToString());
+                print(E.data[11].ToString());
+                of1.text =""+ E.data[2].ToString();
+                of2.text =""+ E.data[3].ToString();
+                of3.text =""+ E.data[4].ToString();
+                of4.text =""+ E.data[5].ToString();
+                of5.text =""+ E.data[6].ToString();
 
-                rq1.text = E.data[7].str;
-                rq2.text = E.data[8].str;
-                rq3.text = E.data[9].str;
-                rq4.text = E.data[10].str;
-                rq5.text = E.data[11].str;
+                rq1.text =""+ E.data[7].ToString();
+                rq2.text =""+ E.data[8].ToString();
+                rq3.text =""+ E.data[9].ToString();
+                rq4.text =""+ E.data[10].ToString();
+                rq5.text =""+ E.data[11].ToString();
 
 
             }

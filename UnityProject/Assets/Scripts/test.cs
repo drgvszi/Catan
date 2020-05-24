@@ -8,10 +8,12 @@ public class test : MonoBehaviour
 {
     GameObject inter;
     Toggle tg;
-
+    public Text txt;
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        txt.text = "aaaa";
     }
+
+   
 }
