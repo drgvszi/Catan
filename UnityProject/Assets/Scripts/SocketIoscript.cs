@@ -224,41 +224,41 @@ public class SocketIoscript : MonoBehaviour
             if (LoginScript.CurrentLobby.third == LoginScript.CurrentUser)
             {
 
-                lumber.text =(int.Parse(lumber.text) + int.Parse(E.data[23].ToString())).ToString();
-                ore.text = (int.Parse(ore.text) + int.Parse(E.data[27].ToString())).ToString();
-                grain.text = (int.Parse(grain.text) + int.Parse(E.data[25].ToString())).ToString();
-                brick.text = (int.Parse(brick.text) + int.Parse(E.data[26].ToString())).ToString();
-                wool.text = (int.Parse(wool.text) + int.Parse(E.data[24].ToString())).ToString();
+                lumber.text = E.data[23].ToString();
+                ore.text = E.data[27].ToString();
+                grain.text = E.data[25].ToString();
+                brick.text = E.data[26].ToString();
+                wool.text = E.data[24].ToString();
 
             }
             else if (LoginScript.CurrentLobby.second == LoginScript.CurrentUser)
             {
 
-                lumber.text = (int.Parse(lumber.text) + int.Parse(E.data[17].ToString())).ToString();
-                ore.text = (int.Parse(ore.text) + int.Parse(E.data[21].ToString())).ToString();
-                grain.text = (int.Parse(grain.text) + int.Parse(E.data[19].ToString())).ToString();
-                brick.text = (int.Parse(brick.text) + int.Parse(E.data[20].ToString())).ToString();
-                wool.text = (int.Parse(wool.text) + int.Parse(E.data[18].ToString())).ToString();
+                lumber.text = E.data[17].ToString();
+                ore.text = E.data[21].ToString();
+                grain.text = E.data[19].ToString();
+                brick.text = E.data[20].ToString();
+                wool.text = E.data[18].ToString();
 
             }
             else if (LoginScript.CurrentLobby.first == LoginScript.CurrentUser)
             {
 
-                lumber.text = (int.Parse(lumber.text) + int.Parse(E.data[11].ToString())).ToString();
-                ore.text = (int.Parse(ore.text) + int.Parse(E.data[15].ToString())).ToString();
-                grain.text = (int.Parse(grain.text) + int.Parse(E.data[13].ToString())).ToString();
-                brick.text = (int.Parse(brick.text) + int.Parse(E.data[14].ToString())).ToString();
-                wool.text = (int.Parse(wool.text) + int.Parse(E.data[12].ToString())).ToString();
+                lumber.text = E.data[11].ToString();
+                ore.text = E.data[15].ToString();
+                grain.text = E.data[13].ToString();
+                brick.text = E.data[14].ToString();
+                wool.text = E.data[12].ToString();
 
             }
             else if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
             {
 
-                lumber.text = (int.Parse(lumber.text) + int.Parse(E.data[5].ToString())).ToString();
-                ore.text = (int.Parse(ore.text) + int.Parse(E.data[9].ToString())).ToString();
-                grain.text = (int.Parse(grain.text) + int.Parse(E.data[7].ToString())).ToString();
-                brick.text = (int.Parse(brick.text) + int.Parse(E.data[8].ToString())).ToString();
-                wool.text = (int.Parse(wool.text) + int.Parse(E.data[6].ToString())).ToString();
+                lumber.text = E.data[5].ToString();
+                ore.text = E.data[9].ToString();
+                grain.text = E.data[7].ToString();
+                brick.text = E.data[8].ToString();
+                wool.text = E.data[6].ToString();
 
             }
 
@@ -382,31 +382,6 @@ public class SocketIoscript : MonoBehaviour
             }
             Debug.Log(dice_1);
             Debug.Log(dice_2);
-
-            /*MakeRequestResponse command = new MakeRequestResponse();
-            command.gameId = LoginScript.CurrentUserGameId;
-            command.playerId = LoginScript.CurrentUserGEId;
-            RequestJson req = new RequestJson();
-            RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command).Then(Response =>
-            {
-                Debug.Log("Update code " + Response.code);
-                Debug.Log("Update status " + Response.status);
-                Debug.Log("Update arguments lumber " + Response.arguments.lumber);
-                Debug.Log("Update arguments settle " + Response.arguments.settlements[1]);
-                // Debug.Log("Update roads " + Response.arguments.roads[0][1]);//NU MERGE ASTA
-                // Debug.Log("Update roads " + Response.arguments.roads[0][0]);//NU MERGE NICI ASTA
-
-                lumber.text = Response.arguments.lumber.ToString();
-                ore.text = Response.arguments.ore.ToString();
-                grain.text = Response.arguments.grain.ToString();
-                brick.text = Response.arguments.brick.ToString();
-                wool.text = Response.arguments.wool.ToString();
-
-            }).Catch(err => { Debug.Log(err); });
-            */
-
-
-
         });
 
 
