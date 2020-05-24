@@ -13,4 +13,8 @@ public class MakeRequestResponse
     public int port;
     public string offer;
     public string request;
+    public string resource;
+    public string development;
+    public string resource_0;
+    public string resource_1;
 }
