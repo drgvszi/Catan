@@ -38184,8 +38184,8 @@ MonoBehaviour:
   togle8: {fileID: 367322173}
   togle9: {fileID: 1409992490}
   lumber: {fileID: 371030346}
-  ore: {fileID: 1301698132}
-  brick: {fileID: 694343209}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
   grain: {fileID: 1215494028}
   wool: {fileID: 145854600}
 --- !u!114 &1882502310

@@ -628,7 +628,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 67148}
+      Script: {instanceID: 78162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -823,7 +823,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13424}
     - Class: 114
-      Script: {instanceID: 79488}
+      Script: {instanceID: 90472}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1745,4 +1745,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LobbyList.unity
   - Assets/Scenes/WaitingRoom.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/234/UnityProject.exe
+  playerPath: C:/Users/cmiro/Desktop/catanexec/UnityProject.exe
