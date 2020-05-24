@@ -164,6 +164,39 @@ public class MakeRequest
 
         }).Catch(err => { Debug.Log(err); });
     }
+    public static void acceptTrade(string CurrentUserGame, string CurrentUserId)
+    {
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
+        TradePlayerJson command = new TradePlayerJson();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        RequestJson req = new RequestJson();
+        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/wantToTrade", command).Then(Response =>
+        {
+            Debug.Log("Accept Trade " + Response.code);
+            Debug.Log("Accdept Trade " + Response.status);
+            JSONObject json_message = new JSONObject();
+            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+            json_message.AddField("username", LoginScript.CurrentUser);
+            json_message.AddField("gameEngineId", LoginScript.CurrentUserGEId);
+            socket.Emit("wantToTrade", json_message);
+
+        }).Catch(err => { Debug.Log(err); });
+    }
+   /* public static void sendParteners(string CurrentUserGame, string CurrentUserId)
+    {
+        TradePlayerJson command = new TradePlayerJson();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        RequestJson req = new RequestJson();
+        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendParteners", command).Then(Response =>
+        {
+            Debug.Log("SendParteners " + Response.code);
+            Debug.Log("Send Parteners " + Response.status);
+
+        }).Catch(err => { Debug.Log(err); });
+    }*/
 }
 
 
