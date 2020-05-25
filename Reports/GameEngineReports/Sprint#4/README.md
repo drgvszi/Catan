@@ -566,7 +566,7 @@
 ```
 # Dice
 ## Error messages
- - You do not have more than seven resource cards in order to discard half of them.
+ - You do not have more than seven resource cards to discard half of them.
 ## Success messages
  - The dice sum is seven.
  - The dice sum is not seven.
@@ -642,7 +642,7 @@
 - You have no more roads to build.
 ## Success Messages
 - The road was built successfully.
-- The road was built successfully. You have no more roads to build using the Road Building development card.
+- The road was built successfully. You do not have roads in bank.
 - The road was bought successfully.
 # Settlements
 ## Error Messages
