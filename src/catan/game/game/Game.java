@@ -269,7 +269,7 @@ public abstract class Game {
                 }
                 inDiscardState = checkInDiscardState(7);
                 responseArguments.put("sentAll", !inDiscardState);
-                return new UserResponse(HttpStatus.SC_OK, "The resource cards were discarded successfully.", responseArguments);
+                return new UserResponse(HttpStatus.SC_OK, "The resource cards\nwere discarded successfully.", responseArguments);
             }
             case "wantToTrade": {
                 Code code = wantToTrade(playerId);

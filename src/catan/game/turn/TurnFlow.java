@@ -33,7 +33,7 @@ public class TurnFlow {
         fsm = new FSM("stateConfig.xml", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
-                response = new UserResponse(HttpStatus.SC_ACCEPTED, "The message has no assigned action.", null);
+                response = new UserResponse(HttpStatus.SC_ACCEPTED, "The message\nhas no assigned action.", null);
                 return true;
             }
         });
@@ -83,7 +83,7 @@ public class TurnFlow {
                 int end = requestArguments.get("end");
                 if (!(lastSettlement.getId() == start || lastSettlement.getId() == end)) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED,
-                            "It does not connect to your last intersection.", null);
+                            "It does not connect\nto your last intersection.", null);
                     return false;
                 }
                 Code code = game.buildRoad(start, end);
@@ -212,7 +212,7 @@ public class TurnFlow {
                 }
                 Map<String, Object> responseArguments = new HashMap<>();
                 responseArguments.put("resource", result.getValue());
-                response = new UserResponse(HttpStatus.SC_OK, "The resource card was stolen successfully.",
+                response = new UserResponse(HttpStatus.SC_OK, "The resource card\nwas stolen successfully.",
                         responseArguments);
                 return true;
             }
@@ -261,7 +261,7 @@ public class TurnFlow {
         fsm.setAction("sendPartners", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
-                response = new UserResponse(HttpStatus.SC_OK, "The trade partners were sent successfully.",
+                response = new UserResponse(HttpStatus.SC_OK, "The trade partners\nwere sent successfully.",
                         game.sendPartners());
                 return true;
             }
@@ -474,7 +474,7 @@ public class TurnFlow {
                     return false;
                 }
                 currentPlayer.setRoadsToBuild(Math.min(bank.getRoadsNumber(currentPlayer), 2));
-                response = new UserResponse(HttpStatus.SC_OK, "You can use Road Building development card.",
+                response = new UserResponse(HttpStatus.SC_OK, "You can use\nRoad Building development card.",
                         null);
                 return true;
             }
@@ -495,7 +495,7 @@ public class TurnFlow {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
-                response = new UserResponse(HttpStatus.SC_OK, "You can use Year of Plenty development card.",
+                response = new UserResponse(HttpStatus.SC_OK, "You can use\nYear of Plenty development card.",
                         null);
                 return true;
             }
@@ -519,7 +519,7 @@ public class TurnFlow {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
-                response = new UserResponse(HttpStatus.SC_OK, "The resource cards were stolen successfully.",
+                response = new UserResponse(HttpStatus.SC_OK, "The resource cards\nwere stolen successfully.",
                         responseArguments);
                 return true;
             }
@@ -544,7 +544,7 @@ public class TurnFlow {
                 Player currentPlayer = game.getCurrentPlayer();
                 currentPlayer.setRoadsToBuild(currentPlayer.getRoadsToBuild() - 1);
                 if (currentPlayer.getRoadsToBuild() < 1) {
-                    response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully. You have no more roads to build using the Road Building development card.", null);
+                    response = new UserResponse(HttpStatus.SC_OK, "The road was built successfully.\nYou do not have roads in bank.", null);
                     fsm.ProcessFSM("goNext");
                     return false;
                 }
@@ -569,7 +569,7 @@ public class TurnFlow {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
                 }
-                response = new UserResponse(HttpStatus.SC_OK, "The resource cards were taken successfully.",
+                response = new UserResponse(HttpStatus.SC_OK, "The resource cards\nwere taken successfully.",
                         null);
                 return true;
             }
@@ -595,7 +595,7 @@ public class TurnFlow {
                 }
                 fsm.ProcessFSM("endGame");
                 response = new UserResponse(HttpStatus.SC_OK,
-                        "The game has ended because there are not enough active players.", null);
+                        "The game has ended because\nthere are not enough active players.", null);
                 return false;
             }
         });
