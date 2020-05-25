@@ -630,12 +630,18 @@ public abstract class Game {
             return Code.NotDiscard;
         }
         Map<Resource, Integer> resourcesToDiscard = new HashMap<>();
+        int resourcesToDiscardNumber = 0;
         for (String resourceString : requestArguments.keySet()) {
             Resource resource = Helper.getResourceFromString(resourceString);
             if (resource == null) {
                 return Code.InvalidRequest;
             }
-            resourcesToDiscard.put(resource, (Integer) requestArguments.get(resourceString));
+            int resourcesToDiscardByType = (Integer) requestArguments.get(resourceString);
+            resourcesToDiscardNumber += resourcesToDiscardByType;
+            resourcesToDiscard.put(resource, resourcesToDiscardByType);
+        }
+        if (resourcesToDiscardNumber == 0) {
+            return Code.NoResources;
         }
         return discardResources(playerId, resourcesToDiscard);
     }

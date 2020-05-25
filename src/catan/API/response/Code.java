@@ -6,6 +6,7 @@ public enum Code {
     DiceSeven,
     DiceNotSeven,
     NotDiscard,
+    NoResources,
 
     //endregion
 
