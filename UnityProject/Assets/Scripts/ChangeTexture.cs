@@ -18,6 +18,7 @@ public class ChangeTexture : MonoBehaviour
     public GameObject objOre;
     public GameObject objGrain;
     public GameObject objDesert;
+    public GameObject tataLaRobberi;
     public TextMesh text;
     public int nr;
     BoardConnectivityJson board = null;
@@ -37,6 +38,7 @@ public class ChangeTexture : MonoBehaviour
         if (done == false) { 
             if (ReceiveBoardScript.ReceivedBoard.board[0] != null)
             {
+                
                 string str = "";
                 str = board.board[nr].number.ToString();
                 text.text = str;
@@ -57,8 +59,10 @@ public class ChangeTexture : MonoBehaviour
                         Instantiate(objGrain, SpawnPasture.position, SpawnPasture.rotation);
                         break;
                     case "desert":
+                        tataLaRobberi.SetActive(true);
                         Instantiate(objDesert, SpawnDesertField.position, SpawnDesertField.rotation);
                         Instantiate(robbler, robber.position, robber.rotation);
+                        tataLaRobberi.SetActive(false);
                         break;
                     case "brick":
                         Instantiate(objBrick, SpawnHills.position, SpawnHills.rotation);

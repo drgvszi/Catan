@@ -24,6 +24,8 @@ public class Dices : MonoBehaviour
     public GameObject sside4;
     public GameObject sside5;
     public GameObject sside6;
+    public GameObject tataPanel;
+    public GameObject tataHot;
     public Text lumber;
     public Text ore;
     public Text brick;
@@ -245,70 +247,15 @@ public class Dices : MonoBehaviour
                 }
                 if (i + j == 7)
                 {
-                    /*int player_0_sum = int.Parse(Response.arguments.wool_0) + int.Parse(Response.arguments.lumber_0) + int.Parse(Response.arguments.grain_0)
-                                            + int.Parse(Response.arguments.brick_0) + int.Parse(Response.arguments.ore_0);
-                    int player_1_sum  =  int.Parse(Response.arguments.wool_1) + int.Parse(Response.arguments.lumber_1) + int.Parse(Response.arguments.grain_1)
-                                        + int.Parse(Response.arguments.brick_1) + int.Parse(Response.arguments.ore_1);
-                    int player_2_sum = int.Parse(Response.arguments.wool_2) + int.Parse(Response.arguments.lumber_2) + int.Parse(Response.arguments.grain_2)
-                                        + int.Parse(Response.arguments.brick_2) + int.Parse(Response.arguments.ore_2);
-                    int player_3_sum = int.Parse(Response.arguments.wool_3) + int.Parse(Response.arguments.lumber_3) + int.Parse(Response.arguments.grain_3)
-                                        + int.Parse(Response.arguments.brick_3) + int.Parse(Response.arguments.ore_3);
-                    if(player_0_sum>7 && LoginScript.CurrentUser==LoginScript.CurrentLobby.master)
+                    tataHot.SetActive(true);
+                    int player_0_sum = int.Parse(lumber.text) + int.Parse(brick.text) + int.Parse(ore.text) + int.Parse(wool.text) + int.Parse(grain.text);
+                    if (player_0_sum > 7)
                     {
-
+                        tataPanel.SetActive(true);
                     }
-                    if(player_1_sum>7 && LoginScript.CurrentUser == LoginScript.CurrentLobby.first)
-                    {
-
-                    }
-                    if(player_2_sum>7 && LoginScript.CurrentUser == LoginScript.CurrentLobby.second)
-                    {
-
-                    }
-                    if(player_3_sum>7 && LoginScript.CurrentUser == LoginScript.CurrentLobby.third)
-                    {
-
-                    }
-                    */
-                    MakeRequestResponse command1 = new MakeRequestResponse();
-                    command1.gameId = LoginScript.CurrentUserGameId;
-                    command1.playerId = LoginScript.CurrentUserGEId;
-                    command1.tile = 10;
-                    RequestJson req1 = new RequestJson();
-                    RestClient.Post<MoveRobberRequest>("https://catan-connectivity.herokuapp.com/game/moveRobber", command1).Then(Response1 =>
-                    {
-                        Debug.Log("Move robber " + Response1.code);
-                        Debug.Log("Move robber  " + Response1.status);
-                        Debug.Log("Mode Robber " + Response1.arguments.player_0);
-                        Debug.Log("Mode Robber " + Response1.arguments.player_1);
-                        Debug.Log("Mode Robber " + Response1.arguments.player_2);
-                        if(Response1.arguments.player_0!=null)
-                        {
-                            MakeRequestResponse command2 = new MakeRequestResponse();
-                            command2.gameId = LoginScript.CurrentUserGameId;
-                            command2.playerId = LoginScript.CurrentUserGEId;
-                            command2.answer = "yes";
-                            command2.player = Response1.arguments.player_0;
-                            RestClient.Post<MoveRobberRequest>("https://catan-connectivity.herokuapp.com/game/stealResource", command2).Then(Response2 =>
-                            {
-                                Debug.Log("Stolen");
-                            }).Catch(err => { Debug.Log(err); });
-                        }
-                        else
-                        {
-                            MakeRequestResponse command2 = new MakeRequestResponse();
-                            command2.gameId = LoginScript.CurrentUserGameId;
-                            command2.playerId = LoginScript.CurrentUserGEId;
-                            command2.answer = "no";
-                            command2.player = Response1.arguments.player_0;
-                            RestClient.Post<MoveRobberRequest>("https://catan-connectivity.herokuapp.com/game/stealResource", command2).Then(Response2 =>
-                            {
-                                Debug.Log("Not stolen");
-                            }).Catch(err => { Debug.Log(err); });
-                        }
-                        
-                     
-                    }).Catch(err => { Debug.Log(err); });
+ 
+                    
+                    
                 }
             }
             txt.text = req.status;
@@ -319,9 +266,5 @@ public class Dices : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
