@@ -131,8 +131,8 @@
  "status": "message (success or error type)", 
  "arguments":
  { 
- "0": "playerId from which to steal a resource", 
- "1": "playerId from which to steal a resource" 
+ "player_0": "playerId from which to steal a resource", 
+ "player_1": "playerId from which to steal a resource" 
  } 
 }
 ```
