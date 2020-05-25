@@ -14,18 +14,11 @@ using System.Runtime.InteropServices;
 
 public class test : MonoBehaviour
 {
-    public GameObject robbler;
-    public Transform robber;
-    public GameObject x;
-
+    
     void Start()
     {
-        print("test");
-        Instantiate(robbler, robber.position, robber.rotation);
-        x = GameObject.Find("Robber777(Clone)");
-        print(x.name);
-        x.SetActive(false);
-
+        Text txt = FindTextFiel.find();
+        //txt.text = " aaaaaaaaaaaaaa \n bbbbbbbbbb";
     }
 
    

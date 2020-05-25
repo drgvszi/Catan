@@ -62,7 +62,6 @@ public class SocketIoscript : MonoBehaviour
     public Text points4;
 
     public GameObject tradePanel;
-    public GameObject tataPanel;
     public Text of1;
     public Text of2;
     public Text of3;
@@ -518,15 +517,8 @@ public class SocketIoscript : MonoBehaviour
                 }
                 Debug.Log(dice_1);
                 Debug.Log(dice_2);
-                if (int.Parse(dice_1) + int.Parse(dice_2) == 7)
-                {
-                    int player_0_sum = int.Parse(lumber.text) + int.Parse(brick.text) + int.Parse(ore.text) + int.Parse(wool.text) + int.Parse(grain.text);
-
-                    if (player_0_sum > 7)
-                    {
-                        tataPanel.SetActive(true);
-                    }
-                }
+               
+                
             }
         });
 

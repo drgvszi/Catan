@@ -26,8 +26,8 @@ public class AcceptTrade : MonoBehaviour
     public void acceptTrade()
     {
         MakeRequest.acceptTrade(LoginScript.CurrentUserGameId, LoginScript.CurrentUserGEId);
-        //Thread.Sleep(2000);
-       // updateResource();
+        Thread.Sleep(2000);
+        updateResource();
     }
     public void declineTrade()
     {
