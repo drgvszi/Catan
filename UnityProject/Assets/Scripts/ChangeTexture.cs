@@ -24,12 +24,7 @@ public class ChangeTexture : MonoBehaviour
     bool done = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
-
-
-    }
+ 
 
     // Update is called once per frame
     void Update()
@@ -38,7 +33,6 @@ public class ChangeTexture : MonoBehaviour
         if (done == false) { 
             if (ReceiveBoardScript.ReceivedBoard.board[0] != null)
             {
-                done = true;
                 string str = "";
                 str = board.board[nr].number.ToString();
                 text.text = str;
@@ -68,6 +62,7 @@ public class ChangeTexture : MonoBehaviour
 
                 }
             }
+            done = true;
            // else
            //     Debug.Log("Null");
         }

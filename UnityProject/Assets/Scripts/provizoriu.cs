@@ -33,6 +33,8 @@ public class provizoriu : MonoBehaviour
     public Text grain;
     public Text wool;
 
+
+
     public int capat1;
     public int capat2;
     public SocketIOComponent socket;
@@ -177,6 +179,7 @@ public class provizoriu : MonoBehaviour
                     grain.text = Response1.arguments.grain.ToString();
                     brick.text = Response1.arguments.brick.ToString();
                     wool.text = Response1.arguments.wool.ToString();
+             
 
                 }).Catch(err => { Debug.Log(err); });
 

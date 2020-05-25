@@ -41563,6 +41563,10 @@ MonoBehaviour:
   brick: {fileID: 1301698132}
   grain: {fileID: 1215494028}
   wool: {fileID: 145854600}
+  points1: {fileID: 0}
+  points2: {fileID: 0}
+  points3: {fileID: 0}
+  points4: {fileID: 0}
   tradePanel: {fileID: 7443613674015516218}
   of1: {fileID: 1575653973}
   of2: {fileID: 1634389355}
@@ -73135,6 +73139,7 @@ GameObject:
   - component: {fileID: 2205872309880793867}
   - component: {fileID: 2205872309880793864}
   - component: {fileID: 2205872309880793865}
+  - component: {fileID: 2205872309880793868}
   m_Layer: 5
   m_Name: LeaveButton
   m_TagString: Untagged
@@ -73185,13 +73190,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
+      - m_Target: {fileID: 2205872309880793868}
+        m_MethodName: LeaveGame
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: a2355bc3333e6b143803a21c5913f301,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -73268,6 +73272,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2205872309880793868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205872309880793863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49293c135c38e1c4d8d73afe567c5ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 0}
 --- !u!114 &2205872309884757906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101058,7 +101075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -28}
+  m_AnchoredPosition: {x: 43, y: -30}
   m_SizeDelta: {x: 85, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7550251943273094510
@@ -124395,11 +124412,11 @@ RectTransform:
   - {fileID: 8525720703210576334}
   - {fileID: 8525720702074390018}
   m_Father: {fileID: 8525720703019873042}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -33, y: -14.299988}
+  m_AnchoredPosition: {x: -276, y: -14.299988}
   m_SizeDelta: {x: 916, y: 662.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8525720702550496535
@@ -125445,8 +125462,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.58755, y: 0.75002, z: 1}
   m_Children:
-  - {fileID: 8525720703334598044}
   - {fileID: 8525720702550496534}
+  - {fileID: 8525720703334598044}
   m_Father: {fileID: 2205872309884757911}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126276,11 +126293,11 @@ RectTransform:
   m_Children:
   - {fileID: 8525720703390990414}
   m_Father: {fileID: 8525720703019873042}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: 314}
+  m_AnchoredPosition: {x: -260, y: 307}
   m_SizeDelta: {x: 500, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8525720703334598045

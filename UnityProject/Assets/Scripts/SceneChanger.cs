@@ -57,6 +57,7 @@ public class SceneChanger : MonoBehaviour
 
     public void goToMenu()
     {
+       // ChangeTexture.done = false;
         SceneManager.LoadScene("MenuScene");
     }
 

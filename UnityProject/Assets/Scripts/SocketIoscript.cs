@@ -55,6 +55,11 @@ public class SocketIoscript : MonoBehaviour
     bool ok1 = false;
     public static int turn = 1;
 
+    public Text points1;
+    public Text points2;
+    public Text points3;
+    public Text points4;
+
     public GameObject tradePanel;
     public Text of1;
     public Text of2;

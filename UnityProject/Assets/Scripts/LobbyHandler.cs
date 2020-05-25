@@ -101,6 +101,7 @@ public class LobbyHandler : MonoBehaviour
         string lobbyid = e.data.GetField("lobbyid").str;
         if (lobbyid == LoginScript.CurrentUserLobbyId) 
         {
+            print("asd21");
             ReceiveBoardScript recive = new ReceiveBoardScript();
             recive.getGameBoardNotMaster();
 
@@ -132,6 +133,7 @@ public class LobbyHandler : MonoBehaviour
         Debug.Log(LoginScript.CurrentUserGEId);
         RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/leaveGame", command).Then(res =>
         {
+            //ChangeTexture.setDone(false);
             Debug.Log(res.Text);
 
         }).Catch(err => { Debug.Log(err); });
