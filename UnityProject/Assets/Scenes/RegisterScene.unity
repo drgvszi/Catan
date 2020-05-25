@@ -203,9 +203,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2098499460}
-        m_MethodName: Hide
-        m_Mode: 1
+      - m_Target: {fileID: 434377768}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -640,6 +640,7 @@ MonoBehaviour:
   emailField: {fileID: 1716822916}
   passwordField: {fileID: 1497572464}
   passwordConfirmField: {fileID: 890543125}
+  panel: {fileID: 434377768}
   errorBoxMsg: {fileID: 1121292075}
 --- !u!114 &263486882
 MonoBehaviour:
@@ -800,7 +801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7000122, y: -14.099976}
+  m_AnchoredPosition: {x: 0.70007324, y: -14.099976}
   m_SizeDelta: {x: -631.4, y: -481.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &440193628

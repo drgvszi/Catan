@@ -11,6 +11,7 @@ public class RegisterScript : MonoBehaviour
     public InputField emailField;
     public InputField passwordField;
     public InputField passwordConfirmField;
+    public GameObject panel;
 
     public Text errorBoxMsg;
 
@@ -27,42 +28,51 @@ public class RegisterScript : MonoBehaviour
         {
             errorBoxMsg.text = "Username field is empty!";
             Debug.Log("Username field is empty!");
+            panel.SetActive(true);
+
             //return false;
         }
         else if (email.Equals(""))
         {
             errorBoxMsg.text = "Email field is empty!";
             Debug.Log("Email field is empty!");
+            panel.SetActive(true);
             //return false;
         }
         else if (IsValidEmail(email) == false)
         {
             errorBoxMsg.text = "Email is not valid";
             Debug.Log("Email is not valid");
+            panel.SetActive(true);
             //return false;
         }
         else if (password.Equals(""))
         {
             errorBoxMsg.text = "Password field is empty!";
             Debug.Log("Password field is empty!");
+            panel.SetActive(true);
             //return false;
         }
         else if (password.Length < 6)
         {
             errorBoxMsg.text = "The password is too short!";
             Debug.Log("The password is too short!");
+            panel.SetActive(true);
             //return false;
         }
         else if (passwordConfirm.Equals(""))
         {
             errorBoxMsg.text = "Confirm Password field is empty!";
             Debug.Log("Confirm Password field is empty!");
+
+            panel.SetActive(true);
             //return false;
         }
         else if (!(password.Equals(passwordConfirm)))
         {
             errorBoxMsg.text = "The passwords don't match!";
             Debug.Log("The passwords don't match!");
+            panel.SetActive(true);
             //return false;
         }
         else
@@ -87,6 +97,7 @@ public class RegisterScript : MonoBehaviour
                     else if (user_returnat.username.Equals(username))
                     {
                         errorBoxMsg.text = "The username is already in use. Use another!";
+                        panel.SetActive(true);
                         Debug.Log($"The username is already in use. Use another!");
                         temp = false;
                     }                   
