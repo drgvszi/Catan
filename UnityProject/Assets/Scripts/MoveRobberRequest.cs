@@ -8,6 +8,7 @@ public class MoveRobberArguments
     public string player_0;
     public string player_1;
     public string player_2;
+    public string resource;
 }
 [Serializable]
 public class MoveRobberRequest 

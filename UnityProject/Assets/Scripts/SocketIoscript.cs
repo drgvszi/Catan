@@ -96,7 +96,14 @@ public class SocketIoscript : MonoBehaviour
             
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
-                trade++;
+                if(E.data[3].str=="false")
+                {
+                    trade--;
+                }
+                else
+                {
+                    trade++;
+                }
                 if (trade == 1)
                 {
                     trade = 0;
@@ -149,6 +156,33 @@ public class SocketIoscript : MonoBehaviour
                     }).Catch(err => { Debug.Log(err); });
 
                    
+                }
+                if(trade==-3)
+                {
+                    trade = 0;
+                    TradePlayerJson command = new TradePlayerJson();
+                    command.gameId = LoginScript.CurrentUserGameId;
+                    command.playerId = LoginScript.CurrentUserGEId;
+                    RequestJson req = new RequestJson();
+                    RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendPartners", command).Then(Response =>
+                    {
+                        Debug.Log("SendParteners " + Response.code);
+                        Debug.Log("Send Parteners " + Response.status);
+                        Debug.Log("Send Partenets " + Response.arguments.player_0);
+                        SelectedPartener commandSelect = new SelectedPartener();
+                        commandSelect.gameId = LoginScript.CurrentUserGameId;
+                        commandSelect.playerId = LoginScript.CurrentUserGEId;
+                        commandSelect.player = null;
+                        RequestJson request = new RequestJson();
+                        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/selectPartner", commandSelect).Then(Response2 =>
+                        {
+                            Debug.Log("Nu a selectat nimeni");
+                            Debug.Log(Response2.status);
+
+                        }).Catch(err => { Debug.Log(err); });
+
+                    }).Catch(err => { Debug.Log(err); });
+
                 }
 
                 
@@ -484,20 +518,7 @@ public class SocketIoscript : MonoBehaviour
                 }
                 Debug.Log(dice_1);
                 Debug.Log(dice_2);
-                if(int.Parse(dice_1) + int.Parse(dice_2) == 7)
-                {
-                    MakeRequestResponse command1 = new MakeRequestResponse();
-                    command1.gameId = LoginScript.CurrentUserGameId;
-                    command1.playerId = LoginScript.CurrentUserGEId;
-                    command1.tile = 10;
-                    RequestJson req1 = new RequestJson();
-                    RestClient.Post<MoveRobberRequest>("https://catan-connectivity.herokuapp.com/game/moveRobber", command1).Then(Response1 =>
-                    {
-                        Debug.Log("Move robber " + Response1.code);
-                        Debug.Log("Move robber  " + Response1.status);
-                        Debug.Log("Move robber " + Response1.arguments.player_0);
-                    }).Catch(err => { Debug.Log(err); });
-                }
+               
                 
             }
         });

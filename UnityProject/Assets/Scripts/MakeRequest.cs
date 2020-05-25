@@ -184,6 +184,17 @@ public class MakeRequest
 
         }).Catch(err => { Debug.Log(err); });
     }
+    public static void declineTrade(string CurrentUserGame, string CurrentUserId)
+    {
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
+        JSONObject json_message = new JSONObject();
+        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+        json_message.AddField("username", LoginScript.CurrentUser);
+        json_message.AddField("gameEngineId", LoginScript.CurrentUserGEId);
+        json_message.AddField("wantToTrade", "false");
+        socket.Emit("wantToTrade", json_message);
+    }
    /* public static void sendParteners(string CurrentUserGame, string CurrentUserId)
     {
         TradePlayerJson command = new TradePlayerJson();

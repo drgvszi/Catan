@@ -29,6 +29,10 @@ public class AcceptTrade : MonoBehaviour
         Thread.Sleep(2000);
         updateResource();
     }
+    public void declineTrade()
+    {
+        MakeRequest.declineTrade(LoginScript.CurrentUserGameId, LoginScript.CurrentUserGEId);
+    }
     
     public void updateResource()
     {

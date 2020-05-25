@@ -34,7 +34,7 @@ public class Lobby
 public class LobbyHandler : MonoBehaviour
 {
     public SocketIOComponent socket;                                                               // BETTER ASK Datco Maxim what he have done here. Only God and him know
-    GameObject startbutton;
+    GameObject startbutton = GameObject.Find("Start");
     bool ok = false;
     void Start()
     {
