@@ -96,6 +96,7 @@ public class Messages {
         messages.put(Code.NoTradeAvailable, "No trade available.");
         messages.put(Code.AlreadyInTrade, "You are already in trade.");
         messages.put(Code.NotInTrade, "The selected player is not in trade.");
+        messages.put(Code.NoPartner, "Nobody wanted to trade.");
         messages.put(Code.InvalidPortOffer, "The offer does not match the port.");
 
         //endregion

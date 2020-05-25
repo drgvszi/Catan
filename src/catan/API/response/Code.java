@@ -88,6 +88,7 @@ public enum Code {
     NoTradeAvailable,
     AlreadyInTrade,
     NotInTrade,
+    NoPartner,
     InvalidPortOffer,
 
     //endregion Trade

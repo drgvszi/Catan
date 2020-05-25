@@ -943,6 +943,9 @@ public abstract class Game {
 
     public Code selectPartner(String playerId) {
         if (!tradePartners.contains(playerId)) {
+            if (tradePartners.size() == 0) {
+                return Code.NoPartner;
+            }
             return Code.NotInTrade;
         }
         Player partner = players.get(playerId);
