@@ -16,4 +16,8 @@ public class MakeRequestResponse
     public int tile;
     public string answer;
     public string player;
+    public string resource;
+    public string development;
+    public string resource_0;
+    public string resource_1;
 }

@@ -195,19 +195,117 @@ public class MakeRequest
         json_message.AddField("wantToTrade", "false");
         socket.Emit("wantToTrade", json_message);
     }
-   /* public static void sendParteners(string CurrentUserGame, string CurrentUserId)
+
+    /* public static void sendParteners(string CurrentUserGame, string CurrentUserId)
+     {
+         TradePlayerJson command = new TradePlayerJson();
+         command.gameId = CurrentUserGame;
+         command.playerId = CurrentUserId;
+         RequestJson req = new RequestJson();
+         RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendParteners", command).Then(Response =>
+         {
+             Debug.Log("SendParteners " + Response.code);
+             Debug.Log("Send Parteners " + Response.status);
+
+         }).Catch(err => { Debug.Log(err); });
+     }*/
+
+
+    public static void buyDevelopment(string CurrentUserGame, string CurrentUserId)
     {
-        TradePlayerJson command = new TradePlayerJson();
+        MakeRequestResponse command = new MakeRequestResponse();
         command.gameId = CurrentUserGame;
         command.playerId = CurrentUserId;
-        RequestJson req = new RequestJson();
-        RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendParteners", command).Then(Response =>
+        //Debug.Log(CurrentUserGame);
+        //Debug.Log(CurrentUserId);
+        RequestJsonDevelopmentExceptMonopoly req = new RequestJsonDevelopmentExceptMonopoly();
+        RestClient.Post<RequestJsonDevelopmentExceptMonopoly>("https://catan-connectivity.herokuapp.com/game/buyDevelopment", command).Then(Response =>
         {
-            Debug.Log("SendParteners " + Response.code);
-            Debug.Log("Send Parteners " + Response.status);
-
+            req.code = Response.code;
+            req.status = Response.status;
+            req.arguments = Response.arguments;
+            Debug.Log(req.code);
+            Debug.Log(req.status);
+            Debug.Log(req.arguments);
         }).Catch(err => { Debug.Log(err); });
-    }*/
+    }
+
+    public static void useDevelopment(string CurrentUserGame, string CurrentUserId, string development)
+    {
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.development = development;
+        //Debug.Log(CurrentUserGame);
+        //Debug.Log(CurrentUserId);
+        RequestJsonDevelopmentExceptMonopoly req = new RequestJsonDevelopmentExceptMonopoly();
+        RestClient.Post<RequestJsonDevelopmentExceptMonopoly>("https://catan-connectivity.herokuapp.com/game/useDevelopment", command).Then(Response =>
+        {
+            req.code = Response.code;
+            req.status = Response.status;
+            Debug.Log(req.code);
+            Debug.Log(req.status);
+        }).Catch(err => { Debug.Log(err); });
+    }
+
+    public static void takeResourceFromAll(string CurrentUserGame, string CurrentUserId, string resource)
+    {
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.resource = resource;
+        //Debug.Log(CurrentUserGame);
+        //Debug.Log(CurrentUserId);s
+        RequestJsonDevelopmentMonopoly req = new RequestJsonDevelopmentMonopoly();
+        RestClient.Post<RequestJsonDevelopmentMonopoly>("https://catan-connectivity.herokuapp.com/game/takeResourceFromAll", command).Then(Response =>
+        {
+            req.code = Response.code;
+            req.status = Response.status;
+            req.arguments = Response.arguments;
+            Debug.Log(req.code);
+            Debug.Log(req.arguments);
+            Debug.Log(req.status);
+        }).Catch(err => { Debug.Log(err); });
+    }
+
+    public static void buildDevelopmentRoad(string CurrentUserGame, string CurrentUserId, int start, int end)
+    {
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.start = start;
+        command.end = end;
+        //Debug.Log(CurrentUserGame);
+        //Debug.Log(CurrentUserId);
+        RequestJsonDevelopmentExceptMonopoly req = new RequestJsonDevelopmentExceptMonopoly();
+        RestClient.Post<RequestJsonDevelopmentExceptMonopoly>("https://catan-connectivity.herokuapp.com/game/buildDevelopmentRoad", command).Then(Response =>
+        {
+            req.code = Response.code;
+            req.status = Response.status;
+            Debug.Log(req.code);
+            Debug.Log(req.status);
+        }).Catch(err => { Debug.Log(err); });
+    }
+
+    public static void takeTwoResources(string CurrentUserGame, string CurrentUserId, string resource_0, string resource_1)
+    {
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = CurrentUserGame;
+        command.playerId = CurrentUserId;
+        command.resource_0 = resource_0;
+        command.resource_1 = resource_1;
+        //Debug.Log(CurrentUserGame);
+        //Debug.Log(CurrentUserId);
+        RequestJsonDevelopmentExceptMonopoly req = new RequestJsonDevelopmentExceptMonopoly();
+        RestClient.Post<RequestJsonDevelopmentExceptMonopoly>("https://catan-connectivity.herokuapp.com/game/takeTwoResources", command).Then(Response =>
+        {
+            req.code = Response.code;
+            req.status = Response.status;
+            Debug.Log(req.code);
+            Debug.Log(req.status);
+        }).Catch(err => { Debug.Log(err); });
+    }
+
 }
 
 
