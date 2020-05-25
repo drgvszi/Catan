@@ -270,7 +270,7 @@ public class Dices : MonoBehaviour
 
                     }
                     */
-                    /*MakeRequestResponse command1 = new MakeRequestResponse();
+                    MakeRequestResponse command1 = new MakeRequestResponse();
                     command1.gameId = LoginScript.CurrentUserGameId;
                     command1.playerId = LoginScript.CurrentUserGEId;
                     command1.tile = 10;
@@ -308,7 +308,7 @@ public class Dices : MonoBehaviour
                         }
                         
                      
-                    }).Catch(err => { Debug.Log(err); });*/
+                    }).Catch(err => { Debug.Log(err); });
                 }
             }
             txt.text = req.status;

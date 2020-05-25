@@ -163,6 +163,7 @@ public class SocketIoscript : MonoBehaviour
                     TradePlayerJson command = new TradePlayerJson();
                     command.gameId = LoginScript.CurrentUserGameId;
                     command.playerId = LoginScript.CurrentUserGEId;
+                   // command.arguments = null;
                     RequestJson req = new RequestJson();
                     RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendPartners", command).Then(Response =>
                     {
@@ -184,8 +185,6 @@ public class SocketIoscript : MonoBehaviour
                     }).Catch(err => { Debug.Log(err); });
 
                 }
-
-                
             }
                 
         });
