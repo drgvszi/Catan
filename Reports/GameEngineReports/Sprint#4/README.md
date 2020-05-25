@@ -247,7 +247,7 @@
 ```
  - the current player must send ```selectPartner``` if he sent ```sendPartners```
  - ```player``` contains the player identifier from the ```sendPartners``` response arguments
- - ```arguments``` can contain null only if no other player wanted to trade
+ - ```player``` can contain null only if no other player wanted to trade
 ```
 { 
  "code": "HttpStatus code", 
