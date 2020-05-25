@@ -356,21 +356,21 @@ public abstract class Game {
         result.put("roadBuilding", player.getDevelopmentsNumber(Development.roadBuilding));
         result.put("victoryPoint", player.getHiddenVictoryPoints());
         result.put("yearOfPlenty", player.getDevelopmentsNumber(Development.yearOfPlenty));
-        Set<int[]> roads = new HashSet<>();
-        for (Road road : player.getRoads()) {
-            roads.add(new int[]{road.getStart().getId(), road.getEnd().getId()});
-        }
-        result.put("roads", roads);
-        Set<Integer> settlements = new HashSet<>();
-        for (Intersection settlement : player.getSettlements()) {
-            settlements.add(settlement.getId());
-        }
-        result.put("settlements", settlements);
-        Set<Integer> cities = new HashSet<>();
-        for (Intersection city : player.getCities()) {
-            cities.add(city.getId());
-        }
-        result.put("cities", cities);
+//        Set<int[]> roads = new HashSet<>();
+//        for (Road road : player.getRoads()) {
+//            roads.add(new int[]{road.getStart().getId(), road.getEnd().getId()});
+//        }
+//        result.put("roads", roads);
+//        Set<Integer> settlements = new HashSet<>();
+//        for (Intersection settlement : player.getSettlements()) {
+//            settlements.add(settlement.getId());
+//        }
+//        result.put("settlements", settlements);
+//        Set<Integer> cities = new HashSet<>();
+//        for (Intersection city : player.getCities()) {
+//            cities.add(city.getId());
+//        }
+//        result.put("cities", cities);
         result.put("usedKnights", player.getUsedKnights());
         result.put("roadsToBuild", player.getRoadsToBuild());
         result.put("hasLargestArmy", player.hasLargestArmy());
@@ -535,10 +535,10 @@ public abstract class Game {
         Random dice = new Random();
         int firstDice = dice.nextInt(6) + 1;
         int secondDice = dice.nextInt(6) + 1;
-        while (firstDice + secondDice == 7) {
-            firstDice = dice.nextInt(6) + 1;
-            secondDice = dice.nextInt(6) + 1;
-        }
+//        while (firstDice + secondDice == 7) {
+//            firstDice = dice.nextInt(6) + 1;
+//            secondDice = dice.nextInt(6) + 1;
+//        }
         return new Pair<>(firstDice, secondDice);
     }
 
@@ -685,17 +685,19 @@ public abstract class Game {
 
     //region Available Properties Positions
 
-    protected Set<int[]> getAvailableRoadPositions(Player player) {
-        Set<int[]> availableRoadPositions = new HashSet<>();
+    protected List<Integer> getAvailableRoadPositions(Player player) {
+        List<Integer> availableRoadPositions = new ArrayList<>();
         if (player.getSettlements().size() > 0 && player.getRoads().size() < 2) {
             Intersection lastBuilding = player.getSettlements().get(player.getSettlements().size() - 1);
             int start = lastBuilding.getId();
             for (Intersection intersection : board.getAdjacentIntersections(lastBuilding)) {
                 int end = intersection.getId();
                 if (end < start) {
-                    availableRoadPositions.add(new int[]{end, start});
+                    availableRoadPositions.add(end);
+                    availableRoadPositions.add(start);
                 } else {
-                    availableRoadPositions.add(new int[]{start, end});
+                    availableRoadPositions.add(start);
+                    availableRoadPositions.add(end);
                 }
             }
         } else {
@@ -709,8 +711,8 @@ public abstract class Game {
                         end = aux;
                     }
                     if (!board.hasRoad(start, end)) {
-                        availableRoadPositions.add(new int[]{start, end});
-                    }
+                        availableRoadPositions.add(start);
+                        availableRoadPositions.add(end);                    }
                 }
                 for (Intersection intersection : board.getAdjacentIntersections(road.getEnd())) {
                     int start = road.getEnd().getId();
@@ -721,8 +723,8 @@ public abstract class Game {
                         end = aux;
                     }
                     if (!board.hasRoad(start, end)) {
-                        availableRoadPositions.add(new int[]{start, end});
-                    }
+                        availableRoadPositions.add(start);
+                        availableRoadPositions.add(end);                    }
                 }
             }
         }

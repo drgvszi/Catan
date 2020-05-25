@@ -430,24 +430,6 @@
       "roadBuilding": "number of owned roadBuildings (integer)",
       "victoryPoint": "number of owned victoryPoints (integer)",
       "yearOfPlenty": "number of owned yearsOfPlenty (integer)",
-      "settlements": [
-        "number of owned intersection (integer)",
-        "number of owned intersection (integer)"
-      ],
-      "cities": [
-        "number of owned intersection (integer)",
-        "number of owned intersection (integer)"
-      ],
-      "roads": [
-        [
-          "number of start intersection (integer)",
-          "number of end intersection (integer)"
-        ],
-        [
-          "number of start intersection (integer)",
-          "number of end intersection (integer)"
-        ]
-      ],
       "usedKnights": "number of used Knight development cards (integer)",
       "roadsToBuild": "number of remaining roads to build when using Road Building development card",
       "hasLargestArmy": "true or false (boolean)",
@@ -467,14 +449,10 @@
         "number of available intersection (integer)"
       ],
       "availableRoadPositions": [
-        [
-          "number of start intersection (integer)",
-          "number of end intersection (integer)"
-        ],
-        [
-          "number of start intersection (integer)",
-          "number of end intersection (integer)"
-        ]
+        "number of start intersection (integer)",
+        "number of end intersection (integer)",
+        "number of start intersection (integer)",
+        "number of end intersection (integer)"
       ]
     }
   },
