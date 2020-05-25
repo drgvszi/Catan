@@ -13900,8 +13900,8 @@ MonoBehaviour:
   sside5: {fileID: 569374663}
   sside6: {fileID: 176303715}
   lumber: {fileID: 371030346}
-  ore: {fileID: 1301698132}
-  brick: {fileID: 694343209}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
   grain: {fileID: 1215494028}
   wool: {fileID: 145854600}
   socket: {fileID: 0}
@@ -14412,7 +14412,7 @@ GameObject:
   - component: {fileID: 694343210}
   - component: {fileID: 694343209}
   m_Layer: 5
-  m_Name: brick text
+  m_Name: ore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26472,7 +26472,7 @@ GameObject:
   - component: {fileID: 1301698133}
   - component: {fileID: 1301698132}
   m_Layer: 5
-  m_Name: clay text
+  m_Name: brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26827,11 +26827,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 3
   capat2: 2
   socket: {fileID: 0}
@@ -29475,7 +29475,7 @@ GameObject:
   - component: {fileID: 1495888096}
   - component: {fileID: 1495888095}
   m_Layer: 5
-  m_Name: Clay image
+  m_Name: brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37037,7 +37037,7 @@ GameObject:
   - component: {fileID: 1822848830}
   - component: {fileID: 1822848829}
   m_Layer: 5
-  m_Name: Brick image
+  m_Name: ore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111651,11 +111651,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 44
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -111721,11 +111721,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 5
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -111792,11 +111792,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 27
   capat2: 26
   socket: {fileID: 0}
@@ -111864,11 +111864,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 21
   capat2: 22
   socket: {fileID: 0}
@@ -111935,11 +111935,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 24
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -112006,11 +112006,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 23
   capat2: 52
   socket: {fileID: 0}
@@ -112078,11 +112078,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 24
   capat2: 25
   socket: {fileID: 0}
@@ -112150,11 +112150,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 10
   capat2: 29
   socket: {fileID: 0}
@@ -112221,11 +112221,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 0
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -112291,11 +112291,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 4
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -112362,11 +112362,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 41
   capat2: 42
   socket: {fileID: 0}
@@ -112434,11 +112434,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 8
   capat2: 27
   socket: {fileID: 0}
@@ -112505,11 +112505,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 14
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -112576,11 +112576,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 31
   capat2: 30
   socket: {fileID: 0}
@@ -112647,11 +112647,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 40
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -112734,11 +112734,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 46
   capat2: 47
   socket: {fileID: 0}
@@ -112806,11 +112806,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 7
   capat2: 24
   socket: {fileID: 0}
@@ -112877,11 +112877,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 18
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -112947,11 +112947,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 7
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113017,11 +113017,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 16
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113088,11 +113088,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 12
   capat2: 3
   socket: {fileID: 0}
@@ -113159,11 +113159,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 37
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113230,11 +113230,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 36
   capat2: 35
   socket: {fileID: 0}
@@ -113302,11 +113302,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 48
   capat2: 49
   socket: {fileID: 0}
@@ -113374,11 +113374,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 50
   capat2: 51
   socket: {fileID: 0}
@@ -113445,11 +113445,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 47
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113515,11 +113515,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 52
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113585,11 +113585,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 42
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113655,11 +113655,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 35
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113725,11 +113725,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 32
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113795,11 +113795,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 38
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113865,11 +113865,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 25
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -113935,11 +113935,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 20
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -114005,11 +114005,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 12
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -114075,11 +114075,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 29
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -114146,11 +114146,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 18
   capat2: 5
   socket: {fileID: 0}
@@ -114218,11 +114218,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 6
   capat2: 7
   socket: {fileID: 0}
@@ -114290,11 +114290,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 17
   capat2: 18
   socket: {fileID: 0}
@@ -114361,11 +114361,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 49
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -114432,11 +114432,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 32
   capat2: 31
   socket: {fileID: 0}
@@ -114504,11 +114504,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 1
   socket: {fileID: 0}
@@ -114575,11 +114575,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 41
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -114646,11 +114646,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 45
   capat2: 46
   socket: {fileID: 0}
@@ -114718,11 +114718,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 49
   capat2: 50
   socket: {fileID: 0}
@@ -114790,11 +114790,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 28
   capat2: 27
   socket: {fileID: 0}
@@ -114862,11 +114862,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 40
   capat2: 39
   socket: {fileID: 0}
@@ -114933,11 +114933,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 39
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -115038,11 +115038,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -115109,11 +115109,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 4
   capat2: 3
   socket: {fileID: 0}
@@ -115181,11 +115181,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 2
   capat2: 9
   socket: {fileID: 0}
@@ -115253,11 +115253,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 47
   capat2: 48
   socket: {fileID: 0}
@@ -115325,11 +115325,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 20
   capat2: 47
   socket: {fileID: 0}
@@ -115397,11 +115397,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 1
   capat2: 2
   socket: {fileID: 0}
@@ -115469,11 +115469,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 4
   capat2: 5
   socket: {fileID: 0}
@@ -115541,11 +115541,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 13
   capat2: 12
   socket: {fileID: 0}
@@ -115613,11 +115613,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 33
   capat2: 32
   socket: {fileID: 0}
@@ -115685,11 +115685,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 19
   capat2: 20
   socket: {fileID: 0}
@@ -115757,11 +115757,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 16
   capat2: 17
   socket: {fileID: 0}
@@ -115829,11 +115829,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 22
   capat2: 49
   socket: {fileID: 0}
@@ -115901,11 +115901,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 12
   capat2: 11
   socket: {fileID: 0}
@@ -115973,11 +115973,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 38
   capat2: 37
   socket: {fileID: 0}
@@ -116044,11 +116044,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 22
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116114,11 +116114,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 19
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116184,11 +116184,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 51
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116255,11 +116255,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 14
   capat2: 13
   socket: {fileID: 0}
@@ -116326,11 +116326,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 30
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116397,11 +116397,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 40
   capat2: 41
   socket: {fileID: 0}
@@ -116469,11 +116469,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 32
   capat2: 11
   socket: {fileID: 0}
@@ -116541,11 +116541,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 26
   capat2: 25
   socket: {fileID: 0}
@@ -116612,11 +116612,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 9
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116683,11 +116683,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 5
   capat2: 0
   socket: {fileID: 0}
@@ -116754,11 +116754,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 33
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116824,11 +116824,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 3
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116894,11 +116894,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 28
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -116964,11 +116964,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 53
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117035,11 +117035,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 16
   capat2: 15
   socket: {fileID: 0}
@@ -117120,11 +117120,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 8
   capat2: 7
   socket: {fileID: 0}
@@ -117192,11 +117192,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 21
   socket: {fileID: 0}
@@ -117264,11 +117264,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 38
   capat2: 39
   socket: {fileID: 0}
@@ -117335,11 +117335,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 2
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117406,11 +117406,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 20
   capat2: 21
   socket: {fileID: 0}
@@ -117477,11 +117477,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 6
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117547,11 +117547,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 26
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117618,11 +117618,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 30
   capat2: 29
   socket: {fileID: 0}
@@ -117689,11 +117689,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 17
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117760,11 +117760,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 52
   capat2: 51
   socket: {fileID: 0}
@@ -117831,11 +117831,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 13
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117901,11 +117901,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 34
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -117972,11 +117972,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 34
   capat2: 33
   socket: {fileID: 0}
@@ -118044,11 +118044,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 15
   capat2: 4
   socket: {fileID: 0}
@@ -118115,11 +118115,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 36
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -118186,11 +118186,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 14
   capat2: 15
   socket: {fileID: 0}
@@ -118258,11 +118258,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 10
   capat2: 9
   socket: {fileID: 0}
@@ -118330,11 +118330,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 44
   capat2: 45
   socket: {fileID: 0}
@@ -118401,11 +118401,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 46
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -118471,11 +118471,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 50
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -118541,11 +118541,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 43
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -118611,11 +118611,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 31
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -118682,11 +118682,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 39
   capat2: 16
   socket: {fileID: 0}
@@ -118754,11 +118754,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 8
   capat2: 9
   socket: {fileID: 0}
@@ -118825,11 +118825,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 15
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -118896,11 +118896,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 42
   capat2: 17
   socket: {fileID: 0}
@@ -118968,11 +118968,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 11
   capat2: 10
   socket: {fileID: 0}
@@ -119040,11 +119040,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 42
   capat2: 43
   socket: {fileID: 0}
@@ -119112,11 +119112,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 22
   capat2: 23
   socket: {fileID: 0}
@@ -119184,11 +119184,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 6
   capat2: 23
   socket: {fileID: 0}
@@ -119255,11 +119255,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 10
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -119325,11 +119325,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 27
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -119395,11 +119395,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 48
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -119465,11 +119465,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 45
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -119536,11 +119536,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 29
   capat2: 28
   socket: {fileID: 0}
@@ -119608,11 +119608,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 52
   capat2: 53
   socket: {fileID: 0}
@@ -119680,11 +119680,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 36
   capat2: 37
   socket: {fileID: 0}
@@ -119752,11 +119752,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 1
   capat2: 6
   socket: {fileID: 0}
@@ -119823,11 +119823,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 11
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -119893,11 +119893,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 8
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -119964,11 +119964,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 24
   capat2: 53
   socket: {fileID: 0}
@@ -120036,11 +120036,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 18
   capat2: 19
   socket: {fileID: 0}
@@ -120108,11 +120108,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 43
   capat2: 44
   socket: {fileID: 0}
@@ -120180,11 +120180,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 37
   capat2: 14
   socket: {fileID: 0}
@@ -120252,11 +120252,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 34
   capat2: 13
   socket: {fileID: 0}
@@ -120323,11 +120323,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 23
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
@@ -120394,11 +120394,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 44
   capat2: 19
   socket: {fileID: 0}
@@ -120466,11 +120466,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: -1
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 35
   capat2: 34
   socket: {fileID: 0}
@@ -120537,11 +120537,11 @@ MonoBehaviour:
   player4: {fileID: 247054990}
   ver: {fileID: 1431064208}
   numar: 21
-  lumber: {fileID: 0}
-  ore: {fileID: 0}
-  brick: {fileID: 0}
-  grain: {fileID: 0}
-  wool: {fileID: 0}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   capat1: 0
   capat2: 0
   socket: {fileID: 0}
