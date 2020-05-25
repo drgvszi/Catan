@@ -13,4 +13,5 @@ public class MakeRequestResponse
     public int port;
     public string offer;
     public string request;
+    public int tile;
 }

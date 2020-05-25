@@ -5,6 +5,7 @@ using SocketIO;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
 using Proyecto26;
+using System.Globalization;
 
 public class SocketIoscript : MonoBehaviour
 {
@@ -483,6 +484,21 @@ public class SocketIoscript : MonoBehaviour
                 }
                 Debug.Log(dice_1);
                 Debug.Log(dice_2);
+                if(int.Parse(dice_1) + int.Parse(dice_2) == 7)
+                {
+                    MakeRequestResponse command1 = new MakeRequestResponse();
+                    command1.gameId = LoginScript.CurrentUserGameId;
+                    command1.playerId = LoginScript.CurrentUserGEId;
+                    command1.tile = 10;
+                    RequestJson req1 = new RequestJson();
+                    RestClient.Post<MoveRobberRequest>("https://catan-connectivity.herokuapp.com/game/moveRobber", command1).Then(Response1 =>
+                    {
+                        Debug.Log("Move robber " + Response1.code);
+                        Debug.Log("Move robber  " + Response1.status);
+                        Debug.Log("Move robber " + Response1.arguments.player_0);
+                    }).Catch(err => { Debug.Log(err); });
+                }
+                
             }
         });
 
