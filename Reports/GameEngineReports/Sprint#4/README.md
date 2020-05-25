@@ -124,7 +124,7 @@
  } 
 }
 ```
- - if the dice sum is seven, the current player must send ```moveRobber```, otherwise the game will not continue
+ - if the dice sum is seven and no player has eight or more resource cards, the current player must send ```moveRobber```, otherwise the game will not continue
 ```
 { 
  "code": "HttpStatus code", 
