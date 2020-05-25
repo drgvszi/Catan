@@ -21105,7 +21105,7 @@ RectTransform:
   m_Children:
   - {fileID: 1016381378}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -26605,7 +26605,7 @@ Transform:
   - {fileID: 288241187}
   - {fileID: 920775076}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319411288
 GameObject:
@@ -29014,7 +29014,7 @@ RectTransform:
   - {fileID: 346860125}
   - {fileID: 1190872701}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41856,7 +41856,7 @@ RectTransform:
   - {fileID: 317049904}
   - {fileID: 1822848828}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 11
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -70620,7 +70620,7 @@ RectTransform:
   - {fileID: 876790695}
   - {fileID: 7443613673682066708}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -73127,13 +73127,13 @@ RectTransform:
   - {fileID: 8916641833365612454}
   - {fileID: 1177432845}
   - {fileID: 279553252}
-  - {fileID: 2029153230}
   - {fileID: 1037347854}
   - {fileID: 7443613674015516217}
   - {fileID: 1497389484444116572}
   - {fileID: 2205872310497931846}
   - {fileID: 1462586914}
   - {fileID: 1312993142}
+  - {fileID: 2029153230}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73180,6 +73180,11 @@ MonoBehaviour:
   player2: {fileID: 1427787477}
   player3: {fileID: 2009676157}
   player4: {fileID: 247054990}
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
   socket: {fileID: 0}
 --- !u!114 &2205872310042122224
 MonoBehaviour:
@@ -73833,7 +73838,7 @@ Transform:
   - {fileID: 8916641834058067275}
   - {fileID: 804495309}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2205872310497931847
 GameObject:
@@ -95930,7 +95935,7 @@ RectTransform:
   - {fileID: 1152173860}
   - {fileID: 1908934741}
   m_Father: {fileID: 2205872309884757911}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
