@@ -542,6 +542,7 @@
 # Dice
 ## Error messages
  - You do not have more than seven resource cards to discard half of them.
+ - You have not discarded any resource cards.
 ## Success messages
  - The dice sum is seven.
  - The dice sum is not seven.
