@@ -271,6 +271,10 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (arguments == null) {
+                    if (game.getTradePartners().size() == 0) {
+                        response = new UserResponse(HttpStatus.SC_OK, "Nobody wanted to trade.", null);
+                        return true;
+                    }
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);
                     return false;
