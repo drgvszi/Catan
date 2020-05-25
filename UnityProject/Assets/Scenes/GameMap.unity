@@ -8631,8 +8631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144, y: -142.2}
-  m_SizeDelta: {x: 95.05, y: 20}
+  m_AnchoredPosition: {x: 106.93, y: -142.2}
+  m_SizeDelta: {x: 20.915, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367322173
 MonoBehaviour:
@@ -17896,7 +17896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &876790695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28767,8 +28767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64, y: 0}
-  m_SizeDelta: {x: 95.05, y: 20}
+  m_AnchoredPosition: {x: -102.01, y: 0}
+  m_SizeDelta: {x: 19.025, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446178781
 MonoBehaviour:
@@ -40852,6 +40852,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d66c4016dda90c41bd6cb290ab0bee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lumber: {fileID: 371030346}
+  ore: {fileID: 694343209}
+  brick: {fileID: 1301698132}
+  grain: {fileID: 1215494028}
+  wool: {fileID: 145854600}
+  socket: {fileID: 0}
 --- !u!1 &1982099733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 0ca60db43ac3c7a43b4808eb0c9f0dac,
@@ -94955,7 +94961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &7443613673682066714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -95948,7 +95954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &7443613674015516223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96616,17 +96622,6 @@ MonoBehaviour:
       - m_Target: {fileID: 876790694}
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7443613674203381628}
-        m_MethodName: bankTradeRequest
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
