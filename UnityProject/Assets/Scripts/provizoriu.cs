@@ -64,8 +64,13 @@ public class provizoriu : MonoBehaviour
                     req.status = Response.status;
                     if (req.code == 200)
                     {
-                        
-                        allPieces.SetActive(false);
+                         JSONObject json_message = new JSONObject();
+                        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                        json_message.AddField("username", LoginScript.CurrentUser);
+                        json_message.AddField("intersection", command.intersection);
+                        print(command.intersection);
+                        socket.Emit("buildsettlement", json_message);
+                       
 
                         if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                         {
@@ -87,7 +92,7 @@ public class provizoriu : MonoBehaviour
 
                         }
                         
-
+                        allPieces.SetActive(false);
                         int x = int.Parse(lumber.text) - 1;
                         lumber.text = x.ToString();
                         x = int.Parse(brick.text) - 1;
@@ -97,12 +102,7 @@ public class provizoriu : MonoBehaviour
                         x = int.Parse(wool.text) - 1;
                         wool.text = x.ToString();
 
-                        JSONObject json_message = new JSONObject();
-                        json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                        json_message.AddField("username", LoginScript.CurrentUser);
-                        json_message.AddField("intersection", command.intersection);
-                        print(command.intersection);
-                        socket.Emit("buildsettlement", json_message);
+                       
                     }
 
                     Debug.Log(req.code);
@@ -132,7 +132,7 @@ public class provizoriu : MonoBehaviour
                         json_message.AddField("intersection", command.intersection);
                         print(command.intersection);
                         socket.Emit("buildsettlement", json_message);
-                        allPieces.SetActive(false);
+                      
 
                         if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                         {
@@ -153,7 +153,8 @@ public class provizoriu : MonoBehaviour
                             AfiseazaDrum.afiseaza(newPiece4, piece);
 
                         }
-                    }
+                    } 
+                    allPieces.SetActive(false);
                     Debug.Log(req.code);
                     Debug.Log(req.status);
 

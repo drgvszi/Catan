@@ -17,7 +17,8 @@ public class test : MonoBehaviour
     
     void Start()
     {
-        
+        Text txt = FindTextFiel.find();
+        txt.text = " aaaaaaaaaaaaaa \n bbbbbbbbbb";
     }
 
    

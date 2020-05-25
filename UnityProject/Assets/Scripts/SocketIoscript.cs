@@ -187,8 +187,11 @@ public class SocketIoscript : MonoBehaviour
         socket.On("buildroad", (E) =>
         {
             turn++;
+            Debug.Log("buildroad");
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
+
+                Debug.Log("buildroad227711");
                 string user_who_built_road = E.data[1].str;
                 string start = E.data[2].ToString();
                 string end = E.data[3].ToString();
@@ -278,7 +281,29 @@ public class SocketIoscript : MonoBehaviour
                     player2.SetActive(false);
                     ver.text = "2";
                 }
+                if (user_who_built_road == LoginScript.CurrentLobby.master && ver.text == "2")
+                {
 
+                    AfiseazaDrum.afiseaza(newPieceR1, inter);
+
+                }
+
+                else if (user_who_built_road == LoginScript.CurrentLobby.first && ver.text == "2")
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR2, inter);
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.second && ver.text == "2")
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR3, inter);
+                }
+                else if (user_who_built_road == LoginScript.CurrentLobby.third && ver.text == "2")
+                {
+
+                    AfiseazaDrum.afiseaza(newPieceR4, inter);
+
+                }
                 drumuri.SetActive(false);
             }
 
