@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine;
+using System.Threading;
 using UnityEngine.UI;
+using UnityEditor;
+using UnityEngine;
+using FullSerializer;
+using Proyecto26;
+using UnityEngine.SceneManagement;
+using System.Text;
+using SocketIO;
+using System;
+using System.Runtime.InteropServices;
 
 public class test : MonoBehaviour
 {
-    GameObject inter;
-    Toggle tg;
-    public Text txt;
-    // Update is called once per frame
+    
     void Start()
     {
-        txt.text = "aaaa";
+        
     }
 
    

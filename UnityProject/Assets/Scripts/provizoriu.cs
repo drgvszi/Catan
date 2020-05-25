@@ -162,6 +162,23 @@ public class provizoriu : MonoBehaviour
                     txt.text = req.status;
                 }).Catch(err => { Debug.Log(err); });
 
+                MakeRequestResponse command1 = new MakeRequestResponse();
+                command1.gameId = LoginScript.CurrentUserGameId;
+                command1.playerId = LoginScript.CurrentUserGEId;
+                RequestJson req1 = new RequestJson();
+                RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command1).Then(Response1 =>
+                {
+                    Debug.Log("Update code " + Response1.code);
+                    Debug.Log("Update status " + Response1.status);
+                    Debug.Log("Update arguments lumber " + Response1.arguments.lumber);
+                    lumber.text = Response1.arguments.lumber.ToString();
+                    ore.text = Response1.arguments.ore.ToString();
+                    grain.text = Response1.arguments.grain.ToString();
+                    brick.text = Response1.arguments.brick.ToString();
+                    wool.text = Response1.arguments.wool.ToString();
+
+                }).Catch(err => { Debug.Log(err); });
+
             }
         }
         else
