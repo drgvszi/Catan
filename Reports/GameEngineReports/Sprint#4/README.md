@@ -246,7 +246,8 @@
 }
 ```
  - the current player must send ```selectPartner``` if he sent ```sendPartners```
- - ```player``` should contain the player identifier from the ```sendPartners``` response arguments
+ - ```player``` contains the player identifier from the ```sendPartners``` response arguments
+ - ```arguments``` can contain null only if no other player wanted to trade
 ```
 { 
  "code": "HttpStatus code", 
@@ -678,6 +679,7 @@
 - The trade has started successfully.
 - You can take part in the trade.
 - The trade partners were sent successfully.
+- Nobody wanted to trade.
 - The trade was made successfully.
 ## Bank and Port Trade
 ### Success Messages
