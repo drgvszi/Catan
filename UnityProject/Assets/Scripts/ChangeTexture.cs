@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using System.Threading;
 
 public class ChangeTexture : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class ChangeTexture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Text txt = FindTextFiel.find();
         BoardConnectivityJson board = ReceiveBoardScript.ReceivedBoard;
         if (done == false) { 
             if (ReceiveBoardScript.ReceivedBoard.board[0] != null)
@@ -43,6 +45,7 @@ public class ChangeTexture : MonoBehaviour
                 str = board.board[nr].number.ToString();
                 text.text = str;
                 string resource = board.board[nr].resource;
+                txt.text = resource;
                 Debug.Log(resource);
                 switch (resource)
                 {
@@ -68,9 +71,10 @@ public class ChangeTexture : MonoBehaviour
                         Instantiate(objBrick, SpawnHills.position, SpawnHills.rotation);
                         break;
 
-                }
+                } 
+                done = true;
             }
-            done = true;
+           
            // else
            //     Debug.Log("Null");
         }

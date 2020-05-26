@@ -11134,7 +11134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &455247000
 Transform:
   m_ObjectHideFlags: 0
@@ -27367,11 +27367,11 @@ MonoBehaviour:
   objForest: {fileID: 7633285713931926599, guid: 4306d2a4110135f4d8a5d25b7c5635ab,
     type: 3}
   robbler: {fileID: 7068537698086195324, guid: df4ec1534b9c8e944ac14ffe8342ff7c, type: 3}
-  objPasture: {fileID: 6858461780352505516, guid: b3073cf689230ec4586c1ba443870e52,
+  objPasture: {fileID: -927199367670048503, guid: 85b28bd8c9202f94ea388a39d254b2f4,
     type: 3}
   objBrick: {fileID: 7494333064309295065, guid: b0b798c6ed1bb9b4a94587809c568dfb,
     type: 3}
-  objOre: {fileID: 7350768277752909199, guid: 73bd740834d3abd4a965020dd02226a6, type: 3}
+  objOre: {fileID: -927199367670048503, guid: 1bae5ee4befe6434cb4a59abd72a0b01, type: 3}
   objGrain: {fileID: -927199367670048503, guid: bc94cc4921b463342bdf4a32f2e996de,
     type: 3}
   objDesert: {fileID: -927199367670048503, guid: 9506dd9635b634f4c85e90dcb45fe197,
@@ -31835,7 +31835,7 @@ Transform:
   - {fileID: 174550276}
   - {fileID: 1820978888}
   m_Father: {fileID: 1996679330}
-  m_RootOrder: 100
+  m_RootOrder: 95
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455355576
 GameObject:
@@ -45434,12 +45434,12 @@ Transform:
   - {fileID: 486978151}
   - {fileID: 1586026621}
   - {fileID: 3406105911736674321}
+  - {fileID: 1454123519}
   - {fileID: 1426314804}
   - {fileID: 748756352}
   - {fileID: 964770073}
   - {fileID: 1422327369}
   - {fileID: 893002350}
-  - {fileID: 1454123519}
   - {fileID: 1937503146}
   m_Father: {fileID: 0}
   m_RootOrder: 0

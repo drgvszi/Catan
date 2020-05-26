@@ -48,7 +48,16 @@ public class ReceiveBoardScript
         {
             ReceiveBoardScript.ReceivedBoard.ports = board.ports;
             ReceiveBoardScript.ReceivedBoard.board = board.board;
-            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[0].number);
+            Debug.Log("recive board not master");
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[0].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[1].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[2].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[3].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[4].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[5].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[6].resource);
+            Debug.Log(ReceiveBoardScript.ReceivedBoard.board[7].resource);
+
         }).Catch(err => { Debug.Log(err); });
     }
 }

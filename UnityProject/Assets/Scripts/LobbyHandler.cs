@@ -144,6 +144,7 @@ public class LobbyHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         startbutton.SetActive(false);
         // display the names of the members of the lobby. If not master then cannot start game
         GameObject name1 = GameObject.Find("Text1");
