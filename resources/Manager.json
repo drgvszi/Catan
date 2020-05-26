@@ -20,7 +20,7 @@
     "command": "setMaxPlayers",
     "arguments": {
       "gameId": "gameId",
-      "maxPlayers": "a number between 3 and 6"
+      "maxPlayers": "a number between 3 and 6 (integer)"
     }
   },
   {
@@ -46,6 +46,20 @@
   {
     "username": "username",
     "password": "password",
+    "command": "removePlayer",
+    "arguments": {
+      "gameId": "gameId",
+      "playerId": "playerId"
+    }
+  },
+  {
+    "code": "HttpStatus code",
+    "status": "message (success or error type)",
+    "arguments": null
+  },
+  {
+    "username": "username",
+    "password": "password",
     "command": "startGame",
     "arguments": {
       "gameId": "gameId"
@@ -62,6 +76,21 @@
   {
     "username": "username",
     "password": "password",
+    "command": "changePlayerStatus",
+    "arguments": {
+      "gameId": "gameId",
+      "playerId": "playerId",
+      "active": "true or false (boolean)"
+    }
+  },
+  {
+    "code": "HttpStatus code",
+    "status": "message (success or error type)",
+    "arguments": null
+  },
+  {
+    "username": "username",
+    "password": "password",
     "command": "getRanking",
     "arguments": {
       "gameId": "gameId"
@@ -72,14 +101,11 @@
     "status": "message (success or error type)",
     "arguments": {
       "player_0": "playerId",
-      "publicScore_1": 3,
-      "hiddenScore_1": 5,
+      "publicScore_0": "number of public points, without Victory Points development cards (integer)",
+      "hiddenScore_0": "number of hidden points, with Victory Points development cards (integer)",
       "player_1": "playerId",
-      "publicScore_2": 3,
-      "hiddenScore_2": 4,
-      "player_2": "playerId",
-      "publicScore_3": 2,
-      "hiddenScore_3": 4,
+      "publicScore_1": "number of hidden points, with Victory Points development cards (integer)",
+      "hiddenScore_1": "number of hidden points, with Victory Points development cards (integer)",
       "foundWinner": false
     }
   },

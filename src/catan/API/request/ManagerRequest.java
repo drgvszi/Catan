@@ -156,6 +156,27 @@ public class ManagerRequest implements GameRequest {
                 game.getPlayers().remove(playerId);
                 return new ManagerResponse(HttpStatus.SC_OK, "The player was removed successfully.", null);
             }
+            case "startGame": {
+                if (requestJson == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
+                }
+                String gameId = requestJson.get("gameId");
+                Game game = Application.games.get(gameId);
+                if (game == null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
+                }
+                if (game.getBank() != null) {
+                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", null);
+                }
+                if (game.startGame()) {
+                    Map<String, String> payload = new HashMap<>();
+                    payload.put("board", game.getBoard().getBoardJson());
+                    payload.put("ports", game.getBoard().getPortsJson());
+                    String responseJson = new ObjectMapper().writeValueAsString(payload);
+                    return new ManagerResponse(HttpStatus.SC_OK, "The game has started successfully.", responseJson);
+                }
+                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.", null);
+            }
             case "changePlayerStatus": {
                 if (requestJson == null) {
                     return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
@@ -181,27 +202,6 @@ public class ManagerRequest implements GameRequest {
                     }
                 }
                 return new ManagerResponse(HttpStatus.SC_OK, "The player status has been changed successfully.", null);
-            }
-            case "startGame": {
-                if (requestJson == null) {
-                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game identifier is not specified.", null);
-                }
-                String gameId = requestJson.get("gameId");
-                Game game = Application.games.get(gameId);
-                if (game == null) {
-                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game does not exist.", null);
-                }
-                if (game.getBank() != null) {
-                    return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game has already started.", null);
-                }
-                if (game.startGame()) {
-                    Map<String, String> payload = new HashMap<>();
-                    payload.put("board", game.getBoard().getBoardJson());
-                    payload.put("ports", game.getBoard().getPortsJson());
-                    String responseJson = new ObjectMapper().writeValueAsString(payload);
-                    return new ManagerResponse(HttpStatus.SC_OK, "The game has started successfully.", responseJson);
-                }
-                return new ManagerResponse(HttpStatus.SC_ACCEPTED, "The game can not start without players.", null);
             }
             case "getRanking": {
                 if (requestJson == null) {
