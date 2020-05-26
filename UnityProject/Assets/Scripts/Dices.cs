@@ -32,6 +32,7 @@ public class Dices : MonoBehaviour
     public Text grain;
     public Text wool;
     public SocketIOComponent socket;
+    public Text DiscarAmount;
 
     public InputField ilumber;
     public InputField ibirck;
@@ -254,10 +255,13 @@ public class Dices : MonoBehaviour
                 if (i + j == 7)
                 {
                     tataHot.SetActive(true);
+
                     int player_0_sum = int.Parse(lumber.text) + int.Parse(brick.text) + int.Parse(ore.text) + int.Parse(wool.text) + int.Parse(grain.text);
                     if (player_0_sum > 7)
                     {
                         tataPanel.SetActive(true);
+                        player_0_sum = player_0_sum / 2;
+                        DiscarAmount.text = "You have to discard " + player_0_sum.ToString() + " of your cards";
                         ibirck.text = "";
                         iore.text = "";
                         ilumber.text = "";

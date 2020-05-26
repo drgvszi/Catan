@@ -10,6 +10,14 @@ public class discardResource : MonoBehaviour
     public InputField ore;
     public InputField wool;
     public InputField grain;
+    public GameObject panel;
+
+
+    public Text ilumber;
+    public Text ibirck;
+    public Text iore;
+    public Text iwool;
+    public Text igrain;
 
     public void discard()
     {
@@ -59,6 +67,34 @@ public class discardResource : MonoBehaviour
             Debug.Log(Response.code) ;
             Debug.Log(Response.status);
             Debug.Log(Response.arguments.sentAll) ;
+            if(Response.code==200)
+            {
+                panel.SetActive(false);
+
+                MakeRequestResponse command1 = new MakeRequestResponse();
+                command1.gameId = LoginScript.CurrentUserGameId;
+                command1.playerId = LoginScript.CurrentUserGEId;
+                RequestJson req1 = new RequestJson();
+                RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command1).Then(Response1 =>
+                {
+                    Debug.Log("Update code " + Response1.code);
+                    Debug.Log("Update status " + Response1.status);
+                    Debug.Log("Update arguments lumber " + Response1.arguments.lumber);
+
+                    print("end turn info");
+                    print(Response1.arguments.lumber.ToString());
+                    print(Response1.arguments.ore.ToString());
+                    print(Response1.arguments.grain.ToString());
+                    print(Response1.arguments.brick.ToString());
+                    print(Response1.arguments.wool.ToString());
+
+                    ilumber.text = Response1.arguments.lumber.ToString();
+                    iore.text = Response1.arguments.ore.ToString();
+                    igrain.text = Response1.arguments.grain.ToString();
+                    ibirck.text = Response1.arguments.brick.ToString();
+                    iwool.text = Response1.arguments.wool.ToString();
+                }).Catch(err => { Debug.Log(err); });
+            }
         }).Catch(err => { Debug.Log(err);});
     }
 }

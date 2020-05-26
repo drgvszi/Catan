@@ -85,6 +85,8 @@ public class SocketIoscript : MonoBehaviour
     public GameObject tataHot;
     public GameObject Robbler;
 
+    public Text DiscardAmount;
+
 
 
     void Start()
@@ -540,6 +542,8 @@ public class SocketIoscript : MonoBehaviour
 
                     if (player_0_sum > 7)
                     {
+                        player_0_sum = player_0_sum / 2;
+                        DiscardAmount.text = "You have to discard " + player_0_sum.ToString() + " of your cards";
                         tataPanel.SetActive(true);
                         tataPanel.SetActive(true);
                         ibirck.text = "";
@@ -624,6 +628,7 @@ public class SocketIoscript : MonoBehaviour
                 Debug.Log("buyCity");
                 string user_who_built_settelment = E.data[1].str;
                 string intesection = E.data[2].ToString();
+                casute.SetActive(true);
                 interO = GameObject.Find(intesection);
                 ///Debug.Log(intesection);
 
@@ -646,7 +651,7 @@ public class SocketIoscript : MonoBehaviour
                     AfiseazaDrum.afiseaza(newPieceO4, interO);
                 }
 
-
+                casute.SetActive(false);
             }
         });
         socket.On("playerTrade", (E) =>
@@ -725,6 +730,35 @@ public class SocketIoscript : MonoBehaviour
                 //Instantiate(Robler, rob.position, rob.rotation);
                 //Rober.SetActive(false);
                 tataHot.SetActive(false);
+
+            }
+        });
+
+        socket.On("Stolen", (E) =>
+        {
+            Debug.Log("Stolen");
+            if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+            {
+                MakeRequestResponse command1 = new MakeRequestResponse();
+                command1.gameId = LoginScript.CurrentUserGameId;
+                command1.playerId = LoginScript.CurrentUserGEId;
+                RequestJson req1 = new RequestJson();
+                RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command1).Then(Response1 =>
+                {
+                    Debug.Log("Update code " + Response1.code);
+                    Debug.Log("Update status " + Response1.status);
+                    print(Response1.arguments.lumber.ToString());
+                    print(Response1.arguments.ore.ToString());
+                    print(Response1.arguments.grain.ToString());
+                    print(Response1.arguments.brick.ToString());
+                    print(Response1.arguments.wool.ToString());
+
+                    lumber.text = Response1.arguments.lumber.ToString();
+                    ore.text = Response1.arguments.ore.ToString();
+                    grain.text = Response1.arguments.grain.ToString();
+                    brick.text = Response1.arguments.brick.ToString();
+                    wool.text = Response1.arguments.wool.ToString();
+                }).Catch(err => { Debug.Log(err); });
 
             }
         });

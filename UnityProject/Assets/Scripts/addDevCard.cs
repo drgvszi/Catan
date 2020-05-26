@@ -21,6 +21,13 @@ public class addDevCard : MonoBehaviour
      Text yearofplenty;
      Text univer;
 
+
+    public Text ilumber;
+    public Text ibirck;
+    public Text iore;
+    public Text iwool;
+    public Text igrain;
+
     public void buyDev()
     {
         Text txt = FindTextFiel.find();
@@ -37,6 +44,7 @@ public class addDevCard : MonoBehaviour
             print(req.arguments.development);
             if (req.code == 200)
             {
+
                 knight = GameObject.Find("KnightText").GetComponent<Text>();
                 roadbuid = GameObject.Find("RoadBuildingText").GetComponent<Text>();
                 monopoly = GameObject.Find("MonopolyText").GetComponent<Text>();
@@ -63,6 +71,14 @@ public class addDevCard : MonoBehaviour
                     yearofplenty.text = nr.ToString();
                     
                 }
+                int x;
+                
+                x = int.Parse(igrain.text) - 1;
+                igrain.text = x.ToString();
+                x = int.Parse(iwool.text) - 1;
+                iwool.text = x.ToString();
+                x = int.Parse(iore.text) - 1;
+                iore.text = x.ToString();
             }
 
 
