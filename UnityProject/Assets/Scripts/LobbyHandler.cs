@@ -115,7 +115,6 @@ public class LobbyHandler : MonoBehaviour
         UnityConnectivityCommand command = new UnityConnectivityCommand();
         command.lobbyid = LoginScript.CurrentUserLobbyId;
         command.username = LoginScript.CurrentUser;
-
         RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/leaveLobby", command).Then(res =>
         {
             Debug.Log(res.Text);
@@ -131,10 +130,12 @@ public class LobbyHandler : MonoBehaviour
         command.playerId = LoginScript.CurrentUserGEId;
         command.gameId = LoginScript.CurrentUserGameId;
         Debug.Log(LoginScript.CurrentUserGEId);
+        
         RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/leaveGame", command).Then(res =>
         {
             //ChangeTexture.setDone(false);
             Debug.Log(res.Text);
+            ReceiveBoardScript.ReceivedBoard.board[0] = null;
 
         }).Catch(err => { Debug.Log(err); });
 

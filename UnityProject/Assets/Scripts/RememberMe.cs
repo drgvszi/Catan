@@ -148,7 +148,7 @@ namespace Catan {
     }
 }
 */
-$_SESSION["username"] = $user;
+/*$_SESSION["username"] = $user;
 	if(login($user,$pass))
 		{
 			if(isset($_POST["remember"]))
@@ -161,4 +161,4 @@ $_SESSION["username"] = $user;
 			setcookie($cookie_pass, $cookie_pass_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 			}
 
-		}
+		}*/
