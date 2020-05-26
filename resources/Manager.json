@@ -26,7 +26,7 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments": ""
+    "arguments": null
   },
   {
     "username": "username",
@@ -94,6 +94,6 @@
   {
     "code": "HttpStatus code",
     "status": "message (success or error type)",
-    "arguments": ""
+    "arguments": null
   }
 ]

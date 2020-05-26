@@ -634,6 +634,9 @@ public class Player {
         for (int road = 0; road < roads.size(); road++) {
             longestRoadLengths.add(road, 1);
         }
+        if (roads.size() > 0) {
+            longestRoadLength = 1;
+        }
         for (int road = 1; road < roads.size(); road++) {
             for (int previousRoad = road - 1; previousRoad >= 0; previousRoad--) {
                 if (roads.get(road).getStart().getId() == roads.get(previousRoad).getEnd().getId()) {
