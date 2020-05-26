@@ -180,6 +180,7 @@ public class MakeRequest
             json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
             json_message.AddField("username", LoginScript.CurrentUser);
             json_message.AddField("gameEngineId", LoginScript.CurrentUserGEId);
+            json_message.AddField("wantToTrade","true");
             socket.Emit("wantToTrade", json_message);
 
         }).Catch(err => { Debug.Log(err); });

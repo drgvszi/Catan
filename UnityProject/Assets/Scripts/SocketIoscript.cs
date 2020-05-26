@@ -76,6 +76,12 @@ public class SocketIoscript : MonoBehaviour
     public Text playerName;
     public int trade = 0;
 
+    public InputField ilumber;
+    public InputField ibirck;
+    public InputField iore;
+    public InputField iwool;
+    public InputField igrain;
+
 
 
     void Start()
@@ -103,9 +109,9 @@ public class SocketIoscript : MonoBehaviour
                 }
                 else
                 {
-                    trade++;
+                    trade+=10;
                 }
-                if (trade == 1)
+                if (trade > 0)
                 {
                     trade = 0;
                     TradePlayerJson command = new TradePlayerJson();
@@ -133,6 +139,13 @@ public class SocketIoscript : MonoBehaviour
 
                             if(Response2.code==200)
                             {
+
+
+                                JSONObject json_message = new JSONObject();
+                                json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                                socket.Emit("UpdateResource", json_message);
+
+
                                 MakeRequestResponse command1 = new MakeRequestResponse();
                                 command1.gameId = LoginScript.CurrentUserGameId;
                                 command1.playerId = LoginScript.CurrentUserGEId;
@@ -525,6 +538,12 @@ public class SocketIoscript : MonoBehaviour
                     if (player_0_sum > 7)
                     {
                         tataPanel.SetActive(true);
+                        tataPanel.SetActive(true);
+                        ibirck.text = "";
+                        iore.text = "";
+                        ilumber.text = "";
+                        igrain.text = "";
+                        iwool.text = "";
                     }
                 }
             }
@@ -656,6 +675,36 @@ public class SocketIoscript : MonoBehaviour
                 rq4.text = "" + E.data[10].ToString();
                 rq5.text = "" + E.data[11].ToString();
 
+
+            }
+        });
+
+        socket.On("UpdateResource", (E) =>
+        {
+            Debug.Log("playerTrade");
+            if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+            {
+
+                MakeRequestResponse command1 = new MakeRequestResponse();
+                command1.gameId = LoginScript.CurrentUserGameId;
+                command1.playerId = LoginScript.CurrentUserGEId;
+                RequestJson req1 = new RequestJson();
+                RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command1).Then(Response1 =>
+                {
+                    Debug.Log("Update code " + Response1.code);
+                    Debug.Log("Update status " + Response1.status);
+                    print(Response1.arguments.lumber.ToString());
+                    print(Response1.arguments.ore.ToString());
+                    print(Response1.arguments.grain.ToString());
+                    print(Response1.arguments.brick.ToString());
+                    print(Response1.arguments.wool.ToString());
+
+                    lumber.text = Response1.arguments.lumber.ToString();
+                    ore.text = Response1.arguments.ore.ToString();
+                    grain.text = Response1.arguments.grain.ToString();
+                    brick.text = Response1.arguments.brick.ToString();
+                    wool.text = Response1.arguments.wool.ToString();
+                }).Catch(err => { Debug.Log(err); });
 
             }
         });

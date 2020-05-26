@@ -15638,6 +15638,11 @@ MonoBehaviour:
   grain: {fileID: 1215494028}
   wool: {fileID: 145854600}
   socket: {fileID: 0}
+  ilumber: {fileID: 489209229}
+  ibirck: {fileID: 1624950173}
+  iore: {fileID: 157090931}
+  iwool: {fileID: 1759430988}
+  igrain: {fileID: 1483447337}
 --- !u!65 &651557342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22267,9 +22272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe9b61116c86344c92de53321d01027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1240811991}
-  counter: 0
-  pop: {fileID: 0}
+  knight: {fileID: 0}
+  roadbuid: {fileID: 0}
+  monopoly: {fileID: 0}
+  yearofplenty: {fileID: 0}
+  univer: {fileID: 0}
 --- !u!95 &988472859
 Animator:
   serializedVersion: 3
@@ -38484,6 +38491,7 @@ GameObject:
   - component: {fileID: 1718338958}
   - component: {fileID: 1718338957}
   - component: {fileID: 1718338956}
+  - component: {fileID: 1718338955}
   m_Layer: 5
   m_Name: TataLaAcceptare
   m_TagString: Untagged
@@ -38511,6 +38519,23 @@ RectTransform:
   m_AnchoredPosition: {x: 447.0001, y: 2}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1718338955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718338953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ce14b82a290c545b42b82b38563e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lumber: {fileID: 489209229}
+  birck: {fileID: 1624950173}
+  ore: {fileID: 157090931}
+  wool: {fileID: 1759430988}
+  grain: {fileID: 1483447337}
 --- !u!114 &1718338956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45721,6 +45746,11 @@ MonoBehaviour:
   rq5: {fileID: 1325697618}
   playerName: {fileID: 1613001632}
   trade: 0
+  ilumber: {fileID: 489209229}
+  ibirck: {fileID: 1624950173}
+  iore: {fileID: 157090931}
+  iwool: {fileID: 1759430988}
+  igrain: {fileID: 1483447337}
 --- !u!114 &1996679332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77122,6 +77152,7 @@ GameObject:
   - component: {fileID: 2205872309398031802}
   - component: {fileID: 2205872309398031803}
   - component: {fileID: 2205872309398031804}
+  - component: {fileID: 2205872309398031806}
   m_Layer: 5
   m_Name: Dev
   m_TagString: Untagged
@@ -77201,18 +77232,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 988472858}
-        m_MethodName: countPP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2205872309398031804}
-        m_MethodName: show
+        m_MethodName: buyDev
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -77243,6 +77263,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2205872309398031801}
   m_CullTransparentMesh: 0
+--- !u!114 &2205872309398031806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205872309398031801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe9b61116c86344c92de53321d01027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knight: {fileID: 1240811991}
+  roadbuid: {fileID: 1198193141}
+  monopoly: {fileID: 995984439}
+  yearofplenty: {fileID: 1751136149}
+  univer: {fileID: 1836382349}
 --- !u!1 &2205872309708462916
 GameObject:
   m_ObjectHideFlags: 0

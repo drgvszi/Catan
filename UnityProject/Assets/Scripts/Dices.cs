@@ -33,6 +33,12 @@ public class Dices : MonoBehaviour
     public Text wool;
     public SocketIOComponent socket;
 
+    public InputField ilumber;
+    public InputField ibirck;
+    public InputField iore;
+    public InputField iwool;
+    public InputField igrain;
+
     public void Show()
     {
         GameObject go = GameObject.Find("SocketIO");
@@ -252,6 +258,11 @@ public class Dices : MonoBehaviour
                     if (player_0_sum > 7)
                     {
                         tataPanel.SetActive(true);
+                        ibirck.text = "";
+                        iore.text = "";
+                        ilumber.text = "";
+                        igrain.text = "";
+                        iwool.text = "";
                     }
  
                     

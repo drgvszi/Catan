@@ -160,12 +160,9 @@ public class provizoriu : MonoBehaviour
                     Debug.Log(req.code);
                     Debug.Log(req.status);
 
-                    
-
                     txt.text = req.status;
-                }).Catch(err => { Debug.Log(err); });
-
-                MakeRequestResponse command1 = new MakeRequestResponse();
+                    if(ver.text=="1")
+                    {MakeRequestResponse command1 = new MakeRequestResponse();
                 command1.gameId = LoginScript.CurrentUserGameId;
                 command1.playerId = LoginScript.CurrentUserGEId;
                 RequestJson req1 = new RequestJson();
@@ -182,6 +179,13 @@ public class provizoriu : MonoBehaviour
              
 
                 }).Catch(err => { Debug.Log(err); });
+
+                    }
+                    
+                    
+                }).Catch(err => { Debug.Log(err); });
+
+               
 
             }
         }
