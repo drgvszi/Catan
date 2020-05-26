@@ -43,6 +43,10 @@ public class TurnFlow {
         fsm.setAction("buildSettlement", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableSettlementPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableSettlementPosition), null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);
@@ -68,6 +72,10 @@ public class TurnFlow {
         fsm.setAction("buildRoad", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);
@@ -342,6 +350,10 @@ public class TurnFlow {
         fsm.setAction("buyRoad", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);
@@ -365,6 +377,10 @@ public class TurnFlow {
         fsm.setAction("buySettlement", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableSettlementPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableSettlementPosition), null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);
@@ -388,6 +404,10 @@ public class TurnFlow {
         fsm.setAction("buyCity", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableCityPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableCityPosition), null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);
@@ -464,6 +484,10 @@ public class TurnFlow {
         fsm.setAction("useRoadBuilding", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    return true;
+                }
                 Code code = game.useDevelopment(Development.roadBuilding);
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
@@ -530,6 +554,10 @@ public class TurnFlow {
         fsm.setAction("buildDevelopmentRoad", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
+                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);

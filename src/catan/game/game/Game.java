@@ -700,7 +700,7 @@ public abstract class Game {
 
     //region Available Properties Positions
 
-    protected List<Integer> getAvailableRoadPositions(Player player) {
+    public List<Integer> getAvailableRoadPositions(Player player) {
         List<Integer> availableRoadPositions = new ArrayList<>();
         if (player.getSettlements().size() > 0 && player.getRoads().size() < 2) {
             Intersection lastBuilding = player.getSettlements().get(player.getSettlements().size() - 1);
@@ -746,7 +746,7 @@ public abstract class Game {
         return availableRoadPositions;
     }
 
-    protected Set<Integer> getAvailableSettlementPositions(Player player) {
+    public Set<Integer> getAvailableSettlementPositions(Player player) {
         Set<Integer> availableSettlementPositions = new HashSet<>();
         if (player.getSettlements().size() < 2) {
             for (Intersection intersection : board.getIntersections()) {
@@ -769,7 +769,7 @@ public abstract class Game {
         return availableSettlementPositions;
     }
 
-    protected Set<Integer> getAvailableCityPositions(Player player) {
+    public Set<Integer> getAvailableCityPositions(Player player) {
         Set<Integer> availableCityPositions = new HashSet<>();
         for (Intersection settlement : player.getSettlements()) {
             availableCityPositions.add(settlement.getId());
@@ -814,8 +814,7 @@ public abstract class Game {
     }
 
     protected Development getRandomDevelopment() {
-        Development[] developments = {Development.knight, Development.monopoly, Development.roadBuilding,
-                Development.yearOfPlenty};
+        Development[] developments = {Development.knight, Development.monopoly, Development.yearOfPlenty};
         Random random = new Random();
         int index = random.nextInt(developments.length);
         while (bank.getDevelopmentsNumber(developments[index]) <= 0) {

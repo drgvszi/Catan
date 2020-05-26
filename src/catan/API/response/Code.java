@@ -64,6 +64,10 @@ public enum Code {
     InvalidSettlementPosition,
     InvalidCityPosition,
 
+    NoAvailableRoadPosition,
+    NoAvailableSettlementPosition,
+    NoAvailableCityPosition,
+
     IntersectionAlreadyOccupied,
     DistanceRuleViolated,
     NotConnectsToIntersection,
