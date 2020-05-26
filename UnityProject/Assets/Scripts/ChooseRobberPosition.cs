@@ -18,6 +18,8 @@ public class ChooseRobberPosition : MonoBehaviour
     public GameObject Robler;
     public Transform rob;
 
+    public static SocketIOComponent socket;
+
     void OnMouseDown()
     {
         int nrHexa = int.Parse(Rober.name);
@@ -27,6 +29,9 @@ public class ChooseRobberPosition : MonoBehaviour
         //Rober.SetActive(false);
         tataRoberi.SetActive(false);
 
+        GameObject go = GameObject.Find("SocketIO");
+        socket = go.GetComponent<SocketIOComponent>();
+
         MakeRequestResponse command1 = new MakeRequestResponse();
         command1.gameId = LoginScript.CurrentUserGameId;
         command1.playerId = LoginScript.CurrentUserGEId;
@@ -34,6 +39,11 @@ public class ChooseRobberPosition : MonoBehaviour
         RequestJson req1 = new RequestJson();
         RestClient.Post<MoveRobberRequest>("https://catan-connectivity.herokuapp.com/game/moveRobber", command1).Then(Response1 =>
         {
+            JSONObject json_message = new JSONObject();
+            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+            json_message.AddField("intersection", nrHexa.ToString());
+            socket.Emit("placeRobber", json_message);
+
             Debug.Log("Move robber " + Response1.code);
             Debug.Log("Move robber  " + Response1.status);
             Debug.Log("Mode Robber " + Response1.arguments.player_0);

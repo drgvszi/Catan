@@ -22252,6 +22252,7 @@ RectTransform:
   - {fileID: 1501530655}
   - {fileID: 1945051882}
   - {fileID: 518971130}
+  - {fileID: 1123868859}
   m_Father: {fileID: 2205872309884757911}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22272,11 +22273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe9b61116c86344c92de53321d01027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight: {fileID: 0}
-  roadbuid: {fileID: 0}
-  monopoly: {fileID: 0}
-  yearofplenty: {fileID: 0}
-  univer: {fileID: 0}
 --- !u!95 &988472859
 Animator:
   serializedVersion: 3
@@ -22394,7 +22390,7 @@ GameObject:
   - component: {fileID: 995984440}
   - component: {fileID: 995984439}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MonopolyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25934,6 +25930,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121812393}
   m_Mesh: {fileID: 2534964839176971238, guid: e2fb0f30e1b746640b78360bdc76c4fa, type: 3}
+--- !u!1 &1123868856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123868859}
+  - component: {fileID: 1123868858}
+  - component: {fileID: 1123868857}
+  m_Layer: 5
+  m_Name: wood text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1123868857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123868856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 612cc09755b4bd546a7b1e81a8515c9e, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1123868858
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123868856}
+  m_CullTransparentMesh: 0
+--- !u!224 &1123868859
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123868856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.49443477, y: 0.47302148, z: 0.7049627}
+  m_Children: []
+  m_Father: {fileID: 988472857}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 771.60144, y: 162.18085}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1127547449
 GameObject:
   m_ObjectHideFlags: 0
@@ -27572,7 +27645,7 @@ MonoBehaviour:
     type: 3}
   objBrick: {fileID: 7494333064309295065, guid: b0b798c6ed1bb9b4a94587809c568dfb,
     type: 3}
-  objOre: {fileID: -927199367670048503, guid: 1bae5ee4befe6434cb4a59abd72a0b01, type: 3}
+  objOre: {fileID: 7350768277752909199, guid: 73bd740834d3abd4a965020dd02226a6, type: 3}
   objGrain: {fileID: -927199367670048503, guid: bc94cc4921b463342bdf4a32f2e996de,
     type: 3}
   objDesert: {fileID: -927199367670048503, guid: 9506dd9635b634f4c85e90dcb45fe197,
@@ -27720,7 +27793,7 @@ GameObject:
   - component: {fileID: 1198193142}
   - component: {fileID: 1198193141}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RoadBuildingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28644,7 +28717,7 @@ GameObject:
   - component: {fileID: 1240811992}
   - component: {fileID: 1240811991}
   m_Layer: 5
-  m_Name: Text
+  m_Name: KnightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39309,7 +39382,7 @@ GameObject:
   - component: {fileID: 1751136150}
   - component: {fileID: 1751136149}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: YearOfPlentyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41788,7 +41861,7 @@ GameObject:
   - component: {fileID: 1836382350}
   - component: {fileID: 1836382349}
   m_Layer: 5
-  m_Name: Text
+  m_Name: VictoryPointText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45751,6 +45824,8 @@ MonoBehaviour:
   iore: {fileID: 157090931}
   iwool: {fileID: 1759430988}
   igrain: {fileID: 1483447337}
+  tataHot: {fileID: 1454123518}
+  Robbler: {fileID: 7068537698086195324, guid: df4ec1534b9c8e944ac14ffe8342ff7c, type: 3}
 --- !u!114 &1996679332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77275,11 +77350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe9b61116c86344c92de53321d01027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight: {fileID: 1240811991}
-  roadbuid: {fileID: 1198193141}
-  monopoly: {fileID: 995984439}
-  yearofplenty: {fileID: 1751136149}
-  univer: {fileID: 1836382349}
 --- !u!1 &2205872309708462916
 GameObject:
   m_ObjectHideFlags: 0

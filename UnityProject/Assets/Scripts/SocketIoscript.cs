@@ -82,6 +82,9 @@ public class SocketIoscript : MonoBehaviour
     public InputField iwool;
     public InputField igrain;
 
+    public GameObject tataHot;
+    public GameObject Robbler;
+
 
 
     void Start()
@@ -708,6 +711,24 @@ public class SocketIoscript : MonoBehaviour
 
             }
         });
+        socket.On("placeRobber", (E) =>
+        {
+            Debug.Log("placeRobber");
+            if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+            {
+                tataHot.SetActive(true);      
+                GameObject rob = GameObject.Find("0"+E.data[1].str); 
+                GameObject x = GameObject.Find("Robber777(Clone)");
+               
+                Destroy(x);
+                AfiseazaDrum.afiseaza(Robbler, rob);
+                //Instantiate(Robler, rob.position, rob.rotation);
+                //Rober.SetActive(false);
+                tataHot.SetActive(false);
+
+            }
+        });
+
 
     }
 
