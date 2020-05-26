@@ -114,12 +114,14 @@ public class TurnFlow {
                 result.put("dice_1", firstDice);
                 result.put("dice_2", secondDice);
                 int diceSum = firstDice + secondDice;
-                game.setInDiscardState(game.checkInDiscardState(diceSum));
                 if (diceSum == 7) {
+                    game.updateDiscardState();
+                    game.setInDiscardState(game.checkInDiscardState());
                     result.putAll(game.getRollSevenResult());
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollSeven");
                 } else {
+                    game.setInDiscardState(false);
                     result.putAll(game.getRollNotSevenResult(diceSum));
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollNotSeven");
@@ -199,7 +201,12 @@ public class TurnFlow {
                         new TypeReference<HashMap<String, String>>() {
                         });
                 String answer = requestArguments.get("answer");
-                if (answer == null || answer.equalsIgnoreCase("no")) {
+                if (answer == null) {
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
+                            null);
+                    return false;
+                }
+                if (answer.equalsIgnoreCase("no")) {
                     response = new UserResponse(HttpStatus.SC_OK, "Okay.", null);
                     return true;
                 }

@@ -14,7 +14,8 @@ public class Messages {
         messages.put(Code.DiceSeven, "The dice sum is seven.");
         messages.put(Code.DiceNotSeven, "The dice sum is not seven.");
         messages.put(Code.NotDiscard, "You do not have more than seven\nresource cards to discard half of them.");
-        messages.put(Code.NoResources, "You have not discarded\nany resource cards.");
+        messages.put(Code.NotHalf, "You have not discarded\nhalf of your resource cards.");
+        messages.put(Code.DiscardState, "There is somebody who has not discarded\nhalf of their resource cards yet.");
 
         //endregion
 

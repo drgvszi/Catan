@@ -29,6 +29,7 @@ public class Player {
     private List<Intersection> settlements;
     private List<Intersection> cities;
 
+    private int resourcesToDiscard;
     private int usedKnights;
     private int roadsToBuild;
 
@@ -65,6 +66,7 @@ public class Player {
         settlements = new ArrayList<>();
         cities = new ArrayList<>();
 
+        resourcesToDiscard = 0;
         usedKnights = 0;
         roadsToBuild = 0;
 
@@ -142,6 +144,10 @@ public class Player {
         return cities.size();
     }
 
+    public int getResourcesToDiscard() {
+        return resourcesToDiscard;
+    }
+
     public int getUsedKnights() {
         return usedKnights;
     }
@@ -201,6 +207,10 @@ public class Player {
 
     public void setCities(List<Intersection> cities) {
         this.cities = cities;
+    }
+
+    public void setResourcesToDiscard(int resourcesToDiscard) {
+        this.resourcesToDiscard = resourcesToDiscard;
     }
 
     public void setUsedKnights(int usedKnights) {

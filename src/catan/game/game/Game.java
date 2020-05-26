@@ -242,7 +242,7 @@ public abstract class Game {
             return result;
         }
         if (inDiscardState) {
-            return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.ForbiddenRequest), null);
+            return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.DiscardState), null);
         }
         if (playerId.equals(currentPlayer.getId())) {
             players.get(playerId).getTurnFlow().fsm.setShareData(requestArguments);
@@ -267,7 +267,7 @@ public abstract class Game {
                 if (code != null) {
                     return new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                 }
-                inDiscardState = checkInDiscardState(7);
+                inDiscardState = checkInDiscardState();
                 responseArguments.put("sentAll", !inDiscardState);
                 return new UserResponse(HttpStatus.SC_OK, "The resource cards\nwere discarded successfully.", responseArguments);
             }
@@ -542,13 +542,21 @@ public abstract class Game {
         return new Pair<>(firstDice, secondDice);
     }
 
+    public void updateDiscardState() {
+        for (Player player : playersOrder) {
+            if (player.getResourcesNumber() > 7) {
+                player.setResourcesToDiscard(player.getResourcesNumber() / 2);
+            }
+        }
+    }
+
     public Map<String, Object> getRollSevenResult() {
         Map<String, Object> result = initializeRollDiceResult();
         for (Player player : playersOrder) {
             int playerIndex = playersOrder.indexOf(player);
             int resourceNumber = player.getResourcesNumber();
             if (resourceNumber > 7) {
-                result.put("resourcesToDiscard_" + playerIndex, resourceNumber / 2);
+                result.put("resourcesToDiscard_" + playerIndex, player.getResourcesToDiscard());
             }
         }
         return result;
@@ -640,9 +648,10 @@ public abstract class Game {
             resourcesToDiscardNumber += resourcesToDiscardByType;
             resourcesToDiscard.put(resource, resourcesToDiscardByType);
         }
-        if (resourcesToDiscardNumber == 0) {
-            return Code.NoResources;
+        if (resourcesToDiscardNumber != players.get(playerId).getResourcesToDiscard()) {
+            return Code.NotHalf;
         }
+        players.get(playerId).setResourcesToDiscard(0);
         return discardResources(playerId, resourcesToDiscard);
     }
 
@@ -655,12 +664,9 @@ public abstract class Game {
         return null;
     }
 
-    public boolean checkInDiscardState(int diceSum) {
-        if (diceSum != 7) {
-            return false;
-        }
+    public boolean checkInDiscardState() {
         for (Player player : playersOrder) {
-            if (player.getResourcesNumber() > 7) {
+            if (player.getResourcesToDiscard() != 0) {
                 return true;
             }
         }
