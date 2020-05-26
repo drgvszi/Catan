@@ -40,7 +40,7 @@ public class developAction : MonoBehaviour
             if (req.code == 200)
             {
                 tataRobberi.SetActive(true);
-                asd = GameObject.Find("RoadBuildingText").GetComponent<Text>();
+                asd = GameObject.Find("KnightText").GetComponent<Text>();
                 int x = int.Parse(asd.text);
                 x = x - 1;
                 asd.text = x.ToString();
