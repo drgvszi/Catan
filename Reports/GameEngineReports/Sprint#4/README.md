@@ -1,3 +1,192 @@
+# Configure Game
+## Create a game
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "newGame",
+ "arguments":
+ {
+  "scenario": "scenario"
+ }
+}
+```
+ - only ```SettlersOfCatan``` is implemented for ```scenario``` at this moment
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments":
+ {
+  "gameId": "gameId"
+ }
+}
+```
+ - ```gameId``` is a random generated identifier
+## Set the maximum number of players who can enter the game
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "setMaxPlayers",
+ "arguments":
+ {
+  "gameId": "gameId",
+  "maxPlayers": "a number between 3 and 6 (integer)"
+ }
+}
+```
+ - ```setMaxPlayers``` can be sent whenever between ```newGame``` and ```startGame```
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments": null
+}
+```
+## Add a player
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "addPlayer",
+ "arguments":
+ {
+  "gameId": "gameId"
+ }
+}
+```
+ - ```addPlayer``` can be sent whenever between ```setMaxPlayers``` and ```startGame```
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments":
+ {
+  "playerId": "playerId"
+ }
+}
+```
+ - ```playerId``` is a random generated identifier
+## Remove a player permanently
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "removePlayer",
+ "arguments":
+ {
+  "gameId": "gameId",
+  "playerId": "playerId"
+ }
+}
+```
+ - ```removePlayer``` can be sent whenever between ```setMaxPlayers``` and ```startGame```
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments": null
+}
+```
+## Start the game
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "startGame",
+ "arguments":
+ {
+  "gameId": "gameId"
+ }
+}
+```
+ - ```startGame``` can be sent only once, if at least one player has been added
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments":
+ {
+  "board": "array of tiles",
+  "ports": "array of intersections"
+ }
+}
+```
+ - ```board``` contains for each tile a random resource, including a desert, and a random number for the dice sum
+ - ```ports``` contains for the fixed intersections a random port
+## Remove a player temporarily
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "changePlayerStatus",
+ "arguments":
+ {
+  "gameId": "gameId",
+  "playerId": "playerId",
+  "active": "true or false (boolean)"
+ }
+}
+```
+ - ```changePlayerStatus``` can be sent whenever between ```newGame``` and ```endGame```
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments": null
+}
+```
+## See the current ranking
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "getRanking",
+ "arguments":
+ {
+  "gameId": "gameId"
+ }
+}
+```
+ - ```getRanking``` can be sent whenever between ```startGame``` and ```endGame```
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments":
+ {
+  "player_0": "playerId",
+  "publicScore_0": "number of public points, without Victory Points development cards (integer)",
+  "hiddenScore_0": "number of hidden points, with Victory Points development cards (integer)",
+  "player_1": "playerId",
+  "publicScore_1": "number of hidden points, with Victory Points development cards (integer)",
+  "hiddenScore_1": "number of hidden points, with Victory Points development cards (integer)",
+  "foundWinner": false
+ }
+}
+```
+ - if ```foundWinner``` is true, only ```endGame``` can be sent next
+## End the game
+```
+{
+ "username": "username",
+ "password": "password",
+ "command": "endGame",
+ "arguments":
+ {
+  "gameId": "gameId"
+ }
+}
+```
+ - ```endGame``` can be sent whenever after ```startGame``` and removes the game identifier
+```
+{
+ "code": "HttpStatus code",
+ "status": "message (success or error type)",
+ "arguments": null
+}
+```
 # Build First Two Settlements and Roads
 ## Build a settlement for free
 ``` 
@@ -523,6 +712,37 @@
  }
 } 
 ```
+# Game
+## Error messages
+ - No scenario is specified.
+ - The scenario is not implemented.
+ - The maximum number of players is not specified.
+ - The game does not exist.
+ - There are already more players.
+ - The game has already started.
+ - The game identifier is not specified.
+ - There is no room left.
+ - The player does not exist.
+ - The game can not start without players.
+## Success Messages
+- The game was created successfully.
+- The maximum number of players was set successfully.
+- The player was added successfully.
+- The player was removed successfully.
+- The game has started successfully.
+- The player status has not been changed.
+- The player status has been changed successfully.
+- Here is your information.
+- Here is the current ranking.
+- The game has ended successfully.
+- The game has ended because there are not enough active players.
+# Requests
+## Error Messages
+- Invalid request.
+- Forbidden request.
+# Automaton
+## Error Messages
+- The message has no assigned action.
 # Dice
 ## Error messages
  - You do not have more than seven resource cards to discard half of them.
@@ -644,14 +864,3 @@
 ## Bank and Port Trade
 ### Success Messages
 - The trade was made successfully.
-# Game
-## Success Messages
-- The game has ended successfully.
-- The game has ended because there are not enough active players.
-# Requests
-## Error Messages
-- Invalid request.
-- Forbidden request.
-# Automaton
-## Error Messages
-- The message has no assigned action.
