@@ -30,6 +30,7 @@ public class UpdateJsonArguments
     public RoadsAndPositions[] availableRoadPositions = new RoadsAndPositions[100];*/
     public int[] availableCityPositions = new int[100];
     public int[] availableSettlementPositions = new int[100];
+    public int longestRoad;
     public int usedKnights;
     public int roadsToBuild;
     public bool hasLargestArmy;

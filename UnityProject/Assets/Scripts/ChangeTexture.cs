@@ -35,7 +35,7 @@ public class ChangeTexture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Text txt = FindTextFiel.find();
+
         BoardConnectivityJson board = ReceiveBoardScript.ReceivedBoard;
         if (done == false) { 
             if (ReceiveBoardScript.ReceivedBoard.board[0] != null)
@@ -45,7 +45,6 @@ public class ChangeTexture : MonoBehaviour
                 str = board.board[nr].number.ToString();
                 text.text = str;
                 string resource = board.board[nr].resource;
-                txt.text = resource;
                 Debug.Log(resource);
                 switch (resource)
                 {
