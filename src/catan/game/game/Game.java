@@ -727,7 +727,8 @@ public abstract class Game {
                     }
                     if (!board.hasRoad(start, end)) {
                         availableRoadPositions.add(start);
-                        availableRoadPositions.add(end);                    }
+                        availableRoadPositions.add(end);
+                    }
                 }
                 for (Intersection intersection : board.getAdjacentIntersections(road.getEnd())) {
                     int start = road.getEnd().getId();
@@ -739,7 +740,8 @@ public abstract class Game {
                     }
                     if (!board.hasRoad(start, end)) {
                         availableRoadPositions.add(start);
-                        availableRoadPositions.add(end);                    }
+                        availableRoadPositions.add(end);
+                    }
                 }
             }
         }

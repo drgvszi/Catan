@@ -48,11 +48,13 @@ public class Messages {
         messages.put(Code.BankNotEnoughBrick, "The bank does not have enough\nBrick resource cards.");
         messages.put(Code.BankNotEnoughOre, "The bank does not have enough\nOre resource cards.");
 
+        messages.put(Code.BankNoResource, "The bank does not have\nany resource cards.");
         messages.put(Code.BankNoLumber, "The bank does not have\nLumber resource cards.");
         messages.put(Code.BankNoWool, "The bank does not have\nWool resource cards.");
         messages.put(Code.BankNoGrain, "The bank does not have\nGrain resource cards.");
         messages.put(Code.BankNoBrick, "The bank does not have\nBrick resource cards.");
         messages.put(Code.BankNoOre, "The bank does not have\nOre resource cards.");
+
 
         messages.put(Code.BankNoDevelopment, "The bank does not have\nany development cards.");
         messages.put(Code.BankNoKnight, "The bank does not have\nKnight development cards.");

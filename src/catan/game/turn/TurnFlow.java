@@ -44,7 +44,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableSettlementPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableSettlementPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableSettlementPosition), null);
                     return true;
                 }
                 if (arguments == null) {
@@ -73,7 +73,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableRoadPosition), null);
                     return true;
                 }
                 if (arguments == null) {
@@ -351,7 +351,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableRoadPosition), null);
                     return true;
                 }
                 if (arguments == null) {
@@ -378,7 +378,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableSettlementPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableSettlementPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableSettlementPosition), null);
                     return true;
                 }
                 if (arguments == null) {
@@ -405,7 +405,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableCityPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableCityPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableCityPosition), null);
                     return true;
                 }
                 if (arguments == null) {
@@ -485,7 +485,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableRoadPosition), null);
                     return true;
                 }
                 Code code = game.useDevelopment(Development.roadBuilding);
@@ -555,7 +555,7 @@ public class TurnFlow {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
                 if (game.getAvailableRoadPositions(game.getCurrentPlayer()).size() == 0) {
-                    response = new UserResponse(HttpStatus.SC_OK, Messages.getMessage(Code.NoAvailableRoadPosition), null);
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.NoAvailableRoadPosition), null);
                     return true;
                 }
                 if (arguments == null) {
@@ -586,6 +586,31 @@ public class TurnFlow {
         fsm.setAction("takeTwoResources", new FSMAction() {
             @Override
             public boolean action(String currentState, String message, String nextState, Object arguments) {
+                Bank bank = game.getBank();
+                int resourcesNumber = 0;
+                for (Resource resource : Resource.values()) {
+                    if (resource != Resource.desert) {
+                        resourcesNumber += bank.getResourcesNumber(resource);
+                    }
+                }
+                if (resourcesNumber == 0) {
+                    response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.BankNoResource),
+                            null);
+                    return true;
+                }
+                if (resourcesNumber == 1) {
+                    for (Resource resource : Resource.values()) {
+                        if (resource != Resource.desert) {
+                            if (bank.getResourcesNumber(resource) == 1) {
+                                bank.removeResource(resource);
+                                game.getCurrentPlayer().addResource(resource);
+                                response = new UserResponse(HttpStatus.SC_OK, "You have taken the last\nresource card from the bank.",
+                                        null);
+                                return true;
+                            }
+                        }
+                    }
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);

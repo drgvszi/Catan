@@ -46,6 +46,8 @@ public enum Code {
     BankNoBrick,
     BankNoOre,
 
+    BankNoResource,
+
     BankNoDevelopment,
     BankNoKnight,
     BankNoMonopoly,
