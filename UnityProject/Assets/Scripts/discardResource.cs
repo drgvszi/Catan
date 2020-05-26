@@ -53,7 +53,12 @@ public class discardResource : MonoBehaviour
         else
             nr_ore = int.Parse(ore.text);
 
-        DiscardRequestJson command = new DiscardRequestJson();
+        int player_0_sum = int.Parse(ilumber.text) + int.Parse(ibirck.text) + int.Parse(iore.text) + int.Parse(iwool.text) + int.Parse(igrain.text);
+        player_0_sum = player_0_sum / 2;
+
+        if(player_0_sum==nr_brick+nr_grain+nr_lumber+nr_ore+nr_wool)
+        {
+ DiscardRequestJson command = new DiscardRequestJson();
         command.gameId = LoginScript.CurrentUserGameId;
         command.playerId = LoginScript.CurrentUserGEId;
         command.ore = nr_ore;
@@ -96,5 +101,8 @@ public class discardResource : MonoBehaviour
                 }).Catch(err => { Debug.Log(err); });
             }
         }).Catch(err => { Debug.Log(err);});
+        }
+
+       
     }
 }

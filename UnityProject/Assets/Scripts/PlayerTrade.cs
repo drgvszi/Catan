@@ -126,11 +126,7 @@ public class PlayerTrade : MonoBehaviour
             }
 
 
-            
-
-        }).Catch(err => { Debug.Log(err); });
-
-            MakeRequestResponse command1 = new MakeRequestResponse();
+             MakeRequestResponse command1 = new MakeRequestResponse();
             command1.gameId = LoginScript.CurrentUserGameId;
             command1.playerId = LoginScript.CurrentUserGEId;
             RequestJson req1 = new RequestJson();
@@ -148,5 +144,9 @@ public class PlayerTrade : MonoBehaviour
 
             }).Catch(err => { Debug.Log(err); });
 
+
+        }).Catch(err => { Debug.Log(err); });
+
+           
     }
 }

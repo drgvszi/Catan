@@ -9678,11 +9678,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tex1: {fileID: 473490798}
-  ilumber: {fileID: 0}
-  ibirck: {fileID: 0}
-  iore: {fileID: 0}
-  iwool: {fileID: 0}
-  igrain: {fileID: 0}
+  ilumber: {fileID: 371030346}
+  ibirck: {fileID: 1301698132}
+  iore: {fileID: 694343209}
+  iwool: {fileID: 145854600}
+  igrain: {fileID: 1215494028}
 --- !u!1 &354988884
 GameObject:
   m_ObjectHideFlags: 0
@@ -18661,11 +18661,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tex1: {fileID: 1061204065}
-  ilumber: {fileID: 0}
-  ibirck: {fileID: 0}
-  iore: {fileID: 0}
-  iwool: {fileID: 0}
-  igrain: {fileID: 0}
+  ilumber: {fileID: 371030346}
+  ibirck: {fileID: 1301698132}
+  iore: {fileID: 694343209}
+  iwool: {fileID: 145854600}
+  igrain: {fileID: 1215494028}
 --- !u!1 &786493911
 GameObject:
   m_ObjectHideFlags: 0
@@ -31324,11 +31324,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tex1: {fileID: 890901886}
-  ilumber: {fileID: 0}
-  ibirck: {fileID: 0}
-  iore: {fileID: 0}
-  iwool: {fileID: 0}
-  igrain: {fileID: 0}
+  ilumber: {fileID: 371030346}
+  ibirck: {fileID: 1301698132}
+  iore: {fileID: 694343209}
+  iwool: {fileID: 145854600}
+  igrain: {fileID: 1215494028}
 --- !u!1 &1365780466
 GameObject:
   m_ObjectHideFlags: 0
