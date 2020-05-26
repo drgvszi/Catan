@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Proyecto26;
 public class discardResource : MonoBehaviour
 {
     public InputField lumber;
@@ -45,7 +45,20 @@ public class discardResource : MonoBehaviour
         else
             nr_ore = int.Parse(ore.text);
 
-
-        //request discard
+        DiscardRequestJson command = new DiscardRequestJson();
+        command.gameId = LoginScript.CurrentUserGameId;
+        command.playerId = LoginScript.CurrentUserGEId;
+        command.ore = nr_ore;
+        command.wool = nr_wool;
+        command.brick = nr_brick;
+        command.grain = nr_grain;
+        command.lumber = nr_lumber;
+        DiscardResponse req = new DiscardResponse();
+        RestClient.Post<DiscardResponse>("https://catan-connectivity.herokuapp.com/game/discardResources", command).Then(Response =>
+        {
+            Debug.Log(Response.code) ;
+            Debug.Log(Response.status);
+            Debug.Log(Response.arguments.sentAll) ;
+        }).Catch(err => { Debug.Log(err);});
     }
 }
