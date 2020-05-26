@@ -1,33 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using UnityEngine;
+using System.Threading;
 using UnityEngine.UI;
+using UnityEditor;
+using UnityEngine;
+using FullSerializer;
+using Proyecto26;
+using UnityEngine.SceneManagement;
+using System.IO;
+using System.Text;
+using SocketIO;
+
 
 public class developAction : MonoBehaviour
 {
     public GameObject cardPopUp;
     public GameObject noPopUp;
     public Text txt;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject tataRobberi;
+    Text asd;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void asd1()
     {
-        print(txt.text);
-        if (txt.text != "0")
-            cardPopUp.SetActive(true);
-        else
-            noPopUp.SetActive(true); 
+        Text txt = FindTextFiel.find();
+        MakeRequestResponse command = new MakeRequestResponse();
+        command.gameId = LoginScript.CurrentUserGameId;
+        command.playerId = LoginScript.CurrentUserGEId;
+        command.development = "knight";
+        //Debug.Log(CurrentUserGame);
+        //Debug.Log(CurrentUserId);
+        RequestJsonDevelopmentExceptMonopoly req = new RequestJsonDevelopmentExceptMonopoly();
+        RestClient.Post<RequestJsonDevelopmentExceptMonopoly>("https://catan-connectivity.herokuapp.com/game/useDevelopment", command).Then(Response =>
+        {
+            req.code = Response.code;
+            req.status = Response.status;
+            Debug.Log(req.code);
+            Debug.Log(req.status);
+            if (req.code == 200)
+            {
+                tataRobberi.SetActive(true);
+                asd = GameObject.Find("RoadBuildingText").GetComponent<Text>();
+                int x = int.Parse(asd.text);
+                x = x - 1;
+                asd.text = x.ToString();
+            }
+
+        }).Catch(err => { Debug.Log(err); });
+
+
+        
+
     }
 }

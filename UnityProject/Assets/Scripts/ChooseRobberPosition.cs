@@ -46,10 +46,6 @@ public class ChooseRobberPosition : MonoBehaviour
         {
             if (Response1.code == 200)
             {
-
-
-
-
                 GameObject x = GameObject.Find("Robber777(Clone)");
                 Destroy(x);
                 Instantiate(Robler, rob.position, rob.rotation);
