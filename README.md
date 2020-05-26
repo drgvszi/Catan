@@ -91,7 +91,8 @@ In this function  we say that if we receive a request that has in its body prope
 If the request comes  with incomplete properties in body, we send back a response that with a specific error (```Malformed JSON body.Missing required fields```).
 # C# Scripts
 We use C# Scripts to bind our NodeAPI with the Game Interface.
-In general this scripts are attached to a button or are called when 
+In general this scripts are attached to a button or are called when in need.
+[https://github.com/georgiana-ojoc/Catan/tree/Connectivity/Code/Scripts](https://github.com/georgiana-ojoc/Catan/tree/Connectivity/Code/Scripts)
 ## LobbyHandler.cs
 This is one of the most complex scripts. It is used to handle playes activity in the lobby (entering or leaving).
 ### EmitStartGame()
@@ -163,15 +164,201 @@ public int number;
 ```
 Where we have a field resources in arguments, it will be mapped to HexagonConnectivityJson.resource and so will happen to number.
 ### SocketIO in C# scripts
-If we broadcast information in the server side (NodeAPI) we shoudl do that also in C#.
-In the EmitStartGame() we have :
+If we broadcast information in the server side (NodeAPI) we should do that also in C#.
+For example a more complex functionality is trade between players. We have a function 
 ```
-JSONObject json_message = new JSONObject(); 
-json_message.AddField("lobbyid",LoginScript.CurrentUserLobbyId);
-socket.Emit("gamestart", json_message);
+public static void acceptTrade(string CurrentUserGame, string CurrentUserId)
+
+{
+
+	GameObject go = GameObject.Find("SocketIO");
+
+	socket = go.GetComponent<SocketIOComponent>();
+
+	TradePlayerJson command = new TradePlayerJson();
+
+	command.gameId = CurrentUserGame;
+
+	command.playerId = CurrentUserId;
+
+	RequestJson req = new RequestJson();
+
+	RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/wantToTrade", command).Then(Response =>
+
+	{
+
+		JSONObject json_message = new JSONObject();
+		json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+
+		json_message.AddField("username", LoginScript.CurrentUser);
+
+		json_message.AddField("gameEngineId", LoginScript.CurrentUserGEId);
+
+		json_message.AddField("wantToTrade","true");
+
+		socket.Emit("wantToTrade", json_message);
+
+	}).Catch(err => { Debug.Log(err); });
+
+}
+
 ```
 What happens is that we create  JSON that will be emited, as I said before, to our server socketIO functionality. 
-### De continuat SOCKETIO
+That JSON contains all the fields that we want to be sent to the rest of the users (an user can't emit an event to himself). 
+In a ```SocketIoscript``` script we create an object (```GameObject```) that imports a SocketIO. We set the users that should receive data from emitted events.
+Here is an example on how we will receive information about who accepted the trade
+```
+socket.On("wantToTrade", (E) =>
+
+{
+
+	if (E.data[0].str == LoginScript.CurrentUserLobbyId)
+
+	{
+
+		if(E.data[3].str=="false")
+
+		{
+
+			trade--;
+
+		}
+
+		else
+
+		{
+
+			trade+=10;
+
+		}
+
+		if (trade > 0)
+
+		{
+
+			trade = 0;
+
+			TradePlayerJson command = new TradePlayerJson();
+
+			command.gameId = LoginScript.CurrentUserGameId;
+
+			command.playerId = LoginScript.CurrentUserGEId;
+
+			RequestJson req = new RequestJson();
+
+			RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendPartners", command).Then(Response =>
+
+			{
+
+
+				SelectedPartener commandSelect = new SelectedPartener();
+
+				commandSelect.gameId = LoginScript.CurrentUserGameId;
+
+				commandSelect.playerId = LoginScript.CurrentUserGEId;
+
+				commandSelect.player = Response.arguments.player_0;
+
+
+				RequestJson request = new RequestJson();
+
+				RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/selectPartner", commandSelect).Then(Response2 =>
+
+				{
+
+					Text txt = FindTextFiel.find();
+
+					txt.text = Response2.status;
+
+					if(Response2.code==200)
+
+					{
+
+						JSONObject json_message = new JSONObject();
+
+						json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+
+						socket.Emit("UpdateResource", json_message);
+
+						MakeRequestResponse command1 = new MakeRequestResponse();
+
+						command1.gameId = LoginScript.CurrentUserGameId;
+
+						command1.playerId = LoginScript.CurrentUserGEId;
+
+						RequestJson req1 = new RequestJson();
+
+						RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command1).Then(Response1 =>
+
+						{
+
+
+							lumber.text = Response1.arguments.lumber.ToString();
+
+							ore.text = Response1.arguments.ore.ToString();
+
+							grain.text = Response1.arguments.grain.ToString();
+
+							brick.text = Response1.arguments.brick.ToString();
+
+							wool.text = Response1.arguments.wool.ToString();
+
+							}).Catch(err => { Debug.Log(err); });
+
+						}
+
+					}).Catch(err => { Debug.Log(err); });
+
+			}).Catch(err => { Debug.Log(err); });
+
+		}
+
+		if(trade==-3)
+
+		{
+
+			trade = 0;
+
+			TradePlayerJson command = new TradePlayerJson();
+
+			command.gameId = LoginScript.CurrentUserGameId;
+
+			command.playerId = LoginScript.CurrentUserGEId;
+
+			RequestJson req = new RequestJson();
+
+			RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/sendPartners", command).Then(Response =>
+
+			{
+
+				SelectedPartener commandSelect = new SelectedPartener();
+
+				commandSelect.gameId = LoginScript.CurrentUserGameId;
+
+				commandSelect.playerId = LoginScript.CurrentUserGEId;
+
+				commandSelect.player = null;
+
+				RequestJson request = new RequestJson();
+
+				RestClient.Post<RequestJson>("https://catan-connectivity.herokuapp.com/game/selectPartner", commandSelect).Then(Response2 =>
+
+				{
+
+					Debug.Log("Nobody selected to trade");
+
+				}).Catch(err => { Debug.Log(err); });
+
+		}).Catch(err => { Debug.Log(err); });
+
+		}
+
+	}
+
+});
+```
+Here we listen when an event comes to "wantToTrade". When an event happens, data sent in JSON can be taken using E.data[i], where i represents an order keys in json have where are added.
+Trade is a variable we use to check what kind of request was made. If the field ```wantToTrade``` is set to false, it means that someone declined the trade. Otherwise, if the trade >0 it means that there is someone that wants to trade. We take the first player that accepts and sent him in a request to Game Engine Module via NodeAPI. Both requests are similar. The difference is made by the fact that if we want to send a declined request, we sent a null playerId, otherwise we send  the playerId that first checked the button. After the trade is done we make an update request to render the new resources an user has.
 ### Tests for NodeAPI
 [https://github.com/georgiana-ojoc/Catan/blob/Connectivity/NodeApi/test/unitTests.js](https://github.com/georgiana-ojoc/Catan/blob/Connectivity/NodeApi/test/unitTests.js)
 
@@ -190,7 +377,7 @@ const players=[
 
 ]
 ```
-Mocha uses describe() as a method to say how or what the test is supposed to do or test.
+Mocha uses describe() as a method to say how or what the test is supposed to do.
 This is how a register functionality is tested using Mocha:
 ```
 describe('register unit test',function(){
