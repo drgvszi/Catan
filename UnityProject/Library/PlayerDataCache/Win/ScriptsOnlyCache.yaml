@@ -642,7 +642,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13460}
     - Class: 114
-      Script: {instanceID: 68432}
+      Script: {instanceID: 68944}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -837,7 +837,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13446}
     - Class: 114
-      Script: {instanceID: 82590}
+      Script: {instanceID: 83102}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -968,7 +968,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 3a9346654d785b37818a88b2de4dcb71
+      Hash: 5c58fafd33dc97cf707284a7a9293d4e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EndTurn

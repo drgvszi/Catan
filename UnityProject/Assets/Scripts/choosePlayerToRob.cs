@@ -36,14 +36,16 @@ public class choosePlayerToRob : MonoBehaviour
         {
             Debug.Log("Stolen");
             txt.text = Response2.status;
+            JSONObject json_message = new JSONObject();
+            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+            socket.Emit("Stolen", json_message);
+
             MakeRequestResponse command1 = new MakeRequestResponse();
              command1.gameId = LoginScript.CurrentUserGameId;
             command1.playerId = LoginScript.CurrentUserGEId;
              RequestJson req1 = new RequestJson();
 
-            JSONObject json_message = new JSONObject();
-            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-            socket.Emit("Stolen", json_message);
+           
 
             RestClient.Post<UpdateJson>("https://catan-connectivity.herokuapp.com/game/update", command1).Then(Response1 =>
         {

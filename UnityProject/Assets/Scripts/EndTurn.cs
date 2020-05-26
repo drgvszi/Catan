@@ -21,12 +21,17 @@ public class EndTurn : MonoBehaviour
     public GameObject player4;
     public SocketIOComponent socket;
 
-    public Text tex1;
     public Text ilumber;
     public Text ibirck;
     public Text iore;
     public Text iwool;
     public Text igrain;
+
+    public Text vPoints;
+    public Text lRoad;
+    public Text uKnight;
+    public Text devCards;
+    public Text resCards;
     public void endTurn()
     {
         GameObject go = GameObject.Find("SocketIO");
