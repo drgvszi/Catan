@@ -372,6 +372,7 @@ public abstract class Game {
 //        }
 //        result.put("cities", cities);
         result.put("usedKnights", player.getUsedKnights());
+        result.put("longestRoad", player.getLongestRoadLength());
         result.put("roadsToBuild", player.getRoadsToBuild());
         result.put("hasLargestArmy", player.hasLargestArmy());
         result.put("hasLongestRoad", player.hasLongestRoad());
@@ -381,9 +382,9 @@ public abstract class Game {
         result.put("canBuySettlement", canBuySettlement(player));
         result.put("canBuyCity", canBuyCity(player));
         result.put("canBuyDevelopment", canBuyDevelopment(player));
-        result.put("availableRoadPositions", getAvailableRoadPositions(player));
-        result.put("availableSettlementPositions", getAvailableSettlementPositions(player));
-        result.put("availableCityPositions", getAvailableCityPositions(player));
+//        result.put("availableRoadPositions", getAvailableRoadPositions(player));
+//        result.put("availableSettlementPositions", getAvailableSettlementPositions(player));
+//        result.put("availableCityPositions", getAvailableCityPositions(player));
         return result;
     }
 

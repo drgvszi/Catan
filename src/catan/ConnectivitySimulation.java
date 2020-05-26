@@ -313,9 +313,8 @@ public class ConnectivitySimulation implements Runnable {
 
             update(gameId, playerIds.get(1));
             update(gameId, playerIds.get(0));
-            buildSettlement(gameId, playerIds.get(0), 20);
+            buildSettlement(gameId, playerIds.get(0), 19);
             update(gameId, playerIds.get(0));
-            buildRoad(gameId, playerIds.get(0), 18, 19);
             buildRoad(gameId, playerIds.get(0), 19, 20);
 
             update(gameId, playerIds.get(1));
@@ -340,9 +339,9 @@ public class ConnectivitySimulation implements Runnable {
             buildRoad(gameId, playerIds.get(1), 10, 11);
 
             update(gameId, playerIds.get(0));
-            buildSettlement(gameId, playerIds.get(0), 30);
+            buildSettlement(gameId, playerIds.get(0), 21);
             update(gameId, playerIds.get(0));
-            buildRoad(gameId, playerIds.get(0), 30, 31);
+            buildRoad(gameId, playerIds.get(0), 20, 21);
 
             getRanking(gameId);
 
