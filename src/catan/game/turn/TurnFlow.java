@@ -121,7 +121,6 @@ public class TurnFlow {
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollSeven");
                 } else {
-                    game.setInDiscardState(false);
                     result.putAll(game.getRollNotSevenResult(diceSum));
                     fsm.setShareData(result);
                     fsm.ProcessFSM("rollNotSeven");

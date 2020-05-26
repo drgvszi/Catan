@@ -371,6 +371,7 @@ public abstract class Game {
 //            cities.add(city.getId());
 //        }
 //        result.put("cities", cities);
+//        result.put("resourcesToDiscard", player.getResourcesToDiscard());
         result.put("usedKnights", player.getUsedKnights());
         result.put("longestRoad", player.getLongestRoadLength());
         result.put("roadsToBuild", player.getRoadsToBuild());
@@ -635,7 +636,8 @@ public abstract class Game {
         if (!inDiscardState) {
             return Code.DiceNotSeven;
         }
-        if (players.get(playerId).getResourcesNumber() <= 7) {
+        Player player = players.get(playerId);
+        if (player.getResourcesNumber() <= 7) {
             return Code.NotDiscard;
         }
         Map<Resource, Integer> resourcesToDiscard = new HashMap<>();
@@ -649,10 +651,10 @@ public abstract class Game {
             resourcesToDiscardNumber += resourcesToDiscardByType;
             resourcesToDiscard.put(resource, resourcesToDiscardByType);
         }
-        if (resourcesToDiscardNumber != players.get(playerId).getResourcesToDiscard()) {
+        if (resourcesToDiscardNumber != player.getResourcesToDiscard()) {
             return Code.NotHalf;
         }
-        players.get(playerId).setResourcesToDiscard(0);
+        player.setResourcesToDiscard(0);
         return discardResources(playerId, resourcesToDiscard);
     }
 
