@@ -486,6 +486,7 @@
   "victoryPoint": "number of owned victoryPoints (integer)",
   "yearOfPlenty": "number of owned yearsOfPlenty (integer)",
   "usedKnights": "number of used Knight development cards (integer)",
+  "longestRoad": "length of longest road chain (integer)",
   "roadsToBuild": "number of remaining roads to build when using Road Building development card",
   "hasLargestArmy": "true or false (boolean)",
   "hasLongestRoad": "true or false (boolean)",
@@ -494,24 +495,7 @@
   "canBuyRoad": "true or false (boolean)",
   "canBuySettlement": "true or false (boolean)",
   "canBuyCity": "true or false (boolean)",
-  "canBuyDevelopment": "true or false (boolean)",
-  "availableSettlementPositions":
-  [
-   "number of available intersection (integer)",
-   "number of available intersection (integer)"
-  ],
-  "availableCityPositions":
-  [
-   "number of available intersection (integer)",
-   "number of available intersection (integer)"
-  ],
-  "availableRoadPositions":
-  [
-   "number of start intersection (integer)",
-   "number of end intersection (integer)",
-   "number of start intersection (integer)",
-   "number of end intersection (integer)"
-  ]
+  "canBuyDevelopment": "true or false (boolean)"
  }
 }
 ```
@@ -542,7 +526,7 @@
 # Dice
 ## Error messages
  - You do not have more than seven resource cards to discard half of them.
- - You have not discarded any resource cards.
+ - You have not discarded half of your resource cards.
 ## Success messages
  - The dice sum is seven.
  - The dice sum is not seven.
