@@ -37,6 +37,7 @@ public class developAction : MonoBehaviour
             req.status = Response.status;
             Debug.Log(req.code);
             Debug.Log(req.status);
+            txt.text = req.status;
             if (req.code == 200)
             {
                 tataRobberi.SetActive(true);

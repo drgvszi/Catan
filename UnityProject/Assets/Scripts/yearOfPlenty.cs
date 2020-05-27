@@ -34,6 +34,7 @@ public class yearOfPlenty : MonoBehaviour
             command.playerId = LoginScript.CurrentUserGEId;
             Debug.Log(req.code);
             Debug.Log(req.status);
+            txt.text = req.status;
             if (req.code == 200)
             {
                 panel.SetActive(true);
