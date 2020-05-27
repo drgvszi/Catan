@@ -20,6 +20,11 @@ public class provisoriuO : MonoBehaviour
     public GameObject newPieceO3;
     public GameObject newPieceO4;
 
+    public Text lumber;
+    public Text ore;
+    public Text brick;
+    public Text grain;
+    public Text wool;
 
     public SocketIOComponent socket;
 
@@ -49,7 +54,7 @@ public class provisoriuO : MonoBehaviour
                 json_message.AddField("username", LoginScript.CurrentUser);
                 json_message.AddField("intersection", command.intersection);
                 socket.Emit("buyCity", json_message);
-                allPieces.SetActive(false);
+               
                 if (LoginScript.CurrentLobby.master == LoginScript.CurrentUser)
                 {
                     AfiseazaDrum.afiseaza(newPieceO1, piece);
@@ -68,8 +73,14 @@ public class provisoriuO : MonoBehaviour
                 {
                     AfiseazaDrum.afiseaza(newPieceO4, piece);
 
-                }
+                } 
 
+                allPieces.SetActive(false);
+                int x  = int.Parse(ore.text) - 3;
+                ore.text = x.ToString();
+                x = int.Parse(grain.text) - 2;
+                grain.text = x.ToString();
+         
             }
             Debug.Log(req.code);
             Debug.Log(req.status);

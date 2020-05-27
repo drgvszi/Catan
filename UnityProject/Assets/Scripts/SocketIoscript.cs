@@ -736,6 +736,8 @@ public class SocketIoscript : MonoBehaviour
 
         socket.On("Stolen", (E) =>
         {
+            Text txt = FindTextFiel.find();
+            txt.text = "Someone stole part of your cards";
             Debug.Log("Stolen");
             if (E.data[0].str == LoginScript.CurrentUserLobbyId)
             {
