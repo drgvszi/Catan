@@ -816,7 +816,7 @@ public abstract class Game {
     }
 
     protected Development getRandomDevelopment() {
-        Development[] developments = {Development.knight, Development.monopoly, Development.yearOfPlenty};
+        Development[] developments = {Development.yearOfPlenty};
         Random random = new Random();
         int index = random.nextInt(developments.length);
         while (bank.getDevelopmentsNumber(developments[index]) <= 0) {
