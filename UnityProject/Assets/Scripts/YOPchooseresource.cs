@@ -30,6 +30,8 @@ public class YOPchooseresource : MonoBehaviour
     public GameObject panel;
     public void choose()
     {
+        resource2 = "";
+        resource1 = "";
         GameObject go = GameObject.Find("SocketIO");
         socket = go.GetComponent<SocketIOComponent>();
         int i=0;
@@ -38,44 +40,48 @@ public class YOPchooseresource : MonoBehaviour
             i++;
             resource1 = "lumber";
         }
+
         if (togle1.isOn)
-        {
-            i++;
-            if(i==0)
+        {if(i==0)
                 resource1 = "brick";
             else
                 resource2 = "brick";
+            i++;
+            
 
         }
         if (togle2.isOn)
-        {
-            i++;
-            if (i == 0)
+        { if (i == 0)
                 resource1 = "wool";
             else
                 resource2 = "wool";
+            i++;
+           
         }
         if (togle3.isOn)
-        {
-            i++;
-            if (i == 0)
+        { if (i == 0)
                 resource1 = "grain";
             else
                 resource2 = "grain";
+            i++;
+           
         }
         if (togle4.isOn)
-        {
-            i++;
-            if (i == 0)
+        { if (i == 0)
                 resource1 = "ore";
             else
                 resource2 = "ore";
+            i++;
+           
         }
+        print(resource1);
+        print(resource2);
+
  Text txt = FindTextFiel.find();
         if(i==2)
         {
            
-            panel.SetActive(false);
+            
             MakeRequestResponse command = new MakeRequestResponse();
             command.gameId = LoginScript.CurrentUserGameId;
             command.playerId = LoginScript.CurrentUserGEId;
@@ -91,7 +97,9 @@ public class YOPchooseresource : MonoBehaviour
                 Debug.Log(req.code);
                 Debug.Log(req.status);
                 txt.text = Response.status;
-
+                if(Response.code==200)
+                {
+                panel.SetActive(false);
                 MakeRequestResponse command1 = new MakeRequestResponse();
                 command1.gameId = LoginScript.CurrentUserGameId;
                 command1.playerId = LoginScript.CurrentUserGEId;
@@ -113,6 +121,8 @@ public class YOPchooseresource : MonoBehaviour
                     iwool.text = Response1.arguments.wool.ToString();
                 }).Catch(err => { Debug.Log(err); });
 
+                }
+               
 
             }).Catch(err => { Debug.Log(err); });
         }

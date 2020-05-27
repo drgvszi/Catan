@@ -660,7 +660,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13472}
     - Class: 114
-      Script: {instanceID: 69886}
+      Script: {instanceID: 71676}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -855,7 +855,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 85490}
+      Script: {instanceID: 87246}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
