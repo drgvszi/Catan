@@ -747,6 +747,7 @@
 ## Error messages
  - You do not have more than seven resource cards to discard half of them.
  - You have not discarded half of your resource cards.
+ - Somebody has not discarded half of their resource cards yet.
 ## Success messages
  - The dice sum is seven.
  - The dice sum is not seven.
@@ -779,6 +780,8 @@
 - You can use Road Building development card.
 - You can use Year of Plenty development card.
 - The resource cards were stolen successfully.
+- You have taken the last resource card from the bank.
+- You have taken the last two resource cards from the bank.
 - The resource cards were taken successfully.
 ## Player Turn
 ### Error Messages
@@ -795,6 +798,7 @@
 - The bank does not have enough Brick resource cards.
 - The bank does not have enough Ore resource cards.
 #### No Resource Card
+- The bank does not have any resource cards
 - The bank does not have Lumber resource cards.
 - The bank does not have Wool resource cards.
 - The bank does not have Grain resource cards.
@@ -814,6 +818,7 @@
 - You do not have cities in bank.
 # Roads
 ## Error Messages
+- You have no more available road positions.
 - Invalid position for road.
 - It does not connect to your last intersection.
 - It does not connect to one of your intersections.
@@ -826,6 +831,7 @@
 - The road was bought successfully.
 # Settlements
 ## Error Messages
+- You have no more available settlement positions.
 - Invalid position for settlement.
 - Intersection already occupied.
 - The two roads distance rule is not satisfied.
@@ -836,6 +842,7 @@
 - The settlement was bought successfully.
 # Cities
 ## Error Messages
+- You have no more available city positions.
 - Invalid position for city.
 - You have no more cities to build.
 ## Success Messages
