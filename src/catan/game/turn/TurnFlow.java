@@ -633,7 +633,7 @@ public class TurnFlow {
                 Map<String, String> requestArguments = new ObjectMapper().convertValue(arguments,
                         new TypeReference<HashMap<String, String>>() {
                         });
-                Code code = game.takeTwoResources(requestArguments.get("resource_1"), requestArguments.get("resource_2"));
+                Code code = game.takeTwoResources(requestArguments.get("resource_0"), requestArguments.get("resource_1"));
                 if (code != null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(code), null);
                     return false;
