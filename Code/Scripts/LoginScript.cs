@@ -12,6 +12,15 @@ public class LoginScript : MonoBehaviour
     public InputField Username;
     public InputField Password;
     public static int UserAccepted = -2;
+    public static string CurrentUser = null;
+    public static string CurrentUserPassword = null;
+    public static string CurrentUserEmail = null;
+    public static string CurrentUserId = null;
+    public static string CurrentUserExtension = null;
+    public static string CurrentUserLobbyId = null;
+    public static string CurrentUserGameId = null;
+    public static string CurrentUserGEId = null;
+    public static Lobby CurrentLobby = null;
     public static int ButtonPressed = 0;
     private void CheckCredentials(UserCredentials Checker)
     {
@@ -29,6 +38,11 @@ public class LoginScript : MonoBehaviour
             {
                 Debug.Log("Congratulations you succesfully logged on!" + Checker.username);
                 LoginScript.UserAccepted = 1;
+                CurrentUser = Checker.username;
+                CurrentUserPassword = Checker.userpassword;
+                CurrentUserEmail = Checker.useremail;
+                CurrentUserId = Checker.userId;
+                CurrentUserExtension = Checker.userextension;
                 SceneManager.LoadScene("MenuScene");
 
             }

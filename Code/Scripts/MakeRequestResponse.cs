@@ -10,4 +10,14 @@ public class MakeRequestResponse
     public int intersection;
     public int start;
     public int end;
+    public int port;
+    public string offer;
+    public string request;
+    public int tile;
+    public string answer;
+    public string player;
+    public string resource;
+    public string development;
+    public string resource_0;
+    public string resource_1;
 }

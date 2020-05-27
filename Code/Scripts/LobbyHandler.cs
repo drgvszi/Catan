@@ -15,6 +15,7 @@ public class Lobby
     public string master;
     public string lobbyid;
     public string gameid;
+    
 
     public Lobby(string extension, string first, string second, string third, string master, string gameid, string lobbyid)
     {
@@ -33,7 +34,8 @@ public class Lobby
 public class LobbyHandler : MonoBehaviour
 {
     public SocketIOComponent socket;                                                               // BETTER ASK Datco Maxim what he have done here. Only God and him know
-    GameObject startbutton;
+    GameObject startbutton = GameObject.Find("Start");
+    bool ok = false;
     void Start()
     {
         GameObject go = GameObject.Find("SocketIO");
@@ -72,23 +74,26 @@ public class LobbyHandler : MonoBehaviour
 
     public void EmitStartGame()
     {
-        Debug.Log(LoginScript.CurrentUserGEId);
-        GameIDConnectivityJson gameid = new GameIDConnectivityJson();
-        gameid.gameid = LoginScript.CurrentUserGameId;
-        RestClient.Post<BoardConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/startgame", gameid).Then(board =>
+        if (ok == false)
         {
-            ReceiveBoardScript.ReceivedBoard.ports = board.ports;
-            ReceiveBoardScript.ReceivedBoard.board = board.board;
+            ok = true;
+            Debug.Log(LoginScript.CurrentUserGEId);
+            GameIDConnectivityJson gameid = new GameIDConnectivityJson();
+            gameid.gameid = LoginScript.CurrentUserGameId;
+            RestClient.Post<BoardConnectivityJson>("https://catan-connectivity.herokuapp.com/lobby/startgame", gameid).Then(board =>
+            {
+                ReceiveBoardScript.ReceivedBoard.ports = board.ports;
+                ReceiveBoardScript.ReceivedBoard.board = board.board;
 
-            JSONObject json_message = new JSONObject();
-            json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-            socket.Emit("gamestart", json_message);
+                JSONObject json_message = new JSONObject();
+                json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
+                socket.Emit("gamestart", json_message);
 
-            SceneChanger n = new SceneChanger();
-            n.startGame();
+                SceneChanger n = new SceneChanger();
+                n.startGame();
 
-        }).Catch(err => { Debug.Log(err); });
-
+            }).Catch(err => { Debug.Log(err); });
+        }
     }
 
     public void EmittedStartGame(SocketIOEvent e)
@@ -96,6 +101,7 @@ public class LobbyHandler : MonoBehaviour
         string lobbyid = e.data.GetField("lobbyid").str;
         if (lobbyid == LoginScript.CurrentUserLobbyId) 
         {
+            print("asd21");
             ReceiveBoardScript recive = new ReceiveBoardScript();
             recive.getGameBoardNotMaster();
 
@@ -109,7 +115,6 @@ public class LobbyHandler : MonoBehaviour
         UnityConnectivityCommand command = new UnityConnectivityCommand();
         command.lobbyid = LoginScript.CurrentUserLobbyId;
         command.username = LoginScript.CurrentUser;
-
         RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/leaveLobby", command).Then(res =>
         {
             Debug.Log(res.Text);
@@ -125,9 +130,12 @@ public class LobbyHandler : MonoBehaviour
         command.playerId = LoginScript.CurrentUserGEId;
         command.gameId = LoginScript.CurrentUserGameId;
         Debug.Log(LoginScript.CurrentUserGEId);
+        
         RestClient.Post("https://catan-connectivity.herokuapp.com/lobby/leaveGame", command).Then(res =>
         {
+            //ChangeTexture.setDone(false);
             Debug.Log(res.Text);
+            ReceiveBoardScript.ReceivedBoard.board[0] = null;
 
         }).Catch(err => { Debug.Log(err); });
 
@@ -137,6 +145,7 @@ public class LobbyHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         startbutton.SetActive(false);
         // display the names of the members of the lobby. If not master then cannot start game
         GameObject name1 = GameObject.Find("Text1");
