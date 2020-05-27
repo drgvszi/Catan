@@ -59,6 +59,7 @@ ScriptsOnlyBuild:
     - roadBuildingCard
     - showCards
     - test
+    - yearOfPlenty
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -148,6 +149,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11432}
     - Class: 114
       Script: {instanceID: 11496}
+    - Class: 114
+      Script: {instanceID: 11522}
     - Class: 114
       Script: {instanceID: 11580}
     - Class: 114
@@ -259,7 +262,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 26300}
+      Script: {instanceID: 26302}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -657,7 +660,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13472}
     - Class: 114
-      Script: {instanceID: 69904}
+      Script: {instanceID: 70416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -852,7 +855,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 85486}
+      Script: {instanceID: 86000}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128

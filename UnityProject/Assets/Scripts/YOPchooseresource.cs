@@ -91,9 +91,6 @@ public class YOPchooseresource : MonoBehaviour
                 Debug.Log(req.code);
                 Debug.Log(req.status);
                 txt.text = Response.status;
-                JSONObject json_message = new JSONObject();
-                json_message.AddField("lobbyid", LoginScript.CurrentUserLobbyId);
-                socket.Emit("Stolen", json_message);
 
                 MakeRequestResponse command1 = new MakeRequestResponse();
                 command1.gameId = LoginScript.CurrentUserGameId;

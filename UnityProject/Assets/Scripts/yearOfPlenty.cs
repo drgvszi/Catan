@@ -15,6 +15,7 @@ using System.Text;
 public class yearOfPlenty : MonoBehaviour
 {
     Text asd;
+   public GameObject panel;
     public void yearOP()
     {
         Text txt = FindTextFiel.find();
@@ -35,6 +36,7 @@ public class yearOfPlenty : MonoBehaviour
             Debug.Log(req.status);
             if (req.code == 200)
             {
+                panel.SetActive(true);
                 asd = GameObject.Find("YearOfPlentyText").GetComponent<Text>();
                 int x = int.Parse(asd.text);
                 x = x - 1;
