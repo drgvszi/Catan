@@ -611,6 +611,20 @@ public class TurnFlow {
                         }
                     }
                 }
+                if (resourcesNumber == 2) {
+                    for (Resource resource : Resource.values()) {
+                        if (resource != Resource.desert) {
+                            int resourceNumberByType = bank.getResourcesNumber(resource);
+                            if (resourceNumberByType > 0) {
+                                bank.removeResource(resource, resourceNumberByType);
+                                game.getCurrentPlayer().addResource(resource, resourceNumberByType);
+                            }
+                        }
+                    }
+                    response = new UserResponse(HttpStatus.SC_OK, "You have taken the last\ntwo resource cards from the bank.",
+                            null);
+                    return true;
+                }
                 if (arguments == null) {
                     response = new UserResponse(HttpStatus.SC_ACCEPTED, Messages.getMessage(Code.InvalidRequest),
                             null);

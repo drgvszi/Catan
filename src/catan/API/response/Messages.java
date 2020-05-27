@@ -70,13 +70,13 @@ public class Messages {
 
         //region Properties
 
-        messages.put(Code.InvalidRoadPosition, "Invalid position for road.");
-        messages.put(Code.InvalidSettlementPosition, "Invalid position for settlement.");
-        messages.put(Code.InvalidCityPosition, "Invalid position for city.");
-
         messages.put(Code.NoAvailableRoadPosition, "You have no more available\nroad positions.");
         messages.put(Code.NoAvailableSettlementPosition, "You have no more available\nsettlement positions.");
         messages.put(Code.NoAvailableCityPosition, "You have no more available\ncity positions.");
+
+        messages.put(Code.InvalidRoadPosition, "Invalid position for road.");
+        messages.put(Code.InvalidSettlementPosition, "Invalid position for settlement.");
+        messages.put(Code.InvalidCityPosition, "Invalid position for city.");
 
         messages.put(Code.IntersectionAlreadyOccupied, "Intersection already occupied.");
         messages.put(Code.DistanceRuleViolated, "The two roads distance rule\nis not satisfied.");

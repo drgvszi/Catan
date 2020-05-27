@@ -62,13 +62,13 @@ public enum Code {
 
     //region Properties
 
-    InvalidRoadPosition,
-    InvalidSettlementPosition,
-    InvalidCityPosition,
-
     NoAvailableRoadPosition,
     NoAvailableSettlementPosition,
     NoAvailableCityPosition,
+
+    InvalidRoadPosition,
+    InvalidSettlementPosition,
+    InvalidCityPosition,
 
     IntersectionAlreadyOccupied,
     DistanceRuleViolated,
