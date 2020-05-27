@@ -63,7 +63,17 @@ io.on('connection', (socket) => {
 		console.log(msg);
 		socket.broadcast.emit("gamestart", msg);
 	});
-	
+	socket.on("buildsettlement", (msg) => {
+		console.log("buildsettlement");
+		console.log(msg);
+		socket.broadcast.emit("buildsettlement", msg);
+	});
+
+	socket.on("buildroad", (msg) => {
+		console.log("buildroad");
+		console.log(msg);
+		socket.broadcast.emit("buildroad", msg);
+	});
 	socket.on('disconnect', function() {
       console.log('Got disconnect!');
   	});

@@ -344,6 +344,11 @@ const startGame = async(req, response) => {
 					boards.child(game_id).set({
 						data:board
 					});
+					var index = 0;
+					for(index = 0; index < all_lobbies.length; index++)
+						if(game_id  == all_lobbies[index].gameid)
+							break;
+					db.ref('lobbies').child(all_lobbies[index].lobbyid).update({"started":1});
 					response.send(board);
 			}
 				else{
