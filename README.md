@@ -1,4 +1,4 @@
-### (Trello board)[https://trello.com/b/OGXjuf7D/game-engine]
+### [Trello board](https://trello.com/b/OGXjuf7D/game-engine)
 ### URL for POST requests regarding game configurations: https://catan-engine.herokuapp.com/Catan/managerRequest/
 # Configure Game
 ## Create a game
